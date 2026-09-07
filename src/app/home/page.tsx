@@ -4,12 +4,10 @@ import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { HOME } from "@/data/routes-content/home";
 
-const badApple:string = "/videos/background.mp4";
-
 export default function Home() {
   return (
       <Hero className="flex flex-wrap justify-center lg:justify-start lg:max-w-5xl mx-8 lg:mx-0 xl:max-w-7xl gap-16" fade={true} background={
-        <BackgroundAscii url={badApple} containerClassOverride="absolute inset-0 z-0 w-full h-full" loop={true} />
+        <BackgroundAscii url={'/videos/background.mp4'} containerClassOverride="absolute inset-0 z-0 w-full h-full" loop={true} />
       }>
         <div className="md:w-xl lg:px-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bulletin mb-4 text-center md:text-left">{HOME.heroTitle}</h1>

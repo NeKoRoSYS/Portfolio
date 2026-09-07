@@ -5,8 +5,8 @@ import MarqueeModule from "react-fast-marquee";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
-    heroTitle: `Engineering experiences that leave a mark`,
-    heroSubtitle: `Here at GravenSoft, our team is committed to delivering you quality software solutions that scale.`,
+    heroTitle: `NeKoRoSYS`,
+    heroSubtitle: `Your one-man IT Department.`,
     testTitle: `Lorem Ipsum`,
     testTest: `dolor sit amet, consectetur adipiscing elit. Quisque vel magna nec nulla sollicitudin consectetur.
     Donec non nisl ex. Sed sit amet libero sollicitudin, sodales orci sed, malesuada eros.Fusce nibh sapien, tincidunt
