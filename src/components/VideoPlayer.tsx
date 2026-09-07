@@ -160,13 +160,15 @@ export function BackgroundAscii({
         gl.viewport(0, 0, canvas.width, canvas.height);
       }
 
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true); 
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
-      gl.uniform2f(resLocation, canvas.width, canvas.height);
-      gl.uniform1f(sizeLocation, sampleSize);
-      gl.uniform3f(colorLocation, themeR, themeG, themeB);
-      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      if (video.readyState >= video.HAVE_CURRENT_DATA) {
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true); 
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
+        gl.uniform2f(resLocation, canvas.width, canvas.height);
+        gl.uniform1f(sizeLocation, sampleSize);
+        gl.uniform3f(colorLocation, themeR, themeG, themeB);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+      }
       animationId = requestAnimationFrame(renderLoop);
     };
 
@@ -207,7 +209,6 @@ export function BackgroundAscii({
         muted
         loop 
         playsInline 
-        crossOrigin="anonymous" 
         style={{ position: 'absolute', width: '1px', height: '1px', opacity: 0 }} 
       />
       <canvas 
