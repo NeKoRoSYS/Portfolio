@@ -39,7 +39,7 @@ export function Header() {
         <div className="w-full py-8 flex justify-between items-center px-8 xl:px-0 md:max-w-6xl">
           <div className="flex gap-2 justify-center items-center">
             <Image width={8} height={8} src={Icons.gravensoftIcon} className="w-8 aspect-square rounded-md" alt={'GravenSoft Icon'}></Image>
-            <p className="font-bulletin text-3xl">GravenSoft</p>
+            <p className="font-bulletin text-3xl">NeKoRoSYS</p>
           </div>
           <nav className={`drop-shadow-black/35 drop-shadow-lg hidden sm:flex flex-row gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
             {

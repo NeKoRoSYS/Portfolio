@@ -18,9 +18,9 @@ export const NAVIGATE: HyperlinkSchema[] = [
 ]
 
 export const SOCIALS: HyperlinkSchema[] = [
-    {name: "Twitter", path: "https://twitter.com/GravenSoft", icon: Icons.twitterIcon, isRoute: false},
-    {name: "LinkedIn", path: "https://linkedin.com/company/GravenSoft", icon: Icons.linkedInIcon, isRoute: false},
-    {name: "GitHub", path: "https://github.com/GravenSoft-DEV", icon: Icons.githubIcon, isRoute: false},
+    {name: "Twitter", path: "https://twitter.com/NeKoRoSYS", icon: Icons.twitterIcon, isRoute: false},
+    {name: "LinkedIn", path: "https://linkedin.com/in/malibiran-johnmarky", icon: Icons.linkedInIcon, isRoute: false},
+    {name: "GitHub", path: "https://github.com/NeKoRoSYS", icon: Icons.githubIcon, isRoute: false},
     {name: "Discord", path: "https://discord.gg/qJp2ByQZq4", icon: Icons.discordIcon, isRoute: false},
 ]
 

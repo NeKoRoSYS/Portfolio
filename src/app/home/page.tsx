@@ -28,7 +28,7 @@ export default function Home() {
                 href="/contact"
                 className="relative z-10 w-full sm:w-fit h-16 px-8 rounded-xl bg-white text-black font-bold hover:bg-zinc-950 hover:text-white"
               >
-                Build with Us
+                Get in Touch
               </Button>
             </div>
             <Button className="transition-transform origin-center hover:scale-95 w-full sm:w-fit h-16 px-8 rounded-xl border border-white bg-white/20 text-white font-bold hover:bg-white hover:text-black" href="/portfolio"><p>Portfolio</p></Button>
