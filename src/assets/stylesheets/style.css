@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed; 
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, 
+body, 
+#root {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+}
+
+@theme {
+  --font-bulletin: 'Bulletin', sans-serif;
+  --font-cosmic: 'CosmicSuperHuman', sans-serif;
+  --font-kunstraub: 'Kunstraub', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: 'Bulletin';
+  src: url('../fonts/BulletinGothic.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CosmicSuperHuman';
+  src: url('../fonts/CosmicSuperHuman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kunstraub';
+  src: url('../fonts/Kunstraub.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

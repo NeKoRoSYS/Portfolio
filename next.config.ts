@@ -1,7 +1,17 @@
+import { withNextVideo } from "next-video/process";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+        permanent: true,
+      },
+    ];
+  },
 };
 
-export default nextConfig;
+
+export default withNextVideo(nextConfig, { folder: 'public/videos' });
