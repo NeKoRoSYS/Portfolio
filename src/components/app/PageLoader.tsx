@@ -1,6 +1,5 @@
 export function PageLoader() {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center w-full min-h-svh z-10">
-    </div>
+    <div className="z-10 flex min-h-svh w-full flex-1 flex-col items-center justify-center"></div>
   );
 }

@@ -1,143 +1,59 @@
 {
-
   "compilerOptions": {
+    "target": "ES2017",
 
-  
-  "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
 
-  
-  "lib": [
+    "allowJs": true,
 
-  
-  
-  "dom",
+    "skipLibCheck": true,
 
-  
-  
-  "dom.iterable",
+    "strict": true,
 
-  
-  
-  "esnext"
+    "noEmit": true,
 
-  
-  ],
+    "esModuleInterop": true,
 
-  
-  "allowJs": true,
+    "module": "esnext",
 
-  
-  "skipLibCheck": true,
+    "moduleResolution": "bundler",
 
-  
-  "strict": true,
+    "resolveJsonModule": true,
 
-  
-  "noEmit": true,
+    "isolatedModules": true,
 
-  
-  "esModuleInterop": true,
+    "jsx": "react-jsx",
 
-  
-  "module": "esnext",
+    "incremental": true,
 
-  
-  "moduleResolution": "bundler",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
 
-  
-  "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./src/*"],
 
-  
-  "isolatedModules": true,
-
-  
-  "jsx": "react-jsx",
-
-  
-  "incremental": true,
-
-  
-  "plugins": [
-
-  
-  
-  {
-
-  
-  
-  
-  "name": "next"
-
-  
-  
-  }
-
-  
-  ],
-
-  
-  "paths": {
-
-  
-  
-  "@/*": [
-
-  
-  
-  
-  "./src/*"
-
-  
-  
-  ],
-
-  
-  
-  "@videos/*": [
-
-  
-  
-  
-  "./public/videos/*"
-
-  
-  
-  ]
-
-  
-  }
-
+      "@videos/*": ["./public/videos/*"]
+    }
   },
 
   "include": [
+    "video.d.ts",
 
-  
-  "video.d.ts",
+    "next-env.d.ts",
 
-  
-  "next-env.d.ts",
+    "**/*.ts",
 
-  
-  "**/*.ts",
+    "**/*.tsx",
 
-  
-  "**/*.tsx",
+    ".next/types/**/*.ts",
 
-  
-  ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
 
-  
-  ".next/dev/types/**/*.ts",
-
-  
-  "**/*.mts"
-
+    "**/*.mts"
   ],
 
-  "exclude": [
-
-  
-  "node_modules"
-
-  ]
+  "exclude": ["node_modules"]
 }

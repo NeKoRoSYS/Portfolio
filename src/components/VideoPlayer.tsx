@@ -1,19 +1,26 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 
 interface VideoSchema {
-    url: string;
-    containerClassOverride?: string;
-    videoClassOverride?: string;
-    loop?: boolean;
+  url: string;
+  containerClassOverride?: string;
+  videoClassOverride?: string;
+  loop?: boolean;
 }
 
-export default function VideoPlayer({ url, containerClassOverride, videoClassOverride, loop }: VideoSchema) {
+export default function VideoPlayer({
+  url,
+  containerClassOverride,
+  videoClassOverride,
+  loop,
+}: VideoSchema) {
   return (
-    <div className={`overflow-hidden bg-black ${containerClassOverride ? containerClassOverride : "shadow-2xl max-w-3xl mx-auto my-8 rounded-xl"}`}>
-      <video 
-        className={`w-full h-full max-w-none pointer-events-none object-cover ${videoClassOverride}`}
+    <div
+      className={`overflow-hidden bg-black ${containerClassOverride ? containerClassOverride : "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl"}`}
+    >
+      <video
+        className={`pointer-events-none h-full w-full max-w-none object-cover ${videoClassOverride}`}
         loop={loop}
         muted
         autoPlay
@@ -33,12 +40,12 @@ interface BackgroundProps {
   themeColor?: string;
 }
 
-export function BackgroundAscii({ 
+export function BackgroundAscii({
   url,
   containerClassOverride,
-  videoClassOverride, 
-  sampleSize = 20, 
-  themeColor = '#a855f7'
+  videoClassOverride,
+  sampleSize = 20,
+  themeColor = "#a855f7",
 }: VideoSchema & BackgroundProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -48,14 +55,17 @@ export function BackgroundAscii({
     const canvas = canvasRef.current;
     if (!video || !canvas) return;
 
-    const gl = canvas.getContext('webgl', { antialias: false, powerPreference: "high-performance" });
+    const gl = canvas.getContext("webgl", {
+      antialias: false,
+      powerPreference: "high-performance",
+    });
     if (!gl) {
       console.error("WebGL not supported, falling back.");
       return;
     }
 
     const parseHex = (hex: string) => {
-      const clean = hex.replace('#', '');
+      const clean = hex.replace("#", "");
       const r = parseInt(clean.substring(0, 2), 16) / 255;
       const g = parseInt(clean.substring(2, 4), 16) / 255;
       const b = parseInt(clean.substring(4, 6), 16) / 255;
@@ -132,7 +142,11 @@ export function BackgroundAscii({
 
     const positionBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
+      gl.STATIC_DRAW,
+    );
 
     const posLocation = gl.getAttribLocation(program, "position");
     gl.enableVertexAttribArray(posLocation);
@@ -154,7 +168,10 @@ export function BackgroundAscii({
     const renderLoop = () => {
       if (video.paused || video.ended) return;
 
-      if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+      if (
+        canvas.width !== canvas.clientWidth ||
+        canvas.height !== canvas.clientHeight
+      ) {
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
         gl.viewport(0, 0, canvas.width, canvas.height);
@@ -162,8 +179,15 @@ export function BackgroundAscii({
 
       if (video.readyState >= video.HAVE_CURRENT_DATA) {
         gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true); 
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(
+          gl.TEXTURE_2D,
+          0,
+          gl.RGBA,
+          gl.RGBA,
+          gl.UNSIGNED_BYTE,
+          video,
+        );
         gl.uniform2f(resLocation, canvas.width, canvas.height);
         gl.uniform1f(sizeLocation, sampleSize);
         gl.uniform3f(colorLocation, themeR, themeG, themeB);
@@ -174,7 +198,7 @@ export function BackgroundAscii({
 
     const startVideo = () => {
       video.play().catch(() => {});
-      if (video.readyState >= 3) { 
+      if (video.readyState >= 3) {
         cancelAnimationFrame(animationId);
         animationId = requestAnimationFrame(renderLoop);
       }
@@ -183,16 +207,16 @@ export function BackgroundAscii({
     if (video.readyState >= 1) {
       startVideo();
     } else {
-      video.addEventListener('loadedmetadata', startVideo);
+      video.addEventListener("loadedmetadata", startVideo);
     }
 
-    video.addEventListener('play', () => {
+    video.addEventListener("play", () => {
       cancelAnimationFrame(animationId);
       animationId = requestAnimationFrame(renderLoop);
     });
 
     return () => {
-      video.removeEventListener('loadedmetadata', startVideo);
+      video.removeEventListener("loadedmetadata", startVideo);
       cancelAnimationFrame(animationId);
       gl.deleteTexture(texture);
       gl.deleteBuffer(positionBuffer);
@@ -201,20 +225,24 @@ export function BackgroundAscii({
   }, [sampleSize, themeColor]);
 
   return (
-    <div className={`overflow-hidden opacity-50 bg-black ${containerClassOverride ? containerClassOverride : "shadow-2xl max-w-3xl mx-auto my-8 rounded-xl"}`}>
-      <video 
-        ref={videoRef} 
-        src={url} 
-        autoPlay 
+    <div
+      className={`overflow-hidden bg-black opacity-50 ${containerClassOverride ? containerClassOverride : "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl"}`}
+    >
+      <video
+        ref={videoRef}
+        src={url}
+        autoPlay
         muted
-        loop 
-        playsInline 
-        style={{ position: 'absolute', width: '1px', height: '1px', opacity: 0 }} 
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          opacity: 0,
+        }}
       />
-      <canvas 
-        ref={canvasRef} 
-        className="w-full h-full object-cover" 
-      />
+      <canvas ref={canvasRef} className="h-full w-full object-cover" />
     </div>
   );
 }

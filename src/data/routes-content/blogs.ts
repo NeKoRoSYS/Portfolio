@@ -11,6 +11,4 @@ export interface BlogMeta {
   tags: string[];
 }
 
-export const BLOG_POSTS: BlogMeta[] = [
-  ...announcementPosts
-];
+export const BLOG_POSTS: BlogMeta[] = [...announcementPosts];
