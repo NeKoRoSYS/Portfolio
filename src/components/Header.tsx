@@ -87,7 +87,7 @@ export function Header() {
             className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all sm:flex"
             translateOverride="hover:-translate-y-0.5"
             highlight
-            highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)] hover:bg-zinc-950 hover:text-zinc-100 hover:scale-98"
+            highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(0,255,75,0.25)] hover:bg-zinc-950 hover:text-green-300 hover:scale-98"
           >
             {(hoverClasses) => (
               <Magnetic>

@@ -1,11 +1,13 @@
-import Block from "@/components/Block";
+import Block, { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { BackgroundAscii } from "@/components/VideoPlayer";
-import { HOME } from "@/data/routes-content/home";
+import { LETTERS, ROLES } from "@/data/nekorosys";
+import { HOME, SECTIONS } from "@/data/routes-content/home";
+import { Fragment } from "react/jsx-runtime";
 
 export default function Home() {
   return (
@@ -21,25 +23,37 @@ export default function Home() {
         }
       >
         <div className="mx-auto flex w-full flex-3 flex-col items-center lg:mx-0 lg:items-start">
-          <hr className="mx-auto mb-4 w-full max-w-xs border-zinc-100 lg:hidden" />
+          <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 hover:border-purple-300 lg:hidden" />
 
-          <div className="order-2 flex w-full max-w-xs items-center justify-between gap-4 lg:order-1 lg:max-w-md">
-            <hr className="w-full flex-1 border-zinc-100 lg:hidden" />
+          <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
+            <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
             <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic sm:text-lg lg:text-left lg:text-xl">
-              <span>STUDENT</span>
-              <span>SOFTWARE DEVELOPER</span>
-              <span>GRAPHIC DESIGNER</span>
-              <span>LAYOUT ARTIST</span>
-              <span>ILLUSTRATOR</span>
+              {ROLES.map((role, index) => (
+                <span
+                  key={index}
+                  className="text-green-400 hover:text-purple-300"
+                >
+                  {role.toUpperCase()}
+                </span>
+              ))}
             </TextLoop>
 
-            <hr className="w-full flex-1 border-zinc-100" />
+            <hr className="w-full flex-1 border-2 border-green-400 hover:border-purple-300" />
           </div>
-          <TextScramble className="order-1 mx-auto w-fit text-center font-bulletin text-6xl text-green-400 sm:text-7xl lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
-            {HOME.heroTitle}
-          </TextScramble>
-          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-zinc-100 sm:w-md lg:mx-0 lg:mt-2 lg:mb-16 lg:block" />
-          <div className="order-4 mt-24 flex w-full flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start">
+          <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
+            <TextScramble>
+              {LETTERS.map((element, index) => (
+                <span
+                  key={index}
+                  className="text-green-400 hover:-translate-y-2 hover:text-purple-300"
+                >
+                  {element}
+                </span>
+              ))}
+            </TextScramble>
+          </div>
+          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 hover:border-purple-300 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block" />
+          <div className="order-4 mt-24 flex w-full flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform hover:scale-95 sm:w-fit lg:flex-2">
               <GlowEffect
                 className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
@@ -51,13 +65,13 @@ export default function Home() {
               />
               <Button
                 href="/contact"
-                className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-zinc-100"
+                className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
               >
                 Get in Touch
               </Button>
             </div>
             <Button
-              className="h-16 w-full origin-center rounded-xl border border-white bg-zinc-100/20 px-8 font-bold text-zinc-100 transition-transform hover:scale-95 hover:bg-zinc-100 hover:text-zinc-950 sm:w-fit lg:flex-1"
+              className="h-16 w-full origin-center rounded-xl border border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
               href="/portfolio"
             >
               <p>Portfolio</p>
@@ -65,7 +79,19 @@ export default function Home() {
           </div>
         </div>
       </Hero>
-      <Block>Test</Block>
+
+      {SECTIONS.map((section, index) => (
+        <Section
+          key={index}
+          bgColor={section.bgColor}
+          title={section.title}
+          text={section.text}
+          itemsInside={section.itemsInside}
+          itemsOutside={section.itemsOutside}
+          center={section.center}
+          reverse={section.reverse}
+        />
+      ))}
     </>
   );
 }

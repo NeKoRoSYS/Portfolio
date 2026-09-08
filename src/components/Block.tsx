@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 interface BlockProps {
   children?: ReactNode;
@@ -68,16 +68,16 @@ export function Section(props: SectionProps) {
           ) : null}
           {itemsInside ? (
             <div className={`flex w-full flex-col gap-8`}>
-              {itemsInside?.map((element) => (
-                <>{element}</>
+              {itemsInside?.map((element, index) => (
+                <Fragment key={index}>{element}</Fragment>
               ))}
             </div>
           ) : null}
         </div>
         {itemsOutside ? (
           <div className="flex w-full flex-wrap gap-8 sm:mx-auto lg:w-fit lg:flex-col">
-            {itemsOutside?.map((element) => (
-              <>{element}</>
+            {itemsOutside?.map((element, index) => (
+              <Fragment key={index}>{element}</Fragment>
             ))}
           </div>
         ) : null}

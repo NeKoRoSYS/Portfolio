@@ -1,9 +1,9 @@
 "use client";
-import { type JSX, useEffect, useState } from "react";
-import { motion, MotionProps } from "motion/react";
+import React, { type JSX, useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export type TextScrambleProps = {
-  children: string;
+  children: React.ReactNode;
   duration?: number;
   speed?: number;
   characterSet?: string;
@@ -11,7 +11,7 @@ export type TextScrambleProps = {
   className?: string;
   trigger?: boolean;
   onScrambleComplete?: () => void;
-} & MotionProps;
+};
 
 const defaultChars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -30,10 +30,33 @@ export function TextScramble({
   const MotionComponent = motion.create(
     Component as keyof JSX.IntrinsicElements,
   );
-  const [scrambledText, setScrambledText] = useState<string | null>(null);
+
+  const childArray = React.useMemo(
+    () => React.Children.toArray(children),
+    [children],
+  );
+
+  const letters = React.useMemo(() => {
+    return childArray.flatMap((child) => {
+      if (typeof child === "string" || typeof child === "number") {
+        return String(child).split("");
+      }
+      if (React.isValidElement(child)) {
+        const element = child as React.ReactElement<{
+          children?: React.ReactNode;
+        }>;
+        return String(element.props.children ?? "").split("");
+      }
+      return [];
+    });
+  }, [childArray]);
+
+  const [scrambledLetters, setScrambledLetters] = useState<string[] | null>(
+    null,
+  );
   const [isAnimating, setIsAnimating] = useState(false);
-  const text = children;
-  const displayText = scrambledText ?? children;
+
+  const displayLetters = scrambledLetters ?? letters;
 
   const scramble = async () => {
     if (isAnimating) return;
@@ -43,29 +66,24 @@ export function TextScramble({
     let step = 0;
 
     const interval = setInterval(() => {
-      let scrambled = "";
       const progress = step / steps;
 
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") {
-          scrambled += " ";
-          continue;
-        }
+      const updatedLetters = letters.map((letter, i) => {
+        if (letter === " ") return " ";
 
-        if (progress * text.length > i) {
-          scrambled += text[i];
+        if (progress * letters.length > i) {
+          return letter;
         } else {
-          scrambled +=
-            characterSet[Math.floor(Math.random() * characterSet.length)];
+          return characterSet[Math.floor(Math.random() * characterSet.length)];
         }
-      }
+      });
 
-      setScrambledText(scrambled);
+      setScrambledLetters(updatedLetters);
       step++;
 
       if (step > steps) {
         clearInterval(interval);
-        setScrambledText(null);
+        setScrambledLetters(null);
         setIsAnimating(false);
         onScrambleComplete?.();
       }
@@ -73,14 +91,62 @@ export function TextScramble({
   };
 
   useEffect(() => {
-    if (!trigger) return;
-
+    if (!trigger || letters.length === 0) return;
     scramble();
-  }, [trigger]);
+  }, [trigger, letters]);
+
+  let globalCharIndex = 0;
 
   return (
     <MotionComponent className={className} {...props}>
-      {displayText}
+      {childArray.map((child, childIndex) => {
+        if (typeof child === "string" || typeof child === "number") {
+          const textStr = String(child);
+          const elements: React.ReactNode[] = [];
+
+          for (let i = 0; i < textStr.length; i++) {
+            const char = displayLetters[globalCharIndex];
+            elements.push(
+              <span key={`${childIndex}-${i}`} className="inline-block">
+                {char === " " ? "\u00A0" : char}
+              </span>,
+            );
+            globalCharIndex++;
+          }
+          return elements;
+        }
+
+        if (React.isValidElement(child)) {
+          const element = child as React.ReactElement<{
+            children?: React.ReactNode;
+            className?: string;
+          }>;
+          const innerText = String(element.props.children ?? "");
+
+          const renderedChars = innerText
+            .split("")
+            .map((_, i) => {
+              const char = displayLetters[globalCharIndex];
+              globalCharIndex++;
+              return char === " " ? "\u00A0" : char;
+            })
+            .join("");
+
+          return (
+            <motion.span
+              key={child.key ?? childIndex}
+              className="inline-block"
+              whileHover={{ y: -8 }}
+            >
+              {React.cloneElement(element, {
+                children: renderedChars,
+              })}
+            </motion.span>
+          );
+        }
+
+        return null;
+      })}
     </MotionComponent>
   );
 }
