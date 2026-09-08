@@ -6,8 +6,8 @@ export function TextHyperlink({
   showHyperlinkIcon = true,
   ...hyperlinkProps
 }: HyperlinkSchema & { showHyperlinkIcon?: boolean }) {
-  const { name, path, icon, isRoute } = hyperlinkProps;
-
+  const { name, path, icon } = hyperlinkProps;
+  const isInternal = path.startsWith("#") || path.startsWith("/");
   const className =
     "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2";
   const linkInner = (
@@ -28,7 +28,7 @@ export function TextHyperlink({
     </>
   );
 
-  if (isRoute) {
+  if (isInternal) {
     return (
       <Link href={path} className={className} rel="noreferrer noopener">
         {linkInner}

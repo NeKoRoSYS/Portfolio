@@ -23,9 +23,9 @@ export function Header() {
   const baseHeader: string =
     "w-full h-16 flex justify-center items-center lg:pl-1 lg:max-w-[80%] lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
   const bgVisible: string =
-    "bg-zinc-950/75 border-b lg:border border-zinc-700 backdrop-blur-md lg:rounded-full";
+    "bg-black/75 border-b lg:border border-zinc-700 backdrop-blur-md lg:rounded-full";
   const bgInvisible: string =
-    "sm:bg-zinc-950/0 sm:border-0 sm:border-zinc-700/0 sm:backdrop-blur-none lg:rounded-full";
+    "sm:bg-black/0 sm:border-0 sm:border-zinc-700/0 sm:backdrop-blur-none lg:rounded-full";
 
   return (
     <>
@@ -84,10 +84,10 @@ export function Header() {
             </ul>
           </nav>
           <HoverableElement
-            className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all duration-200 sm:flex"
+            className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all sm:flex"
             translateOverride="hover:-translate-y-0.5"
             highlight
-            highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)]"
+            highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)] hover:bg-zinc-950 hover:text-zinc-100 hover:scale-98"
           >
             {(hoverClasses) => (
               <Magnetic>

@@ -26,7 +26,6 @@ export function Footer() {
               name={hyperlink.name}
               path={hyperlink.path}
               icon={hyperlink.icon}
-              isRoute={hyperlink.isRoute}
             />
           );
         })}

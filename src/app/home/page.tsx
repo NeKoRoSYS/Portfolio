@@ -11,32 +11,40 @@ export default function Home() {
   return (
     <>
       <Hero
-        className="flex flex-wrap justify-center gap-16 lg:justify-start"
-        fade={true}
+        fade
         background={
           <BackgroundAscii
             url={"/videos/background.mp4"}
             containerClassOverride="absolute inset-0 z-0 w-full h-full"
-            loop={true}
+            loop
           />
         }
       >
-        <div className="flex flex-3 flex-col">
-          <div className="order-2 flex items-center justify-center gap-8 lg:order-1 lg:w-md lg:justify-start">
-            <TextLoop className="text-md flex justify-center font-mono italic sm:text-lg lg:text-left lg:text-xl">
+        <div className="mx-auto flex w-full flex-3 flex-col items-center lg:mx-0 lg:items-start">
+          <hr className="mx-auto mb-4 w-full max-w-xs border-zinc-100 lg:hidden" />
+
+          {/* CHANGED: Match width constraints and use justify-between to anchor the lines to the edges */}
+          <div className="order-2 flex w-full max-w-xs items-center justify-between gap-4 lg:order-1 lg:max-w-md">
+            {/* LEFT LINE: Added lg:block so both sides match */}
+            <hr className="w-full flex-1 border-zinc-100 lg:hidden" />
+
+            {/* Text Loop is now perfectly centered between two equal-growing lines */}
+            <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic sm:text-lg lg:text-left lg:text-xl">
               <span>STUDENT</span>
               <span>SOFTWARE DEVELOPER</span>
               <span>GRAPHIC DESIGNER</span>
               <span>LAYOUT ARTIST</span>
               <span>ILLUSTRATOR</span>
             </TextLoop>
-            <hr className="order-3 hidden w-full border-zinc-100 lg:block" />
+
+            {/* RIGHT LINE */}
+            <hr className="w-full flex-1 border-zinc-100" />
           </div>
-          <TextScramble className="order-1 text-center font-bulletin text-6xl text-green-400 sm:text-7xl lg:order-2 lg:text-left lg:text-[8.65rem]">
+          <TextScramble className="order-1 mx-auto w-fit text-center font-bulletin text-6xl text-green-400 sm:text-7xl lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             {HOME.heroTitle}
           </TextScramble>
-          <hr className="order-3 mx-auto mt-8 mb-10 w-full border-zinc-100 sm:w-md lg:mx-0 lg:mt-2 lg:mb-16" />
-          <div className="order-4 flex w-full flex-wrap justify-center gap-4 lg:w-md lg:justify-start">
+          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-zinc-100 sm:w-md lg:mx-0 lg:mt-2 lg:mb-16 lg:block" />
+          <div className="order-4 mt-24 flex w-full flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform hover:scale-95 sm:w-fit lg:flex-2">
               <GlowEffect
                 className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
