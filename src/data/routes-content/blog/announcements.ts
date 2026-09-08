@@ -1,4 +1,4 @@
-import { type BlogMeta } from "@/data/routes-content/blogs";
+import { type BlogMeta } from "@/data/routes-content/blog";
 import test from "@/assets/background.webp";
 
 export const announcementPosts: BlogMeta[] = [
@@ -8,7 +8,7 @@ export const announcementPosts: BlogMeta[] = [
     title: "Hello, World!",
     excerpt: "Testing the blogposts system.",
     date: "2026-08-30",
-    file: "/blogs/my-first-post.md",
+    file: "/blog/my-first-post.md",
     tags: ["Test"],
   },
 ];

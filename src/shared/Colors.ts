@@ -35,7 +35,7 @@ const Colors = {
   twitter:
     "border-neutral-700/80 hover:border-neutral-200 bg-linear-to-b from-neutral-900/50 to-neutral-800/40 hover:from-neutral-700/50 hover:to-neutral-900/30 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
 
-  textAccent: "text-zinc-200",
+  textAccent: "text-green-400",
   textAccentHover: "focus-visible:text-zinc-100 group-hover:text-zinc-950",
   textMutedNav: "text-zinc-400",
   textBody: "text-zinc-200",

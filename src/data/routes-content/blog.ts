@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { announcementPosts } from "./blogs/announcements";
+import { announcementPosts } from "./blog/announcements";
 
 export interface BlogMeta {
   slug: string;

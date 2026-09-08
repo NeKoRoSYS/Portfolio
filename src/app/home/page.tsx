@@ -1,4 +1,4 @@
-import Block, { Section } from "@/components/Block";
+import { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
@@ -6,13 +6,13 @@ import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
-import { HOME, SECTIONS } from "@/data/routes-content/home";
-import { Fragment } from "react/jsx-runtime";
+import { SECTIONS } from "@/data/routes-content/home";
 
 export default function Home() {
   return (
     <>
       <Hero
+        borderVisible
         fade
         background={
           <BackgroundAscii
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
             <Button
               className="h-16 w-full origin-center rounded-xl border border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
-              href="/portfolio"
+              href="#portfolio"
             >
               <p>Portfolio</p>
             </Button>
@@ -84,6 +84,7 @@ export default function Home() {
         <Section
           key={index}
           bgColor={section.bgColor}
+          id={section.id}
           title={section.title}
           text={section.text}
           itemsInside={section.itemsInside}

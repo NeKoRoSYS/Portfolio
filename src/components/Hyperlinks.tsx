@@ -1,12 +1,15 @@
 import Link from "next/link";
 import type { HyperlinkSchema } from "../data/hyperlinks";
 import { Icons } from "../shared/Icons";
+import { CopyTextToClipboard } from "@/shared/Utils";
+import { cn } from "@/lib/utils";
 
 export function TextHyperlink({
   showHyperlinkIcon = true,
   ...hyperlinkProps
 }: HyperlinkSchema & { showHyperlinkIcon?: boolean }) {
   const { name, path, icon } = hyperlinkProps;
+  const isCopy = path.startsWith("copy:");
   const isInternal = path.startsWith("#") || path.startsWith("/");
   const className =
     "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2";
@@ -27,6 +30,18 @@ export function TextHyperlink({
       ) : null}
     </>
   );
+
+  if (isCopy) {
+    return (
+      <a
+        className={cn(className, "cursor-pointer")}
+        rel="noreferrer noopener"
+        onClick={() => CopyTextToClipboard(path.slice(5))}
+      >
+        {linkInner}
+      </a>
+    );
+  }
 
   if (isInternal) {
     return (

@@ -30,6 +30,7 @@ export default function Block({
 }
 
 export interface SectionProps {
+  id?: string;
   title?: string;
   text?: string;
   bgColor?: string;
@@ -41,6 +42,7 @@ export interface SectionProps {
 
 export function Section(props: SectionProps) {
   const {
+    id,
     title,
     text,
     bgColor = "bg-zinc-950",
@@ -52,6 +54,7 @@ export function Section(props: SectionProps) {
 
   return (
     <Block className={` ${bgColor}`}>
+      <div id={id} className="relative" />
       <div
         className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-fit sm:w-full`}
       >

@@ -9,21 +9,12 @@ export interface HyperlinkSchema {
 
 export const NAVIGATE: HyperlinkSchema[] = [
   { name: "Home", path: "/home" },
-  { name: "Contact", path: "/contact" },
-  { name: "Blog", path: "/blogs" },
+  { name: "Portfolio", path: "#portfolio" },
+  { name: "Contact", path: "#contact" },
+  { name: "Blog", path: "/blog" },
 ];
 
 export const SOCIALS: HyperlinkSchema[] = [
-  {
-    name: "GitHub",
-    path: "https://github.com/NeKoRoSYS",
-    icon: Icons.githubIcon,
-  },
-  {
-    name: "LinkedIn",
-    path: "https://linkedin.com/in/malibiran-johnmarky",
-    icon: Icons.linkedInIcon,
-  },
   {
     name: "Discord",
     path: "https://discord.gg/qJp2ByQZq4",
@@ -34,9 +25,73 @@ export const SOCIALS: HyperlinkSchema[] = [
     path: "https://twitter.com/NeKoRoSYS",
     icon: Icons.twitterIcon,
   },
+  {
+    name: "TikTok",
+    path: "https://tiktok.com/@nekorosys",
+    icon: Icons.tiktokIcon,
+  },
+  {
+    name: "YouTube",
+    path: "https://youtube.com/@NeKoRoSYS",
+    icon: Icons.youtubeIcon,
+  },
+  {
+    name: "Itch.io",
+    path: "https://nekorosys.itch.io/",
+    icon: Icons.itchioIcon,
+  },
+  {
+    name: "GitHub",
+    path: "https://github.com/NeKoRoSYS",
+    icon: Icons.githubIcon,
+  },
+  {
+    name: "Behance",
+    path: "https://behance.net/NeKoRoSYS",
+    icon: Icons.behanceIcon,
+  },
+  {
+    name: "LinkedIn",
+    path: "https://linkedin.com/in/malibiran-johnmarky",
+    icon: Icons.linkedInIcon,
+  },
+  {
+    name: "Mail",
+    path: "mailto:nekorosys@gmail.com",
+    icon: Icons.emailIcon,
+  },
+  {
+    name: "Payhip",
+    path: "https://payhip.com/NeKoRoSYS",
+    icon: Icons.payhipIcon,
+  },
+];
+
+export const SPONSOR: HyperlinkSchema[] = [
+  {
+    name: "Ko-Fi",
+    path: "https://ko-fi.com/NeKoRoSYS",
+    icon: Icons.kofiIcon,
+  },
+  {
+    name: "PayPal",
+    path: "https://paypal.me/genecromarky",
+    icon: Icons.paypalIcon,
+  },
+  {
+    name: "Bitcoin",
+    path: "copy:bc1qw80kkgu8yp4mwzuzddygmnyamcjesfavwmer8a",
+    icon: Icons.bitcoinIcon,
+  },
+  {
+    name: "Ethereum",
+    path: "copy:0x5C429b3fdc7E6F7a692C234358ba31492Feb651C",
+    icon: Icons.etheriumIcon,
+  },
 ];
 
 export const LinkColumns: [title: string, HyperlinkSchema[]][] = [
   ["Navigate", NAVIGATE],
-  ["Connect", SOCIALS],
+  ["Find Me", SOCIALS],
+  ["Sponsor", SPONSOR],
 ];
