@@ -38,8 +38,8 @@ export function Footer() {
 
   return (
     <footer className="flex h-auto w-full grow flex-col items-center border-t border-zinc-700 bg-black text-zinc-100">
-      <section className="mx-auto flex w-full flex-col items-center justify-between gap-12 px-8 py-8 lg:max-w-[80%] lg:flex-row lg:items-start lg:gap-24 lg:py-8 xl:px-0">
-        <p style={{ textAlign: "center" }}> Made with by NeKoRoSYS </p>
+      <section className="mx-auto flex w-full flex-col items-center justify-between gap-12 py-8 lg:max-w-[80%] lg:flex-row lg:items-start lg:gap-24">
+        <p style={{ textAlign: "center" }}> Made with 💜 by NeKoRoSYS </p>
         <div className="flex w-full max-w-md flex-col items-center justify-around gap-8 sm:flex-row sm:items-start sm:gap-24 lg:w-fit lg:px-0">
           {LinkColumns.filter(([title]) => title !== "Legal").map(
             ([title, links]) =>
@@ -56,11 +56,10 @@ export function Footer() {
       <hr className="w-full border-zinc-800 lg:max-w-[80%]" />
 
       <section
-        className={`mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 px-8 py-8 pb-16 lg:max-w-[80%] lg:gap-24 xl:px-0`}
+        className={`mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 py-8 pb-16 lg:max-w-[80%] lg:gap-24`}
       >
-        <p style={{ textAlign: "center" }}>
-          {" "}
-          2026 NeKoRoSYS. All Rights Reserved.{" "}
+        <p className="text-center font-bold text-zinc-700">
+          2026 NeKoRoSYS. All Rights Reserved.
         </p>
         {legalColumn.length > 0 ? (
           <div className="flex w-full flex-col items-center justify-between gap-12 sm:flex-row sm:gap-24 md:w-fit">

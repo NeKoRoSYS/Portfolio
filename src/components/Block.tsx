@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface BlockProps {
@@ -15,9 +16,13 @@ export default function Block({
   return (
     <section
       id={id}
-      className={`flex w-full flex-col items-center justify-center ${borderVisible ? `border-b border-zinc-800` : ""} ${className}`}
+      className={cn(
+        "flex w-full flex-col items-center justify-center",
+        borderVisible && "border-b border-zinc-800",
+        className,
+      )}
     >
-      <div className={`h-full w-full max-w-5xl px-8 py-12 sm:py-16 xl:px-0`}>
+      <div className={`h-full w-full max-w-5xl px-8 py-12 sm:py-16`}>
         {children}
       </div>
     </section>

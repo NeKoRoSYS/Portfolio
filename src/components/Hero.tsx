@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Block from "./Block";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
   className?: string;
@@ -15,14 +16,20 @@ export default function Hero({
   fade,
 }: HeroProps) {
   return (
-    <Block className={`relative min-h-svh bg-[rgba(19,13,28,1)]`}>
-      {background}
-      {fade ? (
-        <div className="pointer-events-none absolute bottom-0 left-0 z-10 flex h-full w-full items-center justify-center bg-linear-to-b from-black/0 to-black to-100%"></div>
-      ) : null}
-      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+    <Block className={cn("relative min-h-svh bg-[rgba(19,13,28,1)]")}>
+      <div className="pointer-events-none absolute inset-0 z-0">
+        {background}
+      </div>
+      {fade && (
+        <div className="pointer-events-none absolute inset-0 z-0 bg-linear-to-b from-black/0 to-black" />
+      )}
+
+      <div className="pointer-events-none relative z-10 flex min-h-full w-full flex-col justify-center py-24">
         <div
-          className={`pointer-events-auto relative w-full drop-shadow-lg drop-shadow-black/50 sm:px-0 ${className}`}
+          className={cn(
+            "pointer-events-auto w-full drop-shadow-lg drop-shadow-black/50",
+            className,
+          )}
         >
           {children}
         </div>

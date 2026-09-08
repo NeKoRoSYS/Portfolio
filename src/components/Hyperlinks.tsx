@@ -9,7 +9,7 @@ export function TextHyperlink({
   const { name, path, icon, isRoute } = hyperlinkProps;
 
   const className =
-    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-white flex flex-row items-center gap-2";
+    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2";
   const linkInner = (
     <>
       {icon ? (
