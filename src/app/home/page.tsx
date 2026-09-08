@@ -23,12 +23,8 @@ export default function Home() {
         <div className="mx-auto flex w-full flex-3 flex-col items-center lg:mx-0 lg:items-start">
           <hr className="mx-auto mb-4 w-full max-w-xs border-zinc-100 lg:hidden" />
 
-          {/* CHANGED: Match width constraints and use justify-between to anchor the lines to the edges */}
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-4 lg:order-1 lg:max-w-md">
-            {/* LEFT LINE: Added lg:block so both sides match */}
             <hr className="w-full flex-1 border-zinc-100 lg:hidden" />
-
-            {/* Text Loop is now perfectly centered between two equal-growing lines */}
             <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic sm:text-lg lg:text-left lg:text-xl">
               <span>STUDENT</span>
               <span>SOFTWARE DEVELOPER</span>
@@ -37,7 +33,6 @@ export default function Home() {
               <span>ILLUSTRATOR</span>
             </TextLoop>
 
-            {/* RIGHT LINE */}
             <hr className="w-full flex-1 border-zinc-100" />
           </div>
           <TextScramble className="order-1 mx-auto w-fit text-center font-bulletin text-6xl text-green-400 sm:text-7xl lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
