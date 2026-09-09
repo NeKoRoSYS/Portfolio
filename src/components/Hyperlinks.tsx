@@ -12,14 +12,14 @@ export function TextHyperlink({
   const isCopy = path.startsWith("copy:");
   const isInternal = path.startsWith("#") || path.startsWith("/");
   const className =
-    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2";
+    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2 group";
   const linkInner = (
     <>
       {icon ? (
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
-          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 hover:brightness-0 hover:invert sm:h-4 sm:w-4 sm:brightness-0 sm:invert`}
+          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 group-hover:brightness-0 group-hover:invert sm:h-4 sm:w-4`}
         />
       ) : null}
       <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>

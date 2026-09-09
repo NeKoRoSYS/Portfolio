@@ -14,11 +14,6 @@ import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
 
-interface TabProps {
-  children: string;
-  path: string;
-}
-
 export function Header() {
   const onTop: boolean = useScrollOnTop();
   const baseHeader: string =
@@ -89,7 +84,7 @@ export function Header() {
                         className="group flex h-full w-full items-center px-6"
                       >
                         <span
-                          className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ""} ${Colors.textAccentHover} font-bold`}
+                          className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : "text-zinc-300"} ${Colors.textAccentHover} font-bold`}
                         >
                           {route.name}
                         </span>
