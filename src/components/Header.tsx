@@ -79,18 +79,22 @@ export function Header() {
                   enableHover
                 >
                   {HEADERROUTES.map((route) => (
-                    <Link
+                    <li
                       key={route.name}
                       data-id={route.name}
-                      href={route.path}
-                      className="group flex h-full w-full items-center px-6"
+                      className="h-full w-full"
                     >
-                      <span
-                        className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ""} ${Colors.textAccentHover} font-bold`}
+                      <Link
+                        href={route.path}
+                        className="group flex h-full w-full items-center px-6"
                       >
-                        {`${route.name}`}
-                      </span>
-                    </Link>
+                        <span
+                          className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ""} ${Colors.textAccentHover} font-bold`}
+                        >
+                          {route.name}
+                        </span>
+                      </Link>
+                    </li>
                   ))}
                 </AnimatedBackground>
               </ul>

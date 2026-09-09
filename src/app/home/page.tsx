@@ -36,7 +36,7 @@ export default function Home() {
                   key={index}
                   className="text-green-400 hover:text-purple-300"
                 >
-                  {role.toUpperCase()}
+                  <TextScramble>{role.toUpperCase()}</TextScramble>
                 </span>
               ))}
             </TextLoop>
@@ -94,6 +94,7 @@ export default function Home() {
       {SECTIONS.map((section, index) => (
         <Section
           key={index}
+          background={section.background}
           bgColor={section.bgColor}
           id={section.id}
           borderVisible={section.borderVisible}

@@ -66,3 +66,16 @@ export function TextHyperlink({
     </a>
   );
 }
+
+export function IconHyperlink(hyperlinkProps: HyperlinkSchema) {
+  const { name, path, icon } = hyperlinkProps;
+  return (
+    <a href={path} rel="noreferrer noopener" target="_blank" title={name}>
+      <div
+        aria-hidden={true}
+        style={{ backgroundImage: `url("${icon}")` }}
+        className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 hover:brightness-0 hover:invert`}
+      />
+    </a>
+  );
+}

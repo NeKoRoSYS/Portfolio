@@ -1,5 +1,6 @@
 import { type SectionProps } from "@/components/Block";
 import { HoverPanel, Panel } from "@/components/Panel";
+import { BackgroundAscii } from "@/components/VideoPlayer";
 import MarqueeModule from "react-fast-marquee";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
@@ -20,12 +21,34 @@ export const HOME = {
 export const SECTIONS: SectionProps[] = [
   {
     id: "home",
-    title: "Hello, World!",
-    text: `I am John Marky G. Malibiran, but I am better known online as NeKoRoSYS! I am a 19-year-old Filipino based in Manila, Philippines.
-    Currently in college, I am taking Computer Science as my undergraduate program; hopefully graduating by the year 2030. I aspire to be a
-    Software Engineer and Systems Architect, and my goal is to learn a lot of aspects that come in developing software and IoT such as video
-    games, utilities, and other systems. I am interested in web, game, and AI/ML development though I also happen to like creating graphic
-    and motion designs.`,
+    sections: [
+      <div className="col-span-12 mb-8 lg:col-span-5 lg:mb-0">
+        <div className="flex h-full w-full flex-wrap items-center justify-start">
+          <h3 className="text-center text-4xl md:text-5xl lg:text-left lg:text-6xl">
+            Hello, World!
+          </h3>
+        </div>
+      </div>,
+      <div className="col-span-12 lg:col-span-7">
+        <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
+          <div className="flex h-full w-full grow flex-col items-center justify-center p-4">
+            <p>
+              I am John Marky G. Malibiran, but I am better known online as{" "}
+              <b>NeKoRoSYS</b>! I am a 19-year-old Filipino currently taking
+              Computer Science as my undergraduate program.
+            </p>
+            <br />
+            <p>
+              I aspire to be a Software Engineer and Systems Architect, and my
+              goal is to learn a lot of aspects that come in developing software
+              and IoT such as video games, utilities, and other systems. I am
+              interested in web, game, and AI/ML development though I also
+              happen to like creating graphic and motion designs.
+            </p>
+          </div>
+        </Panel>
+      </div>,
+    ],
   },
   {
     id: "skills",
@@ -48,9 +71,24 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "contact",
     sections: [
-      <div className="col-span-12 md:col-span-6">Test</div>,
-      <div className="col-span-12 md:col-span-6">Test</div>,
-      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 mb-8 lg:col-span-6 lg:mb-0">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <h3 className="text-center text-4xl md:text-5xl lg:text-left lg:text-6xl">
+            Everything starts with{" "}
+            <span className="font-serif text-green-400 italic">"Hello."</span>
+          </h3>
+          <p className="w-full text-center font-bold text-zinc-500 lg:text-left">
+            Let's turn your ideas into reality.
+          </p>
+        </div>
+      </div>,
+      <div className="col-span-12 lg:col-span-6">
+        <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
+          <div className="flex h-full w-full grow flex-col items-center justify-center">
+            <div className="z-10 text-center sm:text-left">Test</div>
+          </div>
+        </Panel>
+      </div>,
     ],
     borderVisible: false,
     reverse: true,
