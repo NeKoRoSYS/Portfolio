@@ -1,5 +1,4 @@
 import { type SectionProps } from "@/components/Block";
-import Chip from "@/components/Chip";
 import { HoverPanel, Panel } from "@/components/Panel";
 import MarqueeModule from "react-fast-marquee";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
@@ -34,6 +33,11 @@ export const SECTIONS: SectionProps[] = [
     title: "Skills and Credentials",
     center: true,
     borderVisible: false,
+    sections: [
+      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 md:col-span-6">Test</div>,
+    ],
   },
   {
     id: "portfolio",
@@ -44,13 +48,9 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "contact",
     sections: [
-      <div className="col-span-12 p-4 md:col-span-6">
-        Item 1 (flex-1 equivalent)
-      </div>,
-      <div className="col-span-12 p-4 md:col-span-6">
-        Item 1 (flex-1 equivalent)
-      </div>,
-      <div className="col-span-12 p-4">Item 1 (flex-1 equivalent)</div>,
+      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 md:col-span-6">Test</div>,
     ],
     borderVisible: false,
     reverse: true,

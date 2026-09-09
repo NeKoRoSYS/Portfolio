@@ -36,6 +36,7 @@ export function TextHyperlink({
   if (isCopy) {
     return (
       <a
+        title={`Click to copy: ${name}}`}
         className={cn(className, "cursor-pointer")}
         rel="noreferrer noopener"
         onClick={() => CopyTextToClipboard(path.slice(5))}
@@ -56,6 +57,7 @@ export function TextHyperlink({
   return (
     <a
       href={path}
+      title={name}
       className={className}
       rel="noreferrer noopener"
       target="_blank"

@@ -59,9 +59,7 @@ export function Section(props: SectionProps) {
         className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-fit sm:w-full`}
       >
         {title != null || text != null ? (
-          <div
-            className={`flex flex-col gap-8 ${!sections ? "w-full" : "w-full lg:w-fit"}`}
-          >
+          <div className={`flex w-full flex-col gap-8`}>
             {title ? (
               typeof title === "string" || typeof title === "number" ? (
                 <h1

@@ -12,6 +12,7 @@ export const ROLES = [
 ];
 
 interface ProjectProps {
+  featured?: boolean;
   title?: string;
   excerpt?: string;
   description?: string;

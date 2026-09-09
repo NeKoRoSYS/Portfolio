@@ -12,6 +12,7 @@ import Hamburger from "./Hamburger";
 import { Magnetic } from "./motion-primitives/magnetic";
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
+import { Spotlight } from "./motion-primitives/spotlight";
 
 interface TabProps {
   children: string;
@@ -21,7 +22,7 @@ interface TabProps {
 export function Header() {
   const onTop: boolean = useScrollOnTop();
   const baseHeader: string =
-    "h-16 flex justify-center items-center lg:pl-1 lg:max-w-6xl lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
+    "h-16 flex justify-center items-center lg:max-w-6xl lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
   const bgVisible: string =
     "bg-black/75 border-b lg:border border-zinc-700 backdrop-blur-md lg:rounded-full";
   const bgInvisible: string =
@@ -36,13 +37,21 @@ export function Header() {
       />
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-1 mx-auto lg:inset-x-8",
+          "fixed inset-x-0 top-0 z-1 mx-auto overflow-hidden lg:inset-x-8",
           baseHeader,
           bgVisible,
           onTop && bgInvisible,
         )}
       >
         <div className="flex w-full items-center justify-between px-4 py-8">
+          <Spotlight
+            className={`-z-10 my-8 bg-zinc-700 blur-2xl ${onTop ? "hidden" : ""}`}
+            size={128}
+            springOptions={{
+              bounce: 0.3,
+              duration: 0.1,
+            }}
+          />
           <div className="flex items-center justify-center gap-2">
             <Image
               width={8}

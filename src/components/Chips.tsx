@@ -16,7 +16,7 @@ interface ChipSchema {
   colorOverride?: ChipColor;
 }
 
-export default function Chip({
+export function PillChip({
   children,
   className,
   colorOverride = "gray",
@@ -27,6 +27,21 @@ export default function Chip({
       className={`flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} ${className} items-center`}
     >
       <div className={`h-2 w-2 rounded-full border ${colorClass}`}></div>
+      {children}
+    </div>
+  );
+}
+
+export function RectChip({
+  children,
+  className,
+  colorOverride = "gray",
+}: ChipSchema) {
+  const colorClass = colorMap[colorOverride] || colorMap.gray;
+  return (
+    <div
+      className={`flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} ${className} items-center`}
+    >
       {children}
     </div>
   );

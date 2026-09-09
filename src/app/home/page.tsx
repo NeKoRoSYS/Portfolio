@@ -2,6 +2,7 @@ import { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
+import { Spotlight } from "@/components/motion-primitives/spotlight";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import ScrollIndicator from "@/components/ScrollIndicator";
@@ -69,11 +70,19 @@ export default function Home() {
                 href="#contact"
                 className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
               >
+                <Spotlight
+                  className={`-z-10 my-8 bg-zinc-100/50 blur-2xl`}
+                  size={64}
+                  springOptions={{
+                    bounce: 0.3,
+                    duration: 0.1,
+                  }}
+                />
                 Get in Touch
               </Button>
             </div>
             <Button
-              className="h-16 w-full origin-center rounded-xl border border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
+              className="h-16 w-full origin-center rounded-xl border border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
               href="#portfolio"
             >
               <p>Portfolio</p>
