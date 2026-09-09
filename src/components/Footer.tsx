@@ -38,9 +38,7 @@ export function Footer() {
             {links.map((hyperlink, index) => {
               return (
                 <TextHyperlink
-                  showHyperlinkIcon={
-                    showTitle == true && hyperlink.icon == null
-                  }
+                  showHyperlinkIcon={false}
                   key={`${hyperlink.path}-${index}`}
                   name={hyperlink.name}
                   path={hyperlink.path}
@@ -86,7 +84,7 @@ export function Footer() {
             {legalColumn.map(([title, links]) =>
               ColumnLinks(
                 links,
-                "flex flex-row gap-8 justify-around mx-auto",
+                "flex flex-row gap-8 justify-around mx-auto font-bold",
                 false,
                 title,
               ),
