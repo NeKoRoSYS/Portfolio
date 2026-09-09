@@ -86,7 +86,7 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 lg:col-span-6">
         <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
-          <div className="z-10 flex flex-row gap-4 text-center sm:text-left">
+          <div className="z-10 flex flex-row gap-4 text-center sm:text-left lg:flex-col">
             {CONTACT.map((link, index) => (
               <Button
                 key={index}
