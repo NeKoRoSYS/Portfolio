@@ -4,6 +4,7 @@ import "@/assets/stylesheets/style.css";
 import { Header } from "@/components/Header";
 import PageWrapper from "@/components/app/PageWrapper";
 import { Footer } from "@/components/Footer";
+import { SmoothScroller } from "@/components/SmoothScroller";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="relative flex min-h-full flex-col text-zinc-100 selection:bg-gray-600/50">
+      <body className="relative flex flex-col text-zinc-100 selection:bg-gray-600/50">
         <Header />
         <PageWrapper>{children}</PageWrapper>
         <Footer />

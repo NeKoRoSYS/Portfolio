@@ -31,14 +31,13 @@ export default function Block({
 
 export interface SectionProps {
   id?: string;
-  title?: string;
+  title?: string | ReactNode;
   text?: string;
   bgColor?: string;
   borderVisible?: boolean;
   center?: boolean;
   reverse?: boolean;
-  itemsOutside?: ReactNode[];
-  itemsInside?: ReactNode[];
+  sections?: ReactNode[];
 }
 
 export function Section(props: SectionProps) {
@@ -50,8 +49,7 @@ export function Section(props: SectionProps) {
     borderVisible = true,
     center = false,
     reverse = false,
-    itemsOutside,
-    itemsInside,
+    sections,
   } = props;
 
   return (
@@ -60,28 +58,29 @@ export function Section(props: SectionProps) {
       <div
         className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-fit sm:w-full`}
       >
-        <div
-          className={`flex flex-col gap-8 ${!itemsOutside ? "w-full" : "w-full lg:w-fit"}`}
-        >
-          {title ? (
-            <h1 className={`text-4xl font-bold ${center ? "text-center" : ""}`}>
-              {title}
-            </h1>
-          ) : null}
-          {text ? (
-            <p className={`${center ? "text-center" : ""}`}>{text}</p>
-          ) : null}
-          {itemsInside ? (
-            <div className={`flex w-full flex-col gap-8`}>
-              {itemsInside?.map((element, index) => (
-                <Fragment key={index}>{element}</Fragment>
-              ))}
-            </div>
-          ) : null}
-        </div>
-        {itemsOutside ? (
-          <div className="flex w-full flex-wrap gap-8 sm:mx-auto lg:w-fit lg:flex-col">
-            {itemsOutside?.map((element, index) => (
+        {title != null || text != null ? (
+          <div
+            className={`flex flex-col gap-8 ${!sections ? "w-full" : "w-full lg:w-fit"}`}
+          >
+            {title ? (
+              typeof title === "string" || typeof title === "number" ? (
+                <h1
+                  className={`text-4xl font-bold ${center ? "text-center" : reverse ? "text-right" : ""}`}
+                >
+                  {title}
+                </h1>
+              ) : (
+                title
+              )
+            ) : null}
+            {text ? (
+              <p className={`${center ? "text-center" : ""}`}>{text}</p>
+            ) : null}
+          </div>
+        ) : null}
+        {sections ? (
+          <div className="grid w-full grid-cols-12 flex-wrap sm:mx-auto">
+            {sections?.map((element, index) => (
               <Fragment key={index}>{element}</Fragment>
             ))}
           </div>

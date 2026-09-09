@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export const LETTERS = ["N", "E", "K", "O", "R", "O", "S", "Y", "S"];
 
 export const ROLES = [
@@ -8,3 +10,13 @@ export const ROLES = [
   "Layout Designer",
   "Illustrator",
 ];
+
+interface ProjectProps {
+  title?: string;
+  excerpt?: string;
+  description?: string;
+  thumbnail?: string | StaticImageData;
+  tags?: string[];
+}
+
+export const PROJECTS: ProjectProps[] = [{}];

@@ -2,13 +2,13 @@ import { StaticImageData } from "next/image";
 import { announcementPosts } from "./blog/announcements";
 
 export interface BlogMeta {
-  slug: string;
   title: string;
   excerpt: string;
   thumbnail?: string | StaticImageData;
+  tags: string[];
   date: string;
   file: string;
-  tags: string[];
+  slug: string;
 }
 
 export const BLOG_POSTS: BlogMeta[] = [...announcementPosts];

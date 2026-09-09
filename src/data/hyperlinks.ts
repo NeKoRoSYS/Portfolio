@@ -1,16 +1,14 @@
 import { Icons } from "../shared/Icons";
 import { StaticImageData } from "next/image";
+import { RouteMeta } from "./routes";
 
-export interface HyperlinkSchema {
-  name: string;
-  path: string;
+export interface HyperlinkSchema extends RouteMeta {
   icon?: string | StaticImageData;
 }
 
 export const NAVIGATE: HyperlinkSchema[] = [
   { name: "Home", path: "/home" },
   { name: "Portfolio", path: "#portfolio" },
-  { name: "Contact", path: "#contact" },
   { name: "Blog", path: "/blog" },
 ];
 
@@ -56,11 +54,6 @@ export const SOCIALS: HyperlinkSchema[] = [
     icon: Icons.linkedInIcon,
   },
   {
-    name: "Mail",
-    path: "mailto:nekorosys@gmail.com",
-    icon: Icons.emailIcon,
-  },
-  {
     name: "Payhip",
     path: "https://payhip.com/NeKoRoSYS",
     icon: Icons.payhipIcon,
@@ -90,8 +83,11 @@ export const SPONSOR: HyperlinkSchema[] = [
   },
 ];
 
+export const LEGAL: HyperlinkSchema[] = [{ name: "Contact", path: "#contact" }];
+
 export const LinkColumns: [title: string, HyperlinkSchema[]][] = [
   ["Navigate", NAVIGATE],
   ["Find Me", SOCIALS],
   ["Sponsor", SPONSOR],
+  ["Legal", LEGAL],
 ];

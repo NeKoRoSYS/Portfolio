@@ -73,10 +73,10 @@ export function Footer() {
       <hr className="mx-auto w-full max-w-6xl border-zinc-800" />
 
       <section
-        className={`mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 py-8 pb-16 lg:max-w-[80%] lg:gap-24`}
+        className={`mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 px-8 py-8 pb-16 lg:max-w-6xl lg:gap-24`}
       >
         <p className="text-center font-bold text-zinc-700">
-          2026 NeKoRoSYS. All Rights Reserved.
+          © 2026 NeKoRoSYS. All Rights Reserved.
         </p>
         {legalColumn.length > 0 ? (
           <div className="flex w-full flex-col items-center justify-between gap-12 sm:flex-row sm:gap-24 md:w-fit">

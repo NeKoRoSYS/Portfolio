@@ -15,6 +15,7 @@ export default function Home() {
       <ScrollIndicator />
       <Hero
         fade
+        className="flex flex-wrap justify-between"
         background={
           <BackgroundAscii
             url={"/videos/background.mp4"}
@@ -23,7 +24,7 @@ export default function Home() {
           />
         }
       >
-        <div className="mx-auto flex w-full flex-3 flex-col items-center lg:mx-0 lg:items-start">
+        <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
           <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 hover:border-purple-300 lg:hidden" />
 
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
@@ -89,8 +90,7 @@ export default function Home() {
           borderVisible={section.borderVisible}
           title={section.title}
           text={section.text}
-          itemsInside={section.itemsInside}
-          itemsOutside={section.itemsOutside}
+          sections={section.sections}
           center={section.center}
           reverse={section.reverse}
         />

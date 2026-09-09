@@ -32,7 +32,6 @@ export const SECTIONS: SectionProps[] = [
     id: "skills",
     bgColor: "bg-zinc-900",
     title: "Skills and Credentials",
-    itemsInside: [<div></div>],
     center: true,
     borderVisible: false,
   },
@@ -40,13 +39,20 @@ export const SECTIONS: SectionProps[] = [
     id: "portfolio",
     bgColor: "bg-zinc-900",
     title: "My Work",
-    itemsInside: [<div></div>],
     center: true,
   },
   {
     id: "contact",
-    title: "Let's build something memorable",
-    itemsInside: [<div></div>],
+    sections: [
+      <div className="col-span-12 p-4 md:col-span-6">
+        Item 1 (flex-1 equivalent)
+      </div>,
+      <div className="col-span-12 p-4 md:col-span-6">
+        Item 1 (flex-1 equivalent)
+      </div>,
+      <div className="col-span-12 p-4">Item 1 (flex-1 equivalent)</div>,
+    ],
     borderVisible: false,
+    reverse: true,
   },
 ];

@@ -55,50 +55,55 @@ export function Header() {
               NeKoRoSYS
             </p>
           </div>
-          <nav className={`hidden sm:block`}>
-            <ul
-              className={`flex flex-row text-sm font-medium drop-shadow-lg drop-shadow-black/35 ${Colors.textMutedNav} flex h-10 w-fit items-center rounded-full border border-zinc-700 bg-zinc-900/75`}
-            >
-              <AnimatedBackground
-                className="rounded-full bg-zinc-100 dark:bg-zinc-100"
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.25,
-                }}
-                enableHover
+          <div className="flex flex-row items-center justify-end gap-4">
+            <nav className={`hidden sm:block`}>
+              <ul
+                className={`flex flex-row text-sm font-medium drop-shadow-lg drop-shadow-black/35 ${Colors.textMutedNav} flex h-9 w-fit items-center rounded-full border border-zinc-700 bg-zinc-900/75`}
               >
-                {HEADERROUTES.map((route) => (
-                  <Link
-                    key={route.name}
-                    data-id={route.name}
-                    href={route.path}
-                    className="group flex h-full w-full items-center px-6"
-                  >
-                    <span
-                      className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ""} ${Colors.textAccentHover} font-bold`}
+                <AnimatedBackground
+                  className="rounded-full bg-zinc-100 dark:bg-zinc-100"
+                  transition={{
+                    type: "spring",
+                    bounce: 0,
+                    duration: 0.25,
+                  }}
+                  enableHover
+                >
+                  {HEADERROUTES.map((route) => (
+                    <Link
+                      key={route.name}
+                      data-id={route.name}
+                      href={route.path}
+                      className="group flex h-full w-full items-center px-6"
                     >
-                      {`${route.name}`}
-                    </span>
-                  </Link>
-                ))}
-              </AnimatedBackground>
-            </ul>
-          </nav>
-          <HoverableElement
-            className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all sm:flex"
-            translateOverride="hover:-translate-y-0.5"
-            highlight
-            highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(0,255,75,0.25)] hover:bg-zinc-950 hover:text-green-300 hover:scale-98"
-          >
-            {(hoverClasses) => (
-              <Magnetic>
-                <Button className={`${hoverClasses} font-bold`} href="#contact">
-                  Contact
-                </Button>
-              </Magnetic>
-            )}
-          </HoverableElement>
+                      <span
+                        className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ""} ${Colors.textAccentHover} font-bold`}
+                      >
+                        {`${route.name}`}
+                      </span>
+                    </Link>
+                  ))}
+                </AnimatedBackground>
+              </ul>
+            </nav>
+            <HoverableElement
+              className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all sm:flex"
+              translateOverride="hover:-translate-y-0.5"
+              highlight
+              highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(0,255,75,0.25)] hover:bg-zinc-950 hover:text-green-300 hover:scale-98"
+            >
+              {(hoverClasses) => (
+                <Magnetic>
+                  <Button
+                    className={`${hoverClasses} font-bold`}
+                    href="#contact"
+                  >
+                    Contact
+                  </Button>
+                </Magnetic>
+              )}
+            </HoverableElement>
+          </div>
           <Hamburger className="visible sm:hidden" />
         </div>
       </header>
