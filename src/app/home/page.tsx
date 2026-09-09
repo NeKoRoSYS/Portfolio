@@ -67,7 +67,7 @@ export default function Home() {
                 scale={1.01}
               />
               <Button
-                href="#contact"
+                path="#contact"
                 className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
               >
                 <Spotlight
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <Button
               className="h-16 w-full origin-center rounded-xl border border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
-              href="#portfolio"
+              path="#portfolio"
             >
               <p>Portfolio</p>
             </Button>

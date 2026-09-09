@@ -109,10 +109,9 @@ export function Header() {
                 <Magnetic>
                   <Button
                     className={`${hoverClasses} font-bold`}
-                    href="#contact"
-                  >
-                    Contact
-                  </Button>
+                    path="#contact"
+                    name={"Contact"}
+                  />
                 </Magnetic>
               )}
             </HoverableElement>

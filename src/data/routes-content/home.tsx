@@ -1,7 +1,9 @@
 import { type SectionProps } from "@/components/Block";
+import Button from "@/components/Buttons";
 import { HoverPanel, Panel } from "@/components/Panel";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import MarqueeModule from "react-fast-marquee";
+import { CONTACT } from "../hyperlinks";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
@@ -71,7 +73,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "contact",
     sections: [
-      <div className="col-span-12 mb-8 lg:col-span-6 lg:mb-0">
+      <div className="col-span-12 mb-16 lg:col-span-6 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <h3 className="text-center text-4xl md:text-5xl lg:text-left lg:text-6xl">
             Everything starts with{" "}
@@ -83,12 +85,37 @@ export const SECTIONS: SectionProps[] = [
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-6">
-        <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
-          <div className="flex h-full w-full grow flex-col items-center justify-center">
-            <div className="z-10 text-center sm:text-left">Test</div>
+        <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
+          <div className="z-10 flex flex-row gap-4 text-center sm:text-left">
+            {CONTACT.map((link, index) => (
+              <Button
+                key={index}
+                path={link.path}
+                name={link.name}
+                icon={link.icon}
+                className={`relative z-10 h-16 w-full rounded-xl border px-8 font-bold ${link.colors}`}
+              />
+            ))}
           </div>
-        </Panel>
+        </div>
       </div>,
+
+      /* 
+      <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
+        <div className="flex h-full w-full grow flex-col items-center justify-center">
+          <div className="z-10 flex flex-row gap-4 text-center sm:text-left">
+            {CONTACT.map((link, index) => (
+              <Button
+                key={index}
+                path={link.path}
+                name={link.name}
+                icon={link.icon}
+                className={`relative z-10 h-16 w-full rounded-xl border px-8 font-bold ${link.colors}`}
+              />
+            ))}
+          </div>
+        </div>
+      </Panel>*/
     ],
     borderVisible: false,
     reverse: true,

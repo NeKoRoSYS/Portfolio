@@ -1,9 +1,14 @@
 import { Icons } from "../shared/Icons";
 import { StaticImageData } from "next/image";
 import { RouteMeta } from "./routes";
+import Colors from "@/shared/Colors";
 
 export interface HyperlinkSchema extends RouteMeta {
   icon?: string | StaticImageData;
+}
+
+export interface ButtonSchema extends HyperlinkSchema {
+  colors?: string;
 }
 
 export const NAVIGATE: HyperlinkSchema[] = [
@@ -83,6 +88,27 @@ export const BUSINESS: HyperlinkSchema[] = [
     name: "Payhip",
     path: "https://payhip.com/NeKoRoSYS",
     icon: Icons.payhipIcon,
+  },
+];
+
+export const CONTACT: ButtonSchema[] = [
+  {
+    name: "Discord",
+    path: "https://discord.gg/qJp2ByQZq4",
+    icon: Icons.discordIcon,
+    colors: Colors.discord,
+  },
+  {
+    name: "LinkedIn",
+    path: "https://linkedin.com/in/malibiran-johnmarky",
+    icon: Icons.linkedInIcon,
+    colors: Colors.linkedin,
+  },
+  {
+    name: "Mail",
+    path: "mailto:malibiran.johnmarky@gmail.com",
+    icon: Icons.emailIcon,
+    colors: Colors.google,
   },
 ];
 
