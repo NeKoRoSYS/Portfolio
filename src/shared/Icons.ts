@@ -8,7 +8,7 @@ export const Icons = {
   paypalIcon: "/icons/paypal.svg",
   bitcoinIcon: "/icons/bitcoin.svg",
   emailIcon: "/icons/email.svg",
-  etheriumIcon: "/icons/ethereum.svg",
+  ethereumIcon: "/icons/ethereum.svg",
   instagramIcon: "/icons/instagram.svg",
   payhipIcon: "/icons/payhip.svg",
   facebookIcon: "/icons/facebook.svg",

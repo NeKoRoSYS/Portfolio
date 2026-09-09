@@ -4,6 +4,8 @@ import { HoverPanel, Panel } from "@/components/Panel";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import MarqueeModule from "react-fast-marquee";
 import { CONTACT } from "../hyperlinks";
+import Grid from "@/components/Grid";
+import { Spotlight } from "@/components/motion-primitives/spotlight";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
@@ -72,14 +74,18 @@ export const SECTIONS: SectionProps[] = [
   },
   {
     id: "contact",
+    spotlight: { enable: true, color: "bg-purple-800/50" },
+    background: <Grid />,
     sections: [
       <div className="col-span-12 mb-16 lg:col-span-6 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="text-center text-4xl md:text-5xl lg:text-left lg:text-6xl">
-            Everything starts with{" "}
-            <span className="font-serif text-green-400 italic">"Hello."</span>
+          <h3 className="text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
+            Everything starts with a{" "}
+            <span className="font-serif font-normal text-green-400 italic">
+              "Hello."
+            </span>
           </h3>
-          <p className="w-full text-center font-bold text-zinc-500 lg:text-left">
+          <p className="mt-4 w-full text-center font-bold text-zinc-500 lg:text-left">
             Let's turn your ideas into reality.
           </p>
         </div>
@@ -118,6 +124,5 @@ export const SECTIONS: SectionProps[] = [
       </Panel>*/
     ],
     borderVisible: false,
-    reverse: true,
   },
 ];

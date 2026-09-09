@@ -40,7 +40,7 @@ export function Header() {
       >
         <div className="flex w-full items-center justify-between px-4 py-8">
           <Spotlight
-            className={`-z-10 my-8 bg-zinc-700 blur-2xl ${onTop ? "hidden" : ""}`}
+            className={`-z-10 bg-zinc-300/15 blur-2xl ${onTop ? "hidden" : ""}`}
             size={128}
             springOptions={{
               bounce: 0.3,

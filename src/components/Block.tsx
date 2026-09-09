@@ -1,16 +1,24 @@
 import { cn } from "@/lib/utils";
 import { Fragment, type ReactNode } from "react";
+import { Spotlight } from "./motion-primitives/spotlight";
+
+interface SpotlightProps {
+  enable?: boolean;
+  color?: string;
+}
 
 interface BlockProps {
   children?: ReactNode;
   background?: ReactNode;
   className?: string;
+  spotlight?: SpotlightProps;
   borderVisible?: boolean;
 }
 
 export default function Block({
   id,
   children,
+  spotlight,
   background,
   className,
   borderVisible = true,
@@ -24,6 +32,17 @@ export default function Block({
         className,
       )}
     >
+      {spotlight?.enable && (
+        <Spotlight
+          className={`pointer-events-auto ${spotlight.color} blur-3xl`}
+          size={256}
+          springOptions={{
+            stiffness: 200,
+            damping: 30,
+            mass: 0.5,
+          }}
+        />
+      )}
       {background && (
         <div className="pointer-events-none absolute inset-0 z-0">
           {background}
@@ -45,6 +64,7 @@ export interface SectionProps {
   text?: string;
   bgColor?: string;
   borderVisible?: boolean;
+  spotlight?: SpotlightProps;
   center?: boolean;
   reverse?: boolean;
   sections?: ReactNode[];
@@ -53,6 +73,7 @@ export interface SectionProps {
 export function Section(props: SectionProps) {
   const {
     id,
+    spotlight,
     background,
     title,
     text,
@@ -67,6 +88,7 @@ export function Section(props: SectionProps) {
     <>
       <Block
         id={id}
+        spotlight={spotlight}
         borderVisible={borderVisible}
         className={` ${bgColor} `}
         background={background}

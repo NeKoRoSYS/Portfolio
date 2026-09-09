@@ -71,11 +71,12 @@ export default function Home() {
                 className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
               >
                 <Spotlight
-                  className={`-z-10 my-8 bg-zinc-100/50 blur-2xl`}
+                  className={`-z-10 bg-zinc-100/50 blur-2xl`}
                   size={64}
                   springOptions={{
-                    bounce: 0.3,
-                    duration: 0.1,
+                    stiffness: 350,
+                    damping: 30,
+                    mass: 0.5,
                   }}
                 />
                 Get in Touch
@@ -92,18 +93,7 @@ export default function Home() {
       </Hero>
 
       {SECTIONS.map((section, index) => (
-        <Section
-          key={index}
-          background={section.background}
-          bgColor={section.bgColor}
-          id={section.id}
-          borderVisible={section.borderVisible}
-          title={section.title}
-          text={section.text}
-          sections={section.sections}
-          center={section.center}
-          reverse={section.reverse}
-        />
+        <Section key={index} {...section} />
       ))}
     </>
   );

@@ -11,11 +11,12 @@ export default function BrandingCard() {
       isRevese
     >
       <Spotlight
-        className={`-z-1 my-8 bg-zinc-700 blur-2xl`}
+        className={`-z-1 bg-zinc-300/25 blur-3xl`}
         size={128}
         springOptions={{
-          bounce: 0.3,
-          duration: 0.1,
+          stiffness: 250,
+          damping: 30,
+          mass: 0.5,
         }}
       />
       <div className="my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">

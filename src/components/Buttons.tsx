@@ -21,7 +21,7 @@ export default function Button({
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
-          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 hover:brightness-0 hover:invert sm:mr-4 sm:h-4 sm:w-4 sm:brightness-0 sm:invert`}
+          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert hover:brightness-0 hover:invert sm:mr-4 sm:h-4 sm:w-4`}
         />
       ) : null}
       {children}

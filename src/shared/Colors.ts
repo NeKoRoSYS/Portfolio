@@ -11,7 +11,7 @@ const Colors = {
     "border-amber-500/80 hover:border-amber-400 bg-linear-to-b from-amber-900/40 to-amber-600/50 hover:from-amber-500/50 hover:to-amber-700/30 hover:drop-shadow-[0_0_8px_rgba(247,147,26,0.6)]",
   discord:
     "border-indigo-500/80 hover:border-indigo-400 bg-linear-to-b from-indigo-900/30 to-indigo-600/50 hover:from-indigo-500/50 hover:to-indigo-700/30 hover:drop-shadow-[0_0_8px_rgba(114,137,218,0.5)]",
-  etherium:
+  ethereum:
     "border-purple-500/60 hover:border-indigo-300 bg-linear-to-b from-slate-800/50 to-indigo-950/40 hover:from-indigo-500/40 hover:to-purple-500/20 hover:drop-shadow-[0_0_8px_rgba(140,124,240,0.5)]",
   facebook:
     "border-blue-700/80 hover:border-blue-500 bg-linear-to-b from-blue-900/50 to-blue-600/40 hover:from-blue-500/50 hover:to-blue-700/30 hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)]",
