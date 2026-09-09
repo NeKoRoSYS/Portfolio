@@ -7,7 +7,7 @@ export const ROUTES: RouteMeta[] = [
   { path: "" },
   { name: "Home", path: "/home" },
   { name: "Portfolio", path: "#portfolio" },
-  { name: "Contact", path: "/contact" },
+  { name: "Contact", path: "#contact" },
   { name: "Blog", path: "/blog" },
   { name: "Blog Post", path: "/blog/:slug" },
   { name: "Privacy Policy", path: "/privacy-policy" },

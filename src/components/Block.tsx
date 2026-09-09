@@ -22,7 +22,7 @@ export default function Block({
         className,
       )}
     >
-      <div className={`h-full w-full max-w-5xl px-8 py-12 sm:py-16`}>
+      <div className={`h-full w-full max-w-6xl px-8 py-12 sm:py-16`}>
         {children}
       </div>
     </section>
@@ -34,6 +34,7 @@ export interface SectionProps {
   title?: string;
   text?: string;
   bgColor?: string;
+  borderVisible?: boolean;
   center?: boolean;
   reverse?: boolean;
   itemsOutside?: ReactNode[];
@@ -46,6 +47,7 @@ export function Section(props: SectionProps) {
     title,
     text,
     bgColor = "bg-zinc-950",
+    borderVisible = true,
     center = false,
     reverse = false,
     itemsOutside,
@@ -53,7 +55,7 @@ export function Section(props: SectionProps) {
   } = props;
 
   return (
-    <Block className={` ${bgColor}`}>
+    <Block borderVisible={borderVisible} className={` ${bgColor}`}>
       <div id={id} className="relative" />
       <div
         className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-fit sm:w-full`}

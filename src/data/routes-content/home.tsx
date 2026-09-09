@@ -29,10 +29,24 @@ export const SECTIONS: SectionProps[] = [
     and motion designs.`,
   },
   {
+    id: "skills",
+    bgColor: "bg-zinc-900",
+    title: "Skills and Credentials",
+    itemsInside: [<div></div>],
+    center: true,
+    borderVisible: false,
+  },
+  {
     id: "portfolio",
     bgColor: "bg-zinc-900",
     title: "My Work",
     itemsInside: [<div></div>],
     center: true,
+  },
+  {
+    id: "contact",
+    title: "Let's build something memorable",
+    itemsInside: [<div></div>],
+    borderVisible: false,
   },
 ];

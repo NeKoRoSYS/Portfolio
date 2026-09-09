@@ -21,7 +21,7 @@ interface TabProps {
 export function Header() {
   const onTop: boolean = useScrollOnTop();
   const baseHeader: string =
-    "w-full h-16 flex justify-center items-center lg:pl-1 lg:max-w-[80%] lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
+    "h-16 flex justify-center items-center lg:pl-1 lg:max-w-6xl lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
   const bgVisible: string =
     "bg-black/75 border-b lg:border border-zinc-700 backdrop-blur-md lg:rounded-full";
   const bgInvisible: string =
@@ -36,7 +36,7 @@ export function Header() {
       />
       <header
         className={cn(
-          "fixed top-0 right-0 left-0 z-1 mx-auto",
+          "fixed inset-x-0 top-0 z-1 mx-auto lg:inset-x-8",
           baseHeader,
           bgVisible,
           onTop && bgInvisible,
@@ -51,11 +51,13 @@ export function Header() {
               className="aspect-square w-8 rounded-md"
               alt={"GravenSoft Icon"}
             ></Image>
-            <p className="mt-0.5 font-bulletin text-3xl">NeKoRoSYS</p>
+            <p className="mt-0.5 font-bulletin text-3xl select-none hover:text-green-400">
+              NeKoRoSYS
+            </p>
           </div>
           <nav className={`hidden sm:block`}>
             <ul
-              className={`flex flex-row text-sm font-medium drop-shadow-lg drop-shadow-black/35 ${Colors.textMutedNav} flex h-10 w-fit items-center rounded-full border border-zinc-700 bg-zinc-800/75`}
+              className={`flex flex-row text-sm font-medium drop-shadow-lg drop-shadow-black/35 ${Colors.textMutedNav} flex h-10 w-fit items-center rounded-full border border-zinc-700 bg-zinc-900/75`}
             >
               <AnimatedBackground
                 className="rounded-full bg-zinc-100 dark:bg-zinc-100"
@@ -91,7 +93,7 @@ export function Header() {
           >
             {(hoverClasses) => (
               <Magnetic>
-                <Button className={`${hoverClasses} font-bold`} href="/contact">
+                <Button className={`${hoverClasses} font-bold`} href="#contact">
                   Contact
                 </Button>
               </Magnetic>

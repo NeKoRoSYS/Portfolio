@@ -16,6 +16,11 @@ export const NAVIGATE: HyperlinkSchema[] = [
 
 export const SOCIALS: HyperlinkSchema[] = [
   {
+    name: "Itch.io",
+    path: "https://nekorosys.itch.io/",
+    icon: Icons.itchioIcon,
+  },
+  {
     name: "Discord",
     path: "https://discord.gg/qJp2ByQZq4",
     icon: Icons.discordIcon,
@@ -34,11 +39,6 @@ export const SOCIALS: HyperlinkSchema[] = [
     name: "YouTube",
     path: "https://youtube.com/@NeKoRoSYS",
     icon: Icons.youtubeIcon,
-  },
-  {
-    name: "Itch.io",
-    path: "https://nekorosys.itch.io/",
-    icon: Icons.itchioIcon,
   },
   {
     name: "GitHub",

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home";
@@ -11,8 +12,8 @@ import { SECTIONS } from "@/data/routes-content/home";
 export default function Home() {
   return (
     <>
+      <ScrollIndicator />
       <Hero
-        borderVisible
         fade
         background={
           <BackgroundAscii
@@ -27,7 +28,7 @@ export default function Home() {
 
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
             <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
-            <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic sm:text-lg lg:text-left lg:text-xl">
+            <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic select-none sm:text-lg lg:text-left lg:text-xl">
               {ROLES.map((role, index) => (
                 <span
                   key={index}
@@ -40,7 +41,7 @@ export default function Home() {
 
             <hr className="w-full flex-1 border-2 border-green-400 hover:border-purple-300" />
           </div>
-          <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
+          <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             <TextScramble>
               {LETTERS.map((element, index) => (
                 <span
@@ -64,7 +65,7 @@ export default function Home() {
                 scale={1.01}
               />
               <Button
-                href="/contact"
+                href="#contact"
                 className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
               >
                 Get in Touch
@@ -85,6 +86,7 @@ export default function Home() {
           key={index}
           bgColor={section.bgColor}
           id={section.id}
+          borderVisible={section.borderVisible}
           title={section.title}
           text={section.text}
           itemsInside={section.itemsInside}

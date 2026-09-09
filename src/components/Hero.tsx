@@ -31,7 +31,7 @@ export default function Hero({
       </div>
 
       {fade && (
-        <div className="pointer-events-none absolute inset-0 z-0 bg-linear-to-b from-black/0 to-black" />
+        <div className="pointer-events-none absolute inset-0 z-0 bg-linear-to-b from-black/0 to-zinc-950" />
       )}
 
       <div className="relative z-10 flex w-full max-w-6xl flex-col justify-center px-8 py-24">
