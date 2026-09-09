@@ -80,8 +80,8 @@ export const SECTIONS: SectionProps[] = [
       <div className="col-span-12 mb-16 lg:col-span-6 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <h3 className="text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
-            Everything starts with a{" "}
-            <span className="font-serif font-normal text-green-400 italic">
+            Everything starts with{" "}
+            <span className="font-serif font-normal text-green-400 italic hover:text-purple-300">
               "Hello."
             </span>
           </h3>
