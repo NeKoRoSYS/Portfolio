@@ -1,8 +1,9 @@
 import { BUSINESS } from "@/data/hyperlinks";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
-import { IconHyperlink } from "./Hyperlinks";
+import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
+import { Icons } from "@/shared/Icons";
 
 export default function BrandingCard() {
   return (
@@ -26,7 +27,7 @@ export default function BrandingCard() {
         opacity="opacity-100"
       />
       <Spotlight
-        className={`-z-1 bg-zinc-300/25 blur-3xl`}
+        className={`-z-10 bg-zinc-300/25 blur-3xl`}
         size={128}
         springOptions={{
           stiffness: 250,
@@ -37,10 +38,15 @@ export default function BrandingCard() {
       <div className="my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
         <div className="aspect-square min-w-24 rounded-full bg-green-100" />
         <hr className="border border-zinc-800 not-sm:w-[50%] sm:h-16" />
-        <div className="z-10 text-center sm:text-left">
+        <div className="z-10 flex flex-col justify-center text-center sm:justify-start sm:pr-8 sm:text-left">
           <p className="font-bold">John Marky G. Malibiran</p>
-          <p>Manila, NCR, Philippines</p>
-          <p>malibiran.johnmarky@gmail.com</p>
+          <p>Manila, National Capital Region, Philippines</p>
+          <TextHyperlink
+            className="pointer-events-auto mx-auto sm:mx-0"
+            showHyperlinkIcon={false}
+            path={"mailto:malibiran.johnmarky@gmail.com"}
+            name={"malibiran.johnmarky@gmail.com"}
+          />
           <p className="italic">(+63) 921 753 2961</p>
         </div>
       </div>

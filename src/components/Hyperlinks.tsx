@@ -5,15 +5,18 @@ import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
 
 export function TextHyperlink({
+  className,
   showHyperlinkIcon = true,
   ...hyperlinkProps
-}: HyperlinkSchema & { showHyperlinkIcon?: boolean }) {
+}: HyperlinkSchema & { showHyperlinkIcon?: boolean; className?: string }) {
   const { name, path, icon } = hyperlinkProps;
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
-  const className =
-    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2 group";
+  const classOverride = cn(
+    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2 group",
+    className,
+  );
   const linkInner = (
     <>
       {icon ? (
@@ -38,7 +41,7 @@ export function TextHyperlink({
     return (
       <a
         title={`Click to copy: ${name}}`}
-        className={cn(className, "cursor-pointer")}
+        className={cn(classOverride, "cursor-pointer")}
         rel="noreferrer noopener"
         onClick={() => CopyTextToClipboard(path.slice(5))}
       >
@@ -49,7 +52,7 @@ export function TextHyperlink({
 
   if (isHash) {
     return (
-      <a href={path} className={className} rel="noreferrer noopener">
+      <a href={path} className={classOverride} rel="noreferrer noopener">
         {linkInner}
       </a>
     );
@@ -57,7 +60,7 @@ export function TextHyperlink({
 
   if (isRoute) {
     return (
-      <Link href={path} className={className} rel="noreferrer noopener">
+      <Link href={path} className={classOverride} rel="noreferrer noopener">
         {linkInner}
       </Link>
     );
@@ -67,7 +70,7 @@ export function TextHyperlink({
     <a
       href={path}
       title={name}
-      className={className}
+      className={classOverride}
       rel="noreferrer noopener"
       target="_blank"
     >
