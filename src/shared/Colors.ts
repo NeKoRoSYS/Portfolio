@@ -17,6 +17,8 @@ const Colors = {
     "border-blue-700/80 hover:border-blue-500 bg-linear-to-b from-blue-900/50 to-blue-600/40 hover:from-blue-500/50 hover:to-blue-700/30 hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)]",
   github:
     "border-slate-500/80 hover:border-slate-300 bg-linear-to-b from-slate-800/40 to-slate-600/50 hover:from-slate-600/50 hover:to-slate-500/30 hover:drop-shadow-[0_0_8px_rgba(200,205,215,0.4)]",
+  buttonMuted:
+    "border-zinc-500/80 hover:border-zinc-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 hover:from-zinc-600/50 hover:to-zinc-500/30 hover:drop-shadow-[0_0_8px_rgba(200,205,215,0.4)]",
   google:
     "border-red-500/80 hover:border-red-400 bg-linear-to-b from-red-900/30 to-red-600/50 hover:from-red-500/50 hover:to-red-700/30 hover:drop-shadow-[0_0_8px_rgba(234,67,53,0.5)]",
   instagram:

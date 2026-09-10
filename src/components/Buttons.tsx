@@ -17,8 +17,10 @@ export default function Button({
   children?: ReactNode;
   className?: string;
 }) {
-  const classOverride =
-    `px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer ${className}`.trim();
+  const classOverride = cn(
+    "px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",
+    className,
+  );
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
@@ -30,7 +32,7 @@ export default function Button({
             aria-hidden={true}
             style={{ backgroundImage: `url("${icon}")` }}
             className={cn(
-              `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert`,
+              `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert saturate-0`,
               (children || name) && "w-6",
               iconClass,
             )}

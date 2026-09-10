@@ -15,9 +15,67 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const domain: string = "https://nekorosys.vercel.app";
+const title: string = "NeKoRoSYS";
+const description: string = "Marky's personal landing page.";
+
 export const metadata: Metadata = {
-  title: "NeKoRoSYS",
-  description: "Personal landing page.",
+  metadataBase: new URL(domain),
+  title: title,
+  description: description,
+  keywords: [
+    title,
+    "full-stack developer",
+    "software developer",
+    "developer",
+    "graphic design",
+    "layout artist",
+    "motion design",
+    "illustrator",
+    "john",
+    "marky",
+    "ginete",
+    "malibiran",
+    "john marky g. malibiran",
+    "john marky ginete malibiran",
+  ],
+  authors: [
+    { name: "NeKoRoSYS", url: domain },
+    {
+      name: "John Marky G. Malibiran",
+      url: "https://linkedin.com/in/malibiran-johnmarky",
+    },
+  ],
+  creator: "John Marky G. Malibiran",
+  publisher: "NeKoRoSYS",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: domain,
+    siteName: title,
+    title: title,
+    description: description,
+    //images: [
+    //  {
+    //    url: '/og-image.jpg',
+    //    width: 1200,
+    //    height: 630,
+    //    alt: 'My Awesome Application Preview',
+    //  },
+    //],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    //images: ['/og-image.jpg'],
+    creator: "@NeKoRoSYS",
+  },
+
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +83,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "NeKoRoSYS",
+    url: "https://nekorosys.vercel.app",
+  };
   return (
     <html
       lang="en"
@@ -35,6 +99,10 @@ export default function RootLayout({
         <Header />
         <PageWrapper>{children}</PageWrapper>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
