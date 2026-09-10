@@ -24,7 +24,8 @@ export default function Button({
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
           className={cn(
-            `h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert sm:mr-4 sm:h-4 sm:w-4`,
+            `aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert sm:mr-4 sm:w-4`,
+            name && "w-4",
             iconClass,
           )}
         />
