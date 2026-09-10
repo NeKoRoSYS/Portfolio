@@ -13,25 +13,31 @@ export default function Button({
   className = "",
 }: ButtonSchema & { children?: ReactNode; className?: string }) {
   const classOverride =
-    `group h-8 w-fit px-4 flex flex-row items-center justify-center cursor-pointer ${className}`.trim();
+    `px-8 group h-8 w-fit flex flex-row items-center justify-center lg:justify-between cursor-pointer ${className}`.trim();
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
   const linkInner = (
     <>
       {icon && (
-        <div
-          aria-hidden={true}
-          style={{ backgroundImage: `url("${icon}")` }}
-          className={cn(
-            `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert sm:mr-4`,
-            (children || name) && "w-6",
-            iconClass,
-          )}
-        />
+        <div className="flex shrink-0 flex-row items-center gap-3">
+          <div
+            aria-hidden={true}
+            style={{ backgroundImage: `url("${icon}")` }}
+            className={cn(
+              `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert`,
+              (children || name) && "w-6",
+              iconClass,
+            )}
+          />
+        </div>
       )}
       {children}
-      {name && <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>}
+      {name && (
+        <div className="hidden w-full sm:block">
+          <p className={icon != null ? `text-right` : ""}>{name}</p>
+        </div>
+      )}
     </>
   );
 

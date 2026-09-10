@@ -73,7 +73,7 @@ export default function Home() {
                   icon={Icons.emailIcon}
                   iconClass="invert-0 group-hover:invert mr-4"
                   path="#contact"
-                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
+                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300 lg:justify-center"
                 >
                   <Spotlight
                     className={`-z-10 bg-zinc-100/50 blur-2xl`}

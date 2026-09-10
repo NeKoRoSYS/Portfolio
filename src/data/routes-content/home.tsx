@@ -29,7 +29,7 @@ export const SECTIONS: SectionProps[] = [
     sections: [
       <div className="col-span-12 mb-16 lg:col-span-5 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="w-full text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
+          <h3 className="w-full text-center font-cosmic text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
             Hello, World!
           </h3>
         </div>
@@ -80,29 +80,35 @@ export const SECTIONS: SectionProps[] = [
         size="w-[250px] h-[250px]"
         opacity="opacity-75"
       />,
-      <div className="col-span-12 mb-16 lg:col-span-6 lg:mb-0">
+      <div className="col-span-12 mb-16 lg:col-span-8 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
-            Everything starts with{" "}
+          <h3 className="w-full text-center font-cosmic text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
+            One{" "}
             <span className="font-serif font-normal text-green-400 italic hover:text-purple-300">
-              "Hello."
+              'Hello'
             </span>
+            ,
+            <br />
+            <span className="text-green-400 hover:text-purple-300">
+              Many
+            </span>{" "}
+            Possibilities.
           </h3>
           <p className="mt-4 w-full text-center font-bold text-zinc-500 lg:text-left">
-            Let's turn your ideas into reality.
+            Your ideas are just one conversation away from becoming reality.
           </p>
         </div>
       </div>,
-      <div className="col-span-12 lg:col-span-6">
+      <div className="col-span-12 lg:col-span-4">
         <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
-          <div className="z-10 flex w-full flex-row gap-4 text-center sm:w-fit sm:text-left lg:flex-col">
+          <div className="z-10 flex w-xs flex-row gap-4 text-center sm:w-md sm:text-left lg:w-3xs lg:flex-col">
             {CONTACT.map((link, index) => (
               <Button
                 key={index}
                 path={link.path}
-                name={link.name}
+                name={link.altName}
                 icon={link.icon}
-                className={`relative z-10 h-16 w-full rounded-xl border px-8 font-bold ${link.colors}`}
+                className={`relative z-10 h-16 w-full rounded-xl border px-4 font-bold ${link.colors}`}
               />
             ))}
           </div>

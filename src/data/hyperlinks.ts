@@ -4,6 +4,7 @@ import { RouteMeta } from "./routes";
 import Colors from "@/shared/Colors";
 
 export interface HyperlinkSchema extends RouteMeta {
+  altName?: string;
   iconClass?: string;
   icon?: string | StaticImageData;
   tags?: string[];
@@ -30,6 +31,15 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     tags: ["navigate"],
   },
   {
+    altName: "Let's Talk",
+    name: "LinkedIn",
+    path: "https://linkedin.com/in/malibiran-johnmarky",
+    icon: Icons.linkedInIcon,
+    colors: Colors.linkedin,
+    tags: ["business", "contact"],
+  },
+  {
+    altName: "Stay Updated",
     name: "Discord",
     path: "https://discord.gg/qJp2ByQZq4",
     icon: Icons.discordIcon,
@@ -84,13 +94,6 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     icon: Icons.ethereumIcon,
     colors: Colors.ethereum,
     tags: ["sponsor"],
-  },
-  {
-    name: "LinkedIn",
-    path: "https://linkedin.com/in/malibiran-johnmarky",
-    icon: Icons.linkedInIcon,
-    colors: Colors.linkedin,
-    tags: ["business", "contact"],
   },
   {
     name: "GitHub",
