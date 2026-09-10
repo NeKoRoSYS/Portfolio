@@ -19,19 +19,19 @@ export default function Button({
   const isRoute = path.startsWith("/");
   const linkInner = (
     <>
-      {icon ? (
+      {icon && (
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
           className={cn(
-            `aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert sm:mr-4 sm:w-4`,
-            name && "w-4",
+            `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert sm:mr-4`,
+            (children || name) && "w-6",
             iconClass,
           )}
         />
-      ) : null}
+      )}
       {children}
-      <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>
+      {name && <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>}
     </>
   );
 

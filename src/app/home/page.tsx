@@ -71,7 +71,7 @@ export default function Home() {
                 />
                 <Button
                   icon={Icons.emailIcon}
-                  iconClass="invert-0 group-hover:invert"
+                  iconClass="invert-0 group-hover:invert mr-4"
                   path="#contact"
                   className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
                 >
