@@ -86,14 +86,12 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     path: "copy:bc1qw80kkgu8yp4mwzuzddygmnyamcjesfavwmer8a",
     icon: Icons.bitcoinIcon,
     colors: Colors.bitcoin,
-    tags: ["sponsor"],
   },
   {
     name: "Ethereum",
     path: "copy:0x5C429b3fdc7E6F7a692C234358ba31492Feb651C",
     icon: Icons.ethereumIcon,
     colors: Colors.ethereum,
-    tags: ["sponsor"],
   },
   {
     name: "GitHub",
