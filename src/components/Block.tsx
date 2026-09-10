@@ -96,10 +96,10 @@ export function Section(props: SectionProps) {
         <div
           className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-full`}
         >
-          {title != null || text != null ? (
+          {(title != null || text != null) && (
             <div className={`flex w-full flex-col gap-8`}>
-              {title ? (
-                typeof title === "string" || typeof title === "number" ? (
+              {title &&
+                (typeof title === "string" || typeof title === "number" ? (
                   <h2
                     className={`text-4xl font-bold ${center ? "text-center" : reverse ? "text-right" : ""}`}
                   >
@@ -107,20 +107,19 @@ export function Section(props: SectionProps) {
                   </h2>
                 ) : (
                   title
-                )
-              ) : null}
-              {text ? (
+                ))}
+              {text && (
                 <p className={`${center ? "text-center" : ""}`}>{text}</p>
-              ) : null}
+              )}
             </div>
-          ) : null}
-          {sections ? (
+          )}
+          {sections && (
             <div className="grid w-full grid-cols-12 flex-wrap sm:mx-auto">
               {sections?.map((element, index) => (
                 <Fragment key={index}>{element}</Fragment>
               ))}
             </div>
-          ) : null}
+          )}
         </div>
       </Block>
     </>

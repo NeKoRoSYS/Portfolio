@@ -101,14 +101,14 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 lg:col-span-4">
         <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
-          <div className="z-10 flex w-xs flex-col gap-4 text-center sm:w-md sm:flex-row sm:text-left lg:w-3xs lg:flex-col">
+          <div className="z-10 flex w-full max-w-sm flex-row gap-4 text-center sm:w-md sm:max-w-none sm:text-left lg:w-3xs lg:flex-col">
             {CONTACT.map((link, index) => (
               <Button
                 key={index}
                 path={link.path}
                 name={link.altName}
                 icon={link.icon}
-                className={`relative z-10 h-16 w-full rounded-xl border px-4 font-bold ${link.colors}`}
+                className={`relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start ${link.colors}`}
               />
             ))}
           </div>

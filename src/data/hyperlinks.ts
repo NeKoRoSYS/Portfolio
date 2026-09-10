@@ -142,10 +142,3 @@ export const SPONSOR = getLinksByTag("sponsor");
 export const BUSINESS = getLinksByTag("business");
 export const CONTACT = getButtonsByTag("contact");
 export const LEGAL = getLinksByTag("legal");
-
-export const LinkColumns: { title: string; links: HyperlinkSchema[] }[] = [
-  { title: "Navigate", links: getLinksByTag("navigate") },
-  { title: "Find Me", links: getLinksByTag("socials") },
-  { title: "Sponsor", links: getLinksByTag("sponsor") },
-  { title: "Legal", links: getLinksByTag("legal") },
-];

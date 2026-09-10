@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <main>
       <Block className={`relative min-h-[50svh] bg-black`}>
-        <h1 className="text-4xl font-bold">Nothing here but us</h1>
+        <h1 className="text-4xl font-bold">Nothing here but just us</h1>
         <p>and these crickets...</p>
         <br></br>
         <p>The page you are looking for does not exist!</p>

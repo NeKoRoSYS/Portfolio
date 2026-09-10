@@ -1,11 +1,12 @@
 "use client";
 
 import { Fragment } from "react/jsx-runtime";
-import { LinkColumns, type HyperlinkSchema } from "../data/hyperlinks";
+import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import BrandingCard from "./BrandingCard";
+import { COPYRIGHT, LinkColumns } from "@/data/components/footer";
 
 export function Footer() {
   const ColumnLinks = (
@@ -26,11 +27,11 @@ export function Footer() {
               : undefined
           }
         >
-          {showTitle ? (
+          {showTitle && (
             <span className="w-full text-center font-bold sm:text-left">
               {title}
             </span>
-          ) : null}
+          )}
           <div
             key={title}
             className={`${className} flex flex-wrap justify-center sm:justify-start`}
@@ -76,10 +77,8 @@ export function Footer() {
       <section
         className={`z-10 mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 px-8 py-8 pb-16 lg:max-w-6xl lg:gap-24`}
       >
-        <p className="text-center font-bold text-zinc-700">
-          © 2026 NeKoRoSYS. All Rights Reserved.
-        </p>
-        {legalColumn.length > 0 ? (
+        <p className="text-center font-bold text-zinc-700">{COPYRIGHT}</p>
+        {legalColumn.length > 0 && (
           <div className="flex w-full flex-col items-center justify-between gap-12 sm:flex-row sm:gap-24 md:w-fit">
             {legalColumn.map(({ title, links }) =>
               ColumnLinks(
@@ -90,7 +89,7 @@ export function Footer() {
               ),
             )}
           </div>
-        ) : null}
+        )}
       </section>
     </footer>
   );

@@ -3,7 +3,8 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
-import { Icons } from "@/shared/Icons";
+import { FIELDS, PORTRAIT } from "@/data/components/brandingCard";
+import { Fragment } from "react/jsx-runtime";
 
 export default function BrandingCard() {
   return (
@@ -36,18 +37,15 @@ export default function BrandingCard() {
         }}
       />
       <div className="my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
-        <div className="aspect-square min-w-24 rounded-full bg-green-100" />
+        <div
+          style={{ backgroundImage: `url("${PORTRAIT}")` }}
+          className="aspect-square min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
+        />
         <hr className="border border-zinc-800 not-sm:w-[50%] sm:h-16" />
         <div className="z-10 flex flex-col justify-center text-center sm:justify-start sm:pr-8 sm:text-left">
-          <p className="font-bold">John Marky G. Malibiran</p>
-          <p>Manila, National Capital Region, Philippines</p>
-          <TextHyperlink
-            className="pointer-events-auto mx-auto sm:mx-0"
-            showHyperlinkIcon={false}
-            path={"mailto:malibiran.johnmarky@gmail.com"}
-            name={"malibiran.johnmarky@gmail.com"}
-          />
-          <p className="italic">(+63) 921 753 2961</p>
+          {FIELDS.map((element, index) => (
+            <Fragment key={index}>{element}</Fragment>
+          ))}
         </div>
       </div>
       <div className="mt-4 mb-8 flex w-full justify-center gap-4 px-8 lg:justify-end">

@@ -18,7 +18,7 @@ export default function Button({
   className?: string;
 }) {
   const classOverride =
-    `px-4 group h-8 w-fit flex flex-row items-center justify-center lg:justify-between cursor-pointer ${className}`.trim();
+    `px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer ${className}`.trim();
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
@@ -40,7 +40,7 @@ export default function Button({
       {children}
       {name && (
         <div className={cn(icon && "ml-4", truncate && "hidden sm:block")}>
-          <p className={icon != null ? `text-right` : ""}>{name}</p>
+          <p className={icon != null ? `text-center` : ""}>{name}</p>
         </div>
       )}
     </>

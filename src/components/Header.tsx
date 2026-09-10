@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useIsRouteActive, useScrollOnTop } from "../shared/Utils";
 import { HEADERROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
-import { Icons } from "@/shared/Icons";
 import Button from "./Buttons";
 import { HoverableElement } from "./Panel";
 import Hamburger from "./Hamburger";
@@ -13,6 +12,7 @@ import { Magnetic } from "./motion-primitives/magnetic";
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
+import { CTA_NAME, CTA_PATH, ICON, TITLE } from "@/data/components/header";
 
 export function Header() {
   const onTop: boolean = useScrollOnTop();
@@ -51,12 +51,12 @@ export function Header() {
             <Image
               width={8}
               height={8}
-              src={Icons.gravensoftIcon}
+              src={ICON}
               className="aspect-square w-8 rounded-md"
               alt={"GravenSoft Icon"}
             ></Image>
             <p className="mt-0.5 font-bulletin text-3xl select-none hover:text-green-400">
-              NeKoRoSYS
+              {TITLE}
             </p>
           </div>
           <div className="flex flex-row items-center justify-end gap-4">
@@ -104,8 +104,8 @@ export function Header() {
                 <Magnetic>
                   <Button
                     className={`${hoverClasses} font-bold`}
-                    path="#contact"
-                    name={"Contact"}
+                    path={CTA_PATH}
+                    name={CTA_NAME}
                   />
                 </Magnetic>
               )}

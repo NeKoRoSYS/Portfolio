@@ -58,7 +58,7 @@ export default function Home() {
             </TextScramble>
           </div>
           <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 hover:border-purple-300 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block" />
-          <div className="order-4 mt-24 flex flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
+          <div className="order-4 mt-24 flex max-w-xs flex-wrap justify-center gap-4 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform hover:scale-95 sm:w-fit lg:flex-2">
               <Magnetic>
                 <GlowEffect
@@ -84,15 +84,15 @@ export default function Home() {
                       mass: 0.5,
                     }}
                   />
-                  Get in Touch
+                  <p>Get in Touch</p>
                 </Button>
               </Magnetic>
             </div>
             <Button
-              className="h-16 w-full origin-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"
+              className="h-16 w-full origin-center justify-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1 lg:justify-center"
               path="#portfolio"
             >
-              <p>Portfolio</p>
+              <p>See Portfolio</p>
             </Button>
           </div>
         </div>
