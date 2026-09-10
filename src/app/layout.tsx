@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "./",
+    canonical: "/",
   },
 };
 
