@@ -82,7 +82,7 @@ export const SECTIONS: SectionProps[] = [
       />,
       <div className="col-span-12 mb-16 lg:col-span-8 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="w-full text-center font-cosmic text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
+          <h3 className="w-full text-center font-cosmic text-4xl font-bold sm:text-5xl lg:text-left lg:text-6xl">
             One{" "}
             <span className="font-serif font-normal text-green-400 italic hover:text-purple-300">
               'Hello'
@@ -94,14 +94,14 @@ export const SECTIONS: SectionProps[] = [
             </span>{" "}
             Possibilities.
           </h3>
-          <p className="mt-4 w-full text-center font-bold text-zinc-500 lg:text-left">
+          <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:text-left">
             Your ideas are just one conversation away from becoming reality.
           </p>
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-4">
         <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
-          <div className="z-10 flex w-xs flex-row gap-4 text-center sm:w-md sm:text-left lg:w-3xs lg:flex-col">
+          <div className="z-10 flex w-xs flex-col gap-4 text-center sm:w-md sm:flex-row sm:text-left lg:w-3xs lg:flex-col">
             {CONTACT.map((link, index) => (
               <Button
                 key={index}

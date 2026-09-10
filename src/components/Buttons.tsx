@@ -6,14 +6,19 @@ import { cn } from "@/lib/utils";
 
 export default function Button({
   name,
+  truncate,
   children,
   icon,
   iconClass,
   path,
   className = "",
-}: ButtonSchema & { children?: ReactNode; className?: string }) {
+}: ButtonSchema & {
+  truncate?: boolean;
+  children?: ReactNode;
+  className?: string;
+}) {
   const classOverride =
-    `px-8 group h-8 w-fit flex flex-row items-center justify-center lg:justify-between cursor-pointer ${className}`.trim();
+    `px-4 group h-8 w-fit flex flex-row items-center justify-center lg:justify-between cursor-pointer ${className}`.trim();
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
@@ -34,7 +39,7 @@ export default function Button({
       )}
       {children}
       {name && (
-        <div className="hidden w-full sm:block">
+        <div className={cn(icon && "ml-4", truncate && "hidden sm:block")}>
           <p className={icon != null ? `text-right` : ""}>{name}</p>
         </div>
       )}
