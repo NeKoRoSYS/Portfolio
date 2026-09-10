@@ -10,7 +10,8 @@ export function TextHyperlink({
 }: HyperlinkSchema & { showHyperlinkIcon?: boolean }) {
   const { name, path, icon } = hyperlinkProps;
   const isCopy = path.startsWith("copy:");
-  const isInternal = path.startsWith("#") || path.startsWith("/");
+  const isHash = path.startsWith("#");
+  const isRoute = path.startsWith("/");
   const className =
     "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2 group";
   const linkInner = (
@@ -46,7 +47,15 @@ export function TextHyperlink({
     );
   }
 
-  if (isInternal) {
+  if (isHash) {
+    return (
+      <a href={path} className={className} rel="noreferrer noopener">
+        {linkInner}
+      </a>
+    );
+  }
+
+  if (isRoute) {
     return (
       <Link href={path} className={className} rel="noreferrer noopener">
         {linkInner}

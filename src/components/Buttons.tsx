@@ -14,7 +14,8 @@ export default function Button({
   const classOverride =
     `h-8 w-fit px-4 flex flex-row items-center justify-center cursor-pointer ${className}`.trim();
   const isCopy = path.startsWith("copy:");
-  const isInternal = path.startsWith("#") || path.startsWith("/");
+  const isHash = path.startsWith("#");
+  const isRoute = path.startsWith("/");
   const linkInner = (
     <>
       {icon ? (
@@ -42,7 +43,15 @@ export default function Button({
     );
   }
 
-  if (isInternal) {
+  if (isHash) {
+    return (
+      <a href={path} className={classOverride}>
+        {linkInner}
+      </a>
+    );
+  }
+
+  if (isRoute) {
     return (
       <Link href={path} className={classOverride}>
         {linkInner}
@@ -51,7 +60,12 @@ export default function Button({
   }
 
   return (
-    <a href={path} className={classOverride}>
+    <a
+      href={path}
+      className={classOverride}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
       {linkInner}
     </a>
   );

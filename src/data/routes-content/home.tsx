@@ -6,6 +6,7 @@ import MarqueeModule from "react-fast-marquee";
 import { CONTACT } from "../hyperlinks";
 import Grid from "@/components/Grid";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
+import SpotlightBlob from "@/components/SpotlightBlob";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
@@ -24,11 +25,11 @@ export const HOME = {
 
 export const SECTIONS: SectionProps[] = [
   {
-    id: "home",
+    id: "about",
     sections: [
-      <div className="col-span-12 mb-8 lg:col-span-5 lg:mb-0">
-        <div className="flex h-full w-full flex-wrap items-center justify-start">
-          <h3 className="text-center text-4xl md:text-5xl lg:text-left lg:text-6xl">
+      <div className="col-span-12 mb-16 lg:col-span-5 lg:mb-0">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <h3 className="w-full text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
             Hello, World!
           </h3>
         </div>
@@ -55,28 +56,38 @@ export const SECTIONS: SectionProps[] = [
     ],
   },
   {
-    id: "skills",
-    bgColor: "bg-zinc-900",
-    title: "Skills and Credentials",
+    id: "portfolio",
+    bgColor: "bg-zinc-950",
     center: true,
-    borderVisible: false,
     sections: [
-      <div className="col-span-12 md:col-span-6">Test</div>,
-      <div className="col-span-12 md:col-span-6">Test</div>,
-      <div className="col-span-12 md:col-span-6">Test</div>,
+      <div className="col-span-12 mb-16 lg:col-span-12 lg:mb-0">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <h3 className="w-full text-center text-4xl font-bold md:text-5xl lg:text-6xl">
+            My Work
+          </h3>
+        </div>
+      </div>,
     ],
   },
   {
-    id: "portfolio",
-    bgColor: "bg-zinc-900",
-    title: "My Work",
-    center: true,
-  },
-  {
     id: "contact",
-    spotlight: { enable: true, color: "bg-purple-800/50" },
+    spotlight: { enable: true, color: "bg-purple-800/25" },
     background: <Grid />,
     sections: [
+      <SpotlightBlob
+        color="bg-green-400"
+        top="top-[100%]"
+        left="left-[33%] lg:left-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-75"
+      />,
+      <SpotlightBlob
+        color="bg-green-800"
+        top="-top-[50%]"
+        left="invisible lg:visible lg:right-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-75"
+      />,
       <div className="col-span-12 mb-16 lg:col-span-6 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <h3 className="text-center text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">

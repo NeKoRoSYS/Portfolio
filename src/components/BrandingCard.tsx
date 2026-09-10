@@ -2,14 +2,29 @@ import { BUSINESS } from "@/data/hyperlinks";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import { IconHyperlink } from "./Hyperlinks";
+import SpotlightBlob from "./SpotlightBlob";
 
 export default function BrandingCard() {
   return (
     <Tilt
       rotationFactor={4}
-      className="pointer-events-none m-auto flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto"
+      className="pointer-events-none m-auto flex min-h-45 w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto"
       isRevese
     >
+      <SpotlightBlob
+        color="bg-zinc-300"
+        top="-top-[50%] sm:-top-[100%]"
+        left="left-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-25"
+      />
+      <SpotlightBlob
+        color="bg-purple-800"
+        top="top-[100%]"
+        left="right-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-100"
+      />
       <Spotlight
         className={`-z-1 bg-zinc-300/25 blur-3xl`}
         size={128}

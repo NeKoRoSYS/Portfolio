@@ -62,7 +62,7 @@ export default function Home() {
                 className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
                 colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
                 mode="colorShift"
-                blur="soft"
+                blur="medium"
                 duration={2}
                 scale={1.01}
               />

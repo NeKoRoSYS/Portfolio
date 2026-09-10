@@ -52,8 +52,8 @@ export default function ScrollIndicator() {
           : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
-      <div className="flex h-full w-full animate-[float_2s_ease-in-out_infinite] flex-col items-center justify-center select-none">
-        <p className="font-cosmic text-green-400">Scroll Down</p>
+      <div className="flex h-full animate-[float_2s_ease-in-out_infinite] flex-col items-center justify-center select-none">
+        <p className="mx-auto font-cosmic text-green-400">Scroll Down</p>
         <span
           aria-hidden={true}
           className="h-5 w-5 bg-green-400"
