@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "/",
+    canonical: "./",
   },
 };
 
@@ -86,10 +86,31 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "NeKoRoSYS",
-    url: "https://nekorosys.vercel.app",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": domain,
+        url: domain,
+        name: "NeKoRoSYS",
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": domain,
+        url: domain,
+        mainEntity: {
+          "@type": "Person",
+          name: "John Marky G. Malibiran",
+          alternateName: "NeKoRoSYS",
+          description: "Full-Stack Developer and Graphic Designer",
+          sameAs: [
+            "https://linkedin.com/in/malibiran-johnmarky",
+            "https://x.com/NeKoRoSYS",
+          ],
+        },
+      },
+    ],
   };
+
   return (
     <html
       lang="en"
