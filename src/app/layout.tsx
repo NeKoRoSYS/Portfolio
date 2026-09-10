@@ -89,13 +89,13 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": domain,
+        "@id": `${domain}/#website`,
         url: domain,
         name: "NeKoRoSYS",
       },
       {
         "@type": "ProfilePage",
-        "@id": domain,
+        "@id": `${domain}/#profile`,
         url: domain,
         mainEntity: {
           "@type": "Person",
