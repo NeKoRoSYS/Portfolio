@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 const domain: string = "https://nekorosys.vercel.app";
 const title: string = "NeKoRoSYS";
-const description: string = "Marky's personal landing page.";
+const description: string =
+  "NeKoRoSYS is John Marky G. Malibiran's personal brand. This website serves as a landing page to showcase his extensive portfolio of works that span across Tech and Graphic Design.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(domain),

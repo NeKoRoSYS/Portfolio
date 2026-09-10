@@ -17,7 +17,7 @@ export interface ButtonSchema extends HyperlinkSchema {
 export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
   {
     name: "Home",
-    path: "/home",
+    path: "/",
     tags: ["navigate"],
   },
   {

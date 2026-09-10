@@ -5,7 +5,7 @@ export interface RouteMeta {
 
 export const ROUTES: RouteMeta[] = [
   { path: "" },
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
   { name: "Portfolio", path: "#portfolio" },
   { name: "Contact", path: "#contact" },
   { name: "Blog", path: "/blog" },
@@ -15,6 +15,6 @@ export const ROUTES: RouteMeta[] = [
 ];
 
 export const HEADERROUTES: RouteMeta[] = [
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
   { name: "Blog", path: "/blog" },
 ];
