@@ -4,7 +4,6 @@ import "@/assets/stylesheets/style.css";
 import { Header } from "@/components/Header";
 import PageWrapper from "@/components/app/PageWrapper";
 import { Footer } from "@/components/Footer";
-import { SmoothScroller } from "@/components/SmoothScroller";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

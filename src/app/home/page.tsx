@@ -2,6 +2,7 @@ import { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
+import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
@@ -9,6 +10,7 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home";
+import { Icons } from "@/shared/Icons";
 
 export default function Home() {
   return (
@@ -56,31 +58,35 @@ export default function Home() {
             </TextScramble>
           </div>
           <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 hover:border-purple-300 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block" />
-          <div className="order-4 mt-24 flex w-full flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
+          <div className="order-4 mt-24 flex flex-wrap justify-center gap-4 lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform hover:scale-95 sm:w-fit lg:flex-2">
-              <GlowEffect
-                className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
-                colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
-                mode="colorShift"
-                blur="medium"
-                duration={2}
-                scale={1.01}
-              />
-              <Button
-                path="#contact"
-                className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
-              >
-                <Spotlight
-                  className={`-z-10 bg-zinc-100/50 blur-2xl`}
-                  size={64}
-                  springOptions={{
-                    stiffness: 350,
-                    damping: 30,
-                    mass: 0.5,
-                  }}
+              <Magnetic>
+                <GlowEffect
+                  className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
+                  colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
+                  mode="colorShift"
+                  blur="medium"
+                  duration={2}
+                  scale={1.01}
                 />
-                Get in Touch
-              </Button>
+                <Button
+                  icon={Icons.emailIcon}
+                  iconClass="invert-0 group-hover:invert"
+                  path="#contact"
+                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300"
+                >
+                  <Spotlight
+                    className={`-z-10 bg-zinc-100/50 blur-2xl`}
+                    size={64}
+                    springOptions={{
+                      stiffness: 350,
+                      damping: 30,
+                      mass: 0.5,
+                    }}
+                  />
+                  Get in Touch
+                </Button>
+              </Magnetic>
             </div>
             <Button
               className="h-16 w-full origin-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1"

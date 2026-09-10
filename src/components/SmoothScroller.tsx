@@ -1,26 +1,53 @@
 "use client";
 
+import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect } from "react";
-import Lenis from "lenis";
 
-export function SmoothScroller() {
+export default function SmoothScroller({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <ReactLenis
+      root
+      options={{
+        lerp: 1,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+      }}
+    >
+      <AnchorHandler />
+      {children}
+    </ReactLenis>
+  );
+}
+
+function AnchorHandler() {
+  const lenis = useLenis();
+
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+    if (!lenis) return;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    const handleHashClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest("a");
+      if (!target) return;
 
-    requestAnimationFrame(raf);
+      const href = target.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        e.preventDefault();
+        const destination = document.querySelector(href) as HTMLElement;
 
-    return () => {
-      lenis.destroy();
+        if (destination) {
+          lenis.scrollTo(destination, { offset: -100 });
+          window.history.pushState(null, "", href);
+        }
+      }
     };
-  }, []);
+
+    document.addEventListener("click", handleHashClick);
+    return () => document.removeEventListener("click", handleHashClick);
+  }, [lenis]);
 
   return null;
 }

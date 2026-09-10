@@ -4,6 +4,7 @@ import { RouteMeta } from "./routes";
 import Colors from "@/shared/Colors";
 
 export interface HyperlinkSchema extends RouteMeta {
+  iconClass?: string;
   icon?: string | StaticImageData;
   tags?: string[];
 }

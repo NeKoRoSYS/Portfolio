@@ -242,7 +242,10 @@ export function BackgroundAscii({
           opacity: 0,
         }}
       />
-      <canvas ref={canvasRef} className="h-full w-full object-cover" />
+      <canvas
+        ref={canvasRef}
+        className="h-full w-full transform-gpu object-cover will-change-transform"
+      />
     </div>
   );
 }

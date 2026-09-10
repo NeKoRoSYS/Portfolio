@@ -59,30 +59,7 @@ export const SECTIONS: SectionProps[] = [
     id: "portfolio",
     bgColor: "bg-zinc-950",
     center: true,
-    sections: [
-      <div className="col-span-12 mb-16 lg:col-span-12">
-        <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="w-full text-center text-4xl font-bold md:text-5xl lg:text-6xl">
-            My Work
-          </h3>
-        </div>
-      </div>,
-      <div className="col-span-12 lg:col-span-6 lg:mb-0">
-        <div className="lg flex h-full min-h-50 w-full flex-wrap items-center justify-center overflow-hidden rounded-t-2xl bg-zinc-800 lg:rounded-t-none lg:rounded-l-2xl">
-          <section className="flex h-25 w-full self-baseline-last bg-zinc-900">
-            t
-          </section>
-        </div>
-      </div>,
-      <div className="col-span-12 flex flex-col lg:col-span-6 lg:mb-0">
-        <div className="flex min-h-50 flex-1 items-center justify-center overflow-hidden bg-zinc-800 lg:rounded-tr-2xl">
-          t
-        </div>
-        <div className="flex min-h-50 flex-1 items-center justify-center overflow-hidden rounded-b-2xl bg-zinc-800 lg:rounded-b-none lg:rounded-br-2xl">
-          t
-        </div>
-      </div>,
-    ],
+    sections: [],
   },
   {
     id: "contact",
@@ -131,23 +108,6 @@ export const SECTIONS: SectionProps[] = [
           </div>
         </div>
       </div>,
-
-      /* 
-      <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
-        <div className="flex h-full w-full grow flex-col items-center justify-center">
-          <div className="z-10 flex flex-row gap-4 text-center sm:text-left">
-            {CONTACT.map((link, index) => (
-              <Button
-                key={index}
-                path={link.path}
-                name={link.name}
-                icon={link.icon}
-                className={`relative z-10 h-16 w-full rounded-xl border px-8 font-bold ${link.colors}`}
-              />
-            ))}
-          </div>
-        </div>
-      </Panel>*/
     ],
     borderVisible: false,
   },
