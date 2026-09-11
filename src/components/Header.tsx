@@ -17,7 +17,7 @@ import { CTA_NAME, CTA_PATH, ICON, TITLE } from "@/data/components/header";
 export function Header() {
   const onTop: boolean = useScrollOnTop();
   const baseHeader: string =
-    "h-16 flex justify-center items-center lg:max-w-6xl lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-foreground";
+    "h-16 flex justify-center items-center lg:max-w-6xl lg:mt-4 transition-[background-color,border-color,backdrop-filter] duration-250 ease-in-out text-zinc-100";
   const bgVisible: string =
     "bg-black/75 border-b lg:border border-zinc-700 backdrop-blur-md lg:rounded-full";
   const bgInvisible: string =
