@@ -11,6 +11,7 @@ import {
   linksMaxRows,
 } from "@/data/components/footer";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
   const ColumnLinks = (
@@ -21,6 +22,10 @@ export function Footer() {
   ) => {
     const columns = Math.ceil(links.length / linksMaxRows);
     const isGrid = className.includes("grid");
+    function validateNavs(path: string) {
+      const pathname = usePathname();
+      return path == pathname ? "#" : path.startsWith("#") ? "/" + path : path;
+    }
     return (
       <Fragment key={title}>
         <div
@@ -49,7 +54,11 @@ export function Footer() {
                   showHyperlinkIcon={false}
                   key={`${hyperlink.path}-${index}`}
                   name={hyperlink.name}
-                  path={hyperlink.path}
+                  path={
+                    hyperlink.tags?.includes("anchor")
+                      ? validateNavs(hyperlink.path)
+                      : hyperlink.path
+                  }
                   icon={hyperlink.icon}
                 />
               );

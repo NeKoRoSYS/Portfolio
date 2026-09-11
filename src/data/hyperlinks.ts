@@ -18,17 +18,17 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
   {
     name: "Home",
     path: "/",
-    tags: ["navigate"],
+    tags: ["navigate", "anchor"],
   },
   {
     name: "Portfolio",
     path: "#portfolio",
-    tags: ["navigate"],
+    tags: ["navigate", "anchor"],
   },
   {
     name: "Blog",
     path: "/blog",
-    tags: ["navigate"],
+    tags: ["navigate", "anchor"],
   },
   {
     altName: "Let's Talk",
@@ -124,7 +124,7 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
   {
     name: "Contact",
     path: "#contact",
-    tags: ["legal"],
+    tags: ["legal", "anchor"],
   },
 ];
 
