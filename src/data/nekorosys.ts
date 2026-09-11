@@ -20,4 +20,31 @@ interface ProjectProps {
   tags?: string[];
 }
 
-export const PROJECTS: ProjectProps[] = [{}];
+export const TECH_PROJECTS: ProjectProps[] = [
+  { tags: ["Featured"] },
+  { tags: ["Featured"] },
+  { tags: ["Featured"] },
+  { tags: [""] },
+];
+export const ART_PROJECTS: ProjectProps[] = [
+  { tags: ["Featured"] },
+  { tags: ["Featured"] },
+  { tags: ["Featured"] },
+  { tags: [""] },
+];
+
+export const FEATURED_TECH = TECH_PROJECTS.filter((project) =>
+  project.tags?.includes("Featured"),
+);
+
+export const STANDARD_TECH = TECH_PROJECTS.filter(
+  (project) => !project.tags?.includes("Featured"),
+);
+
+export const FEATURED_ART = ART_PROJECTS.filter((project) =>
+  project.tags?.includes("Featured"),
+);
+
+export const STANDARD_ART = ART_PROJECTS.filter(
+  (project) => !project.tags?.includes("Featured"),
+);

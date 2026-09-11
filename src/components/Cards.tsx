@@ -5,14 +5,33 @@ import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
 import { FIELDS, PORTRAIT } from "@/data/components/brandingCard";
 import { Fragment } from "react/jsx-runtime";
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-export default function BrandingCard() {
+interface CardProps {
+  tilt?: boolean;
+  className?: string;
+  children?: ReactNode;
+}
+
+export function Card({ ...props }: CardProps) {
+  const { tilt, className, children } = props;
+  const baseClass =
+    "relative pointer-events-none flex min-h-45 flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
+
+  if (tilt)
+    return (
+      <Tilt rotationFactor={4} className={cn(baseClass, className)} isRevese>
+        {children}
+      </Tilt>
+    );
+
+  return <div className={cn(baseClass, className)}>{children}</div>;
+}
+
+export function BrandingCard() {
   return (
-    <Tilt
-      rotationFactor={4}
-      className="pointer-events-none m-auto flex min-h-45 w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto"
-      isRevese
-    >
+    <Card tilt>
       <SpotlightBlob
         color="bg-zinc-300"
         top="-top-[50%] sm:-top-[100%]"
@@ -58,6 +77,6 @@ export default function BrandingCard() {
           />
         ))}
       </div>
-    </Tilt>
+    </Card>
   );
 }

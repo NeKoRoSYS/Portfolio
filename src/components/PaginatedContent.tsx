@@ -5,6 +5,7 @@ import { Heading3 } from "./Headings";
 import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { Panel } from "./Panel";
+import Grid from "./Grid";
 
 export interface TabData {
   index: number;

@@ -3,7 +3,7 @@
 import { Fragment } from "react/jsx-runtime";
 import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";
-import BrandingCard from "./BrandingCard";
+import { BrandingCard } from "./Cards";
 import {
   COPYRIGHT,
   gridRowsMap,

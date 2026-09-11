@@ -1,11 +1,19 @@
 "use client";
 
+import { BrandingCard, Card } from "@/components/Cards";
 import { Heading3 } from "@/components/Headings";
 import {
   TabData,
   TabControls,
   TabContent,
 } from "@/components/PaginatedContent";
+import {
+  FEATURED_ART,
+  FEATURED_TECH,
+  STANDARD_ART,
+  STANDARD_TECH,
+  TECH_PROJECTS,
+} from "@/data/nekorosys";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
@@ -16,12 +24,44 @@ export function PortfolioSection() {
     {
       index: 0,
       label: "Tech",
-      payload: [<p key="1">test</p>],
+      payload: [
+        <div className="mb-4 grid w-full grid-cols-12 gap-4 sm:mx-auto">
+          {FEATURED_TECH.map((project, index) => (
+            <div
+              key={index}
+              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
+            >
+              <Card className="aspect-video"></Card>
+            </div>
+          ))}
+        </div>,
+        <div className="flex w-full flex-col gap-4">
+          {STANDARD_TECH.map((project, index) => (
+            <Card key={index}></Card>
+          ))}
+        </div>,
+      ],
     },
     {
       index: 1,
-      label: "Media",
-      payload: [<p key="2">yes</p>],
+      label: "Art",
+      payload: [
+        <div className="mb-4 grid w-full grid-cols-12 gap-4 sm:mx-auto">
+          {FEATURED_ART.map((project, index) => (
+            <div
+              key={index}
+              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
+            >
+              <Card className="aspect-video"></Card>
+            </div>
+          ))}
+        </div>,
+        <div className="grid w-full grid-cols-3 gap-4 sm:mx-auto">
+          {STANDARD_ART.map((project, index) => (
+            <Card key={index} className="aspect-video"></Card>
+          ))}
+        </div>,
+      ],
     },
   ];
 
@@ -38,7 +78,10 @@ export function PortfolioSection() {
             {tabs.map((tab) => (
               <button
                 key={tab.index}
-                onClick={() => setActiveId(tab.index)}
+                onClick={() => {
+                  setActiveId(tab.index);
+                  window.location.href = "#portfolio";
+                }}
                 className={cn(
                   "group shrink-0 px-8 py-4 font-bold lg:text-left",
                   activeId === tab.index
