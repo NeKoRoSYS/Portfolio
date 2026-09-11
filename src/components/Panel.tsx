@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils";
 import type { JSX, ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
 
 interface PanelProps {
   children?: ReactNode;
@@ -27,7 +27,9 @@ export function Panel({
   className = "min-h-50 bg-zinc-400",
 }: PanelProps) {
   return (
-    <div className={`rounded-2xl ${className} grow lg:grow-0`}>{children}</div>
+    <div className={cn(`grow rounded-2xl lg:grow-0`, className)}>
+      {children}
+    </div>
   );
 }
 
@@ -42,7 +44,10 @@ export function HoverPanel({ ...props }: PanelProps & HoverablePropsLegacy) {
 
   return (
     <Panel
-      className={`${translate ? translateOverride : ""} ${highlight ? highlightOverride : ""} duration-75 ${className}`}
+      className={cn(
+        `${translate ? translateOverride : ""} ${highlight ? highlightOverride : ""} duration-75`,
+        className,
+      )}
     >
       {children}
     </Panel>
@@ -65,7 +70,7 @@ export function HoverableElement(props: HoverableProps) {
     .filter(Boolean)
     .join(" ");
 
-  const dynamicClasses = twMerge(activeDefaults, className);
+  const dynamicClasses = cn(activeDefaults, className);
 
   return <div>{props.children(dynamicClasses)}</div>;
 }
