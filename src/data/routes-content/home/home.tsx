@@ -1,7 +1,5 @@
 import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
-import { Panel } from "@/components/Panel";
-import MarqueeModule from "react-fast-marquee";
 import { CONTACT } from "../../hyperlinks";
 import Grid from "@/components/Grid";
 import SpotlightBlob from "@/components/SpotlightBlob";
@@ -9,8 +7,6 @@ import { cn } from "@/lib/utils";
 import { Heading2 } from "@/components/Headings";
 import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
-import { BackgroundAscii } from "@/components/VideoPlayer";
-const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,

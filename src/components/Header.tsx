@@ -13,6 +13,7 @@ import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { CTA_NAME, CTA_PATH, ICON, TITLE } from "@/data/components/header";
+import { validateNavs } from "@/lib/utilsClient";
 
 export function Header() {
   const onTop: boolean = useScrollOnTop();
@@ -104,7 +105,7 @@ export function Header() {
                 <Magnetic>
                   <Button
                     className={`${hoverClasses} font-bold`}
-                    path={CTA_PATH}
+                    path={validateNavs(CTA_PATH)}
                     name={CTA_NAME}
                   />
                 </Magnetic>

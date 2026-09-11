@@ -1,7 +1,6 @@
 import { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
-import { TextHyperlink } from "@/components/Hyperlinks";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
@@ -11,7 +10,6 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home/home";
-import { cn } from "@/lib/utils";
 import Colors from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { Heading1 } from "@/components/Headings";
@@ -95,10 +93,7 @@ export default function Home() {
               </Magnetic>
             </div>
             <Button
-              className={cn(
-                "h-16 w-full origin-center justify-center rounded-xl border-2 px-8 font-bold transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95",
-                Colors.buttonMuted,
-              )}
+              className={`${Colors.buttonMuted} h-16 w-full origin-center justify-center rounded-xl border-2 px-8 font-bold transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95`}
               path="#portfolio"
             >
               <p>See Portfolio</p>
