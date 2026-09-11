@@ -32,7 +32,7 @@ export default function Grid({
             <path
               d="M0 40V0H40"
               fill="none"
-              className="stroke-zinc-300 dark:stroke-zinc-700/80"
+              className="stroke-zinc-700/80"
               strokeWidth="1"
             />
           </pattern>
