@@ -111,7 +111,7 @@ export const SECTIONS: SectionProps[] = [
                 icon={link.icon}
                 iconClass={
                   index > 0
-                    ? "brightness-65 group-touch-hover:brightness-0 "
+                    ? "brightness-65 group-touch-hover:brightness-100 "
                     : ""
                 }
                 className={cn(

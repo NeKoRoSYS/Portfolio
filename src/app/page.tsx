@@ -10,6 +10,8 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home";
+import { cn } from "@/lib/utils";
+import Colors from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 
 export default function Home() {
@@ -20,11 +22,13 @@ export default function Home() {
         fade
         className="flex flex-wrap justify-between"
         background={
-          <BackgroundAscii
-            url={"/videos/background.mp4"}
-            containerClassOverride="absolute inset-0 z-0 w-full h-full"
-            loop
-          />
+          <>
+            <BackgroundAscii
+              url={"/videos/background.mp4"}
+              containerClassOverride="absolute inset-0 z-0 w-full h-full"
+              loop
+            />
+          </>
         }
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
@@ -71,7 +75,7 @@ export default function Home() {
                 />
                 <Button
                   icon={Icons.emailIcon}
-                  iconClass="invert-0 group-touch-hover:invert mr-4"
+                  iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
                   path="#contact"
                   className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
                 >
@@ -89,7 +93,10 @@ export default function Home() {
               </Magnetic>
             </div>
             <Button
-              className="h-16 w-full origin-center justify-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95 touch-hover:border-purple-300 touch-hover:bg-purple-500/20 touch-hover:text-zinc-100"
+              className={cn(
+                "h-16 w-full origin-center justify-center rounded-xl border-2 px-8 font-bold backdrop-blur-md transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95",
+                Colors.buttonMuted,
+              )}
               path="#portfolio"
             >
               <p>See Portfolio</p>

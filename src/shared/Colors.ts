@@ -18,7 +18,7 @@ const Colors = {
   github:
     "border-slate-500/80 touch-hover:border-slate-300 bg-linear-to-b from-slate-800/40 to-slate-600/50 touch-hover:from-slate-600/50 touch-hover:to-slate-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,205,215,0.4)]",
   buttonMuted:
-    "border-zinc-500/80 touch-hover:border-zinc-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-zinc-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,205,215,0.4)]",
+    "border-zinc-500/80 touch-hover:border-purple-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-purple-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,25,215,0.4)]",
   google:
     "border-red-500/80 touch-hover:border-red-400 bg-linear-to-b from-red-900/30 to-red-600/50 touch-hover:from-red-500/50 touch-hover:to-red-700/30 touch-hover:drop-shadow-[0_0_8px_rgba(234,67,53,0.5)]",
   instagram:

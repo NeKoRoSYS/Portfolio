@@ -30,9 +30,18 @@ export default function Button({
         <div className="flex shrink-0 flex-row items-center gap-3">
           <div
             aria-hidden={true}
-            style={{ backgroundImage: `url("${icon}")` }}
+            style={{
+              maskImage: `url(${icon.toString()})`,
+              WebkitMaskImage: `url(${icon.toString()})`,
+              maskSize: "contain",
+              WebkitMaskSize: "contain",
+              maskRepeat: "no-repeat",
+              WebkitMaskRepeat: "no-repeat",
+              maskPosition: "center",
+              WebkitMaskPosition: "center",
+            }}
             className={cn(
-              `aspect-square w-6 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert saturate-0`,
+              `aspect-square w-6 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
               (children || name) && "w-6",
               iconClass,
             )}
