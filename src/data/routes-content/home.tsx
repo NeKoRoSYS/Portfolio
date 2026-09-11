@@ -1,11 +1,9 @@
 import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
-import { HoverPanel, Panel } from "@/components/Panel";
-import { BackgroundAscii } from "@/components/VideoPlayer";
+import { Panel } from "@/components/Panel";
 import MarqueeModule from "react-fast-marquee";
 import { CONTACT } from "../hyperlinks";
 import Grid from "@/components/Grid";
-import { Spotlight } from "@/components/motion-primitives/spotlight";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
 import { Heading2 } from "@/components/Headings";
@@ -29,7 +27,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "about",
     sections: [
-      <div className="col-span-12 mb-16 lg:col-span-5 lg:mb-0">
+      <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="w-full text-center lg:text-left">
             Hello, World!
@@ -91,7 +89,7 @@ export const SECTIONS: SectionProps[] = [
             </span>
             ,
             <br />
-            <span className="text-green-400 touch-hover:text-purple-300">
+            <span className="font-bold text-green-400 touch-hover:text-purple-300">
               Many
             </span>{" "}
             Possibilities.
