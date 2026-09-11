@@ -14,7 +14,7 @@ import { SECTIONS } from "@/data/routes-content/home/home";
 import { cn } from "@/lib/utils";
 import Colors from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
-import { Heading1 } from "lucide-react";
+import { Heading1 } from "@/components/Headings";
 
 export default function Home() {
   return (
@@ -51,8 +51,10 @@ export default function Home() {
             <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-300" />
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
-            <TextScramble>
-              <Heading1 className="hidden">NeKoRoSYS</Heading1>
+            <Heading1 className="block text-green-400 sm:hidden touch-hover:text-purple-300">
+              NeKoRoSYS
+            </Heading1>
+            <TextScramble className="hidden sm:block">
               {LETTERS.map((element, index) => (
                 <span
                   key={index}

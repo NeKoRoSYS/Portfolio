@@ -75,9 +75,9 @@ export const SECTIONS: SectionProps[] = [
               </span>
             </TextScramble>
           </Heading2>
-          <p className="mt-4 w-full text-center font-bold text-zinc-400">
-            Cohesive experiences through Software and Designs engineered with
-            purpose.
+          <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:ml-128 lg:text-right">
+            Cohesive experiences through Software and Designs—engineered with
+            purpose to solve real problems.
           </p>
         </div>
       </div>,
