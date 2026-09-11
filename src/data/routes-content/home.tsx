@@ -36,7 +36,7 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 lg:col-span-7">
         <Panel className="flex min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-900 sm:pointer-events-auto">
-          <div className="flex h-full w-full grow flex-col items-center justify-center p-4">
+          <div className="flex h-full w-full grow flex-col items-center justify-center p-4 text-foreground">
             <p>
               I am John Marky G. Malibiran, but I am better known online as{" "}
               <b>NeKoRoSYS</b>! I am a 19-year-old Filipino currently taking
@@ -115,7 +115,7 @@ export const SECTIONS: SectionProps[] = [
                 }
                 className={cn(
                   "relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start",
-                  index > 0 && "text-zinc-400 touch-hover:text-zinc-100",
+                  index > 0 && "text-zinc-400 touch-hover:text-foreground",
                   link.colors,
                 )}
               />

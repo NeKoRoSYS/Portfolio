@@ -39,7 +39,7 @@ const Colors = {
 
   textAccent: "text-green-400",
   textAccentHover:
-    "focus-visible:text-zinc-100 group-touch-hover:text-zinc-950",
+    "focus-visible:text-foreground group-touch-hover:text-zinc-950",
   textMutedNav: "text-zinc-400",
   textBody: "text-zinc-200",
 
