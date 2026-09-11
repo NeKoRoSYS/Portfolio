@@ -105,6 +105,7 @@ export const SECTIONS: SectionProps[] = [
             {CONTACT.map((link, index) => (
               <Button
                 key={index}
+                showHyperlinkIcon
                 path={link.path}
                 name={link.altName}
                 icon={link.icon}

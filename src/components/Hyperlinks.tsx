@@ -23,7 +23,7 @@ export function TextHyperlink({
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
-          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 sm:h-4 sm:w-4 group-touch-hover:brightness-0 group-touch-hover:invert`}
+          className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 sm:w-4 group-touch-hover:brightness-0 group-touch-hover:invert`}
         />
       )}
       <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>
@@ -31,7 +31,7 @@ export function TextHyperlink({
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${Icons.linkIcon}")` }}
-          className="h-3 w-3 shrink-0 bg-cover bg-center bg-no-repeat"
+          className="aspect-square w-3 shrink-0 bg-cover bg-center bg-no-repeat"
         />
       )}
     </>

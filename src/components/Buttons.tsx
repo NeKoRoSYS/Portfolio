@@ -3,9 +3,11 @@ import Link from "next/link";
 import { ButtonSchema } from "@/data/hyperlinks";
 import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
+import { Icons } from "@/shared/Icons";
 
 export default function Button({
   name,
+  showHyperlinkIcon = false,
   truncate,
   children,
   icon,
@@ -13,6 +15,7 @@ export default function Button({
   path,
   className = "",
 }: ButtonSchema & {
+  showHyperlinkIcon?: boolean;
   truncate?: boolean;
   children?: ReactNode;
   className?: string;
@@ -50,9 +53,16 @@ export default function Button({
       )}
       {children}
       {name && (
-        <div className={cn(icon && "ml-4", truncate && "hidden sm:block")}>
+        <div className={cn(icon && "mx-auto", truncate && "hidden sm:block")}>
           <p className={icon != null ? `text-center` : ""}>{name}</p>
         </div>
+      )}
+      {showHyperlinkIcon && (
+        <div
+          aria-hidden={true}
+          style={{ backgroundImage: `url("${Icons.linkArrowIcon}")` }}
+          className="aspect-square w-5 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 group-touch-hover:transform-[translate(4px,-4px)] group-touch-hover:invert"
+        />
       )}
     </>
   );

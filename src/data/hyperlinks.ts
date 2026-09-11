@@ -39,7 +39,7 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     tags: ["business", "contact"],
   },
   {
-    altName: "Stay Updated",
+    altName: "Connect",
     name: "Discord",
     path: "https://discord.gg/qJp2ByQZq4",
     icon: Icons.discordIcon,
