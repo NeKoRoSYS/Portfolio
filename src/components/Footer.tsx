@@ -3,10 +3,9 @@
 import { Fragment } from "react/jsx-runtime";
 import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";
-import { Spotlight } from "./motion-primitives/spotlight";
-import { Tilt } from "./motion-primitives/tilt";
 import BrandingCard from "./BrandingCard";
 import { COPYRIGHT, LinkColumns } from "@/data/components/footer";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
   const ColumnLinks = (
@@ -34,7 +33,10 @@ export function Footer() {
           )}
           <div
             key={title}
-            className={`${className} flex flex-wrap justify-center sm:justify-start`}
+            className={cn(
+              `flex flex-wrap justify-center sm:justify-start`,
+              className,
+            )}
           >
             {links.map((hyperlink, index) => {
               return (
@@ -56,7 +58,7 @@ export function Footer() {
   const legalColumn = LinkColumns.filter(({ title }) => title == "Legal");
 
   return (
-    <footer className="flex h-auto w-full grow flex-col items-center border-t border-zinc-700 bg-black text-zinc-100">
+    <footer className="flex h-auto w-full grow flex-col items-center border-t border-zinc-700 bg-black text-foreground">
       <section className="flex w-full flex-col items-center justify-between gap-12 px-8 py-8 lg:max-w-6xl lg:flex-row lg:items-start lg:gap-24">
         <BrandingCard />
         <div className="flex w-full flex-col items-center justify-around gap-8 sm:flex-row sm:items-start sm:gap-16 lg:w-fit lg:px-0">
@@ -79,7 +81,7 @@ export function Footer() {
       >
         <p className="text-center font-bold text-zinc-700">{COPYRIGHT}</p>
         {legalColumn.length > 0 && (
-          <div className="flex w-full flex-col items-center justify-between gap-12 sm:flex-row sm:gap-24 md:w-fit">
+          <div className="flex w-full flex-col items-center justify-center gap-12 sm:flex-row sm:gap-24 md:w-fit">
             {legalColumn.map(({ title, links }) =>
               ColumnLinks(
                 links,

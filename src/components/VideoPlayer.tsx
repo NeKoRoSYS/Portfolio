@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 
 interface VideoSchema {
@@ -17,10 +18,17 @@ export default function VideoPlayer({
 }: VideoSchema) {
   return (
     <div
-      className={`overflow-hidden bg-black ${containerClassOverride ? containerClassOverride : "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl"}`}
+      className={cn(
+        `overflow-hidden bg-black`,
+        !containerClassOverride &&
+          "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl",
+      )}
     >
       <video
-        className={`pointer-events-none h-full w-full max-w-none object-cover ${videoClassOverride}`}
+        className={cn(
+          `pointer-events-none h-full w-full max-w-none object-cover`,
+          videoClassOverride,
+        )}
         loop={loop}
         muted
         autoPlay
@@ -43,7 +51,6 @@ interface BackgroundProps {
 export function BackgroundAscii({
   url,
   containerClassOverride,
-  videoClassOverride,
   sampleSize = 20,
   themeColor = "#a855f7",
 }: VideoSchema & BackgroundProps) {
@@ -226,7 +233,11 @@ export function BackgroundAscii({
 
   return (
     <div
-      className={`overflow-hidden bg-black opacity-50 ${containerClassOverride ? containerClassOverride : "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl"}`}
+      className={cn(
+        `h-full overflow-hidden bg-black opacity-50`,
+        !containerClassOverride &&
+          "mx-auto my-8 max-w-3xl rounded-xl shadow-2xl",
+      )}
     >
       <video
         ref={videoRef}

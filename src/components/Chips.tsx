@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 const colorMap = {
@@ -24,7 +25,10 @@ export function PillChip({
   const colorClass = colorMap[colorOverride] || colorMap.gray;
   return (
     <div
-      className={`flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} ${className} items-center`}
+      className={cn(
+        `flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} items-center`,
+        className,
+      )}
     >
       <div className={`h-2 w-2 rounded-full border ${colorClass}`}></div>
       {children}

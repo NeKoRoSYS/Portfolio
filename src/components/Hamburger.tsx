@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 interface HamburgerProps {
@@ -15,7 +16,10 @@ export default function Hamburger({ className }: HamburgerProps) {
   return (
     <>
       <div
-        className={`flex h-8 w-8 cursor-pointer items-center justify-center select-none ${className}`}
+        className={cn(
+          `flex h-8 w-8 cursor-pointer items-center justify-center select-none`,
+          className,
+        )}
         onClick={toggle}
       >
         <p>{isOn ? "Yes" : "No"}</p>

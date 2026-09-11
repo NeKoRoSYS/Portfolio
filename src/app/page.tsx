@@ -23,13 +23,11 @@ export default function Home() {
         fade
         className="flex flex-wrap justify-between"
         background={
-          <>
-            <BackgroundAscii
-              url={"/videos/background.mp4"}
-              containerClassOverride="absolute inset-0 z-0 w-full h-full"
-              loop
-            />
-          </>
+          <BackgroundAscii
+            url={"/videos/background.mp4"}
+            containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
+            loop
+          />
         }
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
