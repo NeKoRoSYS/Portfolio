@@ -38,7 +38,8 @@ const Colors = {
     "border-neutral-700/80 touch-hover:border-neutral-200 bg-linear-to-b from-neutral-900/50 to-neutral-800/40 touch-hover:from-neutral-700/50 touch-hover:to-neutral-900/30 touch-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
 
   textAccent: "text-green-400",
-  textAccenttouch-hover: "focus-visible:text-zinc-100 group-touch-hover:text-zinc-950",
+  textAccentHover:
+    "focus-visible:text-zinc-100 group-touch-hover:text-zinc-950",
   textMutedNav: "text-zinc-400",
   textBody: "text-zinc-200",
 
