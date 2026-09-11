@@ -136,6 +136,7 @@ export function TextScramble({
             <motion.span
               key={child.key ?? childIndex}
               className="inline-block"
+              whileTap={{ y: -8 }}
               whileHover={{ y: -8 }}
             >
               {React.cloneElement(element, {
