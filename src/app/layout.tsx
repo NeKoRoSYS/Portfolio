@@ -4,6 +4,7 @@ import "@/assets/stylesheets/style.css";
 import { Header } from "@/components/Header";
 import PageWrapper from "@/components/app/PageWrapper";
 import { Footer } from "@/components/Footer";
+import type { Viewport } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +21,12 @@ const title: string = "NeKoRoSYS";
 const description: string =
   "NeKoRoSYS is John Marky G. Malibiran's personal brand. This website serves as a landing page to showcase his extensive portfolio of works that span across Software and Graphic Design.";
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(domain),
-  colorScheme: "light dark",
   title: title,
   description: description,
   keywords: [
