@@ -85,12 +85,12 @@ export const SECTIONS: SectionProps[] = [
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <h3 className="w-full text-center font-cosmic text-4xl font-bold sm:text-5xl lg:text-left lg:text-6xl">
             One{" "}
-            <span className="font-serif font-normal text-green-400 italic hover:text-purple-300">
+            <span className="font-serif font-normal text-green-400 italic touch-hover:text-purple-300">
               'Hello'
             </span>
             ,
             <br />
-            <span className="text-green-400 hover:text-purple-300">
+            <span className="text-green-400 touch-hover:text-purple-300">
               Many
             </span>{" "}
             Possibilities.
@@ -110,11 +110,13 @@ export const SECTIONS: SectionProps[] = [
                 name={link.altName}
                 icon={link.icon}
                 iconClass={
-                  index > 0 ? "brightness-65 group-hover:brightness-0 " : ""
+                  index > 0
+                    ? "brightness-65 group-touch-hover:brightness-0 "
+                    : ""
                 }
                 className={cn(
                   "relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start",
-                  index > 0 && "text-zinc-400 hover:text-zinc-100",
+                  index > 0 && "text-zinc-400 touch-hover:text-zinc-100",
                   link.colors,
                 )}
               />

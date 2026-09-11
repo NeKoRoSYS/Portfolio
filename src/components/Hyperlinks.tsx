@@ -14,7 +14,7 @@ export function TextHyperlink({
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
   const classOverride = cn(
-    "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-zinc-400 hover:text-zinc-100 flex flex-row items-center gap-2 group",
+    "duration-75 not-sm:touch-hover:-translate-y-1 sm:touch-hover:translate-x-1 text-zinc-400 touch-hover:text-zinc-100 flex flex-row items-center gap-2 group",
     className,
   );
   const linkInner = (
@@ -23,7 +23,7 @@ export function TextHyperlink({
         <div
           aria-hidden={true}
           style={{ backgroundImage: `url("${icon}")` }}
-          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 group-hover:brightness-0 group-hover:invert sm:h-4 sm:w-4`}
+          className={`h-8 w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 sm:h-4 sm:w-4 group-touch-hover:brightness-0 group-touch-hover:invert`}
         />
       )}
       <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>
@@ -86,7 +86,7 @@ export function IconHyperlink(hyperlinkProps: HyperlinkSchema) {
       <div
         aria-hidden={true}
         style={{ backgroundImage: `url("${icon}")` }}
-        className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 hover:brightness-0 hover:invert`}
+        className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 touch-hover:brightness-0 touch-hover:invert`}
       />
     </a>
   );

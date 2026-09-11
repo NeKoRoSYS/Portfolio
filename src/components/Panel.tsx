@@ -36,7 +36,7 @@ export function HoverPanel({ ...props }: PanelProps & HoverablePropsLegacy) {
   const {
     translate,
     highlight,
-    translateOverride = "hover:-translate-y-4",
+    translateOverride = "touch-hover:-translate-y-4",
     highlightOverride,
   } = props;
 
@@ -52,9 +52,9 @@ export function HoverPanel({ ...props }: PanelProps & HoverablePropsLegacy) {
 export function HoverableElement(props: HoverableProps) {
   const {
     translate = true,
-    translateOverride = "hover:-translate-y-4",
+    translateOverride = "touch-hover:-translate-y-4",
     highlight = false,
-    highlightOverride = "hover:bg-zinc-100",
+    highlightOverride = "touch-hover:bg-zinc-100",
     className = "",
   } = props;
 

@@ -55,7 +55,7 @@ export function Header() {
               className="aspect-square w-8 rounded-md"
               alt={"GravenSoft Icon"}
             ></Image>
-            <p className="mt-0.5 font-bulletin text-3xl select-none hover:text-green-400">
+            <p className="mt-0.5 font-bulletin text-3xl select-none touch-hover:text-green-400">
               {TITLE}
             </p>
           </div>
@@ -96,9 +96,9 @@ export function Header() {
             </nav>
             <HoverableElement
               className="hidden rounded-3xl bg-zinc-100 text-zinc-900 transition-all sm:flex"
-              translateOverride="hover:-translate-y-0.5"
+              translateOverride="touch-hover:-translate-y-0.5"
               highlight
-              highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(0,255,75,0.25)] hover:bg-zinc-950 hover:text-green-300 hover:scale-98"
+              highlightOverride="touch-hover:shadow-[0px_10px_20px_1px_rgba(0,255,75,0.25)] touch-hover:bg-zinc-950 touch-hover:text-green-300 touch-hover:scale-98"
             >
               {(hoverClasses) => (
                 <Magnetic>

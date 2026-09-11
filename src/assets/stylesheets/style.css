@@ -77,11 +77,24 @@ body::-webkit-scrollbar,
   }
 }
 
-@custom-variant touch-hover (@media (hover: hover) { &:hover }) or (&:active);
+@custom-variant touch-hover {
+  @media (hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+  &:active {
+    @slot;
+  }
+}
 
 @custom-variant group-touch-hover {
   @media (hover: hover) {
-    :where(.group):hover & { @slot; }
+    :where(.group):hover & {
+      @slot;
+    }
   }
-  :where(.group):active & { @slot; }
+  :where(.group):active & {
+    @slot;
+  }
 }

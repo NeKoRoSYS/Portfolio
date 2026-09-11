@@ -28,7 +28,7 @@ export default function Home() {
         }
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
-          <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 hover:border-purple-300 lg:hidden" />
+          <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 lg:hidden touch-hover:border-purple-300" />
 
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
             <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
@@ -36,33 +36,33 @@ export default function Home() {
               {ROLES.map((role, index) => (
                 <span
                   key={index}
-                  className="text-green-400 hover:text-purple-300"
+                  className="text-green-400 touch-hover:text-purple-300"
                 >
                   <TextScramble>{role.toUpperCase()}</TextScramble>
                 </span>
               ))}
             </TextLoop>
 
-            <hr className="w-full flex-1 border-2 border-green-400 hover:border-purple-300" />
+            <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-300" />
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             <TextScramble>
               {LETTERS.map((element, index) => (
                 <span
                   key={index}
-                  className="text-green-400 hover:-translate-y-2 hover:text-purple-300"
+                  className="text-green-400 touch-hover:-translate-y-2 touch-hover:text-purple-300"
                 >
                   {element}
                 </span>
               ))}
             </TextScramble>
           </div>
-          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 hover:border-purple-300 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block" />
+          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-300" />
           <div className="order-4 mt-24 flex max-w-xs flex-wrap justify-center gap-4 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
-            <div className="group relative z-10 w-full origin-center rounded-xl transition-transform hover:scale-95 sm:w-fit lg:flex-2">
+            <div className="group relative z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
               <Magnetic>
                 <GlowEffect
-                  className={`pointer-events-none absolute inset-0 z-0 group-hover:hidden`}
+                  className={`pointer-events-none absolute inset-0 z-0 group-touch-hover:hidden`}
                   colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
                   mode="colorShift"
                   blur="medium"
@@ -71,9 +71,9 @@ export default function Home() {
                 />
                 <Button
                   icon={Icons.emailIcon}
-                  iconClass="invert-0 group-hover:invert mr-4"
+                  iconClass="invert-0 group-touch-hover:invert mr-4"
                   path="#contact"
-                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 hover:bg-zinc-950 hover:text-green-300 lg:justify-center"
+                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
                 >
                   <Spotlight
                     className={`-z-10 bg-zinc-100/50 blur-2xl`}
@@ -89,7 +89,7 @@ export default function Home() {
               </Magnetic>
             </div>
             <Button
-              className="h-16 w-full origin-center justify-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform hover:scale-95 hover:border-purple-300 hover:bg-purple-500/20 hover:text-zinc-100 sm:w-fit lg:flex-1 lg:justify-center"
+              className="h-16 w-full origin-center justify-center rounded-xl border-2 border-zinc-400 bg-zinc-800/20 px-8 font-bold text-zinc-100 backdrop-blur-md transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95 touch-hover:border-purple-300 touch-hover:bg-purple-500/20 touch-hover:text-zinc-100"
               path="#portfolio"
             >
               <p>See Portfolio</p>
