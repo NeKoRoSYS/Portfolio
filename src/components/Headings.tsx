@@ -9,7 +9,7 @@ export function Heading1({ children, className }: HeadingProps) {
   return (
     <h1
       className={cn(
-        "font-bulletin text-8xl leading-none tracking-tight lg:text-[8.65rem]",
+        "sm:8xl font-bulletin text-7xl leading-none tracking-tight lg:text-[8.65rem]",
         className,
       )}
     >
