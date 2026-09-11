@@ -8,6 +8,7 @@ import Grid from "@/components/Grid";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
+import { Heading2 } from "@/components/Headings";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
@@ -30,9 +31,9 @@ export const SECTIONS: SectionProps[] = [
     sections: [
       <div className="col-span-12 mb-16 lg:col-span-5 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="w-full text-center font-cosmic text-4xl font-bold md:text-5xl lg:text-left lg:text-6xl">
+          <Heading2 className="w-full text-center lg:text-left">
             Hello, World!
-          </h3>
+          </Heading2>
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
@@ -83,7 +84,7 @@ export const SECTIONS: SectionProps[] = [
       />,
       <div className="col-span-12 mb-16 lg:col-span-8 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <h3 className="w-full text-center font-cosmic text-4xl font-bold sm:text-5xl lg:text-left lg:text-6xl">
+          <Heading2 className="w-full text-center lg:text-left">
             One{" "}
             <span className="font-serif font-normal text-green-400 italic touch-hover:text-purple-300">
               'Hello'
@@ -94,7 +95,7 @@ export const SECTIONS: SectionProps[] = [
               Many
             </span>{" "}
             Possibilities.
-          </h3>
+          </Heading2>
           <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:text-left">
             Your ideas are just one conversation away from becoming reality.
           </p>

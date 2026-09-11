@@ -13,6 +13,7 @@ import { SECTIONS } from "@/data/routes-content/home";
 import { cn } from "@/lib/utils";
 import Colors from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
+import { Heading1 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -51,10 +52,11 @@ export default function Home() {
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             <TextScramble>
+              <Heading1 className="hidden">NeKoRoSYS</Heading1>
               {LETTERS.map((element, index) => (
                 <span
                   key={index}
-                  className="text-green-400 touch-hover:-translate-y-2 touch-hover:text-purple-300"
+                  className="text-green-400 touch-hover:text-purple-300"
                 >
                   {element}
                 </span>
