@@ -44,7 +44,7 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     path: "https://discord.gg/qJp2ByQZq4",
     icon: Icons.discordIcon,
     colors: Colors.buttonMuted,
-    tags: ["contact"],
+    tags: ["contact", "socials"],
   },
   {
     name: "Itch.io",

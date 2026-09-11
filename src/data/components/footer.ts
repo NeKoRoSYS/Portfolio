@@ -6,6 +6,7 @@ import {
   SPONSOR,
 } from "../hyperlinks";
 
+export const linksMaxRows: number = 6;
 const currentYear = new Date().getFullYear();
 export const COPYRIGHT: string = `© ${currentYear} NeKoRoSYS. All Rights Reserved.`;
 

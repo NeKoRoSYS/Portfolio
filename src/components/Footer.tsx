@@ -4,7 +4,7 @@ import { Fragment } from "react/jsx-runtime";
 import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";
 import BrandingCard from "./BrandingCard";
-import { COPYRIGHT, LinkColumns } from "@/data/components/footer";
+import { COPYRIGHT, LinkColumns, linksMaxRows } from "@/data/components/footer";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
     showTitle: boolean = false,
     title?: string,
   ) => {
-    const columns = Math.ceil(links.length / 5);
+    const columns = Math.ceil(links.length / linksMaxRows);
     const isGrid = className.includes("grid");
     return (
       <Fragment key={title}>
@@ -66,7 +66,10 @@ export function Footer() {
             ({ title, links }) =>
               ColumnLinks(
                 links,
-                `flex sm:grid grid-flow-col grid-rows-5 gap-4 sm:gap-y-2 sm:gap-x-8 justify-center sm:justify-start`,
+                cn(
+                  `flex sm:grid grid-flow-col gap-4 sm:gap-y-2 sm:gap-x-8 justify-center sm:justify-start`,
+                  "grid-rows-" + linksMaxRows.toString(),
+                ),
                 true,
                 title,
               ),
