@@ -45,7 +45,9 @@ export function HoverPanel({ ...props }: PanelProps & HoverablePropsLegacy) {
   return (
     <Panel
       className={cn(
-        `${translate ? translateOverride : ""} ${highlight ? highlightOverride : ""} duration-75`,
+        "duration-75",
+        translate && translateOverride,
+        highlight && highlightOverride,
         className,
       )}
     >

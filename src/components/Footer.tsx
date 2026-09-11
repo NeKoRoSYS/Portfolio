@@ -77,7 +77,10 @@ export function Footer() {
       <hr className="mx-auto w-full max-w-6xl border-zinc-800" />
 
       <section
-        className={`z-10 mx-auto flex w-full flex-col items-center md:flex-row ${legalColumn.length > 0 ? `justify-between` : "justify-center"} gap-4 px-8 py-8 pb-16 lg:max-w-6xl lg:gap-24`}
+        className={cn(
+          `z-10 mx-auto flex w-full flex-col items-center gap-4 px-8 py-8 pb-16 md:flex-row lg:max-w-6xl lg:gap-24`,
+          legalColumn.length > 0 ? `justify-between` : "justify-center",
+        )}
       >
         <p className="text-center font-bold text-zinc-700">{COPYRIGHT}</p>
         {legalColumn.length > 0 && (

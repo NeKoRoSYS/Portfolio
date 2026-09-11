@@ -45,7 +45,6 @@ export default function Button({
             }}
             className={cn(
               `aspect-square w-6 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
-              (children || name) && "w-6",
               iconClass,
             )}
           />
@@ -71,7 +70,7 @@ export default function Button({
     return (
       <a
         title={`Click to copy: ${name}}`}
-        className={cn(classOverride, "cursor-pointer")}
+        className={classOverride}
         rel="noreferrer noopener"
         onClick={() => CopyTextToClipboard(path.slice(5))}
       >

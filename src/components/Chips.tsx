@@ -26,11 +26,12 @@ export function PillChip({
   return (
     <div
       className={cn(
-        `flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} items-center`,
+        `flex w-fit items-center justify-center gap-2 rounded-full border px-2 pr-3`,
+        colorClass,
         className,
       )}
     >
-      <div className={`h-2 w-2 rounded-full border ${colorClass}`}></div>
+      <div className={cn(`h-2 w-2 rounded-full border`, colorClass)}></div>
       {children}
     </div>
   );
