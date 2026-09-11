@@ -1,6 +1,7 @@
 import { Section } from "@/components/Block";
 import Button from "@/components/Buttons";
 import Hero from "@/components/Hero";
+import { TextHyperlink } from "@/components/Hyperlinks";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
@@ -34,7 +35,6 @@ export default function Home() {
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
           <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 lg:hidden touch-hover:border-purple-300" />
-
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
             <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
             <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic select-none sm:text-lg lg:text-left lg:text-xl">
@@ -63,7 +63,7 @@ export default function Home() {
               ))}
             </TextScramble>
           </div>
-          <hr className="order-3 mx-auto mt-8 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-300" />
+          <hr className="order-3 mx-auto mt-4 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-300" />
           <div className="order-4 mt-24 flex max-w-xs flex-wrap justify-center gap-4 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
               <Magnetic>
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             <Button
               className={cn(
-                "h-16 w-full origin-center justify-center rounded-xl border-2 px-8 font-bold backdrop-blur-md transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95",
+                "h-16 w-full origin-center justify-center rounded-xl border-2 px-8 font-bold transition-transform sm:w-fit lg:flex-1 lg:justify-center touch-hover:scale-95",
                 Colors.buttonMuted,
               )}
               path="#portfolio"

@@ -131,7 +131,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="relative flex flex-col text-zinc-100 selection:bg-gray-600/50">
+      <body className="relative flex flex-col text-zinc-100 selection:bg-purple-600/50">
         <Header />
         <PageWrapper>{children}</PageWrapper>
         <Footer />
