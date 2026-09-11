@@ -38,7 +38,7 @@ export const SECTIONS: SectionProps[] = [
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
-        <div className="flex h-full w-full grow flex-col items-center justify-center py-4 pl-4 text-zinc-100 sm:justify-end">
+        <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100 sm:justify-end">
           <p>
             My name is Marky, but I am better known online as <b>NeKoRoSYS</b>!
             I am a 19-year-old Filipino currently taking Computer Science as my

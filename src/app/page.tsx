@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             <Heading1 className="hidden">NeKoRoSYS</Heading1>
-            <TextScramble className="scale-85 sm:scale-100">
+            <TextScramble>
               {LETTERS.map((element, index) => (
                 <span
                   key={index}

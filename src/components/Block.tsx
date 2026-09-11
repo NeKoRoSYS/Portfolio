@@ -49,7 +49,7 @@ export default function Block({
         </div>
       )}
       <div
-        className={`relative z-10 h-full w-full max-w-6xl px-8 py-12 sm:py-16`}
+        className={`relative z-10 h-full w-full max-w-6xl px-4 py-8 sm:px-8 sm:py-16`}
       >
         {children}
       </div>
