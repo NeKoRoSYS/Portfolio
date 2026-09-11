@@ -27,7 +27,7 @@ export function PortfolioSection() {
 
   return (
     <>
-      <div className="col-span-12 w-full lg:col-span-4 lg:min-h-svh">
+      <div className="col-span-12 w-full lg:col-span-3 lg:min-h-svh">
         <div className="z-10 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2">
           <TabControls
             tabs={tabs}
@@ -60,7 +60,7 @@ export function PortfolioSection() {
         </div>
       </div>
 
-      <div className="col-span-12 lg:col-span-8">
+      <div className="col-span-12 lg:col-span-9">
         <TabContent tabs={tabs} activeId={activeId} />
       </div>
     </>
