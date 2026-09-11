@@ -27,7 +27,7 @@ export default function Block({
     <section
       id={id}
       className={cn(
-        "relative flex w-full scroll-mt-16 flex-col items-center justify-center overflow-hidden sm:scroll-mt-20",
+        "relative flex w-full scroll-mt-16 flex-col items-center justify-center sm:scroll-mt-20",
         borderVisible && "border-b border-zinc-800",
         className,
       )}
@@ -114,7 +114,7 @@ export function Section(props: SectionProps) {
             </div>
           )}
           {sections && (
-            <div className="grid w-full grid-cols-12 flex-wrap sm:mx-auto">
+            <div className="grid w-full grid-cols-12 sm:mx-auto">
               {sections?.map((element, index) => (
                 <Fragment key={index}>{element}</Fragment>
               ))}

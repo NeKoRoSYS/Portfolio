@@ -14,7 +14,7 @@ export function TextHyperlink({
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
   const classOverride = cn(
-    "duration-75 not-sm:touch-hover:-translate-y-1 sm:touch-hover:translate-x-1 text-zinc-400 touch-hover:text-zinc-100 flex flex-row items-center gap-2 group",
+    "duration-75 touch-hover:-translate-y-1 sm:touch-hover:translate-y-0 sm:touch-hover:translate-x-1 text-zinc-400 touch-hover:text-zinc-100 flex flex-row items-center gap-2 group",
     className,
   );
   const linkInner = (

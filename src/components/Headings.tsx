@@ -9,7 +9,7 @@ export function Heading1({ children, className }: HeadingProps) {
   return (
     <h1
       className={cn(
-        "font-bulletin text-8xl leading-none tracking-tight text-zinc-100 lg:text-[8.65rem]",
+        "font-bulletin text-8xl leading-none tracking-tight lg:text-[8.65rem]",
         className,
       )}
     >
@@ -22,7 +22,7 @@ export function Heading2({ children, className }: HeadingProps) {
   return (
     <h2
       className={cn(
-        "font-cosmic text-4xl leading-tight tracking-tight text-zinc-100 sm:text-5xl lg:text-6xl",
+        "font-cosmic text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl",
         className,
       )}
     >
@@ -35,7 +35,7 @@ export function Heading3({ children, className }: HeadingProps) {
   return (
     <h3
       className={cn(
-        "text-2xl leading-snug font-semibold tracking-wide text-zinc-100 sm:text-3xl lg:text-4xl",
+        "text-2xl leading-snug font-semibold tracking-wide sm:text-3xl lg:text-4xl",
         className,
       )}
     >

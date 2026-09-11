@@ -2,11 +2,14 @@ import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
 import { Panel } from "@/components/Panel";
 import MarqueeModule from "react-fast-marquee";
-import { CONTACT } from "../hyperlinks";
+import { CONTACT } from "../../hyperlinks";
 import Grid from "@/components/Grid";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
 import { Heading2 } from "@/components/Headings";
+import { PortfolioSection } from "./portfolio";
+import { TextScramble } from "@/components/motion-primitives/text-scramble";
+import { BackgroundAscii } from "@/components/VideoPlayer";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export const HOME = {
@@ -58,8 +61,28 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "portfolio",
     bgColor: "bg-zinc-950",
+    spotlight: { enable: true, color: "bg-zinc-600/25" },
     center: true,
-    sections: [],
+    sections: [
+      <div className="relative col-span-12 mb-16">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
+            Systems
+            <hr className="w-full border border-zinc-400"></hr>
+            <TextScramble>
+              <span className="font-bulletin font-normal text-green-400 italic touch-hover:text-purple-300">
+                Interlinked
+              </span>
+            </TextScramble>
+          </Heading2>
+          <p className="mt-4 w-full text-center font-bold text-zinc-400">
+            Cohesive experiences through Software and Designs engineered with
+            purpose.
+          </p>
+        </div>
+      </div>,
+      <PortfolioSection />,
+    ],
   },
   {
     id: "contact",
@@ -101,7 +124,7 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 lg:col-span-4">
         <div className="flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center">
-          <div className="z-10 flex w-full max-w-sm flex-row gap-4 text-center sm:w-md sm:max-w-none sm:text-left lg:w-3xs lg:flex-col">
+          <div className="z-10 flex w-full max-w-sm flex-row gap-4 text-center sm:w-md sm:max-w-none sm:text-left lg:w-2xs lg:flex-col">
             {CONTACT.map((link, index) => (
               <Button
                 key={index}
@@ -116,7 +139,8 @@ export const SECTIONS: SectionProps[] = [
                 }
                 className={cn(
                   "relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start",
-                  index > 0 && "text-zinc-400 touch-hover:text-zinc-100",
+                  index > 0 &&
+                    "self-end text-zinc-400 lg:w-3xs touch-hover:text-zinc-100",
                   link.colors,
                 )}
               />

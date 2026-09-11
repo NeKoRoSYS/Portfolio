@@ -1,0 +1,43 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { Heading3 } from "./Headings";
+import { Fragment } from "react/jsx-runtime";
+import { ReactNode } from "react";
+
+export interface TabData {
+  index: number;
+  label: string;
+  payload: any[];
+}
+
+interface TabControlsProps {
+  tabs: TabData[];
+  children: ReactNode;
+  activeId: number;
+  setActiveId: (index: number) => void;
+  className?: string;
+}
+
+interface TabContentProps {
+  tabs: TabData[];
+  activeId: number;
+  className?: string;
+}
+
+export function TabControls({ children, className }: TabControlsProps) {
+  return <div className={cn("", className)}>{children}</div>;
+}
+export function TabContent({ tabs, activeId, className }: TabContentProps) {
+  const activeTab = tabs.find((t) => t.index === activeId);
+
+  const renderContent = (tab?: TabData) => {
+    if (!tab) return null;
+
+    return tab.payload.map((element, index) => (
+      <Fragment key={index}>{element}</Fragment>
+    ));
+  };
+
+  return <div className={cn("", className)}>{renderContent(activeTab)}</div>;
+}

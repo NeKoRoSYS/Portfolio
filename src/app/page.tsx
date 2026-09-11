@@ -9,7 +9,7 @@ import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
-import { SECTIONS } from "@/data/routes-content/home";
+import { SECTIONS } from "@/data/routes-content/home/home";
 import { cn } from "@/lib/utils";
 import Colors from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
@@ -23,11 +23,13 @@ export default function Home() {
         fade
         className="flex flex-wrap justify-between"
         background={
-          <BackgroundAscii
-            url={"/videos/background.mp4"}
-            containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
-            loop
-          />
+          <>
+            <BackgroundAscii
+              url={"/videos/background.mp4"}
+              containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
+              loop
+            />
+          </>
         }
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">

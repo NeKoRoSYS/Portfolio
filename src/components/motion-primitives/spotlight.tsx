@@ -29,7 +29,7 @@ export function Spotlight({
       const parent = containerRef.current.parentElement;
       if (parent) {
         parent.style.position = "relative";
-        parent.style.overflow = "hidden";
+        parent.style.overflow = "clip";
         setParentElement(parent);
       }
     }
@@ -53,9 +53,19 @@ export function Spotlight({
     parentElement.addEventListener("mousemove", handleMouseMove, {
       signal: abortController.signal,
     });
-    parentElement.addEventListener("mouseenter", () => setIsHovered(true), {
-      signal: abortController.signal,
-    });
+    parentElement.addEventListener(
+      "mouseenter",
+      (event) => {
+        const e = event as MouseEvent;
+        const { left, top } = parentElement.getBoundingClientRect();
+        mouseX.jump(e.clientX - left);
+        mouseY.jump(e.clientY - top);
+        setIsHovered(true);
+      },
+      {
+        signal: abortController.signal,
+      },
+    );
     parentElement.addEventListener("mouseleave", () => setIsHovered(false), {
       signal: abortController.signal,
     });
