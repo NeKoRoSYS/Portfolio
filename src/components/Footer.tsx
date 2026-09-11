@@ -4,7 +4,12 @@ import { Fragment } from "react/jsx-runtime";
 import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";
 import BrandingCard from "./BrandingCard";
-import { COPYRIGHT, LinkColumns, linksMaxRows } from "@/data/components/footer";
+import {
+  COPYRIGHT,
+  gridRowsMap,
+  LinkColumns,
+  linksMaxRows,
+} from "@/data/components/footer";
 import { cn } from "@/lib/utils";
 
 export function Footer() {
@@ -68,7 +73,7 @@ export function Footer() {
                 links,
                 cn(
                   `flex sm:grid grid-flow-col gap-4 sm:gap-y-2 sm:gap-x-8 justify-center sm:justify-start`,
-                  "grid-rows-" + linksMaxRows.toString(),
+                  gridRowsMap[linksMaxRows] || "grid-rows-none",
                 ),
                 true,
                 title,
