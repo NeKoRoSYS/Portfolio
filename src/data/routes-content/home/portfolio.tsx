@@ -7,6 +7,7 @@ import {
   TabControls,
   TabContent,
 } from "@/components/PaginatedContent";
+import { MorphingDialogBasicOne } from "@/components/Test";
 import {
   FEATURED_ART,
   FEATURED_TECH,
@@ -25,7 +26,10 @@ export function PortfolioSection() {
       index: 0,
       label: "Tech",
       payload: [
-        <div className="mb-4 grid w-full grid-cols-12 gap-4 sm:mx-auto">
+        <div className="mt-4 mb-8 flex w-full items-center justify-center text-center">
+          <h4 className="text-3xl font-bold">Featured</h4>
+        </div>,
+        <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
           {FEATURED_TECH.map((project, index) => (
             <div
               key={index}
@@ -34,6 +38,9 @@ export function PortfolioSection() {
               <Card className="aspect-video"></Card>
             </div>
           ))}
+        </div>,
+        <div className="my-8 flex w-full items-center justify-center text-center">
+          <h5 className="text-2xl font-bold">Other Projects</h5>
         </div>,
         <div className="flex w-full flex-col gap-4">
           {STANDARD_TECH.map((project, index) => (
@@ -46,6 +53,9 @@ export function PortfolioSection() {
       index: 1,
       label: "Art",
       payload: [
+        <div className="mt-4 mb-8 flex w-full items-center justify-center text-center">
+          <h4 className="text-3xl font-bold">Featured</h4>
+        </div>,
         <div className="mb-4 grid w-full grid-cols-12 gap-4 sm:mx-auto">
           {FEATURED_ART.map((project, index) => (
             <div
@@ -55,6 +65,9 @@ export function PortfolioSection() {
               <Card className="aspect-video"></Card>
             </div>
           ))}
+        </div>,
+        <div className="my-8 flex w-full items-center justify-center text-center">
+          <h5 className="text-2xl font-bold">Other Projects</h5>
         </div>,
         <div className="grid w-full grid-cols-3 gap-4 sm:mx-auto">
           {STANDARD_ART.map((project, index) => (
