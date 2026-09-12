@@ -7,6 +7,7 @@ import { FIELDS, PORTRAIT } from "@/data/components/brandingCard";
 import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { PillChip } from "./Chips";
 
 interface CardProps {
   tilt?: boolean;
@@ -14,19 +15,60 @@ interface CardProps {
   children?: ReactNode;
 }
 
-export function Card({ ...props }: CardProps) {
+export function Card({
+  rotationFactor = 4,
+  ...props
+}: CardProps & { rotationFactor?: number }) {
   const { tilt, className, children } = props;
   const baseClass =
-    "relative pointer-events-none flex min-h-45 flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
+    "relative overflow-clip pointer-events-none w-full flex min-h-45 flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
 
-  if (tilt)
-    return (
-      <Tilt rotationFactor={4} className={cn(baseClass, className)} isRevese>
-        {children}
-      </Tilt>
-    );
+  return (
+    <Tilt
+      rotationFactor={tilt ? rotationFactor : 0}
+      className={cn(baseClass, className)}
+      isRevese
+    >
+      {children}
+    </Tilt>
+  );
+}
 
-  return <div className={cn(baseClass, className)}>{children}</div>;
+interface ProjectProps extends CardProps {}
+
+export function ProjectCard({ ...props }: ProjectProps) {
+  const { tilt, className, children } = props;
+  return (
+    <Card {...props} className={className}>
+      <div className="grid h-full w-full grid-cols-12">
+        <div className="col-span-7 w-full bg-zinc-600"></div>
+        <div className="col-span-5 w-full bg-zinc-800">
+          <div className="flex w-full items-center justify-center">
+            <p className="mx-4 mt-4 w-full text-left text-3xl font-bold">
+              Project Title
+            </p>
+          </div>
+          <div className="flex w-full items-center justify-center">
+            <p className="m-4 w-full text-left">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+              faucibus ex sapien vitae pellentesque sem placerat. In id cursus
+              mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
+              urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum
+              egestas.
+            </p>
+          </div>
+          <div className="m-4 grid grid-cols-4 gap-4">
+            <PillChip colorOverride="green">Test</PillChip>
+            <PillChip colorOverride="green">Test</PillChip>
+            <PillChip colorOverride="green">Test</PillChip>
+            <PillChip colorOverride="green">Test</PillChip>
+            <PillChip colorOverride="green">Test</PillChip>
+            <PillChip colorOverride="green">Test</PillChip>
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
 }
 
 export function BrandingCard() {

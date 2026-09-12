@@ -1,6 +1,6 @@
 "use client";
 
-import { BrandingCard, Card } from "@/components/Cards";
+import { BrandingCard, Card, ProjectCard } from "@/components/Cards";
 import { Heading3 } from "@/components/Headings";
 import {
   TabData,
@@ -35,7 +35,7 @@ export function PortfolioSection() {
               key={index}
               className={cn("col-span-12", index > 0 && "sm:col-span-6")}
             >
-              <Card className="aspect-video"></Card>
+              <ProjectCard className="aspect-video"></ProjectCard>
             </div>
           ))}
         </div>,
@@ -44,7 +44,7 @@ export function PortfolioSection() {
         </div>,
         <div className="flex w-full flex-col gap-4">
           {STANDARD_TECH.map((project, index) => (
-            <Card key={index}></Card>
+            <ProjectCard key={index}></ProjectCard>
           ))}
         </div>,
       ],
@@ -62,7 +62,7 @@ export function PortfolioSection() {
               key={index}
               className={cn("col-span-12", index > 0 && "sm:col-span-6")}
             >
-              <Card className="aspect-video"></Card>
+              <ProjectCard className="aspect-video"></ProjectCard>
             </div>
           ))}
         </div>,
@@ -71,7 +71,7 @@ export function PortfolioSection() {
         </div>,
         <div className="grid w-full grid-cols-3 gap-4 sm:mx-auto">
           {STANDARD_ART.map((project, index) => (
-            <Card key={index} className="aspect-video"></Card>
+            <ProjectCard key={index} className="aspect-video"></ProjectCard>
           ))}
         </div>,
       ],
