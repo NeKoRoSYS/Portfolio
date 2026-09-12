@@ -8,6 +8,7 @@ Originally built with Vite and hosted on GitHub pages, I decided to take the opp
 - Next.js (React) - Frontend Framework
 - Tailwind CSS - Styling
 - TypeScript - Programming Language
+- [Motion Primitives](https://motion-primitives.com/) - Pre-made animated components.
 
 ## Features
 - Data-driven Content - page files only hold the layout. All the displayed information are exported and mapped out from separate `.ts` files where they are more readable and easier to modify, without the daunting feeling of looking at the entire JSX element tree.
