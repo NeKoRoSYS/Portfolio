@@ -11,6 +11,7 @@ Originally built with Vite and hosted on GitHub pages, I decided to take the opp
 - [Motion Primitives](https://motion-primitives.com/) - Pre-made animated and interactive React + Tailwind components
 
 ## Features
+- Uses Next.js - SEO, has out-of-box routing, and is more optimized than base React.
 - Type-safety - TypeScript provides the comfort of knowing the codebase is maintainable and parameters won't accidentally cause errors.
 - Data-driven Content - Page files only hold the layout. All the displayed information are exported and mapped out from separate `.ts` files where they are more readable and easier to modify, without the daunting feeling of looking at the entire JSX element tree.
 - Responsive User Interface - Utilizes Tailwind's breakpoints to dynamically adjust the website layout depending on the size of the screen without affecting DOM count.
