@@ -11,5 +11,5 @@ This is a revamp of my portfolio website. Originally built with Vite and hosted 
 - JavaScript
 
 ## Features
-- Data-driven Content - page files only hold the layout while all the displayed information are exported from somewhere it is readable.
+- Data-driven Content - page files only hold the layout while all the displayed information are exported from somewhere it is readable and easy to modify without the daunting feeling of looking at the JSX element tree.
 - Responsive User Interface - utilizes Tailwind's breakpoints to dynamically adjust the website layout depending on the size of the screen without affecting DOM count.
