@@ -13,5 +13,6 @@ Originally built with Vite and hosted on GitHub pages, I decided to take the opp
 ## Features
 - Data-driven Content - page files only hold the layout. All the displayed information are exported and mapped out from separate `.ts` files where they are more readable and easier to modify, without the daunting feeling of looking at the entire JSX element tree.
 - Responsive User Interface - utilizes Tailwind's breakpoints to dynamically adjust the website layout depending on the size of the screen without affecting DOM count.
+- Implements DRY Principle - Redundancy is reduced wherever possible. Anything that can be repeated has been made to dynamically repeat themselves through code.
 
 This repository will remain public as I consider it as a project in itself.
