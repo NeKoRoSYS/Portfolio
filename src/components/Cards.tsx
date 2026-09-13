@@ -23,7 +23,7 @@ interface CardProps {
 export function Card({ rotationFactor = 4, ...props }: CardProps) {
   const { tilt, className, children } = props;
   const baseClass =
-    "@container  overflow-clip pointer-events-none w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
+    "@container  overflow-clip w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 ";
 
   return (
     <Tilt
