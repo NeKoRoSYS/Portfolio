@@ -130,6 +130,11 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     path: "#contact",
     tags: ["legal", "anchor"],
   },
+  {
+    name: "Privacy Policy",
+    path: "/Privacy-Policy.pdf",
+    tags: ["legal"],
+  },
 ];
 
 export const getLinksByTag = (tag: string): HyperlinkSchema[] =>
