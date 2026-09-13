@@ -27,7 +27,7 @@ export function PortfolioSection() {
   ) => {
     return (
       <>
-        <div className="my-8 flex w-full items-center justify-center text-center">
+        <div className="mb-8 flex w-full items-center justify-center text-center">
           <h4 className="text-3xl font-bold">Featured</h4>
         </div>
         <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
