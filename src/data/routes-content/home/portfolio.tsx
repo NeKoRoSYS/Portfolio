@@ -113,7 +113,7 @@ export function PortfolioSection() {
                   "group shrink-0 px-8 py-4 font-bold italic lg:text-left",
                   activeId === tab.index
                     ? "border-b-2 border-green-400 text-green-400 lg:border-b-0 lg:border-l-2"
-                    : "cursor-pointer text-zinc-500 lg:border-l-2 lg:border-transparent touch-hover:text-purple-300",
+                    : "cursor-pointer text-zinc-500 lg:border-l-2 lg:border-transparent touch-hover:text-zinc-100",
                 )}
               >
                 <Heading3
