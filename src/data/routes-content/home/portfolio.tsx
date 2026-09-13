@@ -12,7 +12,6 @@ import {
   FEATURED_TECH,
   STANDARD_ART,
   STANDARD_TECH,
-  TECH_PROJECTS,
 } from "@/data/nekorosys";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
