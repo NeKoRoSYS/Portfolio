@@ -11,6 +11,7 @@ import { PillChip, RectChip } from "./Chips";
 import { ProjectProps } from "@/data/nekorosys";
 import { Colors } from "@/shared/Colors";
 import Image from "next/image";
+import { Heading3 } from "./Headings";
 
 interface CardProps {
   rotationFactor?: number;
@@ -37,6 +38,7 @@ export function Card({ rotationFactor = 4, ...props }: CardProps) {
 
 export function ProjectCard({
   tilt,
+  projectLink,
   className,
   rotationFactor,
   children,
@@ -107,14 +109,22 @@ export function ProjectCard({
             )}
           >
             <div className="flex w-full">
-              <h3
+              <Heading3
                 className={cn(
-                  "mx-4 mt-4 w-full text-left font-bold text-zinc-100 group-touch-hover:text-green-400",
-                  featured ? "text-3xl" : "text-xl sm:text-2xl",
+                  "mx-4 mt-4 w-full text-left font-bold text-zinc-100",
                 )}
               >
-                {title}
-              </h3>
+                <TextHyperlink
+                  showHyperlinkIcon
+                  linkIconClass="w-5 group-touch-hover:bg-green-400 bg-zinc-400"
+                  className={cn(
+                    "text-zinc-100 transition-transform sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
+                    featured ? "text-3xl" : "text-xl sm:text-2xl",
+                  )}
+                  path={projectLink}
+                  name={title}
+                />
+              </Heading3>
             </div>
             <div className="flex w-full items-center justify-center">
               <p

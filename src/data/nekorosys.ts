@@ -14,6 +14,7 @@ export const ROLES = [
 export interface ProjectProps {
   featured?: boolean;
   title?: string;
+  projectLink: string;
   excerpt?: string;
   description?: string;
   thumbnail?: string[] | StaticImageData[];
@@ -23,6 +24,7 @@ export interface ProjectProps {
 export const TECH_PROJECTS: ProjectProps[] = [
   {
     title: "NeKoRoSHELL",
+    projectLink: "https://github.com/NeKoRoSYS/NeKoRoSHELL",
     thumbnail: ["/projects/tech/nekoroshell.png"],
     excerpt:
       "A custom Arch Linux ricing suite built for the Hyprland window manager.",
@@ -30,6 +32,7 @@ export const TECH_PROJECTS: ProjectProps[] = [
   },
   {
     title: "Portfolio",
+    projectLink: "https://github.com/NeKoRoSYS/Portfolio",
     thumbnail: ["/projects/tech/portfolio.png"],
     excerpt:
       "This website! Modular, responsive, and interactive frontend with a premium finish.",
@@ -43,7 +46,8 @@ export const TECH_PROJECTS: ProjectProps[] = [
     ],
   },
   {
-    title: "NeKoRoBOT",
+    title: "NeKoRoBOT.js",
+    projectLink: "https://github.com/NeKoRoSYS/NeKoRoBOT.js",
     excerpt: "Discord bot template with Python backend.",
     tags: [
       "Featured",
@@ -59,12 +63,16 @@ export const TECH_PROJECTS: ProjectProps[] = [
 export const ART_PROJECTS: ProjectProps[] = [
   {
     title: "'BYTES' Banner",
+    projectLink:
+      "https://www.behance.net/gallery/250082909/BYTES-Media-Marketing-Props",
     thumbnail: ["/projects/art/bytes.jpg"],
     excerpt: "Banner for highschool tech org.",
     tags: ["Featured", "IbisPaint", "Commissioned"],
   },
   {
     title: "'LIFT UP' Banner",
+    projectLink:
+      "https://www.behance.net/gallery/250083891/Voluntary-Work-for-Student-Org",
     thumbnail: ["/projects/art/liftup.png"],
     excerpt: "Banner for senior highschool STEM org.",
     tags: ["Featured", "Adobe Photoshop", "Commissioned"],

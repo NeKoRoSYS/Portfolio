@@ -5,11 +5,11 @@ import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
 
 export function TextHyperlink({
-  className,
-  showHyperlinkIcon = true,
+  linkIconClass,
   ...hyperlinkProps
-}: HyperlinkSchema) {
-  const { name, path, icon, iconClass } = hyperlinkProps;
+}: HyperlinkSchema & { linkIconClass?: string }) {
+  const { className, showHyperlinkIcon, name, path, icon, iconClass } =
+    hyperlinkProps;
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
@@ -42,8 +42,20 @@ export function TextHyperlink({
       {showHyperlinkIcon && (
         <div
           aria-hidden={true}
-          style={{ backgroundImage: `url("${Icons.linkIcon}")` }}
-          className="aspect-square w-3 shrink-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            maskImage: `url(${Icons.linkArrowIcon.toString()})`,
+            WebkitMaskImage: `url(${Icons.linkArrowIcon.toString()})`,
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+          }}
+          className={cn(
+            "aspect-square w-3 shrink-0 bg-white bg-cover bg-center bg-no-repeat group-touch-hover:transform-[translate(4px,-4px)]",
+            linkIconClass,
+          )}
         />
       )}
     </>
