@@ -10,6 +10,7 @@ import {
 import {
   FEATURED_ART,
   FEATURED_TECH,
+  ProjectProps,
   STANDARD_ART,
   STANDARD_TECH,
 } from "@/data/nekorosys";
@@ -19,76 +20,61 @@ import { useState } from "react";
 export function PortfolioSection() {
   const [activeId, setActiveId] = useState<number>(0);
 
+  const renderProjects = (
+    featuredProjects: ProjectProps[],
+    standardProjects: ProjectProps[],
+    useGrid?: boolean,
+  ) => {
+    return (
+      <>
+        <div className="my-8 flex w-full items-center justify-center text-center">
+          <h4 className="text-3xl font-bold">Featured</h4>
+        </div>
+        <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
+          {featuredProjects.map((project, index) => (
+            <div
+              key={index}
+              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
+            >
+              <ProjectCard {...project} tilt featured></ProjectCard>
+            </div>
+          ))}
+        </div>
+        {standardProjects.length > 0 && (
+          <>
+            <div className="my-8 flex w-full items-center justify-center text-center">
+              <h5 className="text-2xl font-bold">Other Projects</h5>
+            </div>
+            <div
+              className={cn(
+                "flex w-full flex-col gap-4 sm:mx-auto",
+                useGrid && "grid grid-cols-3",
+              )}
+            >
+              {standardProjects.map((project, index) => (
+                <ProjectCard
+                  {...project}
+                  key={index}
+                  className="aspect-video"
+                ></ProjectCard>
+              ))}
+            </div>
+          </>
+        )}
+      </>
+    );
+  };
+
   const tabs: TabData[] = [
     {
       index: 0,
       label: "Tech",
-      payload: [
-        <div className="my-8 flex w-full items-center justify-center text-center">
-          <h4 className="text-3xl font-bold">Featured</h4>
-        </div>,
-        <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
-          {FEATURED_TECH.map((project, index) => (
-            <div
-              key={index}
-              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
-            >
-              <ProjectCard {...project} tilt featured></ProjectCard>
-            </div>
-          ))}
-        </div>,
-        STANDARD_TECH.length > 0 && (
-          <>
-            <div className="my-8 flex w-full items-center justify-center text-center">
-              <h5 className="text-2xl font-bold">Other Projects</h5>
-            </div>
-            <div className="flex w-full flex-col gap-4 sm:mx-auto">
-              {STANDARD_TECH.map((project, index) => (
-                <ProjectCard
-                  {...project}
-                  key={index}
-                  className="aspect-video"
-                ></ProjectCard>
-              ))}
-            </div>
-          </>
-        ),
-      ],
+      payload: [renderProjects(FEATURED_TECH, STANDARD_TECH)],
     },
     {
       index: 1,
       label: "Art",
-      payload: [
-        <div className="my-8 flex w-full items-center justify-center text-center">
-          <h4 className="text-3xl font-bold">Featured</h4>
-        </div>,
-        <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
-          {FEATURED_ART.map((project, index) => (
-            <div
-              key={index}
-              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
-            >
-              <ProjectCard {...project} tilt featured></ProjectCard>
-            </div>
-          ))}
-        </div>,
-        STANDARD_ART.length > 0 && (
-          <>
-            <div className="my-8 flex w-full items-center justify-center text-center">
-              <h5 className="text-2xl font-bold">Other Projects</h5>
-            </div>
-            <div className="grid w-full grid-cols-3 gap-4 sm:mx-auto">
-              {STANDARD_ART.map((project, index) => (
-                <ProjectCard
-                  {...project}
-                  key={index}
-                  className="aspect-video"
-                ></ProjectCard>
-              ))}
-            </div>
-          </>
-        ),
-      ],
+      payload: [renderProjects(FEATURED_ART, STANDARD_ART, true)],
     },
   ];
 
