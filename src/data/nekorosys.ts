@@ -11,7 +11,7 @@ export const ROLES = [
   "Illustrator",
 ];
 
-interface ProjectProps {
+export interface ProjectProps {
   featured?: boolean;
   title?: string;
   excerpt?: string;
@@ -21,16 +21,19 @@ interface ProjectProps {
 }
 
 export const TECH_PROJECTS: ProjectProps[] = [
+  {
+    title: "NeKoRoSHELL",
+    excerpt:
+      "A custom Arch Linux ricing suite built for the Hyprland window manager.",
+    tags: ["Featured", "Arch Linux", "Bash", "C++", "Customization"],
+  },
   { tags: ["Featured"] },
   { tags: ["Featured"] },
-  { tags: ["Featured"] },
-  { tags: [""] },
 ];
 export const ART_PROJECTS: ProjectProps[] = [
   { tags: ["Featured"] },
   { tags: ["Featured"] },
   { tags: ["Featured"] },
-  { tags: [""] },
 ];
 
 export const FEATURED_TECH = TECH_PROJECTS.filter((project) =>

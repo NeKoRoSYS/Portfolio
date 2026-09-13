@@ -10,7 +10,7 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home/home";
-import Colors from "@/shared/Colors";
+import { Colors } from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { Heading1 } from "@/components/Headings";
 

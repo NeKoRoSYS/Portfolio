@@ -27,7 +27,7 @@ export default function Block({
     <section
       id={id}
       className={cn(
-        "relative flex w-full scroll-mt-16 flex-col items-center justify-center sm:scroll-mt-20",
+        "relative flex w-full scroll-mt-16 flex-col items-center justify-center overflow-clip sm:scroll-mt-20",
         borderVisible && "border-b border-zinc-800",
         className,
       )}

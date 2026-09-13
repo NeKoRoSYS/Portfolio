@@ -45,7 +45,7 @@ export function RectChip({
   const colorClass = colorMap[colorOverride] || colorMap.gray;
   return (
     <div
-      className={`flex w-fit justify-center gap-2 rounded-full border px-2 pr-3 ${colorClass} ${className} items-center`}
+      className={`flex w-fit justify-center gap-2 rounded-sm border px-2 ${colorClass} ${className} items-center`}
     >
       {children}
     </div>

@@ -1,7 +1,7 @@
 import { Icons } from "../shared/Icons";
 import { StaticImageData } from "next/image";
 import { RouteMeta } from "./routes";
-import Colors from "@/shared/Colors";
+import { BRAND_COLORS, Colors } from "@/shared/Colors";
 
 export interface HyperlinkSchema extends RouteMeta {
   altName?: string;
@@ -35,7 +35,7 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     name: "LinkedIn",
     path: "https://linkedin.com/in/malibiran-johnmarky",
     icon: Icons.linkedInIcon,
-    colors: Colors.linkedin,
+    colors: BRAND_COLORS.linkedin,
     tags: ["business", "contact"],
   },
   {
@@ -50,75 +50,75 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     name: "Itch.io",
     path: "https://nekorosys.itch.io/",
     icon: Icons.itchioIcon,
-    colors: Colors.itchio,
+    colors: BRAND_COLORS.itchio,
     tags: ["socials"],
   },
   {
     name: "Payhip",
     path: "https://payhip.com/NeKoRoSYS",
     icon: Icons.payhipIcon,
-    colors: Colors.payhip,
+    colors: BRAND_COLORS.payhip,
     tags: ["socials"],
   },
   {
     name: "TikTok",
     path: "https://tiktok.com/@nekorosys",
     icon: Icons.tiktokIcon,
-    colors: Colors.tiktok,
+    colors: BRAND_COLORS.tiktok,
     tags: ["socials"],
   },
   {
     name: "Twitter",
     path: "https://twitter.com/NeKoRoSYS",
     icon: Icons.twitterIcon,
-    colors: Colors.twitter,
+    colors: BRAND_COLORS.twitter,
     tags: ["socials"],
   },
   {
     name: "YouTube",
     path: "https://youtube.com/@NeKoRoSYS",
     icon: Icons.youtubeIcon,
-    colors: Colors.google,
+    colors: BRAND_COLORS.google,
     tags: ["socials"],
   },
   {
     name: "Ko-Fi",
     path: "https://ko-fi.com/NeKoRoSYS",
     icon: Icons.kofiIcon,
-    colors: Colors.kofi,
+    colors: BRAND_COLORS.kofi,
     tags: ["sponsor"],
   },
   {
     name: "PayPal",
     path: "https://paypal.me/genecromarky",
     icon: Icons.paypalIcon,
-    colors: Colors.paypal,
+    colors: BRAND_COLORS.paypal,
     tags: ["sponsor"],
   },
   {
     name: "Bitcoin",
     path: "copy:bc1qw80kkgu8yp4mwzuzddygmnyamcjesfavwmer8a",
     icon: Icons.bitcoinIcon,
-    colors: Colors.bitcoin,
+    colors: BRAND_COLORS.bitcoin,
   },
   {
     name: "Ethereum",
     path: "copy:0x5C429b3fdc7E6F7a692C234358ba31492Feb651C",
     icon: Icons.ethereumIcon,
-    colors: Colors.ethereum,
+    colors: BRAND_COLORS.ethereum,
   },
   {
     name: "GitHub",
     path: "https://github.com/NeKoRoSYS",
     icon: Icons.githubIcon,
-    colors: Colors.github,
+    colors: BRAND_COLORS.github,
     tags: ["business"],
   },
   {
     name: "Behance",
     path: "https://behance.net/NeKoRoSYS",
     icon: Icons.behanceIcon,
-    colors: Colors.behance,
+    colors: BRAND_COLORS.behance,
     tags: ["business"],
   },
   {

@@ -15,7 +15,7 @@ export default function Hamburger({ className }: HamburgerProps) {
 
   return (
     <>
-      <div
+      <button
         className={cn(
           `flex h-8 w-8 cursor-pointer items-center justify-center select-none`,
           className,
@@ -23,7 +23,7 @@ export default function Hamburger({ className }: HamburgerProps) {
         onClick={toggle}
       >
         <p>{isOn ? "Yes" : "No"}</p>
-      </div>
+      </button>
     </>
   );
 }

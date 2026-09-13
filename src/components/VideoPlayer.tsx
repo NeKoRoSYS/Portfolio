@@ -171,9 +171,10 @@ export function BackgroundAscii({
     const colorLocation = gl.getUniformLocation(program, "uThemeColor");
 
     let animationId: number;
+    let isVisible = false;
 
     const renderLoop = () => {
-      if (video.paused || video.ended) return;
+      if (!isVisible || video.paused || video.ended) return;
 
       if (
         canvas.width !== canvas.clientWidth ||
@@ -200,31 +201,33 @@ export function BackgroundAscii({
         gl.uniform3f(colorLocation, themeR, themeG, themeB);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       }
+
       animationId = requestAnimationFrame(renderLoop);
     };
 
-    const startVideo = () => {
-      video.play().catch(() => {});
-      if (video.readyState >= 3) {
-        cancelAnimationFrame(animationId);
-        animationId = requestAnimationFrame(renderLoop);
-      }
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        isVisible = entry.isIntersecting;
 
-    if (video.readyState >= 1) {
-      startVideo();
-    } else {
-      video.addEventListener("loadedmetadata", startVideo);
-    }
+        if (isVisible) {
+          video.play().catch(() => {});
+          cancelAnimationFrame(animationId);
+          animationId = requestAnimationFrame(renderLoop);
+        } else {
+          video.pause();
+          cancelAnimationFrame(animationId);
+        }
+      },
+      { threshold: 0 },
+    );
 
-    video.addEventListener("play", () => {
-      cancelAnimationFrame(animationId);
-      animationId = requestAnimationFrame(renderLoop);
-    });
+    observer.observe(canvas);
 
     return () => {
-      video.removeEventListener("loadedmetadata", startVideo);
+      observer.disconnect();
       cancelAnimationFrame(animationId);
+
       gl.deleteTexture(texture);
       gl.deleteBuffer(positionBuffer);
       gl.deleteProgram(program);

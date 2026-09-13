@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useIsRouteActive, useScrollOnTop } from "../shared/Utils";
 import { HEADERROUTES } from "../data/routes";
-import Colors from "../shared/Colors";
+import { Colors } from "../shared/Colors";
 import Button from "./Buttons";
 import { HoverableElement } from "./Panel";
 import Hamburger from "./Hamburger";

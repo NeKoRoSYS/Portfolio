@@ -1,10 +1,6 @@
-const Colors = {
+export const BRAND_COLORS = {
   button:
     "border-yellow-400/80 touch-hover:border-[#39FF14] bg-linear-to-b from-yellow-700/25 to-yellow-300/50 touch-hover:from-[#39FF14]/50 touch-hover:to-green-600/25 touch-hover:drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]",
-  get interactable() {
-    return this.button;
-  },
-
   behance:
     "border-blue-500/80 touch-hover:border-cyan-400 bg-linear-to-b from-blue-800/30 to-blue-600/60 touch-hover:from-cyan-500/50 touch-hover:to-blue-600/30 touch-hover:drop-shadow-[0_0_8px_rgba(0,87,255,0.6)]",
   bitcoin:
@@ -17,8 +13,6 @@ const Colors = {
     "border-blue-700/80 touch-hover:border-blue-500 bg-linear-to-b from-blue-900/50 to-blue-600/40 touch-hover:from-blue-500/50 touch-hover:to-blue-700/30 touch-hover:drop-shadow-[0_0_8px_rgba(24,119,242,0.5)]",
   github:
     "border-slate-500/80 touch-hover:border-slate-300 bg-linear-to-b from-slate-800/40 to-slate-600/50 touch-hover:from-slate-600/50 touch-hover:to-slate-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,205,215,0.4)]",
-  buttonMuted:
-    "border-zinc-500/80 touch-hover:border-purple-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-purple-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,25,215,0.4)]",
   google:
     "border-red-500/80 touch-hover:border-red-400 bg-linear-to-b from-red-900/30 to-red-600/50 touch-hover:from-red-500/50 touch-hover:to-red-700/30 touch-hover:drop-shadow-[0_0_8px_rgba(234,67,53,0.5)]",
   instagram:
@@ -36,8 +30,12 @@ const Colors = {
     "border-cyan-500/80 touch-hover:border-rose-500 bg-linear-to-b from-slate-900/60 to-cyan-950/50 touch-hover:from-rose-500/30 touch-hover:to-cyan-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(254,44,85,0.5)]",
   twitter:
     "border-neutral-700/80 touch-hover:border-neutral-200 bg-linear-to-b from-neutral-900/50 to-neutral-800/40 touch-hover:from-neutral-700/50 touch-hover:to-neutral-900/30 touch-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
+} as const;
 
+export const Colors = {
   textAccent: "text-green-400",
+  buttonMuted:
+    "border-zinc-500/80 touch-hover:border-purple-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-purple-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,25,215,0.4)]",
   textAccentHover:
     "focus-visible:text-zinc-100 group-touch-hover:text-zinc-950",
   textMutedNav: "text-zinc-400",
@@ -57,5 +55,3 @@ const Colors = {
   bgBase: "bg-purple-950",
   borderAccent: "border-purple-400/80",
 } as const;
-
-export default Colors;
