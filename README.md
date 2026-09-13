@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio V2
 
-## Getting Started
+<br>
 
-First, run the development server:
+## Background
+Originally built with Vite and hosted on GitHub pages, I decided to take the opportunity to migrate this project to Vercel so I could utilize the Next.js package. The platform wasn't exactly the issue, though. (To be honest, `nekorosys.vercel.app` just sounds better than `nekorosys.github.io` but that's not the entire point of this project) It's just that the old version had a messy codebase written by someone who didn't really have any idea how React, Tailwind, and TypeScript works (me :P). After gaining enough extensive knowledge on the tech stack in question, I decided to make the website my own and rewrite everything from scratch; with modularity, consistency, and layout responsiveness in mind!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- Vercel - Hosting
+- Next.js (React) - Frontend Framework
+- Tailwind CSS - Styling
+- TypeScript - Programming Language
+- [Motion Primitives](https://motion-primitives.com/) - Pre-made animated and interactive React + Tailwind components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+- Uses Next.js - SEO, has out-of-box routing, and is more optimized than base React.
+- Type-safety - TypeScript provides the comfort of knowing the codebase is maintainable and parameters won't accidentally cause errors.
+- Data-driven Content - Page files only hold the layout. All the displayed information are exported and mapped out from separate `.ts` files where they are more readable and easier to modify, without the daunting feeling of looking at the entire JSX element tree.
+- Responsive User Interface - Utilizes Tailwind's breakpoints to dynamically adjust the website layout depending on the size of the screen without affecting DOM count.
+- Implements DRY Principle - Redundancy is reduced wherever possible. Anything that can be repeated has been made to dynamically repeat themselves through code; and components with similar functions are made to properly inherit from base functions.
