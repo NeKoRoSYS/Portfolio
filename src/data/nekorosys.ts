@@ -51,6 +51,7 @@ export const TECH_PROJECTS: ProjectProps[] = [
       "TypeScript",
       "Discord.js",
       "Python",
+      "Project",
       "Template",
     ],
   },
