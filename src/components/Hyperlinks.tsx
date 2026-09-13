@@ -8,8 +8,8 @@ export function TextHyperlink({
   className,
   showHyperlinkIcon = true,
   ...hyperlinkProps
-}: HyperlinkSchema & { showHyperlinkIcon?: boolean; className?: string }) {
-  const { name, path, icon } = hyperlinkProps;
+}: HyperlinkSchema) {
+  const { name, path, icon, iconClass } = hyperlinkProps;
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
@@ -22,8 +22,20 @@ export function TextHyperlink({
       {icon && (
         <div
           aria-hidden={true}
-          style={{ backgroundImage: `url("${icon}")` }}
-          className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 sm:w-4 group-touch-hover:brightness-0 group-touch-hover:invert`}
+          style={{
+            maskImage: `url(${icon.toString()})`,
+            WebkitMaskImage: `url(${icon.toString()})`,
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+          }}
+          className={cn(
+            `aspect-square w-8 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat sm:w-4 group-touch-hover:bg-zinc-100`,
+            iconClass,
+          )}
         />
       )}
       <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>
@@ -80,14 +92,28 @@ export function TextHyperlink({
 }
 
 export function IconHyperlink(hyperlinkProps: HyperlinkSchema) {
-  const { name, path, icon } = hyperlinkProps;
+  const { name, path, icon, iconClass } = hyperlinkProps;
   return (
     <a href={path} rel="noreferrer noopener" target="_blank" title={name}>
-      <div
-        aria-hidden={true}
-        style={{ backgroundImage: `url("${icon}")` }}
-        className={`aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 touch-hover:brightness-0 touch-hover:invert`}
-      />
+      {icon && (
+        <div
+          aria-hidden={true}
+          style={{
+            maskImage: `url(${icon.toString()})`,
+            WebkitMaskImage: `url(${icon.toString()})`,
+            maskSize: "contain",
+            WebkitMaskSize: "contain",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskPosition: "center",
+            WebkitMaskPosition: "center",
+          }}
+          className={cn(
+            `aspect-square w-8 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
+            iconClass,
+          )}
+        />
+      )}
     </a>
   );
 }

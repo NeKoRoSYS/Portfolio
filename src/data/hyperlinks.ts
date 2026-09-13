@@ -2,15 +2,19 @@ import { Icons } from "../shared/Icons";
 import { StaticImageData } from "next/image";
 import { RouteMeta } from "./routes";
 import { BRAND_COLORS, Colors } from "@/shared/Colors";
+import { ReactNode } from "react";
 
 export interface HyperlinkSchema extends RouteMeta {
+  className?: string;
   altName?: string;
+  showHyperlinkIcon?: boolean;
   iconClass?: string;
   icon?: string | StaticImageData;
   tags?: string[];
 }
 
 export interface ButtonSchema extends HyperlinkSchema {
+  children?: ReactNode;
   colors?: string;
 }
 

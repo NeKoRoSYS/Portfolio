@@ -7,7 +7,7 @@ export const FIELDS: ReactNode[] = [
   <p className="font-bold">John Marky G. Malibiran</p>,
   <p>Manila, National Capital Region, Philippines</p>,
   <TextHyperlink
-    className="pointer-events-auto mx-auto sm:mx-0"
+    className="pointer-events-auto mx-auto sm:mx-0 touch-hover:text-green-400"
     showHyperlinkIcon={false}
     path={"mailto:malibiran.johnmarky@gmail.com"}
     name={"malibiran.johnmarky@gmail.com"}

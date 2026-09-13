@@ -15,10 +15,7 @@ export default function Button({
   path,
   className = "",
 }: ButtonSchema & {
-  showHyperlinkIcon?: boolean;
   truncate?: boolean;
-  children?: ReactNode;
-  className?: string;
 }) {
   const classOverride = cn(
     "text-zinc-100 px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",

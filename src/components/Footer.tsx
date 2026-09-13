@@ -47,6 +47,8 @@ export function Footer() {
             {links.map((hyperlink, index) => {
               return (
                 <TextHyperlink
+                  className="touch-hover:text-purple-300"
+                  iconClass="group-touch-hover:bg-purple-300"
                   showHyperlinkIcon={false}
                   key={`${hyperlink.path}-${index}`}
                   name={hyperlink.name}

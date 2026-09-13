@@ -143,7 +143,7 @@ export function BrandingCard() {
           mass: 0.5,
         }}
       />
-      <div className="relative z-10 h-full w-full rounded-3xl bg-zinc-950">
+      <div className="relative h-full w-full rounded-3xl bg-zinc-950">
         <SpotlightBlob
           color="z-10 bg-zinc-300"
           top="-top-[50%] sm:-top-[100%]"
@@ -159,7 +159,7 @@ export function BrandingCard() {
           opacity="opacity-100"
         />
 
-        <div className="relative my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
+        <div className="relative z-10 my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
           <div
             style={{ backgroundImage: `url("${PORTRAIT}")` }}
             className="aspect-square min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
@@ -171,13 +171,14 @@ export function BrandingCard() {
             ))}
           </div>
         </div>
-        <div className="relative mt-4 mb-8 flex w-full justify-center gap-4 px-8 lg:justify-end">
+        <div className="relative z-10 mt-4 mb-8 flex w-full justify-center gap-4 px-8 lg:justify-end">
           {BUSINESS.map((link, index) => (
             <IconHyperlink
               key={index}
               name={link.name}
               path={link.path}
               icon={link.icon}
+              iconClass={"bg-zinc-400 touch-hover:bg-green-400"}
             />
           ))}
         </div>
