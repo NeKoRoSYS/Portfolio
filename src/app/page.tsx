@@ -58,7 +58,7 @@ export default function Home() {
             <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-300" />
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
-            <Heading1 className="hidden">NeKoRoSYS</Heading1>
+            <Heading1 className="sr-only">NeKoRoSYS</Heading1>
             <TextScramble>
               {LETTERS.map((element, index) => (
                 <span

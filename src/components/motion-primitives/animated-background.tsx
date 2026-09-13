@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
   useId,
+  JSX,
 } from "react";
 
 export type AnimatedBackgroundProps = {
@@ -45,7 +46,7 @@ export function AnimatedBackground({
     }
   }, [defaultValue]);
 
-  return Children.map(children, (child: any, index) => {
+  return Children.map(children, (child: JSX.Element, index) => {
     const id = child.props["data-id"];
 
     const interactionProps = enableHover

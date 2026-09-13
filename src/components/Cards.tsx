@@ -65,7 +65,7 @@ export function ProjectCard({
         />
         <div
           className={cn(
-            "relative flex h-full w-full",
+            "relative flex h-full w-full overflow-clip rounded-3xl",
             featured ? "min-h-50 flex-col @2xl:flex-row" : "min-h-50 flex-row",
           )}
         >
@@ -74,8 +74,8 @@ export function ProjectCard({
               className={cn(
                 "shrink-0 overflow-hidden",
                 featured
-                  ? "aspect-video w-full rounded-t-3xl @2xl:aspect-auto @2xl:w-3/5 @2xl:rounded-l-3xl @2xl:rounded-tr-none"
-                  : "w-1/3 rounded-l-3xl sm:w-1/4",
+                  ? "aspect-video w-full @2xl:aspect-auto @2xl:w-3/5"
+                  : "w-1/3 sm:w-1/4",
               )}
             >
               {thumbnail && (
@@ -102,18 +102,14 @@ export function ProjectCard({
           )}
           <div
             className={cn(
-              "flex min-h-50 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-zinc-800",
-              featured
-                ? "rounded-b-3xl @2xl:w-2/5 @2xl:rounded-r-3xl"
-                : "w-2/3 rounded-r-3xl py-2 sm:w-3/4",
-              !thumbnail && "rounded-3xl",
-              thumbnail && "@2xl:rounded-bl-none",
+              "flex min-h-50 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-2xl shadow-zinc-800",
+              featured ? "@2xl:w-2/5" : "w-2/3 py-2 sm:w-3/4",
             )}
           >
             <div className="flex w-full">
               <h3
                 className={cn(
-                  "mx-4 mt-4 w-full text-left font-bold text-zinc-100",
+                  "mx-4 mt-4 w-full text-left font-bold text-zinc-100 group-touch-hover:text-green-400",
                   featured ? "text-3xl" : "text-xl sm:text-2xl",
                 )}
               >
