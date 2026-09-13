@@ -24,7 +24,7 @@ export function PortfolioSection() {
       index: 0,
       label: "Tech",
       payload: [
-        <div className="mt-4 mb-8 flex w-full items-center justify-center text-center">
+        <div className="my-8 flex w-full items-center justify-center text-center">
           <h4 className="text-3xl font-bold">Featured</h4>
         </div>,
         <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
@@ -59,7 +59,7 @@ export function PortfolioSection() {
       index: 1,
       label: "Art",
       payload: [
-        <div className="mt-4 mb-8 flex w-full items-center justify-center text-center">
+        <div className="my-8 flex w-full items-center justify-center text-center">
           <h4 className="text-3xl font-bold">Featured</h4>
         </div>,
         <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
@@ -100,7 +100,7 @@ export function PortfolioSection() {
             tabs={tabs}
             activeId={activeId}
             setActiveId={setActiveId}
-            className="flex w-full flex-row justify-center lg:flex-col lg:justify-start"
+            className="mb-8 flex w-full flex-row justify-center lg:mb-0 lg:flex-col lg:justify-start"
           >
             {tabs.map((tab) => (
               <button

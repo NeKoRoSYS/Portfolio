@@ -42,8 +42,8 @@ export function TabContent({ tabs, activeId, className }: TabContentProps) {
   };
 
   return (
-    <Panel className="flex h-full min-h-45 w-full flex-col items-center justify-center rounded-3xl border border-zinc-400 bg-zinc-950 sm:pointer-events-auto">
-      <div className="flex h-full w-full grow flex-col items-center justify-center p-4 text-zinc-100">
+    <Panel className={cn(className)}>
+      <div className="flex h-full w-full grow flex-col items-center justify-center text-zinc-100">
         {renderContent(activeTab)}
       </div>
     </Panel>

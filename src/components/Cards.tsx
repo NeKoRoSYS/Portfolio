@@ -52,7 +52,7 @@ export function ProjectCard({
         className={cn("relative h-full w-full p-px", !featured && "min-h-32")}
       >
         <Spotlight
-          className={`bg-green-500`}
+          className={`bg-zinc-100`}
           size={256}
           springOptions={{
             stiffness: 250,
