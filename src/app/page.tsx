@@ -73,23 +73,34 @@ export default function Home() {
                   duration={2}
                   scale={1.01}
                 />
-                <Button
-                  icon={Icons.emailIcon}
-                  iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
-                  path="#contact"
-                  className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
-                >
+                <div className="relative flex rounded-xl p-px">
                   <Spotlight
-                    className={`-z-10 bg-zinc-100/50 blur-2xl`}
-                    size={64}
+                    className={`-z-10 bg-white`}
+                    size={128}
                     springOptions={{
                       stiffness: 350,
                       damping: 30,
                       mass: 0.5,
                     }}
                   />
-                  <p>Get in Touch</p>
-                </Button>
+                  <Button
+                    icon={Icons.emailIcon}
+                    iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
+                    path="#contact"
+                    className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
+                  >
+                    <Spotlight
+                      className={`-z-10 bg-zinc-100/50 blur-2xl`}
+                      size={64}
+                      springOptions={{
+                        stiffness: 350,
+                        damping: 30,
+                        mass: 0.5,
+                      }}
+                    />
+                    <p>Get in Touch</p>
+                  </Button>
+                </div>
               </Magnetic>
             </div>
             <Button
@@ -103,7 +114,7 @@ export default function Home() {
       </Hero>
 
       {SECTIONS.map((section, index) => (
-        <Section key={index} {...section} />
+        <Section key={index} index={index} {...section} />
       ))}
     </>
   );

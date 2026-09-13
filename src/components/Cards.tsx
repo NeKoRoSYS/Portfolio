@@ -133,51 +133,54 @@ export function ProjectCard({
 
 export function BrandingCard() {
   return (
-    <Card tilt>
-      <SpotlightBlob
-        color="bg-zinc-300"
-        top="-top-[50%] sm:-top-[100%]"
-        left="left-0"
-        size="w-[250px] h-[250px]"
-        opacity="opacity-25"
-      />
-      <SpotlightBlob
-        color="bg-purple-800"
-        top="top-[100%]"
-        left="right-0"
-        size="w-[250px] h-[250px]"
-        opacity="opacity-100"
-      />
+    <Card tilt className="p-px">
       <Spotlight
-        className={`-z-10 bg-zinc-300/25 blur-3xl`}
-        size={128}
+        className={`-z-10 bg-zinc-300`}
+        size={256}
         springOptions={{
           stiffness: 250,
           damping: 30,
           mass: 0.5,
         }}
       />
-      <div className="my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
-        <div
-          style={{ backgroundImage: `url("${PORTRAIT}")` }}
-          className="aspect-square min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
+      <div className="relative z-10 h-full w-full rounded-3xl bg-zinc-950">
+        <SpotlightBlob
+          color="z-10 bg-zinc-300"
+          top="-top-[50%] sm:-top-[100%]"
+          left="left-0"
+          size="w-[250px] h-[250px]"
+          opacity="opacity-25"
         />
-        <hr className="border border-zinc-800 not-sm:w-[50%] sm:h-16" />
-        <div className="z-10 flex flex-col justify-center text-center sm:justify-start sm:pr-8 sm:text-left">
-          {FIELDS.map((element, index) => (
-            <Fragment key={index}>{element}</Fragment>
+        <SpotlightBlob
+          color="z-10 bg-purple-800"
+          top="top-[100%]"
+          left="right-0"
+          size="w-[250px] h-[250px]"
+          opacity="opacity-100"
+        />
+
+        <div className="relative my-8 flex h-auto w-full grow flex-col items-center justify-start gap-8 self-stretch sm:flex-row sm:justify-center lg:mx-8 lg:justify-start">
+          <div
+            style={{ backgroundImage: `url("${PORTRAIT}")` }}
+            className="aspect-square min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
+          />
+          <hr className="border border-zinc-800 not-sm:w-[50%] sm:h-16" />
+          <div className="z-10 flex flex-col justify-center text-center sm:justify-start sm:pr-8 sm:text-left">
+            {FIELDS.map((element, index) => (
+              <Fragment key={index}>{element}</Fragment>
+            ))}
+          </div>
+        </div>
+        <div className="relative mt-4 mb-8 flex w-full justify-center gap-4 px-8 lg:justify-end">
+          {BUSINESS.map((link, index) => (
+            <IconHyperlink
+              key={index}
+              name={link.name}
+              path={link.path}
+              icon={link.icon}
+            />
           ))}
         </div>
-      </div>
-      <div className="mt-4 mb-8 flex w-full justify-center gap-4 px-8 lg:justify-end">
-        {BUSINESS.map((link, index) => (
-          <IconHyperlink
-            key={index}
-            name={link.name}
-            path={link.path}
-            icon={link.icon}
-          />
-        ))}
       </div>
     </Card>
   );

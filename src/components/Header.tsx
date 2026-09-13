@@ -33,7 +33,7 @@ export function Header() {
       />
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-1 mx-auto overflow-hidden lg:inset-x-8",
+          "fixed inset-x-0 top-0 z-1 mx-auto overflow-hidden p-px lg:inset-x-8",
           baseHeader,
           bgVisible,
           onTop && bgInvisible,

@@ -8,33 +8,39 @@ interface SpotlightProps {
 }
 
 interface BlockProps {
+  index?: number;
+  id?: string;
   children?: ReactNode;
   background?: ReactNode;
   className?: string;
+  outline?: SpotlightProps;
   spotlight?: SpotlightProps;
   borderVisible?: boolean;
 }
 
 export default function Block({
+  index,
   id,
   children,
+  outline,
   spotlight,
   background,
   className,
   borderVisible = true,
-}: BlockProps & { id?: string }) {
+}: BlockProps) {
   return (
-    <section
-      id={id}
+    <div
       className={cn(
-        "relative flex w-full scroll-mt-16 flex-col items-center justify-center overflow-clip sm:scroll-mt-20",
-        borderVisible && "border-b border-zinc-800",
-        className,
+        outline?.enable
+          ? index != null && index == 0
+            ? "pb-px"
+            : "py-px"
+          : "",
       )}
     >
-      {spotlight?.enable && (
+      {outline?.enable && (
         <Spotlight
-          className={`pointer-events-auto ${spotlight.color} blur-3xl`}
+          className={cn(`pointer-events-auto`, outline?.color)}
           size={256}
           springOptions={{
             stiffness: 200,
@@ -43,28 +49,43 @@ export default function Block({
           }}
         />
       )}
-      {background && (
-        <div className="pointer-events-none absolute inset-0 z-0">
-          {background}
-        </div>
-      )}
-      <div
-        className={`relative z-10 h-full w-full max-w-6xl px-4 py-8 sm:px-8 sm:py-16`}
+      <section
+        id={id}
+        className={cn(
+          "relative flex w-full scroll-mt-16 flex-col items-center justify-center overflow-clip sm:scroll-mt-20",
+          borderVisible && "border-b border-zinc-800",
+          className,
+        )}
       >
-        {children}
-      </div>
-    </section>
+        {spotlight?.enable && (
+          <Spotlight
+            className={`pointer-events-auto ${spotlight.color} blur-3xl`}
+            size={256}
+            springOptions={{
+              stiffness: 200,
+              damping: 30,
+              mass: 0.5,
+            }}
+          />
+        )}
+        {background && (
+          <div className="pointer-events-none absolute inset-0 z-0">
+            {background}
+          </div>
+        )}
+        <div
+          className={`relative z-10 h-full w-full max-w-6xl px-4 py-8 sm:px-8 sm:py-16`}
+        >
+          {children}
+        </div>
+      </section>
+    </div>
   );
 }
 
-export interface SectionProps {
-  id?: string;
-  background?: ReactNode;
+export interface SectionProps extends BlockProps {
   title?: string | ReactNode;
   text?: string;
-  bgColor?: string;
-  borderVisible?: boolean;
-  spotlight?: SpotlightProps;
   center?: boolean;
   reverse?: boolean;
   sections?: ReactNode[];
@@ -72,12 +93,14 @@ export interface SectionProps {
 
 export function Section(props: SectionProps) {
   const {
+    index,
     id,
+    outline,
     spotlight,
     background,
     title,
     text,
-    bgColor = "bg-zinc-950",
+    className = "bg-zinc-950",
     borderVisible = true,
     center = false,
     reverse = false,
@@ -87,10 +110,12 @@ export function Section(props: SectionProps) {
   return (
     <>
       <Block
+        index={index}
         id={id}
+        outline={outline}
         spotlight={spotlight}
         borderVisible={borderVisible}
-        className={` ${bgColor} `}
+        className={` ${className} `}
         background={background}
       >
         <div
