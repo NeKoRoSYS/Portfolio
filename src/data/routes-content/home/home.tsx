@@ -46,6 +46,7 @@ export const SECTIONS: SectionProps[] = [
   },
   {
     id: "portfolio",
+    className: "bg-[rgb(15,15,15)]",
     center: true,
     outline: { enable: true, color: "bg-green-400" },
     sections: [

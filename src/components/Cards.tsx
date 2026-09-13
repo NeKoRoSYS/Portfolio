@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { PillChip, RectChip } from "./Chips";
 import { ProjectProps } from "@/data/nekorosys";
 import { Colors } from "@/shared/Colors";
+import Image from "next/image";
 
 interface CardProps {
   rotationFactor?: number;
@@ -21,7 +22,7 @@ interface CardProps {
 export function Card({ rotationFactor = 4, ...props }: CardProps) {
   const { tilt, className, children } = props;
   const baseClass =
-    "@container relative overflow-clip pointer-events-none w-full flex min-h-45 flex-col items-center justify-center overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
+    "@container  overflow-clip pointer-events-none w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 sm:pointer-events-auto";
 
   return (
     <Tilt
@@ -47,12 +48,14 @@ export function ProjectCard({
   description,
 }: CardProps & ProjectProps) {
   return (
-    <Card tilt={tilt} className={className} rotationFactor={rotationFactor}>
-      <div
-        className={cn("relative h-full w-full p-px", !featured && "min-h-32")}
-      >
+    <Card
+      tilt={tilt}
+      className={cn(className, "group")}
+      rotationFactor={rotationFactor}
+    >
+      <div className={cn("relative h-full p-px")}>
         <Spotlight
-          className={`bg-zinc-100`}
+          className={`bg-green-400`}
           size={256}
           springOptions={{
             stiffness: 250,
@@ -63,30 +66,48 @@ export function ProjectCard({
         <div
           className={cn(
             "relative flex h-full w-full",
-            featured ? "min-h-100 flex-col @2xl:flex-row" : "min-h-32 flex-row",
+            featured ? "min-h-50 flex-col @2xl:flex-row" : "min-h-50 flex-row",
           )}
         >
+          {thumbnail && (
+            <div
+              className={cn(
+                "shrink-0 overflow-hidden",
+                featured
+                  ? "aspect-video w-full rounded-t-3xl @2xl:aspect-auto @2xl:w-3/5 @2xl:rounded-l-3xl @2xl:rounded-tr-none"
+                  : "w-1/3 rounded-l-3xl sm:w-1/4",
+              )}
+            >
+              {thumbnail && (
+                <div
+                  className={cn(
+                    "relative shrink-0 overflow-hidden bg-zinc-800",
+                    featured
+                      ? "aspect-video h-full w-full max-w-none @2xl:aspect-video"
+                      : "w-1/3 sm:w-1/4",
+                  )}
+                >
+                  <Image
+                    src={
+                      typeof thumbnail === "string" ? thumbnail : thumbnail[0]
+                    }
+                    alt={title || "Project thumbnail"}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center transition-transform duration-300 group-touch-hover:scale-115"
+                  />
+                </div>
+              )}
+            </div>
+          )}
           <div
             className={cn(
-              "shrink-0 bg-zinc-800 bg-cover bg-center",
+              "flex min-h-50 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-zinc-800",
               featured
-                ? "aspect-video w-full rounded-t-3xl @2xl:aspect-auto @2xl:w-3/5 @2xl:rounded-l-3xl @2xl:rounded-tr-none"
-                : "w-1/3 rounded-l-3xl sm:w-1/4",
-            )}
-            style={
-              thumbnail
-                ? {
-                    backgroundImage: `url(${typeof thumbnail === "string" ? thumbnail : thumbnail.src})`,
-                  }
-                : undefined
-            }
-          />
-          <div
-            className={cn(
-              "flex grow flex-col justify-between bg-zinc-900 shadow-zinc-800 backdrop-blur-md",
-              featured
-                ? "rounded-b-3xl @2xl:w-2/5 @2xl:rounded-r-3xl @2xl:rounded-bl-none"
+                ? "rounded-b-3xl @2xl:w-2/5 @2xl:rounded-r-3xl"
                 : "w-2/3 rounded-r-3xl py-2 sm:w-3/4",
+              !thumbnail && "rounded-3xl",
+              thumbnail && "@2xl:rounded-bl-none",
             )}
           >
             <div className="flex w-full">
@@ -133,7 +154,7 @@ export function ProjectCard({
 
 export function BrandingCard() {
   return (
-    <Card tilt className="p-px">
+    <Card tilt className="max-w-xl p-px">
       <Spotlight
         className={`-z-10 bg-zinc-300`}
         size={256}
@@ -143,7 +164,7 @@ export function BrandingCard() {
           mass: 0.5,
         }}
       />
-      <div className="relative h-full w-full rounded-3xl bg-zinc-950">
+      <div className="relative w-full rounded-3xl bg-zinc-950">
         <SpotlightBlob
           color="z-10 bg-zinc-300"
           top="-top-[50%] sm:-top-[100%]"

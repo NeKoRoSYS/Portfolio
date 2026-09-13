@@ -8,11 +8,20 @@ import { TextLoop } from "@/components/motion-primitives/text-loop";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
-import { LETTERS, ROLES } from "@/data/nekorosys";
+import { FEATURED_ART, LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home/home";
 import { Colors } from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { Heading1 } from "@/components/Headings";
+import { ProjectCard } from "@/components/Cards";
+import { FEATURED_TECH } from "@/data/nekorosys";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselIndicator,
+  CarouselItem,
+  CarouselNavigation,
+} from "@/components/motion-primitives/carousel";
 
 export default function Home() {
   return (
@@ -20,7 +29,7 @@ export default function Home() {
       <ScrollIndicator />
       <Hero
         fade
-        className="flex flex-wrap justify-between"
+        className="flex flex-col items-center justify-between lg:flex-row"
         background={
           <>
             <BackgroundAscii
@@ -31,7 +40,7 @@ export default function Home() {
           </>
         }
       >
-        <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0">
+        <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0 lg:items-start">
           <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 lg:hidden touch-hover:border-purple-300" />
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
             <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
@@ -110,6 +119,30 @@ export default function Home() {
               <p>See Portfolio</p>
             </Button>
           </div>
+        </div>
+        <div className="hidden w-full flex-1 items-center lg:mx-0 lg:flex">
+          <Carousel className="w-full">
+            <div className="mb-8">
+              <CarouselContent className="w-full">
+                {FEATURED_TECH.map((project, index) => (
+                  <CarouselItem key={index} className="">
+                    <div className="m-4">
+                      <ProjectCard {...project} tilt featured></ProjectCard>
+                    </div>
+                  </CarouselItem>
+                ))}
+                {FEATURED_ART.map((project, index) => (
+                  <CarouselItem key={index} className="">
+                    <div className="m-4">
+                      <ProjectCard {...project} tilt featured></ProjectCard>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </div>
+            <CarouselNavigation alwaysShow />
+            <CarouselIndicator />
+          </Carousel>
         </div>
       </Hero>
 
