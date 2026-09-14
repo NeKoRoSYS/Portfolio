@@ -120,8 +120,8 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="ml-32 hidden w-full flex-1 items-center lg:flex">
-          <Carousel className="w-full">
+        <div className="hidden w-full flex-1 items-center lg:flex">
+          <Carousel className="ml-16 w-full">
             <div className="my-8">
               <CarouselContent className="w-full">
                 {FEATURED_TECH.map((project, index) => (
