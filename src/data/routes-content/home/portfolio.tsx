@@ -28,7 +28,7 @@ export function PortfolioSection() {
     return (
       <>
         <div className="mb-8 flex w-full items-center justify-center text-center">
-          <h4 className="text-3xl font-bold">Featured</h4>
+          <h4 className="font-cosmic text-3xl font-bold">Featured</h4>
         </div>
         <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
           {featuredProjects.map((project, index) => (
@@ -43,7 +43,7 @@ export function PortfolioSection() {
         {standardProjects.length > 0 && (
           <>
             <div className="my-8 flex w-full items-center justify-center text-center">
-              <h5 className="text-2xl font-bold">Other Projects</h5>
+              <h5 className="font-cosmic text-2xl font-bold">Other Projects</h5>
             </div>
             <div
               className={cn(
@@ -92,10 +92,10 @@ export function PortfolioSection() {
                   window.location.href = "#portfolio";
                 }}
                 className={cn(
-                  "group shrink-0 border-b-2 px-8 py-4 font-bold italic lg:border-b-0 lg:border-l-2 lg:text-left",
+                  "group shrink-0 border-b-2 to-75% px-8 py-4 font-bulletin font-bold italic lg:border-b-0 lg:border-l-2 lg:text-left",
                   activeId === tab.index
                     ? "border-green-400 from-green-950 to-green-950/0 text-green-400 lg:bg-linear-to-r"
-                    : "cursor-pointer border-zinc-400 from-zinc-800 to-zinc-950/0 text-zinc-500 lg:bg-linear-to-r touch-hover:border-purple-500 touch-hover:from-purple-800/75 touch-hover:to-purple-950/0 touch-hover:text-zinc-100",
+                    : "cursor-pointer border-zinc-400 text-zinc-100 lg:bg-linear-to-r touch-hover:border-purple-500 touch-hover:from-purple-800/50 touch-hover:to-purple-950/0 touch-hover:text-zinc-100",
                 )}
               >
                 <Heading3

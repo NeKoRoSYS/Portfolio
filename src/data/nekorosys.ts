@@ -48,7 +48,7 @@ export const TECH_PROJECTS: ProjectProps[] = [
     thumbnail: ["/projects/tech/nekoroshell.png"],
     excerpt:
       "A custom Arch Linux ricing suite built for the Hyprland window manager.",
-    tags: ["Featured", "Arch Linux", "Bash", "C++", "Customization", "Project"],
+    tags: ["Featured", "Arch Linux", "Hyprland", "Bash", "C++"],
   },
   {
     title: "Portfolio",
@@ -58,26 +58,32 @@ export const TECH_PROJECTS: ProjectProps[] = [
       "This website! Modular, responsive, and interactive frontend with a premium finish.",
     tags: [
       "Featured",
+      "Vercel",
       "Next.js",
       "TypeScript",
       "React",
       "Tailwind CSS",
-      "Project",
     ],
   },
   {
     title: "NeKoRoBOT.js",
     projectLink: "https://github.com/NeKoRoSYS/NeKoRoBOT.js",
     excerpt: "Discord bot template with Python backend.",
-    tags: [
-      "Featured",
-      "Node.js",
-      "TypeScript",
-      "Discord.js",
-      "Python",
-      "Project",
-      "Template",
-    ],
+    tags: ["Featured", "Node.js", "TypeScript", "Discord.js", "Python"],
+  },
+  {
+    title: "DLux Shell",
+    projectLink: "https://github.com/NeKoRoSYS/NeKoRoSHELL-DLux-Shell",
+    excerpt:
+      "Optional upgrade for NeKoRoSHELL which replaces UI components and binaries like waybar with a unified Quickshell setup.",
+    tags: ["Arch Linux", "Hyprland", "Quickshell", "Bash", "Qt"],
+  },
+  {
+    title: "NeKONTROLLER",
+    projectLink: "https://github.com/NeKoRoSYS/NeKONTROLLER",
+    excerpt:
+      "Lightweight library for the Unity Engine's New Input System to bootstrap player input management.",
+    tags: ["Unity", "C#"],
   },
 ];
 export const ART_PROJECTS: ProjectProps[] = [

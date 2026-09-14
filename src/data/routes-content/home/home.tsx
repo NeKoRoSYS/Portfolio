@@ -7,11 +7,50 @@ import { cn } from "@/lib/utils";
 import { Heading2 } from "@/components/Headings";
 import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
+import { ReactNode } from "react";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
   heroSubtitle: `Your one-man IT Department.`,
 } as const;
+
+function echoString({
+  string,
+  gap,
+  count,
+  className,
+}: {
+  string: string;
+  gap: number;
+  count: number;
+  className: string;
+}) {
+  const elements: { string: string; className: string }[] = [];
+
+  for (let i: number = 0; i < count; i++) {
+    elements[i] = {
+      string: string,
+      className: className,
+    };
+
+    if (/\btranslate-y(?:-[\w.\[\]#%]+)?\b/.test(elements[i].className)) {
+      const stepValue = gap * i;
+
+      const tailwindClass = stepValue === 0.5 ? "1/2" : stepValue;
+
+      elements[i].className = elements[i].className.replace(
+        /\btranslate-y(?:-[\w.\[\]#%]+)?\b/g,
+        `translate-y-${tailwindClass}`,
+      );
+    }
+  }
+
+  return elements.map((element, index) => (
+    <span key={index} className={cn(element.className)}>
+      {element.string}
+    </span>
+  ));
+}
 
 export const SECTIONS: SectionProps[] = [
   {
@@ -68,6 +107,23 @@ export const SECTIONS: SectionProps[] = [
         </div>
       </div>,
       <PortfolioSection />,
+    ],
+  },
+  {
+    id: "stack",
+    center: true,
+    sections: [
+      <div className="col-span-12 mb-16">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <Heading2 className="w-full text-center">
+            The{" "}
+            <span className="relative font-bold text-green-400 touch-hover:text-purple-300">
+              STACK
+            </span>{" "}
+            You Can Trust
+          </Heading2>
+        </div>
+      </div>,
     ],
   },
   {

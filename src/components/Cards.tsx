@@ -161,8 +161,8 @@ export function ProjectCard({
           )}
           <div
             className={cn(
-              "flex min-h-50 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-2xl shadow-zinc-800",
-              featured ? "@2xl:w-2/5" : "w-2/3 py-2 sm:w-3/4",
+              "flex min-h-50 grow flex-col justify-start bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-2xl shadow-zinc-800",
+              featured ? "@2xl:w-2/5" : "w-2/3 sm:w-3/4",
             )}
           >
             <div className="flex w-full">
@@ -175,7 +175,7 @@ export function ProjectCard({
                   showHyperlinkIcon
                   linkIconClass="w-5 group-touch-hover:bg-green-400 bg-zinc-400"
                   className={cn(
-                    "text-zinc-100 transition-transform sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
+                    "font-cosmic text-zinc-100 transition-transform sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
                     featured ? "text-3xl" : "text-xl sm:text-2xl",
                   )}
                   path={projectLink}
@@ -186,22 +186,24 @@ export function ProjectCard({
             <div className="flex w-full items-center justify-center">
               <p
                 className={cn(
-                  "m-4 w-full text-left text-zinc-300",
+                  "m-4 mb-8 w-full text-left text-zinc-300",
                   !featured && "text-sm sm:text-base",
                 )}
               >
                 {excerpt}
               </p>
             </div>
-            <div className="m-4 mt-auto flex flex-wrap justify-end gap-2">
+            <div className="m-4 mt-auto flex flex-wrap justify-end gap-2 self-end">
               {tags
                 ?.filter((tag) => tag !== "Featured")
                 .map((tag, index) => (
                   <RectChip
                     key={index}
+
                     className={cn(
-                      "py-1 text-xs sm:text-sm",
+                      "py-1 text-xs text-zinc-400 hover:text-zinc-100 sm:text-sm",
                       Colors.buttonMuted,
+                      tags[tags.length - 1] == tag && "rounded-br-2xl pr-3",
                     )}
                   >
                     {tag}
