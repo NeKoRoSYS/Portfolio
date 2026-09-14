@@ -1,5 +1,8 @@
 import { StaticImageData } from "next/image";
 
+export const EMAIL = "malibiran.johnmarky@gmail.com";
+export const EMAIL_LINK = "mailto:malibiran.johnmarky@gmail.com";
+
 export const LETTERS = ["N", "E", "K", "O", "R", "O", "S", "Y", "S"];
 
 export const ROLES = [

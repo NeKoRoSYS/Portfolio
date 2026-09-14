@@ -84,7 +84,7 @@ export default function Home() {
                 />
                 <div className="relative flex rounded-xl p-px">
                   <Spotlight
-                    className={`-z-10 bg-white`}
+                    className={`-z-10 bg-green-400`}
                     size={128}
                     springOptions={{
                       stiffness: 350,

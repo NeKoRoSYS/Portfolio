@@ -1,16 +1,20 @@
 import { TextHyperlink } from "@/components/Hyperlinks";
 import { ReactNode } from "react";
+import { EMAIL, EMAIL_LINK } from "../nekorosys";
 
 export const PORTRAIT = "/PORTRAIT.jpg";
+export const NAME: string = "John Marky G. Malibiran";
+export const LOCATION: string = "Manila, National Capital Region, Philippines";
+export const CONTACT_NUMBER: string = "(+63) 921 753 2961";
 
 export const FIELDS: ReactNode[] = [
-  <p className="font-bold">John Marky G. Malibiran</p>,
-  <p>Manila, National Capital Region, Philippines</p>,
+  <p className="hidden font-bold @lg:block">{NAME}</p>,
+  <p>{LOCATION}</p>,
   <TextHyperlink
-    className="pointer-events-auto mx-auto sm:mx-0 touch-hover:text-green-400"
+    className="pointer-events-auto sm:mx-0 touch-hover:text-green-400"
     showHyperlinkIcon={false}
-    path={"mailto:malibiran.johnmarky@gmail.com"}
-    name={"malibiran.johnmarky@gmail.com"}
+    path={EMAIL_LINK}
+    name={EMAIL}
   />,
-  <p className="italic">(+63) 921 753 2961</p>,
+  <p className="italic">{CONTACT_NUMBER}</p>,
 ];
