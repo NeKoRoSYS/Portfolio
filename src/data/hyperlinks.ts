@@ -32,7 +32,12 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
   {
     name: "Blog",
     path: "/blog",
-    tags: ["navigate", "anchor"],
+    tags: ["navigate"],
+  },
+  {
+    name: "About",
+    path: "/about",
+    tags: ["navigate"],
   },
   {
     altName: "Let's Talk",

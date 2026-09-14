@@ -57,9 +57,11 @@ export function Header() {
               className="aspect-square w-8 rounded-md"
               alt={"GravenSoft Icon"}
             ></Image>
-            <p className="mt-0.5 font-bulletin text-3xl select-none touch-hover:text-green-400">
-              {TITLE}
-            </p>
+            <Link draggable={false} href={"/"}>
+              <p className="mt-0.5 font-bulletin text-3xl select-none touch-hover:text-green-400">
+                {TITLE}
+              </p>
+            </Link>
           </div>
           <div className="flex flex-row items-center justify-end gap-4">
             <nav className={`hidden sm:block`}>

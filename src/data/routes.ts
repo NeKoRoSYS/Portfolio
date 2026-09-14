@@ -8,6 +8,7 @@ export const ROUTES: RouteMeta[] = [
   { name: "Home", path: "/" },
   { name: "Portfolio", path: "#portfolio" },
   { name: "Contact", path: "#contact" },
+  { name: "About", path: "/about" },
   { name: "Blog", path: "/blog" },
   { name: "Blog Post", path: "/blog/:slug" },
   { name: "Privacy Policy", path: "/privacy-policy" },
@@ -17,4 +18,5 @@ export const ROUTES: RouteMeta[] = [
 export const HEADERROUTES: RouteMeta[] = [
   { name: "Home", path: "/" },
   { name: "Blog", path: "/blog" },
+  { name: "About", path: "/about" },
 ];
