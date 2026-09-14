@@ -5,6 +5,23 @@ export const EMAIL_LINK = "mailto:malibiran.johnmarky@gmail.com";
 
 export const LETTERS = ["N", "E", "K", "O", "R", "O", "S", "Y", "S"];
 
+export const GLOBAL_KEYWORDS: string[] = [
+  "NeKoRoSYS",
+  "full-stack developer",
+  "software developer",
+  "developer",
+  "graphic design",
+  "layout artist",
+  "motion design",
+  "illustrator",
+  "john",
+  "marky",
+  "ginete",
+  "malibiran",
+  "john marky g. malibiran",
+  "john marky ginete malibiran",
+];
+
 export const ROLES = [
   "Student",
   "Game Developer",

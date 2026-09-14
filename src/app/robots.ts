@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://nekorosys.vercel.app",
+    sitemap: "https://nekorosys.vercel.app/sitemap.xml",
   };
 }

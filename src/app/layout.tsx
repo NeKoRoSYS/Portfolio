@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import PageWrapper from "@/components/app/PageWrapper";
 import { Footer } from "@/components/Footer";
 import type { Viewport } from "next";
+import { GLOBAL_KEYWORDS } from "@/data/nekorosys";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,22 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(domain),
   title: title,
   description: description,
-  keywords: [
-    title,
-    "full-stack developer",
-    "software developer",
-    "developer",
-    "graphic design",
-    "layout artist",
-    "motion design",
-    "illustrator",
-    "john",
-    "marky",
-    "ginete",
-    "malibiran",
-    "john marky g. malibiran",
-    "john marky ginete malibiran",
-  ],
+  keywords: GLOBAL_KEYWORDS,
   authors: [
     { name: "NeKoRoSYS", url: domain },
     {
@@ -77,10 +63,6 @@ export const metadata: Metadata = {
     description: description,
     //images: ['/og-image.jpg'],
     creator: "@NeKoRoSYS",
-  },
-
-  alternates: {
-    canonical: "/",
   },
 };
 
