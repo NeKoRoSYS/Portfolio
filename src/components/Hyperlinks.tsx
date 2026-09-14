@@ -64,6 +64,7 @@ export function TextHyperlink({
   if (isCopy) {
     return (
       <a
+        draggable={false}
         title={`Click to copy: ${name}}`}
         className={cn(classOverride, "cursor-pointer")}
         rel="noreferrer noopener"
@@ -76,7 +77,12 @@ export function TextHyperlink({
 
   if (isHash) {
     return (
-      <a href={path} className={classOverride} rel="noreferrer noopener">
+      <a
+        draggable={false}
+        href={path}
+        className={classOverride}
+        rel="noreferrer noopener"
+      >
         {linkInner}
       </a>
     );
@@ -84,7 +90,12 @@ export function TextHyperlink({
 
   if (isRoute) {
     return (
-      <Link href={path} className={classOverride} rel="noreferrer noopener">
+      <Link
+        draggable={false}
+        href={path}
+        className={classOverride}
+        rel="noreferrer noopener"
+      >
         {linkInner}
       </Link>
     );
@@ -92,6 +103,7 @@ export function TextHyperlink({
 
   return (
     <a
+      draggable={false}
       href={path}
       title={name}
       className={classOverride}
@@ -106,7 +118,13 @@ export function TextHyperlink({
 export function IconHyperlink(hyperlinkProps: HyperlinkSchema) {
   const { name, path, icon, iconClass } = hyperlinkProps;
   return (
-    <a href={path} rel="noreferrer noopener" target="_blank" title={name}>
+    <a
+      draggable={false}
+      href={path}
+      rel="noreferrer noopener"
+      target="_blank"
+      title={name}
+    >
       {icon && (
         <div
           aria-hidden={true}

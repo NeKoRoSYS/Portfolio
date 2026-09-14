@@ -66,6 +66,7 @@ export default function Button({
   if (isCopy) {
     return (
       <a
+        draggable={false}
         title={`Click to copy: ${name}}`}
         className={classOverride}
         rel="noreferrer noopener"
@@ -78,7 +79,7 @@ export default function Button({
 
   if (isHash) {
     return (
-      <a href={path} className={classOverride}>
+      <a draggable={false} href={path} className={classOverride}>
         {linkInner}
       </a>
     );
@@ -86,7 +87,7 @@ export default function Button({
 
   if (isRoute) {
     return (
-      <Link href={path} className={classOverride}>
+      <Link draggable={false} href={path} className={classOverride}>
         {linkInner}
       </Link>
     );
@@ -95,6 +96,7 @@ export default function Button({
   return (
     <a
       href={path}
+      draggable={false}
       className={classOverride}
       target="_blank"
       rel="noreferrer noopener"

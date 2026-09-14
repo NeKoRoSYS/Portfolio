@@ -50,6 +50,7 @@ export function Header() {
           />
           <div className="flex items-center justify-center gap-2">
             <Image
+              draggable={false}
               width={8}
               height={8}
               src={ICON}
@@ -81,6 +82,7 @@ export function Header() {
                       className="h-full w-full"
                     >
                       <Link
+                        draggable={false}
                         href={route.path}
                         className="group flex h-full w-full items-center px-6"
                       >

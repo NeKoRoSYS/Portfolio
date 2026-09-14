@@ -12,6 +12,7 @@ import { ProjectProps } from "@/data/nekorosys";
 import { Colors } from "@/shared/Colors";
 import Image from "next/image";
 import { Heading3 } from "./Headings";
+import { BlogMeta } from "@/data/routes-content/blog";
 
 interface CardProps {
   rotationFactor?: number;
@@ -33,6 +34,61 @@ export function Card({ rotationFactor = 4, ...props }: CardProps) {
     >
       {children}
     </Tilt>
+  );
+}
+
+export function BlogCard({ ...post }: BlogMeta) {
+  return (
+    <Card tilt className="group h-full">
+      <div className="relative h-full p-px">
+        <Spotlight
+          className="bg-green-400"
+          size={256}
+          springOptions={{
+            stiffness: 250,
+            damping: 30,
+            mass: 0.5,
+          }}
+        />
+
+        <div className="relative flex h-full min-h-32 w-full flex-col overflow-clip rounded-3xl @lg:flex-row">
+          {post.thumbnail && (
+            <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-zinc-800 @lg:aspect-auto @lg:w-2/5">
+              <Image
+                width={1280}
+                height={720}
+                className="h-full w-full object-cover transition-transform duration-300 group-touch-hover:scale-115"
+                alt={post.title}
+                src={
+                  typeof post.thumbnail === "string"
+                    ? post.thumbnail
+                    : post.thumbnail?.src
+                }
+              />
+            </div>
+          )}
+
+          <div className="flex min-h-32 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-6 shadow-2xl shadow-zinc-800 @lg:w-3/5">
+            <div>
+              <h2 className="text-2xl font-bold text-zinc-100 transition-transform group-touch-hover:translate-x-2 group-touch-hover:text-green-400">
+                {post.title}
+              </h2>
+              <p className="mt-1 mb-4 text-sm text-zinc-400 italic">
+                {post.date}
+              </p>
+              <p className="mb-4 text-zinc-300">{post.excerpt}</p>
+            </div>
+            <div className="mt-auto flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <PillChip key={tag} colorOverride="gray">
+                  {tag}
+                </PillChip>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Card>
   );
 }
 
@@ -90,6 +146,7 @@ export function ProjectCard({
                   )}
                 >
                   <Image
+                    draggable={false}
                     src={
                       typeof thumbnail === "string" ? thumbnail : thumbnail[0]
                     }
