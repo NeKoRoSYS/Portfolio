@@ -8,6 +8,7 @@ import { HoverableElement, Panel } from "@/components/Panel";
 import { PillChip } from "@/components/Chips";
 import { BLOG_POSTS } from "@/data/routes-content/blog";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Blog() {
   useDocumentTitle(`Blog | NeKoRoSYS`);
@@ -35,7 +36,10 @@ export default function Blog() {
           <p className="font-bold">Tags:</p>
           <button onClick={() => setActiveFilter(null)}>
             <PillChip
-              className={`transition-all duration-75`}
+              className={cn(
+                `transition-all duration-75`,
+                activeFilter !== null && "cursor-pointer",
+              )}
               colorOverride={activeFilter === null ? "green" : "gray"}
             >
               All
@@ -44,7 +48,10 @@ export default function Blog() {
           {availableTags.map((tag) => (
             <button key={tag} onClick={() => setActiveFilter(tag)}>
               <PillChip
-                className="transition-all duration-75"
+                className={cn(
+                  `transition-all duration-75`,
+                  activeFilter === null && "cursor-pointer",
+                )}
                 colorOverride={activeFilter === tag ? "green" : "gray"}
               >
                 {tag}
