@@ -13,6 +13,7 @@ import { Colors } from "@/shared/Colors";
 import Image from "next/image";
 import { Heading3 } from "./Headings";
 import { BlogMeta } from "@/data/routes-content/blog";
+import Grid from "./Grid";
 
 interface CardProps {
   rotationFactor?: number;
@@ -161,11 +162,11 @@ export function ProjectCard({
           )}
           <div
             className={cn(
-              "flex min-h-50 grow flex-col justify-start bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-2xl shadow-zinc-800",
+              "relative flex min-h-50 grow flex-col justify-start overflow-hidden bg-linear-to-b from-zinc-900 from-25% to-zinc-950 shadow-2xl shadow-zinc-800",
               featured ? "@2xl:w-2/5" : "w-2/3 sm:w-3/4",
             )}
           >
-            <div className="flex w-full">
+            <div className="z-10 flex w-full">
               <Heading3
                 className={cn(
                   "mx-4 mt-4 w-full text-left font-bold text-zinc-100",
@@ -183,7 +184,7 @@ export function ProjectCard({
                 />
               </Heading3>
             </div>
-            <div className="flex w-full items-center justify-center">
+            <div className="relative z-10 flex w-full items-center justify-center">
               <p
                 className={cn(
                   "m-4 mb-8 w-full text-left text-zinc-300",
@@ -193,7 +194,7 @@ export function ProjectCard({
                 {excerpt}
               </p>
             </div>
-            <div className="m-4 mt-auto flex flex-wrap justify-end gap-2 self-end">
+            <div className="relative z-10 m-4 mt-auto flex flex-wrap justify-end gap-2 self-end">
               {tags
                 ?.filter((tag) => tag !== "Featured")
                 .map((tag, index) => (

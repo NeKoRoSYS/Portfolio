@@ -8,6 +8,7 @@ import { Heading2 } from "@/components/Headings";
 import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { ReactNode } from "react";
+import { BackgroundAscii } from "@/components/VideoPlayer";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -54,7 +55,27 @@ function echoString({
 
 export const SECTIONS: SectionProps[] = [
   {
+    id: "stack",
+    center: true,
+    borderVisible: false,
+    sections: [
+      <div className="col-span-12">
+        <div className="flex h-full w-full flex-wrap items-center justify-center">
+          <Heading2 className="w-full text-center">
+            Your{" "}
+            <span className="relative font-bold text-green-400 touch-hover:text-purple-300">
+              One-Man
+            </span>{" "}
+            IT Department
+          </Heading2>
+        </div>
+      </div>,
+    ],
+  },
+  {
     id: "about",
+    borderVisible: false,
+    className: "bg-[rgb(15,15,15)]",
     outline: { enable: true, color: "bg-zinc-100" },
     sections: [
       <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
@@ -85,10 +106,34 @@ export const SECTIONS: SectionProps[] = [
   },
   {
     id: "portfolio",
-    className: "bg-[rgb(15,15,15)]",
+    className: "bg-zinc-950",
+    borderVisible: false,
+
+    background: <Grid className="inset-0 z-10" fadeDir="radial" size={56} />,
     center: true,
     outline: { enable: true, color: "bg-green-400" },
     sections: [
+      <SpotlightBlob
+        color="bg-zinc-500/75"
+        top="bottom-[75%]"
+        left="left-[75%]"
+        size="w-[720px] h-[720px]"
+        opacity="opacity-25 "
+      />,
+      <SpotlightBlob
+        color="bg-green-600/50"
+        top="top-[75%]"
+        left="left-[75%]"
+        size="w-[720px] h-[720px]"
+        opacity="opacity-25"
+      />,
+      <SpotlightBlob
+        color="bg-purple-500/35"
+        top="bottom-[15%]"
+        left="right-[88%]"
+        size="w-[1000px] h-[1000px]"
+        opacity="opacity-25"
+      />,
       <div className="relative col-span-12 mb-16">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
@@ -110,37 +155,32 @@ export const SECTIONS: SectionProps[] = [
     ],
   },
   {
-    id: "stack",
-    center: true,
-    sections: [
-      <div className="col-span-12 mb-16">
-        <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <Heading2 className="w-full text-center">
-            The{" "}
-            <span className="relative font-bold text-green-400 touch-hover:text-purple-300">
-              STACK
-            </span>{" "}
-            You Can Trust
-          </Heading2>
-        </div>
-      </div>,
-    ],
-  },
-  {
     id: "contact",
-    outline: { enable: true, color: "bg-purple-400" },
-    spotlight: { enable: true, color: "bg-purple-500/25" },
-    background: <Grid />,
+    outline: { enable: true, color: "bg-green-400" },
+    spotlight: { enable: true, color: "bg-green-500/25" },
+    background: (
+      <>
+        <div className="absolute inset-0 z-0 aspect-video h-full max-w-none opacity-20 lg:aspect-auto lg:w-full">
+          <BackgroundAscii
+            themeColor="#FB67FF"
+            url={"/videos/lavalamp.mp4"}
+
+            containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto "
+            loop
+          />
+        </div>
+      </>
+    ),
     sections: [
       <SpotlightBlob
-        color="bg-green-400"
+        color="bg-purple-400"
         top="top-[100%]"
         left="left-[33%] lg:left-0"
         size="w-[250px] h-[250px]"
         opacity="opacity-75"
       />,
       <SpotlightBlob
-        color="bg-green-800"
+        color="bg-purple-800"
         top="-top-[50%]"
         left="invisible lg:visible lg:right-0"
         size="w-[250px] h-[250px]"

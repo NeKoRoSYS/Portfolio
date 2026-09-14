@@ -122,7 +122,7 @@ export default function Home() {
         </div>
         <div className="hidden w-full flex-1 items-center lg:flex">
           <Carousel className="ml-16 w-full">
-            <div className="my-8">
+            <div className="my-8 mask-[linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
               <CarouselContent className="w-full">
                 {FEATURED_TECH.map((project, index) => (
                   <CarouselItem key={index} className="">
