@@ -160,7 +160,7 @@ export const SECTIONS: SectionProps[] = [
     spotlight: { enable: true, color: "bg-green-500/25" },
     background: (
       <>
-        <div className="absolute inset-0 z-0 aspect-video h-full max-w-none opacity-20 lg:aspect-auto lg:w-full">
+        <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none opacity-20">
           <BackgroundAscii
             themeColor="#FB67FF"
             url={"/videos/lavalamp.mp4"}
@@ -173,8 +173,8 @@ export const SECTIONS: SectionProps[] = [
     ),
     sections: [
       <SpotlightBlob
-        color="bg-purple-400"
-        top="top-[100%]"
+        color="bg-purple-800"
+        top="top-[75%]"
         left="left-[33%] lg:left-0"
         size="w-[250px] h-[250px]"
         opacity="opacity-75"
