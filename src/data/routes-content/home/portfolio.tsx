@@ -92,7 +92,7 @@ export function PortfolioSection() {
                   window.location.href = "#portfolio";
                 }}
                 className={cn(
-                  "group shrink-0 border-b-2 to-75% px-8 py-4 font-bulletin font-bold italic lg:border-b-0 lg:border-l-2 lg:text-left",
+                  "group shrink-0 border-b-2 to-75% px-8 py-4 font-bulletin italic lg:border-b-0 lg:border-l-2 lg:text-left",
                   activeId === tab.index
                     ? "border-green-400 from-green-950 to-green-950/0 text-green-400 lg:bg-linear-to-r"
                     : "cursor-pointer border-zinc-400 text-zinc-100 lg:bg-linear-to-r touch-hover:border-purple-500 touch-hover:from-purple-800/50 touch-hover:to-purple-950/0 touch-hover:text-zinc-100",

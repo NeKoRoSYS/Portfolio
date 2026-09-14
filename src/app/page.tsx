@@ -120,13 +120,13 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="hidden w-full flex-1 items-center lg:mx-0 lg:flex">
+        <div className="ml-16 hidden w-full flex-1 items-center lg:flex">
           <Carousel className="w-full">
             <div className="my-8">
               <CarouselContent className="w-full">
                 {FEATURED_TECH.map((project, index) => (
                   <CarouselItem key={index} className="">
-                    <div className="m-4">
+                    <div className="m-8">
                       <ProjectCard {...project} tilt featured></ProjectCard>
                     </div>
                   </CarouselItem>
