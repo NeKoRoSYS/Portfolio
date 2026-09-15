@@ -10,6 +10,7 @@ import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { ReactNode } from "react";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
+import { Card } from "@/components/Cards";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -85,19 +86,21 @@ export const SECTIONS: SectionProps[] = [
     outline: { enable: true, color: "bg-zinc-100" },
     sections: [
       <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
-        <div className="flex h-full w-full flex-wrap items-center justify-center">
+        <div className="flex h-full w-full flex-wrap items-center justify-center lg:justify-start">
           <Heading2 className="w-full text-center lg:text-left">
             Who I Am
           </Heading2>
+          <Card tilt rotationFactor={10} className="mt-8 h-32 w-32"></Card>
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
-        <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100 sm:justify-end">
+        <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100">
           <p className="self-start">
             I am a <b>Software Developer</b> and <b>Graphic Designer</b> by
-            trade.
+            trade. I commit to doing contracted, commissioned, or otherwise
+            freelance work; though, I am also open for internships, and
+            part-time/full-time jobs.
           </p>
-          <br />
           <div className="mt-8 flex flex-row gap-8 self-start">
             {BUSINESS.map((link, index) => (
               <TextHyperlink
@@ -184,10 +187,10 @@ export const SECTIONS: SectionProps[] = [
           <BackgroundAscii
             themeColor="#FFFFFF"
             url={"/videos/lavalamp.mp4"}
-
             containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto "
             loop
           />
+          <div className="pointer-events-none absolute inset-0 right-0 bottom-0 left-0 z-10 bg-linear-to-b from-black/0 from-50% to-zinc-950" />
         </div>
       </>
     ),
