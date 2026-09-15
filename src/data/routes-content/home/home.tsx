@@ -104,9 +104,9 @@ export const SECTIONS: SectionProps[] = [
             <br />
             <br />
             My portfolio spans across a handful of tech domains and media. Unity
-            game development is my main gig, but I also I make and help create
+            game development is my main gig, but I also make and help create
             web apps through Frontend and Backend development. I make sure that
-            all my work are clean, reliable, consistent; and last but definitely
+            all of my work are clean, reliable, consistent; and last but definitely
             not the least—up to standards.
             <br />
             <br />
