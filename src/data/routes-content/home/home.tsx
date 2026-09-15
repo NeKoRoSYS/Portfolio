@@ -218,6 +218,10 @@ export const SECTIONS: SectionProps[] = [
           <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:text-left">
             Your ideas are just one conversation away from becoming reality.
           </p>
+          <p className="mt-16 hidden w-full text-center font-bold lg:block lg:text-left">
+            Currently open for freelance projects and internships. <br />{" "}
+            Connect with me on LinkedIn or drop an email to start building.
+          </p>
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-4">
@@ -238,6 +242,10 @@ export const SECTIONS: SectionProps[] = [
               />
             ))}
           </div>
+          <p className="mt-8 block w-full text-center font-bold lg:hidden lg:text-left">
+            Currently open for freelance projects and internships. <br />{" "}
+            Connect with me on LinkedIn or drop an email to start building.
+          </p>
         </div>
       </div>,
     ],

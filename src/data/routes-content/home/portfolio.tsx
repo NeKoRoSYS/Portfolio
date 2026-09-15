@@ -31,7 +31,7 @@ export function PortfolioSection() {
     return (
       <>
         <div className="mb-8 flex w-full items-center justify-center text-center">
-          <h4 className="font-cosmic text-3xl font-bold">Featured</h4>
+          <h3 className="font-cosmic text-3xl font-bold">Featured</h3>
         </div>
         <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
           {featuredProjects.map((project, index) => (

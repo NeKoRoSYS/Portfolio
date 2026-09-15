@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 const domain: string = "https://nekorosys.vercel.app";
-const title: string = "NeKoRoSYS";
+const title: string = "NeKoRoSYS | Full-Stack Developer | Graphic Designer";
 const description: string =
-  "NeKoRoSYS is John Marky G. Malibiran's personal brand. This website serves as a landing page to showcase his extensive portfolio of works that span across Software and Graphic Design.";
+  "Explore the portfolio of John Marky G. Malibiran (NeKoRoSYS), featuring full-stack software development, game design, and graphic design projects.";
 
 export const viewport: Viewport = {
   colorScheme: "dark",
@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(domain),
   title: title,
   description: description,
+  alternates: {
+    canonical: domain,
+  },
   keywords: GLOBAL_KEYWORDS,
   authors: [
     { name: "NeKoRoSYS", url: domain },
