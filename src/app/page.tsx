@@ -32,30 +32,33 @@ export default function Home() {
         className="flex flex-col items-center justify-between lg:flex-row"
         background={
           <>
-            <BackgroundAscii
-              url={"/videos/background.mp4"}
-              containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
-              loop
-            />
+            <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none opacity-75">
+              <BackgroundAscii
+                themeColor="#8c2ed9"
+                url={"/videos/background.mp4"}
+                containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
+                loop
+              />
+            </div>
           </>
         }
       >
         <div className="mx-auto flex w-full flex-1 flex-col items-center lg:mx-0 lg:items-start">
-          <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 lg:hidden touch-hover:border-purple-300" />
+          <hr className="mx-auto mb-4 w-full max-w-xs border-2 border-green-400 lg:hidden touch-hover:border-purple-400" />
           <div className="order-2 flex w-full max-w-xs items-center justify-between gap-8 lg:order-1 lg:max-w-md">
             <hr className="w-full flex-1 border-2 border-green-400 lg:hidden" />
             <TextLoop className="text-md flex justify-center font-mono whitespace-nowrap italic select-none sm:text-lg lg:text-left lg:text-xl">
               {ROLES.map((role, index) => (
                 <span
                   key={index}
-                  className="text-green-400 touch-hover:text-purple-300"
+                  className="text-green-400 touch-hover:text-purple-400"
                 >
                   <TextScramble>{role.toUpperCase()}</TextScramble>
                 </span>
               ))}
             </TextLoop>
 
-            <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-300" />
+            <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-400" />
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
             <Heading1 className="sr-only">NeKoRoSYS</Heading1>
@@ -63,14 +66,14 @@ export default function Home() {
               {LETTERS.map((element, index) => (
                 <span
                   key={index}
-                  className="text-green-400 touch-hover:text-purple-300"
+                  className="text-green-400 touch-hover:text-purple-400"
                 >
                   {element}
                 </span>
               ))}
             </TextScramble>
           </div>
-          <hr className="order-3 mx-auto mt-4 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-300" />
+          <hr className="order-3 mx-auto mt-4 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-400" />
           <div className="order-4 mt-24 flex max-w-xs flex-wrap justify-center gap-4 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
               <Magnetic>

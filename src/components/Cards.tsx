@@ -176,7 +176,7 @@ export function ProjectCard({
                   showHyperlinkIcon
                   linkIconClass="w-5 group-touch-hover:bg-zinc-100 bg-zinc-400"
                   className={cn(
-                    "font-cosmic text-zinc-100 transition-transform touch-hover:text-purple-300! sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
+                    "font-cosmic text-zinc-100 transition-transform touch-hover:text-purple-400! sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
                     featured ? "text-3xl" : "text-xl sm:text-2xl",
                   )}
                   path={projectLink}

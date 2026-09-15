@@ -67,7 +67,7 @@ export const SECTIONS: SectionProps[] = [
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="w-full text-center">
             Your{" "}
-            <span className="relative font-bold text-green-400 touch-hover:text-purple-300">
+            <span className="relative font-bold text-green-400 touch-hover:text-purple-400">
               One-Man
             </span>{" "}
             IT Department
@@ -114,7 +114,16 @@ export const SECTIONS: SectionProps[] = [
     borderVisible: false,
 
     background: (
-      <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
+      <>
+        <div className="absolute top-0 right-0 left-0 h-64">
+          <Grid
+            className="inset-0 z-10 opacity-50"
+            fadeDir="bottom"
+            size={56}
+          />
+        </div>
+        <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
+      </>
     ),
     center: true,
     outline: { enable: true, color: "bg-green-400" },
@@ -146,7 +155,7 @@ export const SECTIONS: SectionProps[] = [
             Systems
             <hr className="w-full border border-zinc-400"></hr>
             <TextScramble>
-              <span className="font-bulletin font-normal text-green-400 italic touch-hover:text-purple-300">
+              <span className="font-bulletin font-normal text-green-400 italic touch-hover:text-purple-400">
                 Interlinked
               </span>
             </TextScramble>
@@ -168,7 +177,7 @@ export const SECTIONS: SectionProps[] = [
       <>
         <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none opacity-20">
           <BackgroundAscii
-            themeColor="#FB67FF"
+            themeColor="#FFFFFF"
             url={"/videos/lavalamp.mp4"}
 
             containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto "
@@ -178,16 +187,30 @@ export const SECTIONS: SectionProps[] = [
       </>
     ),
     sections: [
+      <SpotlightBlob
+        color="bg-purple-800"
+        top="top-[100%]"
+        left="left-[33%] lg:left-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-75"
+      />,
+      <SpotlightBlob
+        color="bg-purple-800"
+        top="-top-[50%]"
+        left="invisible lg:visible lg:right-0"
+        size="w-[250px] h-[250px]"
+        opacity="opacity-75"
+      />,
       <div className="col-span-12 mb-16 lg:col-span-8 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="w-full text-center lg:text-left">
             One{" "}
-            <span className="font-serif font-normal text-green-400 italic touch-hover:text-purple-300">
+            <span className="font-serif font-normal text-green-400 italic touch-hover:text-purple-400">
               'Hello'
             </span>
             ,
             <br />
-            <span className="font-bold text-green-400 touch-hover:text-purple-300">
+            <span className="font-bold text-green-400 touch-hover:text-purple-400">
               Many
             </span>{" "}
             Possibilities.
@@ -207,15 +230,9 @@ export const SECTIONS: SectionProps[] = [
                 path={link.path}
                 name={link.altName}
                 icon={link.icon}
-                iconClass={
-                  index > 0
-                    ? "brightness-65 group-touch-hover:brightness-100 "
-                    : ""
-                }
                 className={cn(
                   "relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start",
-                  index > 0 &&
-                    "self-end text-zinc-400 lg:w-3xs touch-hover:text-zinc-100",
+                  index > 0 && "self-end lg:w-3xs touch-hover:text-zinc-100",
                   link.colors,
                 )}
               />

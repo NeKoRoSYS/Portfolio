@@ -48,17 +48,25 @@ export function Header() {
               duration: 0.1,
             }}
           />
-          <div className="flex items-center justify-center gap-2">
-            <Image
-              draggable={false}
-              width={8}
-              height={8}
-              src={ICON}
-              className="aspect-square w-8 rounded-md"
-              alt={"GravenSoft Icon"}
-            ></Image>
-            <Link draggable={false} href={"/"}>
-              <p className="mt-0.5 font-bulletin text-3xl select-none touch-hover:text-green-400">
+          <div className="group">
+            <Link
+              href={"/"}
+              className="flex flex-row items-center justify-center gap-2"
+            >
+              <div
+                style={{
+                  maskImage: `url(${ICON.toString()})`,
+                  WebkitMaskImage: `url(${ICON.toString()})`,
+                  maskSize: "contain",
+                  WebkitMaskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskPosition: "center",
+                }}
+                className="aspect-square w-8 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
+              ></div>
+              <p className="mt-0.5 font-bulletin text-3xl select-none group-touch-hover:text-green-400">
                 {TITLE}
               </p>
             </Link>

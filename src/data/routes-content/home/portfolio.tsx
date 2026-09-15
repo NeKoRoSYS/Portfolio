@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/Buttons";
 import { BrandingCard, Card, ProjectCard } from "@/components/Cards";
 import { Heading3 } from "@/components/Headings";
 import {
@@ -15,6 +16,8 @@ import {
   STANDARD_TECH,
 } from "@/data/nekorosys";
 import { cn } from "@/lib/utils";
+import { BRAND_COLORS } from "@/shared/Colors";
+import { Icons } from "@/shared/Icons";
 import { useState } from "react";
 
 export function PortfolioSection() {
@@ -65,12 +68,42 @@ export function PortfolioSection() {
     {
       index: 0,
       label: "Tech",
-      payload: [renderProjects(FEATURED_TECH, STANDARD_TECH)],
+      payload: [
+        renderProjects(FEATURED_TECH, STANDARD_TECH),
+        <div className="mt-16 flex flex-row items-center justify-center gap-8">
+          <p className="font-cosmic text-2xl">More at</p>
+          <Button
+            showHyperlinkIcon
+            path={"https://github.com/NeKoRoSYS"}
+            name={"GitHub"}
+            icon={Icons.githubIcon}
+            className={cn(
+              "relative z-10 h-16 w-3xs rounded-xl border px-4 font-bold lg:justify-start",
+              BRAND_COLORS.github,
+            )}
+          />
+        </div>,
+      ],
     },
     {
       index: 1,
       label: "Art",
-      payload: [renderProjects(FEATURED_ART, STANDARD_ART, true)],
+      payload: [
+        renderProjects(FEATURED_ART, STANDARD_ART, true),
+        <div className="mt-16 flex flex-row items-center justify-center gap-8">
+          <p className="font-cosmic text-2xl">More at</p>
+          <Button
+            showHyperlinkIcon
+            path={"https://behance.net/NeKoRoSYS"}
+            name={"Behance"}
+            icon={Icons.behanceIcon}
+            className={cn(
+              "relative z-10 h-16 w-3xs rounded-xl border px-4 font-bold lg:justify-start",
+              BRAND_COLORS.behance,
+            )}
+          />
+        </div>,
+      ],
     },
   ];
 

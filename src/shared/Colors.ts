@@ -35,7 +35,7 @@ export const BRAND_COLORS = {
 export const Colors = {
   textAccent: "text-green-400",
   buttonMuted:
-    "border-zinc-400/80 touch-hover:border-purple-300 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-purple-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,25,215,0.4)]",
+    "border-zinc-400/80 touch-hover:border-purple-400 bg-linear-to-b from-zinc-800/40 to-zinc-600/50 touch-hover:from-zinc-600/50 touch-hover:to-purple-500/30 touch-hover:drop-shadow-[0_0_8px_rgba(200,25,215,0.4)]",
   textAccentHover:
     "focus-visible:text-zinc-100 group-touch-hover:text-zinc-950",
   textMutedNav: "text-zinc-400",

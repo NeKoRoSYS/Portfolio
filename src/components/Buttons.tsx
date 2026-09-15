@@ -18,7 +18,7 @@ export default function Button({
   truncate?: boolean;
 }) {
   const classOverride = cn(
-    "text-zinc-100 px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",
+    "container text-zinc-100 px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",
     className,
   );
   const isCopy = path.startsWith("copy:");

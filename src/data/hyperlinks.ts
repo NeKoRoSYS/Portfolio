@@ -48,15 +48,15 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
     tags: ["business", "contact"],
   },
   {
-    altName: "Connect",
+    altName: "Join the Club",
     name: "Discord",
     path: "https://discord.gg/qJp2ByQZq4",
     icon: Icons.discordIcon,
-    colors: Colors.buttonMuted,
+    colors: BRAND_COLORS.discord,
     tags: ["contact", "socials"],
   },
   {
-    name: "Itch.io",
+    name: "itch.io",
     path: "https://nekorosys.itch.io/",
     icon: Icons.itchioIcon,
     colors: BRAND_COLORS.itchio,
