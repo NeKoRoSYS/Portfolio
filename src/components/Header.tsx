@@ -12,7 +12,8 @@ import { Magnetic } from "./motion-primitives/magnetic";
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
-import { CTA_NAME, CTA_PATH, ICON, TITLE } from "@/data/components/header";
+import { CTA_NAME, CTA_PATH, TITLE } from "@/data/components/header";
+import { Media } from "@/shared/Icons";
 import { validateNavs } from "@/lib/utilsClient";
 
 export function Header() {
@@ -55,11 +56,11 @@ export function Header() {
             >
               <Image
                 draggable={false}
-                width={56}
-                height={56}
+                width={1636}
+                height={432}
                 style={{
-                  maskImage: `url(${ICON.toString()})`,
-                  WebkitMaskImage: `url(${ICON.toString()})`,
+                  maskImage: `url(${Media.nekorosysBanner.toString()})`,
+                  WebkitMaskImage: `url(${Media.nekorosysBanner.toString()})`,
                   maskSize: "contain",
                   WebkitMaskSize: "contain",
                   maskRepeat: "no-repeat",
@@ -67,13 +68,10 @@ export function Header() {
                   maskPosition: "center",
                   WebkitMaskPosition: "center",
                 }}
-                className="aspect-square w-8 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
+                className="aspect-auto w-40 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
                 src={"/icons/empty.png"}
                 alt={"NeKoRoSYS Logo"}
               />
-              <p className="mt-0.5 font-bulletin text-3xl select-none group-touch-hover:text-green-400">
-                {TITLE}
-              </p>
             </Link>
           </div>
           <div className="flex flex-row items-center justify-end gap-4">

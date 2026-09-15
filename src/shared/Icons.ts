@@ -22,3 +22,7 @@ export const Icons = {
   gravensoftIcon: "/icons/gravensoftBgFlat.jpg",
   itchioIcon: "/icons/itchio.svg",
 };
+
+export const Media = {
+  nekorosysBanner: "/images/nekorosys/bannerSmall.png",
+};
