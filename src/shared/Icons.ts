@@ -4,6 +4,7 @@ export const Icons = {
   diamondIcon: "/icons/DiamondStar.png",
   linkIcon: "/icons/link.svg",
   behanceIcon: "/icons/behance.svg",
+  nekorosysIcon: "/icons/nekorosys.svg",
   twitterIcon: "/icons/twitter-x.svg",
   tiktokIcon: "/icons/tiktok.svg",
   kofiIcon: "/icons/kofi.svg",
