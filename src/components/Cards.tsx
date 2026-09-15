@@ -3,7 +3,7 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
-import { FIELDS, NAME, PORTRAIT } from "@/data/components/brandingCard";
+import { CONTACT_FIELDS, NAME, PORTRAIT } from "@/data/components/brandingCard";
 import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -229,9 +229,18 @@ export function ProjectCard({
   );
 }
 
-export function BrandingCard() {
+interface BrandingCardProps {
+  className?: string;
+  displayLinks?: boolean;
+  fields?: ReactNode[];
+}
+export function BrandingCard({
+  className,
+  displayLinks,
+  fields,
+}: BrandingCardProps) {
   return (
-    <Card tilt className="max-w-xl p-px">
+    <Card tilt className={cn("max-w-xl p-px", className)}>
       <Spotlight
         className={`-z-10 bg-zinc-300`}
         size={256}
@@ -263,24 +272,28 @@ export function BrandingCard() {
             className="aspect-square max-w-24 min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
           />
           <p className="block font-bold @lg:hidden">{NAME}</p>
-          <hr className="w-[50%] border border-zinc-800 @lg:h-16 @lg:w-0" />
+          {fields && (
+            <hr className="w-[50%] border border-zinc-800 @lg:h-16 @lg:w-0" />
+          )}
           <div className="z-10 flex flex-col items-center justify-center text-center @lg:items-start @lg:justify-start @lg:text-left">
-            {FIELDS.map((element, index) => (
+            {fields?.map((element, index) => (
               <Fragment key={index}>{element}</Fragment>
             ))}
           </div>
         </div>
-        <div className="relative z-10 mt-4 mb-8 flex w-full justify-center gap-4 px-8 @lg:justify-end">
-          {BUSINESS.map((link, index) => (
-            <IconHyperlink
-              key={index}
-              name={link.name}
-              path={link.path}
-              icon={link.icon}
-              iconClass={"bg-zinc-400 touch-hover:bg-green-400"}
-            />
-          ))}
-        </div>
+        {displayLinks && (
+          <div className="relative z-10 mt-4 mb-8 flex w-full justify-center gap-4 px-8 @lg:justify-end">
+            {BUSINESS.map((link, index) => (
+              <IconHyperlink
+                key={index}
+                name={link.name}
+                path={link.path}
+                icon={link.icon}
+                iconClass={"bg-zinc-400 touch-hover:bg-green-400"}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </Card>
   );

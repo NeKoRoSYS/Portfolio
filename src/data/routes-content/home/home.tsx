@@ -10,7 +10,7 @@ import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { ReactNode } from "react";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
-import { Card } from "@/components/Cards";
+import { BrandingCard, Card } from "@/components/Cards";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -85,32 +85,50 @@ export const SECTIONS: SectionProps[] = [
     className: "bg-[rgb(15,15,15)]",
     outline: { enable: true, color: "bg-zinc-100" },
     sections: [
+      <div className="col-span-12 mb-8">
+        <Heading2 className="w-full text-center lg:text-left">
+          Who I Am
+        </Heading2>
+      </div>,
       <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
-        <div className="flex h-full w-full flex-wrap items-center justify-center lg:justify-start">
-          <Heading2 className="w-full text-center lg:text-left">
-            Who I Am
-          </Heading2>
-          <Card tilt rotationFactor={10} className="mt-8 h-32 w-32"></Card>
+        <div className="flex h-full w-full flex-wrap items-center justify-center lg:justify-center">
+          <BrandingCard className="max-w-2xs" />
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
         <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100">
           <p className="self-start">
             I am a <b>Software Developer</b> and <b>Graphic Designer</b> by
-            trade. I commit to doing contracted, commissioned, or otherwise
-            freelance work; though, I am also open for internships, and
-            part-time/full-time jobs.
+            trade.
+            <br />
+            <br />
+            My portfolio spans across a handful of tech domains and media. Unity
+            game development is my main gig, but I also I make and help create
+            web apps through Frontend and Backend development. I make sure that
+            all my work are clean, reliable, consistent; and last but definitely
+            not the least—up to standards.
+            <br />
+            <br />
+            <b>
+              I commit to doing contracted, commissioned, or otherwise freelance
+              work; though, I am also open for internships, and
+              part-time/full-time jobs.
+            </b>
           </p>
-          <div className="mt-8 flex flex-row gap-8 self-start">
-            {BUSINESS.map((link, index) => (
-              <TextHyperlink
-                className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
-                showHyperlinkIcon
-                key={index}
-                path={link.path}
-                name={link.name}
-              />
-            ))}
+          <div className="mt-16 flex flex-col gap-4 self-start">
+            I look forward to working with like-minded individuals who share the
+            same passion for creation and solving problems.
+            <div className="flex flex-row gap-8">
+              {BUSINESS.map((link, index) => (
+                <TextHyperlink
+                  className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
+                  showHyperlinkIcon
+                  key={index}
+                  path={link.path}
+                  name={link.name}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>,
