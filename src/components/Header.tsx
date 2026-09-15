@@ -68,8 +68,8 @@ export function Header() {
                   WebkitMaskPosition: "center",
                 }}
                 className="aspect-square w-8 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
-                src={""}
-                alt={""}
+                src={"/icons/empty.png"}
+                alt={"NeKoRoSYS Logo"}
               />
               <p className="mt-0.5 font-bulletin text-3xl select-none group-touch-hover:text-green-400">
                 {TITLE}
