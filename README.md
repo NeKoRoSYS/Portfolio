@@ -30,5 +30,5 @@ Originally built with Vite and hosted on GitHub pages, I decided to take the opp
 
 ## Copyright
 
-© 2026 John Marky G. Malibiran. All Rights Reserved.
+© 2026 NeKoRoSYS. All Rights Reserved.
 This portfolio is for reference only. You may not copy, reproduce, or redistribute the code or design in whole or in part.
