@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
+import { Icons } from "@/shared/Icons";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -86,6 +87,7 @@ export default function Block({
 export interface SectionProps extends BlockProps {
   title?: string | ReactNode;
   text?: string;
+  showIndex?: boolean;
   center?: boolean;
   reverse?: boolean;
   sections?: ReactNode[];
@@ -95,6 +97,7 @@ export function Section(props: SectionProps) {
   const {
     index,
     id,
+    showIndex = true,
     outline,
     spotlight,
     background,
@@ -121,6 +124,29 @@ export function Section(props: SectionProps) {
         <div
           className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-full`}
         >
+          {showIndex && id && (
+            <div className="group mb-4 flex flex-row items-center justify-center gap-4">
+              <div
+                aria-hidden={true}
+                style={{
+                  maskImage: `url(${Icons.diamondIcon.toString()})`,
+                  WebkitMaskImage: `url(${Icons.diamondIcon.toString()})`,
+                  maskSize: "contain",
+                  WebkitMaskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskPosition: "center",
+                }}
+                className={cn(
+                  `aspect-square w-5 shrink-0 bg-green-400 bg-cover bg-center bg-no-repeat group-touch-hover:bg-purple-400`,
+                )}
+              />
+              <p className="font-mono text-green-400 group-touch-hover:text-purple-400">
+                0{index} // <b>{id?.toUpperCase()}</b>
+              </p>
+            </div>
+          )}
           {(title != null || text != null) && (
             <div className={`flex w-full flex-col gap-8`}>
               {title &&

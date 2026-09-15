@@ -172,16 +172,27 @@ export function ProjectCard({
                   "mx-4 mt-4 w-full text-left font-bold text-zinc-100",
                 )}
               >
-                <TextHyperlink
-                  showHyperlinkIcon
-                  linkIconClass="w-5 group-touch-hover:bg-zinc-100 bg-zinc-400"
-                  className={cn(
-                    "font-cosmic text-zinc-100 transition-transform touch-hover:text-purple-400! sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
-                    featured ? "text-3xl" : "text-xl sm:text-2xl",
-                  )}
-                  path={projectLink}
-                  name={title}
-                />
+                {projectLink != null ? (
+                  <TextHyperlink
+                    showHyperlinkIcon
+                    linkIconClass="w-5 group-touch-hover:bg-zinc-100 bg-zinc-400"
+                    className={cn(
+                      "font-cosmic text-zinc-100 transition-transform touch-hover:text-purple-400! sm:touch-hover:translate-x-2 group-touch-hover:text-green-400",
+                      featured ? "text-3xl" : "text-xl sm:text-2xl",
+                    )}
+                    path={projectLink}
+                    name={title}
+                  />
+                ) : (
+                  <span
+                    className={cn(
+                      "font-cosmic text-zinc-100 group-touch-hover:text-green-400",
+                      featured ? "text-3xl" : "text-xl sm:text-2xl",
+                    )}
+                  >
+                    {title}
+                  </span>
+                )}
               </Heading3>
             </div>
             <div className="relative z-10 flex w-full items-center justify-center">

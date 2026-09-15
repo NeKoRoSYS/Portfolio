@@ -34,7 +34,7 @@ export const ROLES = [
 export interface ProjectProps {
   featured?: boolean;
   title?: string;
-  projectLink: string;
+  projectLink?: string;
   excerpt?: string;
   description?: string;
   thumbnail?: string[] | StaticImageData[];

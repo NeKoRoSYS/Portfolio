@@ -1,6 +1,6 @@
 import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
-import { CONTACT } from "../../hyperlinks";
+import { BUSINESS, CONTACT } from "../../hyperlinks";
 import Grid from "@/components/Grid";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { ReactNode } from "react";
 import { BackgroundAscii } from "@/components/VideoPlayer";
+import { TextHyperlink } from "@/components/Hyperlinks";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -57,6 +58,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "stack",
     center: true,
+    showIndex: false,
     outline: { enable: true, color: "bg-green-400" },
     background: (
       <Grid className="inset-0 z-10 opacity-50" fadeDir="top" size={56} />
@@ -85,25 +87,28 @@ export const SECTIONS: SectionProps[] = [
       <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="w-full text-center lg:text-left">
-            Hello, World!
+            Who I Am
           </Heading2>
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
         <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100 sm:justify-end">
-          <p>
-            My name is Marky, but I am better known online as <b>NeKoRoSYS</b>!
-            I am a 19-year-old Filipino currently taking Computer Science as my
-            undergraduate program.
+          <p className="self-start">
+            I am a <b>Software Developer</b> and <b>Graphic Designer</b> by
+            trade.
           </p>
           <br />
-          <p>
-            I aspire to be a Software Engineer and Systems Architect. My goal is
-            to learn a lot of aspects that come in developing software and IoT
-            such as video games, utilities, and other systems. I am interested
-            in web, game, and AI/ML development; though I also happen to like
-            creating graphic and motion designs.
-          </p>
+          <div className="mt-8 flex flex-row gap-8 self-start">
+            {BUSINESS.map((link, index) => (
+              <TextHyperlink
+                className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
+                showHyperlinkIcon
+                key={index}
+                path={link.path}
+                name={link.name}
+              />
+            ))}
+          </div>
         </div>
       </div>,
     ],
@@ -160,7 +165,7 @@ export const SECTIONS: SectionProps[] = [
               </span>
             </TextScramble>
           </Heading2>
-          <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:ml-128 lg:text-right">
+          <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
             Cohesive experiences through Software and Designs—engineered with
             purpose to solve real problems.
           </p>
