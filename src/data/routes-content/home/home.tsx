@@ -11,6 +11,7 @@ import { ReactNode } from "react";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
 import { BrandingCard, Card } from "@/components/Cards";
+import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -92,7 +93,7 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 mb-12 lg:col-span-5 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center lg:justify-center">
-          <BrandingCard className="max-w-2xs" />
+          <BrandingCard fields={ABOUT_FIELDS} className="max-w-2xs" />
         </div>
       </div>,
       <div className="col-span-12 lg:col-span-7">
@@ -111,7 +112,7 @@ export const SECTIONS: SectionProps[] = [
             <br />
             <b>
               I commit to doing contracted, commissioned, or otherwise freelance
-              work; though, I am also open for internships, and
+              work; though, I am also open for internships and
               part-time/full-time jobs.
             </b>
           </p>
