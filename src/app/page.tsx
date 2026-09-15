@@ -32,10 +32,11 @@ export default function Home() {
         className="flex flex-col items-center justify-between lg:flex-row"
         background={
           <>
-            <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none opacity-75">
+            <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none scale-105">
               <BackgroundAscii
                 themeColor="#8c2ed9"
-                url={"/videos/background.mp4"}
+                sampleSize={12}
+                url={"/videos/backgroundAlt.mp4"}
                 containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto"
                 loop
               />
