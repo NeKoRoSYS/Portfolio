@@ -39,7 +39,7 @@ export type CarouselProviderProps = {
   disableDrag?: boolean;
 };
 
-function CarouselProvider({
+export function CarouselProvider({
   children,
   initialIndex = 0,
   onIndexChange,
@@ -81,7 +81,7 @@ export type CarouselProps = {
   disableDrag?: boolean;
 };
 
-function Carousel({
+export function Carousel({
   children,
   className,
   initialIndex = 0,
@@ -119,7 +119,7 @@ export type CarouselNavigationProps = {
   alwaysShow?: boolean;
 };
 
-function CarouselNavigation({
+export function CarouselNavigation({
   className,
   classNameButton,
   alwaysShow,
@@ -192,7 +192,7 @@ export type CarouselIndicatorProps = {
   classNameButton?: string;
 };
 
-function CarouselIndicator({
+export function CarouselIndicator({
   className,
   classNameButton,
 }: CarouselIndicatorProps) {
@@ -205,21 +205,23 @@ function CarouselIndicator({
         className,
       )}
     >
-      <div className="flex space-x-2">
+      <div className="flex items-center justify-center">
         {Array.from({ length: itemsCount }, (_, i) => (
-          <button
-            key={i}
-            type="button"
-            aria-label={`Go to slide ${i + 1}`}
-            onClick={() => setIndex(i)}
-            className={cn(
-              "h-2 w-2 rounded-full transition-opacity duration-300",
-              index === i
-                ? "bg-zinc-950 dark:bg-zinc-50"
-                : "bg-zinc-900/50 dark:bg-zinc-100/50",
-              classNameButton,
-            )}
-          />
+          <div key={i} className="flex h-8 w-6 items-center justify-center">
+            <button
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={cn(
+                "relative h-2 w-2 rounded-full transition-opacity duration-300",
+                "after:absolute after:-inset-3 after:content-['']",
+                index === i
+                  ? "bg-zinc-950 dark:bg-zinc-50"
+                  : "bg-zinc-900/50 dark:bg-zinc-100/50",
+                classNameButton,
+              )}
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -232,7 +234,7 @@ export type CarouselContentProps = {
   transition?: Transition;
 };
 
-function CarouselContent({
+export function CarouselContent({
   children,
   className,
   transition,
@@ -328,7 +330,7 @@ export type CarouselItemProps = {
   className?: string;
 };
 
-function CarouselItem({ children, className }: CarouselItemProps) {
+export function CarouselItem({ children, className }: CarouselItemProps) {
   return (
     <motion.div
       className={cn(
@@ -340,12 +342,3 @@ function CarouselItem({ children, className }: CarouselItemProps) {
     </motion.div>
   );
 }
-
-export {
-  Carousel,
-  CarouselContent,
-  CarouselNavigation,
-  CarouselIndicator,
-  CarouselItem,
-  useCarousel,
-};
