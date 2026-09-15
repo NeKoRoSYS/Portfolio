@@ -57,6 +57,10 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "stack",
     center: true,
+    outline: { enable: true, color: "bg-green-400" },
+    background: (
+      <Grid className="inset-0 z-10 opacity-50" fadeDir="top" size={56} />
+    ),
     borderVisible: false,
     sections: [
       <div className="col-span-12">
@@ -109,7 +113,9 @@ export const SECTIONS: SectionProps[] = [
     className: "bg-zinc-950",
     borderVisible: false,
 
-    background: <Grid className="inset-0 z-10" fadeDir="radial" size={56} />,
+    background: (
+      <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
+    ),
     center: true,
     outline: { enable: true, color: "bg-green-400" },
     sections: [
@@ -172,20 +178,6 @@ export const SECTIONS: SectionProps[] = [
       </>
     ),
     sections: [
-      <SpotlightBlob
-        color="bg-purple-800"
-        top="top-[75%]"
-        left="left-[33%] lg:left-0"
-        size="w-[250px] h-[250px]"
-        opacity="opacity-75"
-      />,
-      <SpotlightBlob
-        color="bg-purple-800"
-        top="-top-[50%]"
-        left="invisible lg:visible lg:right-0"
-        size="w-[250px] h-[250px]"
-        opacity="opacity-75"
-      />,
       <div className="col-span-12 mb-16 lg:col-span-8 lg:mb-0">
         <div className="flex h-full w-full flex-wrap items-center justify-center">
           <Heading2 className="w-full text-center lg:text-left">
