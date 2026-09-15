@@ -235,7 +235,7 @@ export const SECTIONS: SectionProps[] = [
                 name={link.altName}
                 icon={link.icon}
                 className={cn(
-                  "relative z-10 h-16 w-full rounded-xl border px-4 font-bold lg:justify-start",
+                  "relative z-10 h-16 w-full rounded-xl border px-4 font-bold backdrop-blur-xs lg:justify-start",
                   index > 0 && "self-end lg:w-3xs touch-hover:text-zinc-100",
                   link.colors,
                 )}
