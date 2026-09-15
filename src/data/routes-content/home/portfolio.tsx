@@ -46,7 +46,7 @@ export function PortfolioSection() {
         {standardProjects.length > 0 && (
           <>
             <div className="my-8 flex w-full items-center justify-center text-center">
-              <h4 className="font-cosmic text-2xl font-bold">Other Projects</h5>
+              <h4 className="font-cosmic text-2xl font-bold">Other Projects</h4>
             </div>
             <div
               className={cn(

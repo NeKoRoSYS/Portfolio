@@ -144,7 +144,7 @@ export default function Home() {
               </CarouselContent>
             </div>
             <CarouselNavigation alwaysShow />
-            <CarouselIndicator />
+            <CarouselIndicator classNameButton="bg-amber-50" />
           </Carousel>
         </div>
       </Hero>
