@@ -53,7 +53,10 @@ export function Header() {
               href={"/"}
               className="flex flex-row items-center justify-center gap-2"
             >
-              <div
+              <Image
+                draggable={false}
+                width={56}
+                height={56}
                 style={{
                   maskImage: `url(${ICON.toString()})`,
                   WebkitMaskImage: `url(${ICON.toString()})`,
@@ -65,7 +68,9 @@ export function Header() {
                   WebkitMaskPosition: "center",
                 }}
                 className="aspect-square w-8 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
-              ></div>
+                src={""}
+                alt={""}
+              />
               <p className="mt-0.5 font-bulletin text-3xl select-none group-touch-hover:text-green-400">
                 {TITLE}
               </p>
