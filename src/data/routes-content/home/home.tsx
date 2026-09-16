@@ -1,6 +1,7 @@
 import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
 import { BUSINESS, CONTACT } from "../../hyperlinks";
+import Image from "next/image";
 import Grid from "@/components/Grid";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
@@ -104,9 +105,9 @@ export const SECTIONS: SectionProps[] = [
             <br />
             <br />
             My portfolio spans across a handful of tech domains and media. Unity
-            game development is my main gig, but I also make and help create
-            web apps through Frontend and Backend development. I make sure that
-            all of my work are clean, reliable, consistent; and last but definitely
+            game development is my main gig, but I also make and help create web
+            apps through Frontend and Backend development. I make sure that all
+            of my work are clean, reliable, consistent; and last but definitely
             not the least—up to standards.
             <br />
             <br />
@@ -133,6 +134,34 @@ export const SECTIONS: SectionProps[] = [
           </div>
         </div>
       </div>,
+    ],
+  },
+  {
+    id: "credentials",
+    borderVisible: false,
+    sections: [
+      <>
+        <div className="col-span-12">
+          <Heading2 className="w-full text-center">
+            <span className="text-green-400 touch-hover:text-purple-400">
+              Versatile
+            </span>{" "}
+            and{" "}
+            <span className="group relative text-green-400 touch-hover:text-purple-400">
+              STACKED
+              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50">
+                STACKED
+              </span>
+              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25">
+                STACKED
+              </span>
+              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10">
+                STACKED
+              </span>
+            </span>
+          </Heading2>
+        </div>
+      </>,
     ],
   },
   {
@@ -209,7 +238,7 @@ export const SECTIONS: SectionProps[] = [
             containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto "
             loop
           />
-          <div className="pointer-events-none absolute inset-0 right-0 bottom-0 left-0 z-10 bg-linear-to-b from-black/0 from-50% to-zinc-950" />
+          <div className="pointer-events-none absolute inset-0 right-0 bottom-0 left-0 z-10 bg-linear-to-b from-black/0 from-25% to-black" />
         </div>
       </>
     ),

@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 import { type HyperlinkSchema } from "../data/hyperlinks";
 import { TextHyperlink } from "./Hyperlinks";

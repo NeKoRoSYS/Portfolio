@@ -25,7 +25,7 @@ interface CardProps {
 export function Card({ rotationFactor = 4, ...props }: CardProps) {
   const { tilt, className, children } = props;
   const baseClass =
-    "@container  overflow-clip w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 ";
+    "@container  overflow-clip w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 group";
 
   return (
     <Tilt
@@ -266,7 +266,7 @@ export function BrandingCard({
           opacity="opacity-100"
         />
 
-        <div className="tems-center relative z-10 my-8 flex h-auto w-full flex-col items-center gap-4 self-stretch @lg:flex-row @lg:justify-center @lg:gap-8">
+        <div className="relative z-10 my-8 flex h-auto w-full flex-col items-center gap-4 self-stretch @lg:flex-row @lg:justify-center @lg:gap-8">
           <div
             style={{ backgroundImage: `url("${PORTRAIT}")` }}
             className="aspect-square max-w-24 min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
@@ -281,8 +281,18 @@ export function BrandingCard({
             ))}
           </div>
         </div>
+
+        <div className="absolute bottom-4 left-6 hidden w-full opacity-25 saturate-0 @lg:flex group-touch-hover:opacity-100 group-touch-hover:saturate-100">
+          <Image
+            width={1632}
+            height={432}
+            className="-m-2 aspect-auto w-50 mask-[linear-gradient(to_bottom,black,transparent)]"
+            src="/images/nekorosys/bannerColorSmall.png"
+            alt={"NeKoRoSYS"}
+          />
+        </div>
         {displayLinks && (
-          <div className="relative z-10 mt-4 mb-8 flex w-full justify-center gap-4 px-8 @lg:justify-end">
+          <div className="relative z-10 mt-4 mb-4 flex w-full justify-center gap-4 px-4 @lg:justify-end">
             {BUSINESS.map((link, index) => (
               <IconHyperlink
                 key={index}
