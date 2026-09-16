@@ -63,9 +63,10 @@ export default function Home() {
           </div>
           <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl leading-none select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]/none">
             <Heading1 className="sr-only">NeKoRoSYS</Heading1>
-            <TextScramble>
+            <TextScramble className="aria-hidden:hidden">
               {LETTERS.map((element, index) => (
                 <span
+                  aria-hidden
                   key={index}
                   className="text-green-400 touch-hover:text-purple-400"
                 >
