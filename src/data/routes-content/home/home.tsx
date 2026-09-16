@@ -147,15 +147,24 @@ export const SECTIONS: SectionProps[] = [
               Versatile
             </span>{" "}
             and{" "}
-            <span className="group relative text-green-400 touch-hover:text-purple-400">
+            <span className="group relative text-green-400 select-none touch-hover:text-purple-400">
               STACKED
-              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50"
+              >
                 STACKED
               </span>
-              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25"
+              >
                 STACKED
               </span>
-              <span className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10"
+              >
                 STACKED
               </span>
             </span>
@@ -211,7 +220,7 @@ export const SECTIONS: SectionProps[] = [
             Systems
             <hr className="w-full border border-zinc-400"></hr>
             <TextScramble>
-              <span className="font-bulletin font-normal text-green-400 italic touch-hover:text-purple-400">
+              <span className="font-bulletin font-normal text-green-400 italic select-none touch-hover:text-purple-400">
                 Interlinked
               </span>
             </TextScramble>
