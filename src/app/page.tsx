@@ -61,7 +61,7 @@ export default function Home() {
 
             <hr className="w-full flex-1 border-2 border-green-400 touch-hover:border-purple-400" />
           </div>
-          <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]">
+          <div className="order-1 mx-auto w-fit text-center font-bulletin text-8xl leading-none select-none lg:order-2 lg:mx-0 lg:text-left lg:text-[8.65rem]/none">
             <Heading1 className="sr-only">NeKoRoSYS</Heading1>
             <TextScramble>
               {LETTERS.map((element, index) => (
@@ -75,7 +75,7 @@ export default function Home() {
             </TextScramble>
           </div>
           <hr className="order-3 mx-auto mt-4 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-400" />
-          <div className="order-4 mt-24 flex max-w-xs flex-wrap justify-center gap-4 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
+          <div className="order-4 mt-10 flex max-w-xs flex-wrap justify-center gap-4 sm:mt-24 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
             <div className="group relative z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
               <Magnetic>
                 <GlowEffect
