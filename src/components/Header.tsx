@@ -143,17 +143,19 @@ export function Header() {
         className="visible sm:hidden"
         onToggle={toggleMenu}
         isOpen={isMenuOpen}
-        fields={[
-          <div className="flex h-16 w-full items-center justify-center font-bold">
-            Home
-          </div>,
-          <div className="flex h-16 w-full items-center justify-center font-bold">
-            Blog
-          </div>,
-          <div className="flex h-16 w-full items-center justify-center font-bold">
-            About
-          </div>,
-        ]}
+        fields={HEADERROUTES.map((route, index) => (
+          <Link
+            draggable={false}
+            href={validateNav(route.path)}
+            className="group flex h-16 w-full items-center justify-center"
+          >
+            <span
+              className={`${useIsRouteActive(route.path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : "text-zinc-300"} font-bold`}
+            >
+              {route.name}
+            </span>
+          </Link>
+        ))}
       />
     </>
   );
