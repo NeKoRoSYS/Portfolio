@@ -17,6 +17,7 @@ export function SmartLink({
     download = false,
     showHyperlinkIcon,
     icon,
+    linkIcon = Icons.linkArrowIcon,
     name,
     path,
   } = hyperlinkProps;
@@ -58,8 +59,8 @@ export function SmartLink({
         <div
           aria-hidden={true}
           style={{
-            maskImage: `url(${Icons.linkArrowIcon.toString()})`,
-            WebkitMaskImage: `url(${Icons.linkArrowIcon.toString()})`,
+            maskImage: `url(${linkIcon.toString()})`,
+            WebkitMaskImage: `url(${linkIcon.toString()})`,
             maskSize: "contain",
             WebkitMaskSize: "contain",
             maskRepeat: "no-repeat",

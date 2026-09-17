@@ -13,6 +13,7 @@ export interface HyperlinkSchema extends RouteMeta {
   iconClass?: string;
   labelClass?: string;
   icon?: string | StaticImageData;
+  linkIcon?: string | StaticImageData;
   tags?: string[];
 }
 

@@ -13,6 +13,7 @@ import { TextHyperlink } from "@/components/Hyperlinks";
 import { BrandingCard, Card } from "@/components/Cards";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 import Link from "next/link";
+import { Icons } from "@/shared/Icons";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -186,6 +187,9 @@ export const SECTIONS: SectionProps[] = [
             </p>
             <TextHyperlink
               download={true}
+              showHyperlinkIcon
+              linkIcon={Icons.downloadIcon}
+              linkIconClass="group-touch-hover:transform-[translate(0px,0px)]"
               path={"/CV Malibiran 2026.pdf"}
               name="Click to Download CV"
               className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"

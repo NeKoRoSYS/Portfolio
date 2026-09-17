@@ -1,6 +1,7 @@
 export const Icons = {
   arrowIcon: "/icons/arrow.webp",
   linkArrowIcon: "/icons/arrowLink.svg",
+  downloadIcon: "/icons/downloadIcon.svg",
   diamondIcon: "/icons/diamondStar.svg",
   linkIcon: "/icons/link.svg",
   behanceIcon: "/icons/behance.svg",
