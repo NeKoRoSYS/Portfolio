@@ -53,7 +53,7 @@ export function Tilt({
       : [rotationFactor, -rotationFactor],
   );
 
-  const transform = useMotionTemplate`perspective(1000px) translateZ(${zSpring}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  const transform = useMotionTemplate`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${zSpring}px)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -67,13 +67,13 @@ export function Tilt({
 
     x.set(xPos);
     y.set(yPos);
-    z.set(activeZ);
+    if (activeZ) z.set(activeZ);
   };
 
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
-    z.set(0);
+    if (activeZ) z.set(0);
   };
 
   return (

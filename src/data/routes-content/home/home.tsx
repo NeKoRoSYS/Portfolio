@@ -99,6 +99,12 @@ export const SECTIONS: SectionProps[] = [
       </div>,
       <div className="col-span-12 lg:col-span-7">
         <div className="flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100">
+          <TextHyperlink
+            className="mb-8 justify-start self-start py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
+            showHyperlinkIcon
+            path={"/about"}
+            name={"Read the long version here!"}
+          />
           <p className="self-start">
             I am a <b>Software Developer</b> and <b>Graphic Designer</b> by
             trade.

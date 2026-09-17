@@ -36,7 +36,7 @@ export default function Button({
         icon && "mx-auto text-center",
         !truncate && "block sm:block",
       )}
-      linkIconClass="w-5 sm:w-5 brightness-0 invert-75 group-touch-hover:invert"
+      linkIconClass="w-5 sm:w-5 bg-zinc-400 group-touch-hover:bg-white"
     >
       {children}
     </SmartLink>

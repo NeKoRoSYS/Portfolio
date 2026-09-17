@@ -67,7 +67,7 @@ export function SmartLink({
             WebkitMaskPosition: "center",
           }}
           className={cn(
-            "aspect-square w-3 shrink-0 bg-white bg-cover bg-center bg-no-repeat group-touch-hover:transform-[translate(4px,-4px)]",
+            "aspect-square w-3 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat group-touch-hover:transform-[translate(4px,-4px)] group-touch-hover:bg-white",
             linkIconClass,
           )}
         />

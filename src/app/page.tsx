@@ -131,7 +131,7 @@ export default function Home() {
               <CarouselContent className="w-full">
                 {FEATURED_TECH.map((project, index) => (
                   <CarouselItem key={index} className="">
-                    <div className="mx-4">
+                    <div className="m-4">
                       <ProjectCard {...project} tilt featured></ProjectCard>
                     </div>
                   </CarouselItem>

@@ -22,16 +22,21 @@ interface CardProps {
   children?: ReactNode;
 }
 
-export function Card({ rotationFactor = 4, ...props }: CardProps) {
+export function Card({
+  rotationFactor = 4,
+  activeZ = 25,
+  ...props
+}: CardProps & { activeZ?: number }) {
   const { tilt, className, children } = props;
   const baseClass =
-    "@container  overflow-clip w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 group";
+    "@container w-full flex flex-col rounded-3xl border border-zinc-700 bg-zinc-950 group overflow-hidden";
 
   return (
     <Tilt
       rotationFactor={tilt ? rotationFactor : 0}
       className={cn(baseClass, className)}
       isRevese
+      activeZ={activeZ}
     >
       {children}
     </Tilt>
@@ -41,7 +46,7 @@ export function Card({ rotationFactor = 4, ...props }: CardProps) {
 export function BlogCard({ ...post }: BlogMeta) {
   return (
     <Card tilt className="group h-full">
-      <div className="relative h-full p-px">
+      <div className="relative h-full overflow-hidden p-px">
         <Spotlight
           className="bg-green-400"
           size={256}
@@ -108,11 +113,12 @@ export function ProjectCard({
 }: CardProps & ProjectProps) {
   return (
     <Card
+      activeZ={featured ? 25 : 0}
       tilt={tilt}
       className={cn(className, "group")}
       rotationFactor={rotationFactor}
     >
-      <div className={cn("relative h-full p-px")}>
+      <div className={cn("relative h-full overflow-hidden p-px")}>
         <Spotlight
           className={`bg-green-400`}
           size={256}
@@ -124,7 +130,7 @@ export function ProjectCard({
         />
         <div
           className={cn(
-            "relative flex h-full w-full overflow-clip rounded-3xl",
+            "relative flex h-full w-full overflow-hidden rounded-3xl",
             featured ? "min-h-50 flex-col @2xl:flex-row" : "min-h-50 flex-row",
           )}
         >
@@ -266,7 +272,10 @@ export function BrandingCard({
           opacity="opacity-100"
         />
 
-        <div className="relative z-10 my-8 flex h-auto w-full flex-col items-center gap-4 self-stretch @lg:flex-row @lg:justify-center @lg:gap-8">
+        <div
+          style={{ transform: "translateZ(60px)" }}
+          className="relative z-10 my-8 flex h-auto w-full flex-col items-center gap-4 self-stretch @lg:flex-row @lg:justify-center @lg:gap-8"
+        >
           <div
             style={{ backgroundImage: `url("${PORTRAIT}")` }}
             className="aspect-square max-w-24 min-w-24 rounded-full bg-cover bg-center bg-no-repeat"
