@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef } from "react";
 import {
   motion,
@@ -18,6 +17,7 @@ export type TiltProps = {
   rotationFactor?: number;
   isRevese?: boolean;
   springOptions?: SpringOptions;
+  activeZ?: number;
 };
 
 export function Tilt({
@@ -27,14 +27,16 @@ export function Tilt({
   rotationFactor = 15,
   isRevese = false,
   springOptions,
+  activeZ = 0,
 }: TiltProps) {
   const ref = useRef<HTMLDivElement>(null);
-
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const z = useMotionValue(0);
 
   const xSpring = useSpring(x, springOptions);
   const ySpring = useSpring(y, springOptions);
+  const zSpring = useSpring(z, springOptions);
 
   const rotateX = useTransform(
     ySpring,
@@ -51,27 +53,27 @@ export function Tilt({
       : [rotationFactor, -rotationFactor],
   );
 
-  const transform = useMotionTemplate`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  const transform = useMotionTemplate`perspective(1000px) translateZ(${zSpring}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
-
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-
     const xPos = mouseX / width - 0.5;
     const yPos = mouseY / height - 0.5;
 
     x.set(xPos);
     y.set(yPos);
+    z.set(activeZ);
   };
 
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
+    z.set(0);
   };
 
   return (

@@ -6,7 +6,6 @@ import PageWrapper from "@/components/app/PageWrapper";
 import { Footer } from "@/components/Footer";
 import type { Viewport } from "next";
 import { GLOBAL_KEYWORDS } from "@/data/nekorosys";
-import SmoothScroller from "@/components/SmoothScroller";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
