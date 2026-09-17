@@ -5,7 +5,7 @@ import { SmartLink } from "./Hyperlinks";
 export default function Button({
   name,
   showHyperlinkIcon = false,
-  truncate,
+  truncate = false,
   children,
   icon,
   labelClass,
@@ -34,7 +34,7 @@ export default function Button({
       labelClass={cn(
         labelClass,
         icon && "mx-auto text-center",
-        truncate && "hidden sm:block",
+        !truncate && "block sm:block",
       )}
       linkIconClass="w-5 sm:w-5 brightness-0 invert-75 group-touch-hover:invert"
     >

@@ -49,7 +49,7 @@ export function SmartLink({
       )}
       {children}
       {name && (
-        <p className={cn(labelClass, icon != null && `hidden sm:block`)}>
+        <p className={cn(icon != null && `hidden sm:block`, labelClass)}>
           {name}
         </p>
       )}
