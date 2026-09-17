@@ -139,6 +139,11 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "credentials",
     borderVisible: false,
+    background: (
+      <div className="absolute top-0 right-0 left-0 h-64">
+        <Grid className="inset-0 z-10 opacity-50" fadeDir="bottom" size={56} />
+      </div>
+    ),
     sections: [
       <>
         <div className="col-span-12">
@@ -179,18 +184,8 @@ export const SECTIONS: SectionProps[] = [
     borderVisible: false,
 
     background: (
-      <>
-        <div className="absolute top-0 right-0 left-0 h-64">
-          <Grid
-            className="inset-0 z-10 opacity-50"
-            fadeDir="bottom"
-            size={56}
-          />
-        </div>
-        <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
-      </>
+      <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
     ),
-    center: true,
     outline: { enable: true, color: "bg-green-400" },
     sections: [
       <SpotlightBlob

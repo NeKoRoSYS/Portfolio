@@ -1,9 +1,6 @@
-import { type ReactNode } from "react";
-import Link from "next/link";
 import { ButtonSchema } from "@/data/hyperlinks";
-import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/shared/Icons";
+import { SmartLink } from "./Hyperlinks";
 
 export default function Button({
   name,
@@ -11,6 +8,7 @@ export default function Button({
   truncate,
   children,
   icon,
+  labelClass,
   iconClass,
   path,
   className = "",
@@ -18,90 +16,29 @@ export default function Button({
   truncate?: boolean;
 }) {
   const classOverride = cn(
-    "container text-zinc-100 px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",
+    "relative overflow-clip container text-zinc-100 px-4 group h-8 w-fit flex flex-row items-center justify-center cursor-pointer",
     className,
   );
-  const isCopy = path.startsWith("copy:");
-  const isHash = path.startsWith("#");
-  const isRoute = path.startsWith("/");
-  const linkInner = (
-    <>
-      {icon && (
-        <div className="flex shrink-0 flex-row items-center gap-3">
-          <div
-            aria-hidden={true}
-            style={{
-              maskImage: `url(${icon.toString()})`,
-              WebkitMaskImage: `url(${icon.toString()})`,
-              maskSize: "contain",
-              WebkitMaskSize: "contain",
-              maskRepeat: "no-repeat",
-              WebkitMaskRepeat: "no-repeat",
-              maskPosition: "center",
-              WebkitMaskPosition: "center",
-            }}
-            className={cn(
-              `aspect-square w-6 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
-              iconClass,
-            )}
-          />
-        </div>
-      )}
-      {children}
-      {name && (
-        <div className={cn(icon && "mx-auto", truncate && "hidden sm:block")}>
-          <p className={icon != null ? `text-center` : ""}>{name}</p>
-        </div>
-      )}
-      {showHyperlinkIcon && (
-        <div
-          aria-hidden={true}
-          style={{ backgroundImage: `url("${Icons.linkArrowIcon}")` }}
-          className="aspect-square w-5 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 group-touch-hover:transform-[translate(4px,-4px)] group-touch-hover:invert"
-        />
-      )}
-    </>
-  );
-
-  if (isCopy) {
-    return (
-      <a
-        draggable={false}
-        title={`Click to copy: ${name}}`}
-        className={classOverride}
-        rel="noreferrer noopener"
-        onClick={() => CopyTextToClipboard(path.slice(5))}
-      >
-        {linkInner}
-      </a>
-    );
-  }
-
-  if (isHash) {
-    return (
-      <a draggable={false} href={path} className={classOverride}>
-        {linkInner}
-      </a>
-    );
-  }
-
-  if (isRoute) {
-    return (
-      <Link draggable={false} href={path} className={classOverride}>
-        {linkInner}
-      </Link>
-    );
-  }
 
   return (
-    <a
-      href={path}
-      draggable={false}
+    <SmartLink
+      path={path}
+      name={name}
+      icon={icon}
+      showHyperlinkIcon={showHyperlinkIcon}
       className={classOverride}
-      target="_blank"
-      rel="noreferrer noopener"
+      iconClass={cn(
+        "w-6 sm:w-6 bg-white group-touch-hover:bg-white",
+        iconClass,
+      )}
+      labelClass={cn(
+        labelClass,
+        icon && "mx-auto text-center",
+        truncate && "hidden sm:block",
+      )}
+      linkIconClass="w-5 sm:w-5 brightness-0 invert-75 group-touch-hover:invert"
     >
-      {linkInner}
-    </a>
+      {children}
+    </SmartLink>
   );
 }

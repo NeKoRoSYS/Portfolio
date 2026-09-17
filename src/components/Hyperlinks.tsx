@@ -3,20 +3,29 @@ import type { HyperlinkSchema } from "../data/hyperlinks";
 import { Icons } from "../shared/Icons";
 import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
-export function TextHyperlink({
-  linkIconClass,
+export function SmartLink({
+  children,
   ...hyperlinkProps
-}: HyperlinkSchema & { linkIconClass?: string }) {
-  const { className, showHyperlinkIcon, name, path, icon, iconClass } =
-    hyperlinkProps;
+}: HyperlinkSchema & { children?: ReactNode }) {
+  const {
+    className,
+    iconClass,
+    labelClass,
+    linkIconClass,
+    showHyperlinkIcon,
+    icon,
+    name,
+    path,
+  } = hyperlinkProps;
+
   const isCopy = path.startsWith("copy:");
   const isHash = path.startsWith("#");
   const isRoute = path.startsWith("/");
-  const classOverride = cn(
-    "duration-75 touch-hover:-translate-y-1 sm:touch-hover:translate-y-0 sm:touch-hover:translate-x-1 text-zinc-400 touch-hover:text-zinc-100 flex flex-row items-center gap-2 group",
-    className,
-  );
+
+  const baseClass = "group";
+
   const linkInner = (
     <>
       {icon && (
@@ -38,7 +47,12 @@ export function TextHyperlink({
           )}
         />
       )}
-      <p className={icon != null ? `hidden sm:block` : ""}>{name}</p>
+      {children}
+      {name && (
+        <p className={cn(labelClass, icon != null && `hidden sm:block`)}>
+          {name}
+        </p>
+      )}
       {showHyperlinkIcon && (
         <div
           aria-hidden={true}
@@ -65,8 +79,8 @@ export function TextHyperlink({
     return (
       <a
         draggable={false}
-        title={`Click to copy: ${name}}`}
-        className={cn(classOverride, "cursor-pointer")}
+        title={`Click to copy: ${name}`}
+        className={cn(baseClass, "cursor-pointer", className)}
         rel="noreferrer noopener"
         onClick={() => CopyTextToClipboard(path.slice(5))}
       >
@@ -80,7 +94,7 @@ export function TextHyperlink({
       <a
         draggable={false}
         href={path}
-        className={classOverride}
+        className={cn(baseClass, className)}
         rel="noreferrer noopener"
       >
         {linkInner}
@@ -93,7 +107,7 @@ export function TextHyperlink({
       <Link
         draggable={false}
         href={path}
-        className={classOverride}
+        className={cn(baseClass, className)}
         rel="noreferrer noopener"
       >
         {linkInner}
@@ -106,12 +120,25 @@ export function TextHyperlink({
       draggable={false}
       href={path}
       title={name}
-      className={classOverride}
+      className={cn(baseClass, className)}
       rel="noreferrer noopener"
       target="_blank"
     >
       {linkInner}
     </a>
+  );
+}
+
+export function TextHyperlink({ ...hyperlinkProps }: HyperlinkSchema) {
+  const { className } = hyperlinkProps;
+  return (
+    <SmartLink
+      {...hyperlinkProps}
+      className={cn(
+        "flex flex-row items-center gap-2 text-zinc-400 duration-75 touch-hover:-translate-y-1 touch-hover:text-zinc-100 sm:touch-hover:translate-x-1 sm:touch-hover:translate-y-0",
+        className,
+      )}
+    />
   );
 }
 

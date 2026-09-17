@@ -7,7 +7,7 @@ import { HEADERROUTES } from "../data/routes";
 import { Colors } from "../shared/Colors";
 import Button from "./Buttons";
 import { HoverableElement } from "./Panel";
-import Hamburger from "./Hamburger";
+import Hamburger, { HamburgerMenu } from "./Hamburger";
 import { Magnetic } from "./motion-primitives/magnetic";
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { CTA_NAME, CTA_PATH, TITLE } from "@/data/components/header";
 import { Media } from "@/shared/Icons";
 import { validateNavs } from "@/lib/utilsClient";
+import { useState } from "react";
 
 export function Header() {
   const onTop: boolean = useScrollOnTop();
@@ -25,6 +26,9 @@ export function Header() {
   const bgInvisible: string =
     "sm:bg-black/0 sm:border-0 sm:border-zinc-700/0 sm:backdrop-blur-none lg:rounded-full";
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
   return (
     <>
       <div
@@ -34,13 +38,13 @@ export function Header() {
       />
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-1 mx-auto overflow-hidden p-px lg:inset-x-8",
+          "fixed inset-x-0 top-0 z-100 mx-auto overflow-hidden p-px lg:inset-x-8",
           baseHeader,
           bgVisible,
           onTop && bgInvisible,
         )}
       >
-        <div className="flex w-full items-center justify-between px-4 py-8">
+        <div className="relative flex w-full items-center justify-between px-4 py-8">
           <Spotlight
             className={`-z-10 bg-zinc-300/15 blur-2xl ${onTop ? "hidden" : ""}`}
             size={128}
@@ -119,6 +123,7 @@ export function Header() {
               {(hoverClasses) => (
                 <Magnetic>
                   <Button
+                    labelClass=""
                     className={`${hoverClasses} font-bold`}
                     path={validateNavs(CTA_PATH)}
                     name={CTA_NAME}
@@ -127,9 +132,29 @@ export function Header() {
               )}
             </HoverableElement>
           </div>
-          <Hamburger className="visible sm:hidden" />
+          <Hamburger
+            isOpen={isMenuOpen}
+            onToggle={toggleMenu}
+            className="visible sm:hidden"
+          />
         </div>
       </header>
+      <HamburgerMenu
+        className="visible sm:hidden"
+        onToggle={toggleMenu}
+        isOpen={isMenuOpen}
+        fields={[
+          <div className="flex h-16 w-full items-center justify-center font-bold">
+            Home
+          </div>,
+          <div className="flex h-16 w-full items-center justify-center font-bold">
+            Blog
+          </div>,
+          <div className="flex h-16 w-full items-center justify-center font-bold">
+            About
+          </div>,
+        ]}
+      />
     </>
   );
 }

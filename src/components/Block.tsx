@@ -139,10 +139,10 @@ export function Section(props: SectionProps) {
                   WebkitMaskPosition: "center",
                 }}
                 className={cn(
-                  `aspect-square w-5 shrink-0 bg-green-400 bg-cover bg-center bg-no-repeat group-touch-hover:bg-purple-400`,
+                  `aspect-square w-4 shrink-0 bg-green-400 bg-cover bg-center bg-no-repeat group-touch-hover:bg-purple-400`,
                 )}
               />
-              <p className="font-mono text-green-400 group-touch-hover:text-purple-400">
+              <p className="font-mono text-sm text-green-400 group-touch-hover:text-purple-400">
                 0{index} // <b>{id?.toUpperCase()}</b>
               </p>
             </div>

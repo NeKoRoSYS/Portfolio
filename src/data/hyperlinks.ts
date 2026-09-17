@@ -8,7 +8,9 @@ export interface HyperlinkSchema extends RouteMeta {
   className?: string;
   altName?: string;
   showHyperlinkIcon?: boolean;
+  linkIconClass?: string;
   iconClass?: string;
+  labelClass?: string;
   icon?: string | StaticImageData;
   tags?: string[];
 }
