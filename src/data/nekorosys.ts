@@ -31,6 +31,68 @@ export const ROLES = [
   "Illustrator",
 ];
 
+export interface ToolProps {
+  icon?: string | StaticImageData;
+  name: string;
+  description?: string;
+}
+
+export interface TechStackProps {
+  category?: string;
+  description?: string;
+  tools?: ToolProps[];
+}
+
+export const TECH_STACK: TechStackProps[] = [
+  {
+    category: "Languages",
+    tools: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "C#" },
+      { name: "C++" },
+      { name: "Python" },
+    ],
+  },
+  {
+    category: "Frontend",
+    tools: [
+      { name: "Next.js" },
+      { name: "React" },
+      { name: "Tailwind CSS" },
+      { name: "Vite" },
+    ],
+  },
+  {
+    category: "Backend",
+    tools: [
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "PostgreSQL" },
+      { name: "FastAPI" },
+    ],
+  },
+  {
+    category: "DevOps/SysAd",
+    tools: [
+      { name: "Arch Linux" },
+      { name: "Git" },
+      { name: "Docker" },
+      { name: "Kubernetes" },
+      { name: "Bash" },
+    ],
+  },
+  {
+    category: "Tools",
+    tools: [
+      { name: "Unity" },
+      { name: "VS Code" },
+      { name: "GitHub" },
+      { name: "Vercel" },
+    ],
+  },
+];
+
 export interface ProjectProps {
   featured?: boolean;
   title?: string;

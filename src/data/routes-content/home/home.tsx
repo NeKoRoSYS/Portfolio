@@ -5,14 +5,14 @@ import Image from "next/image";
 import Grid from "@/components/Grid";
 import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
-import { Heading2 } from "@/components/Headings";
+import { Heading2, Heading3 } from "@/components/Headings";
 import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
-import { ReactNode } from "react";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
 import { BrandingCard, Card } from "@/components/Cards";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
+import Link from "next/link";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
@@ -152,34 +152,55 @@ export const SECTIONS: SectionProps[] = [
     ),
     sections: [
       <>
-        <div className="col-span-12">
-          <Heading2 className="w-full text-center">
-            <span className="text-green-400 touch-hover:text-purple-400">
-              Versatile
-            </span>{" "}
-            and{" "}
-            <span className="group relative text-green-400 select-none touch-hover:text-purple-400">
-              STACKED
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50"
-              >
+        <div className="col-span-12 mb-16">
+          <div className="flex h-full w-full flex-wrap items-center justify-center">
+            <Heading2 className="w-full text-center">
+              <span className="text-green-400 touch-hover:text-purple-400">
+                Versatile
+              </span>{" "}
+              and{" "}
+              <span className="group relative text-green-400 select-none touch-hover:text-purple-400">
                 STACKED
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50"
+                >
+                  STACKED
+                </span>
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25"
+                >
+                  STACKED
+                </span>
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10"
+                >
+                  STACKED
+                </span>
               </span>
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25"
-              >
-                STACKED
-              </span>
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10"
-              >
-                STACKED
-              </span>
-            </span>
-          </Heading2>
+            </Heading2>
+            <p className="mt-4 w-full text-center font-bold text-zinc-200">
+              Building with industry-standard skills and tools that deliver.
+            </p>
+            <TextHyperlink
+              download={true}
+              path={"/CV Malibiran 2026.pdf"}
+              name="Click to Download CV"
+              className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
+            />
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <div className="flex h-full w-full flex-wrap items-center justify-center">
+            <Heading3 className="w-full text-center">Education</Heading3>
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-6">
+          <div className="flex h-full w-full flex-wrap items-center justify-center">
+            <Heading3 className="w-full text-center">What I Use</Heading3>
+          </div>
         </div>
       </>,
     ],

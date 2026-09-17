@@ -35,7 +35,7 @@ export function Heading3({ children, className }: HeadingProps) {
   return (
     <h3
       className={cn(
-        "text-2xl leading-snug font-semibold tracking-wide sm:text-3xl lg:text-4xl",
+        "font-cosmic text-2xl leading-snug font-semibold tracking-wide sm:text-3xl lg:text-4xl",
         className,
       )}
     >

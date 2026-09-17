@@ -14,6 +14,7 @@ export function SmartLink({
     iconClass,
     labelClass,
     linkIconClass,
+    download = false,
     showHyperlinkIcon,
     icon,
     name,
@@ -105,6 +106,7 @@ export function SmartLink({
   if (isRoute) {
     return (
       <Link
+        download={download}
         draggable={false}
         href={path}
         className={cn(baseClass, className)}
