@@ -145,6 +145,7 @@ export function Header() {
         isOpen={isMenuOpen}
         fields={HEADERROUTES.map((route, index) => (
           <Link
+            key={index}
             draggable={false}
             href={validateNav(route.path)}
             className="group flex h-16 w-full items-center justify-center"
