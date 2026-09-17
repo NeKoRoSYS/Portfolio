@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
-export function validateNavs(path: string) {
+export function validateNav(path: string) {
   const pathname = usePathname();
   if (path.startsWith("#")) {
     return pathname === "/" ? path : `/${path}`;

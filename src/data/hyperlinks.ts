@@ -144,15 +144,13 @@ export const ALL_LINKS: (HyperlinkSchema | ButtonSchema)[] = [
   },
 ];
 
-export const getLinksByTag = (tag: string): HyperlinkSchema[] =>
-  ALL_LINKS.filter((link) => link.tags?.includes(tag));
+export const getByTag = <T extends HyperlinkSchema = HyperlinkSchema>(
+  tag: string,
+): T[] => ALL_LINKS.filter((link) => link.tags?.includes(tag)) as T[];
 
-export const getButtonsByTag = (tag: string): ButtonSchema[] =>
-  ALL_LINKS.filter((link) => link.tags?.includes(tag)) as ButtonSchema[];
-
-export const NAVIGATE = getLinksByTag("navigate");
-export const SOCIALS = getLinksByTag("socials");
-export const SPONSOR = getLinksByTag("sponsor");
-export const BUSINESS = getLinksByTag("business");
-export const CONTACT = getButtonsByTag("contact");
-export const LEGAL = getLinksByTag("legal");
+export const NAVIGATE = getByTag("navigate");
+export const SOCIALS = getByTag("socials");
+export const SPONSOR = getByTag("sponsor");
+export const BUSINESS = getByTag("business");
+export const CONTACT = getByTag<ButtonSchema>("contact");
+export const LEGAL = getByTag("legal");

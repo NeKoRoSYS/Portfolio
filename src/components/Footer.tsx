@@ -11,7 +11,7 @@ import {
   linksMaxRows,
 } from "@/data/components/footer";
 import { cn } from "@/lib/utils";
-import { validateNavs } from "@/lib/utilsClient";
+import { validateNav } from "@/lib/utilsClient";
 import Grid from "./Grid";
 import { CONTACT_FIELDS } from "@/data/components/brandingCard";
 
@@ -56,7 +56,7 @@ export function Footer() {
                   name={hyperlink.name}
                   path={
                     hyperlink.tags?.includes("anchor")
-                      ? validateNavs(hyperlink.path)
+                      ? validateNav(hyperlink.path)
                       : hyperlink.path
                   }
                   icon={hyperlink.icon}

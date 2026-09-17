@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { CTA_NAME, CTA_PATH, TITLE } from "@/data/components/header";
 import { Media } from "@/shared/Icons";
-import { validateNavs } from "@/lib/utilsClient";
+import { validateNav } from "@/lib/utilsClient";
 import { useState } from "react";
 
 export function Header() {
@@ -55,7 +55,7 @@ export function Header() {
           />
           <div className="group">
             <Link
-              href={"/"}
+              href={validateNav("/")}
               className="flex flex-row items-center justify-center gap-2"
             >
               <Image
@@ -100,7 +100,7 @@ export function Header() {
                     >
                       <Link
                         draggable={false}
-                        href={route.path}
+                        href={validateNav(route.path)}
                         className="group flex h-full w-full items-center px-6"
                       >
                         <span
@@ -125,7 +125,7 @@ export function Header() {
                   <Button
                     labelClass=""
                     className={`${hoverClasses} font-bold`}
-                    path={validateNavs(CTA_PATH)}
+                    path={validateNav(CTA_PATH)}
                     name={CTA_NAME}
                   />
                 </Magnetic>
