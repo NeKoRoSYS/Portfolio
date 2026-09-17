@@ -33,18 +33,13 @@ export function SmartLink({
       {icon && (
         <div
           aria-hidden={true}
-          style={{
-            maskImage: `url(${icon.toString()})`,
-            WebkitMaskImage: `url(${icon.toString()})`,
-            maskSize: "contain",
-            WebkitMaskSize: "contain",
-            maskRepeat: "no-repeat",
-            WebkitMaskRepeat: "no-repeat",
-            maskPosition: "center",
-            WebkitMaskPosition: "center",
-          }}
+          style={
+            {
+              "--mask-url": `url(${icon.toString()})`,
+            } as React.CSSProperties
+          }
           className={cn(
-            `aspect-square w-8 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat sm:w-4 group-touch-hover:bg-zinc-100`,
+            `mask-icon aspect-square w-8 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat sm:w-4 group-touch-hover:bg-zinc-100`,
             iconClass,
           )}
         />
@@ -58,18 +53,13 @@ export function SmartLink({
       {showHyperlinkIcon && (
         <div
           aria-hidden={true}
-          style={{
-            maskImage: `url(${linkIcon.toString()})`,
-            WebkitMaskImage: `url(${linkIcon.toString()})`,
-            maskSize: "contain",
-            WebkitMaskSize: "contain",
-            maskRepeat: "no-repeat",
-            WebkitMaskRepeat: "no-repeat",
-            maskPosition: "center",
-            WebkitMaskPosition: "center",
-          }}
+          style={
+            {
+              "--mask-url": `url(${linkIcon.toString()})`,
+            } as React.CSSProperties
+          }
           className={cn(
-            "aspect-square w-3 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat group-touch-hover:transform-[translate(4px,-4px)] group-touch-hover:bg-white",
+            "mask-icon aspect-square w-3 shrink-0 bg-zinc-400 bg-cover bg-center bg-no-repeat group-touch-hover:transform-[translate(4px,-4px)] group-touch-hover:bg-white",
             linkIconClass,
           )}
         />
@@ -158,18 +148,13 @@ export function IconHyperlink(hyperlinkProps: HyperlinkSchema) {
       {icon && (
         <div
           aria-hidden={true}
-          style={{
-            maskImage: `url(${icon.toString()})`,
-            WebkitMaskImage: `url(${icon.toString()})`,
-            maskSize: "contain",
-            WebkitMaskSize: "contain",
-            maskRepeat: "no-repeat",
-            WebkitMaskRepeat: "no-repeat",
-            maskPosition: "center",
-            WebkitMaskPosition: "center",
-          }}
+          style={
+            {
+              "--mask-url": `url(${icon.toString()})`,
+            } as React.CSSProperties
+          }
           className={cn(
-            `aspect-square w-8 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
+            `mask-icon aspect-square w-8 shrink-0 bg-white bg-cover bg-center bg-no-repeat`,
             iconClass,
           )}
         />

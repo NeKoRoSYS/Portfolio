@@ -70,6 +70,17 @@ body::-webkit-scrollbar,
   font-style: normal;
 }
 
+.mask-icon {
+  mask-image: var(--mask-url);
+  -webkit-mask-image: var(--mask-url);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
 @keyframes float {
   0%,
   100% {

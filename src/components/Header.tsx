@@ -62,17 +62,12 @@ export function Header() {
                 draggable={false}
                 width={1636}
                 height={432}
-                style={{
-                  maskImage: `url(${Media.nekorosysBanner.toString()})`,
-                  WebkitMaskImage: `url(${Media.nekorosysBanner.toString()})`,
-                  maskSize: "contain",
-                  WebkitMaskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskPosition: "center",
-                }}
-                className="aspect-auto w-40 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
+                style={
+                  {
+                    "--mask-url": `url(${Media.nekorosysBanner.toString()})`,
+                  } as React.CSSProperties
+                }
+                className="mask-icon aspect-auto w-40 shrink-0 rounded-md bg-zinc-100 bg-cover bg-center bg-no-repeat group-touch-hover:bg-green-400"
                 src={"/icons/empty.png"}
                 alt={"NeKoRoSYS Logo"}
               />

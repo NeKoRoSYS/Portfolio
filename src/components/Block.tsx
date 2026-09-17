@@ -128,18 +128,13 @@ export function Section(props: SectionProps) {
             <div className="group mb-4 flex flex-row items-center justify-center gap-4">
               <div
                 aria-hidden={true}
-                style={{
-                  maskImage: `url(${Icons.diamondIcon.toString()})`,
-                  WebkitMaskImage: `url(${Icons.diamondIcon.toString()})`,
-                  maskSize: "contain",
-                  WebkitMaskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskPosition: "center",
-                }}
+                style={
+                  {
+                    "--mask-url": `url(${Icons.diamondIcon.toString()})`,
+                  } as React.CSSProperties
+                }
                 className={cn(
-                  `aspect-square w-4 shrink-0 bg-green-400 bg-cover bg-center bg-no-repeat group-touch-hover:bg-purple-400`,
+                  `mask-icon aspect-square w-4 shrink-0 bg-green-400 bg-cover bg-center bg-no-repeat group-touch-hover:bg-purple-400`,
                 )}
               />
               <p className="font-mono text-sm text-green-400 group-touch-hover:text-purple-400">

@@ -56,15 +56,12 @@ export default function ScrollIndicator() {
         <p className="mx-auto font-cosmic text-green-400">Scroll Down</p>
         <span
           aria-hidden={true}
-          className="h-5 w-5 bg-green-400"
-          style={{
-            WebkitMaskImage: `url(${Icons.arrowIcon})`,
-            maskImage: `url(${Icons.arrowIcon})`,
-            WebkitMaskSize: "contain",
-            maskSize: "contain",
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-          }}
+          className="mask-icon h-5 w-5 bg-green-400"
+          style={
+            {
+              "--mask-url": `url(${Icons.arrowIcon.toString()})`,
+            } as React.CSSProperties
+          }
         />
       </div>
     </footer>
