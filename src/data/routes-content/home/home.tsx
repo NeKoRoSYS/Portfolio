@@ -88,7 +88,7 @@ export const SECTIONS: SectionProps[] = [
     className: "bg-[rgb(15,15,15)]",
     background: (
       <Image
-        className="opacity-10 saturate-0"
+        className="aspect-auto h-full w-auto max-w-none opacity-10 saturate-0 sm:w-full"
         alt={"background"}
         width={3066}
         height={2300}
