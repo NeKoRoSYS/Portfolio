@@ -163,6 +163,13 @@ export const SECTIONS: SectionProps[] = [
     ),
     sections: [
       <>
+        <Image
+          alt="stack"
+          width={1920}
+          height={1080}
+          src="/images/nekorosys/nekostack.png"
+          className="absolute top-[2%] right-[2%] -z-10 aspect-auto w-full mask-[linear-gradient(to_bottom,black,transparent_75%)] opacity-50 invert saturate-0"
+        />
         <div className="col-span-12 mb-16">
           <div className="flex h-full w-full flex-wrap items-center justify-center">
             <Heading2 className="w-full text-center">
