@@ -86,6 +86,15 @@ export const SECTIONS: SectionProps[] = [
     id: "about",
     borderVisible: false,
     className: "bg-[rgb(15,15,15)]",
+    background: (
+      <Image
+        className="opacity-10 saturate-0"
+        alt={"background"}
+        width={3066}
+        height={2300}
+        src={"/images/bg.jpg"}
+      />
+    ),
     outline: { enable: true, color: "bg-zinc-100" },
     sections: [
       <div className="col-span-12 mb-8">
@@ -146,6 +155,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "credentials",
     borderVisible: false,
+    outline: { enable: true, color: "bg-green-400" },
     background: (
       <div className="absolute top-0 right-0 left-0 h-64">
         <Grid className="inset-0 z-10 opacity-50" fadeDir="bottom" size={56} />
@@ -196,7 +206,7 @@ export const SECTIONS: SectionProps[] = [
             />
           </div>
         </div>
-        <div className="col-span-12 lg:col-span-6">
+        <div className="col-span-12 border-b border-zinc-800 lg:col-span-6 lg:border-r lg:border-b-0">
           <div className="flex h-full w-full flex-wrap items-center justify-center">
             <Heading3 className="w-full text-center">Education</Heading3>
           </div>

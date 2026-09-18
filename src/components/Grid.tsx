@@ -73,7 +73,7 @@ export default function Grid({
               d={`M0 ${center}H${center}M${center} ${center}V0M${center} ${center}H${size}M${center} ${center}V${size}`}
               stroke="currentColor"
               strokeOpacity="1"
-              className="stroke-zinc-200 dark:stroke-zinc-800"
+              className="stroke-zinc-800"
             />
             <rect
               x={center - 1}
@@ -82,7 +82,7 @@ export default function Grid({
               height="4"
               fill="currentColor"
               fillOpacity="0.25"
-              className="fill-zinc-200 dark:fill-zinc-800"
+              className="fill-zinc-800"
             />
           </pattern>
         </defs>
