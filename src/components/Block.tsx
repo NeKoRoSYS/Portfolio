@@ -91,9 +91,12 @@ export default function Block({
 export type SectionComponent = {
   colSpan?: string;
   wrapperClass?: string;
-  payload?: any;
 } & (
-  | { type: "heading" }
+  | {
+      type: "heading";
+      payload: { title?: string; align?: string; custom?: React.ReactNode };
+    }
+  | { type: "branding-card"; payload: { fields: React.ReactNode[] } }
   | {
       type: "spotlight";
       color: string;
@@ -103,8 +106,7 @@ export type SectionComponent = {
       opacity: string;
     }
   | { type: "portfolio" }
-  | { type: "branding-card" }
-  | { type: "custom"; content: any }
+  | { type: "custom"; content: React.ReactNode }
 );
 
 function SectionRenderer({ component }: { component: SectionComponent }) {

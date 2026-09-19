@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Buttons";
-import { BrandingCard, Card, ProjectCard } from "@/components/Cards";
+import { ProjectCard } from "@/components/Cards";
 import { Heading3 } from "@/components/Headings";
 import {
   TabData,

@@ -1,11 +1,5 @@
 import { type SectionProps } from "@/components/Block";
-import Button from "@/components/Buttons";
-import { CONTACT } from "../../hyperlinks";
-import Grid from "@/components/Grid";
-import SpotlightBlob from "@/components/SpotlightBlob";
 import { cn } from "@/lib/utils";
-import { Heading2 } from "@/components/Headings";
-import { TextScramble } from "@/components/motion-primitives/text-scramble";
 
 export const HOME = {
   heroTitle: `NeKoRoSYS`,
