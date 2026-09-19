@@ -5,6 +5,7 @@ import { Icons } from "@/shared/Icons";
 import { Heading2 } from "./Headings";
 import { PortfolioSection } from "@/data/routes-content/home/portfolio";
 import SpotlightBlob from "./SpotlightBlob";
+import { BrandingCard } from "./Cards";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -102,14 +103,24 @@ export type SectionComponent = {
       opacity: string;
     }
   | { type: "portfolio" }
-  | { type: "custom"; content: string }
+  | { type: "branding-card" }
+  | { type: "custom"; content: any }
 );
 
 function SectionRenderer({ component }: { component: SectionComponent }) {
   const getContent = () => {
     switch (component.type) {
+      case "custom":
+        return component.content;
       case "portfolio":
         return <PortfolioSection />;
+      case "branding-card":
+        return (
+          <BrandingCard
+            fields={component.payload.fields}
+            className="max-w-2xs"
+          />
+        );
       case "heading":
         return (
           component.payload.custom || (
@@ -146,7 +157,6 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
 export interface SectionProps extends BlockProps {
   showIndex?: boolean;
   components?: SectionComponent[];
-  sections?: ReactNode[];
 }
 
 export function Section(props: SectionProps) {
@@ -156,7 +166,6 @@ export function Section(props: SectionProps) {
     showIndex = true,
     className = "bg-zinc-950",
     components,
-    sections,
   } = props;
 
   return (
@@ -179,13 +188,6 @@ export function Section(props: SectionProps) {
               <p className="font-mono text-sm text-green-400 group-touch-hover:text-purple-400">
                 0{index} // <b>{id?.toUpperCase()}</b>
               </p>
-            </div>
-          )}
-          {sections && (
-            <div className="grid w-full grid-cols-12 sm:mx-auto">
-              {sections?.map((element, index) => (
-                <Fragment key={index}>{element}</Fragment>
-              ))}
             </div>
           )}
           {components && (
