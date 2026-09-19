@@ -1,49 +1,6 @@
 import { type SectionProps } from "@/components/Block";
 import { cn } from "@/lib/utils";
 
-export const HOME = {
-  heroTitle: `NeKoRoSYS`,
-  heroSubtitle: `Your one-man IT Department.`,
-} as const;
-
-function echoString({
-  string,
-  gap,
-  count,
-  className,
-}: {
-  string: string;
-  gap: number;
-  count: number;
-  className: string;
-}) {
-  const elements: { string: string; className: string }[] = [];
-
-  for (let i: number = 0; i < count; i++) {
-    elements[i] = {
-      string: string,
-      className: className,
-    };
-
-    if (/\btranslate-y(?:-[\w.\[\]#%]+)?\b/.test(elements[i].className)) {
-      const stepValue = gap * i;
-
-      const tailwindClass = stepValue === 0.5 ? "1/2" : stepValue;
-
-      elements[i].className = elements[i].className.replace(
-        /\btranslate-y(?:-[\w.\[\]#%]+)?\b/g,
-        `translate-y-${tailwindClass}`,
-      );
-    }
-  }
-
-  return elements.map((element, index) => (
-    <span key={index} className={cn(element.className)}>
-      {element.string}
-    </span>
-  ));
-}
-
 export const SECTIONS: SectionProps[] = [
   {
     id: "about",
