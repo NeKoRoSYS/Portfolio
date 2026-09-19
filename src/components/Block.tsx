@@ -109,6 +109,30 @@ export type SectionComponent = {
   | { type: "custom"; content: React.ReactNode }
 );
 
+export type BackgroundProps =
+  | {
+      type: "grid";
+      fadeDir: "top" | "bottom" | "radial";
+      size: number;
+      opacity: number;
+    }
+  | { type: "image"; src: string; opacity: number; saturate: number }
+  | { type: "ascii-video"; url: string; themeColor: string; opacity: number }
+  | { type: "composite"; layers: BackgroundProps[] };
+
+export type TextSegment = {
+  text: string;
+  highlight?: boolean;
+  italic?: boolean;
+  effect?: "scramble" | "pulse";
+  className?: string;
+};
+
+export type HeadingPayload = {
+  segments: TextSegment[];
+  align?: string;
+};
+
 function SectionRenderer({ component }: { component: SectionComponent }) {
   const getContent = () => {
     switch (component.type) {
