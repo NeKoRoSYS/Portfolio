@@ -84,12 +84,47 @@ export default function Block({
   );
 }
 
+export type SectionComponent =
+  | { type: "heading" }
+  | {
+      type: "spotlight";
+      color: string;
+      top: string;
+      left: string;
+      size: string;
+      opacity: string;
+    }
+  | { type: "portfolio" }
+  | { type: "custom"; content: string };
+
+function RenderSectionComponent({
+  component,
+}: {
+  component: SectionComponent;
+}) {
+  const getContent = () => {
+    switch (component.type) {
+      case "portfolio":
+        break;
+      case "heading":
+        break;
+      case "spotlight":
+        break;
+      case "custom":
+        break;
+      default:
+        return null;
+    }
+  };
+}
+
 export interface SectionProps extends BlockProps {
   title?: string | ReactNode;
   text?: string;
   showIndex?: boolean;
   center?: boolean;
   reverse?: boolean;
+  components?: SectionComponent[];
   sections?: ReactNode[];
 }
 
@@ -107,6 +142,7 @@ export function Section(props: SectionProps) {
     borderVisible = true,
     center = false,
     reverse = false,
+    components,
     sections,
   } = props;
 
@@ -118,7 +154,7 @@ export function Section(props: SectionProps) {
         outline={outline}
         spotlight={spotlight}
         borderVisible={borderVisible}
-        className={` ${className} `}
+        className={className}
         background={background}
       >
         <div
