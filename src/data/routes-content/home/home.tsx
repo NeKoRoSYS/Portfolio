@@ -10,9 +10,8 @@ import { PortfolioSection } from "./portfolio";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
-import { BrandingCard, Card } from "@/components/Cards";
+import { BrandingCard } from "@/components/Cards";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
-import Link from "next/link";
 import { Icons } from "@/shared/Icons";
 
 export const HOME = {
@@ -61,25 +60,27 @@ function echoString({
 export const SECTIONS: SectionProps[] = [
   {
     id: "stack",
-    center: true,
     showIndex: false,
     outline: { enable: true, color: "bg-green-400" },
     background: (
       <Grid className="inset-0 z-10 opacity-50" fadeDir="top" size={56} />
     ),
     borderVisible: false,
-    sections: [
-      <div className="col-span-12">
-        <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <Heading2 className="w-full text-center">
-            Your{" "}
-            <span className="relative font-bold text-green-400 touch-hover:text-purple-400">
-              One-Man
-            </span>{" "}
-            IT Department
-          </Heading2>
-        </div>
-      </div>,
+    components: [
+      {
+        type: "heading",
+        payload: {
+          custom: (
+            <Heading2 className="w-full text-center">
+              Your{" "}
+              <span className="relative font-bold text-green-400 touch-hover:text-purple-400">
+                One-Man
+              </span>{" "}
+              IT Department
+            </Heading2>
+          ),
+        },
+      },
     ],
   },
   {
@@ -235,46 +236,55 @@ export const SECTIONS: SectionProps[] = [
       <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
     ),
     outline: { enable: true, color: "bg-green-400" },
-    sections: [
-      <SpotlightBlob
-        color="bg-zinc-500/75"
-        top="bottom-[75%]"
-        left="left-[75%]"
-        size="w-[720px] h-[720px]"
-        opacity="opacity-25 "
-      />,
-      <SpotlightBlob
-        color="bg-green-600/50"
-        top="top-[75%]"
-        left="left-[75%]"
-        size="w-[720px] h-[720px]"
-        opacity="opacity-25"
-      />,
-      <SpotlightBlob
-        color="bg-purple-500/35"
-        top="bottom-[15%]"
-        left="right-[88%]"
-        size="w-[1000px] h-[1000px]"
-        opacity="opacity-25"
-      />,
-      <div className="relative col-span-12 mb-16">
-        <div className="flex h-full w-full flex-wrap items-center justify-center">
-          <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
-            Systems
-            <hr className="w-full border border-zinc-400"></hr>
-            <TextScramble>
-              <span className="font-bulletin font-normal text-green-400 italic select-none touch-hover:text-purple-400">
-                Interlinked
-              </span>
-            </TextScramble>
-          </Heading2>
-          <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
-            Cohesive experiences through Software and Designs—engineered with
-            purpose to solve real problems.
-          </p>
-        </div>
-      </div>,
-      <PortfolioSection />,
+    components: [
+      {
+        type: "heading",
+        wrapperClass: "relative mb-16 relative",
+        payload: {
+          custom: (
+            <div className="flex h-full w-full flex-wrap items-center justify-center">
+              <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
+                Systems
+                <hr className="w-full border border-zinc-400"></hr>
+                <TextScramble>
+                  <span className="font-bulletin font-normal text-green-400 italic select-none touch-hover:text-purple-400">
+                    Interlinked
+                  </span>
+                </TextScramble>
+              </Heading2>
+              <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
+                Cohesive experiences through Software and Designs—engineered
+                with purpose to solve real problems.
+              </p>
+            </div>
+          ),
+        },
+      },
+      {
+        type: "spotlight",
+        color: "bg-zinc-500/75",
+        top: "bottom-[75%]",
+        left: "left-[75%]",
+        size: "w-[720px] h-[720px]",
+        opacity: "opacity-25 ",
+      },
+      {
+        type: "spotlight",
+        color: "bg-green-600/50",
+        top: "top-[75%]",
+        left: "left-[75%]",
+        size: "w-[720px] h-[720px]",
+        opacity: "opacity-25",
+      },
+      {
+        type: "spotlight",
+        color: "bg-purple-500/35",
+        top: "bottom-[15%]",
+        left: "right-[88%]",
+        size: "w-[1000px] h-[1000px]",
+        opacity: "opacity-25",
+      },
+      { type: "portfolio" },
     ],
   },
   {

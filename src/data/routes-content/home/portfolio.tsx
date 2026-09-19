@@ -108,7 +108,7 @@ export function PortfolioSection() {
   ];
 
   return (
-    <>
+    <div className="grid w-full grid-cols-12 gap-8">
       <div className="col-span-12 w-full lg:col-span-3">
         <div className="z-10 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2">
           <TabControls
@@ -149,6 +149,6 @@ export function PortfolioSection() {
       <div className="col-span-12 lg:col-span-9">
         <TabContent tabs={tabs} activeId={activeId} />
       </div>
-    </>
+    </div>
   );
 }

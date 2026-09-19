@@ -2,6 +2,9 @@ import { cn } from "@/lib/utils";
 import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Icons } from "@/shared/Icons";
+import { Heading2 } from "./Headings";
+import { PortfolioSection } from "@/data/routes-content/home/portfolio";
+import SpotlightBlob from "./SpotlightBlob";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -84,7 +87,11 @@ export default function Block({
   );
 }
 
-export type SectionComponent =
+export type SectionComponent = {
+  colSpan?: string;
+  wrapperClass?: string;
+  payload?: any;
+} & (
   | { type: "heading" }
   | {
       type: "spotlight";
@@ -95,35 +102,49 @@ export type SectionComponent =
       opacity: string;
     }
   | { type: "portfolio" }
-  | { type: "custom"; content: string };
+  | { type: "custom"; content: string }
+);
 
-function RenderSectionComponent({
-  component,
-}: {
-  component: SectionComponent;
-}) {
+function SectionRenderer({ component }: { component: SectionComponent }) {
   const getContent = () => {
     switch (component.type) {
       case "portfolio":
-        break;
+        return <PortfolioSection />;
       case "heading":
-        break;
+        return (
+          component.payload.custom || (
+            <Heading2 className={`w-full ${component.payload.align}`}>
+              {component.payload.title}
+            </Heading2>
+          )
+        );
       case "spotlight":
-        break;
+        return (
+          <SpotlightBlob
+            color={component.color}
+            opacity={component.opacity}
+            size={component.size}
+            top={component.top}
+            left={component.left}
+          />
+        );
       case "custom":
         break;
       default:
         return null;
     }
   };
+  return (
+    <div
+      className={cn(component.colSpan || "col-span-12", component.wrapperClass)}
+    >
+      {getContent()}
+    </div>
+  );
 }
 
 export interface SectionProps extends BlockProps {
-  title?: string | ReactNode;
-  text?: string;
   showIndex?: boolean;
-  center?: boolean;
-  reverse?: boolean;
   components?: SectionComponent[];
   sections?: ReactNode[];
 }
@@ -133,33 +154,15 @@ export function Section(props: SectionProps) {
     index,
     id,
     showIndex = true,
-    outline,
-    spotlight,
-    background,
-    title,
-    text,
     className = "bg-zinc-950",
-    borderVisible = true,
-    center = false,
-    reverse = false,
     components,
     sections,
   } = props;
 
   return (
     <>
-      <Block
-        index={index}
-        id={id}
-        outline={outline}
-        spotlight={spotlight}
-        borderVisible={borderVisible}
-        className={className}
-        background={background}
-      >
-        <div
-          className={`flex flex-wrap gap-8 ${reverse ? "sm:flex-row-reverse" : "sm:flex-row"} w-full`}
-        >
+      <Block {...props} className={className}>
+        <div className={cn(`flex w-full flex-wrap gap-8`)}>
           {showIndex && id && (
             <div className="group mb-4 flex flex-row items-center justify-center gap-4">
               <div
@@ -178,27 +181,17 @@ export function Section(props: SectionProps) {
               </p>
             </div>
           )}
-          {(title != null || text != null) && (
-            <div className={`flex w-full flex-col gap-8`}>
-              {title &&
-                (typeof title === "string" || typeof title === "number" ? (
-                  <h2
-                    className={`text-4xl font-bold ${center ? "text-center" : reverse ? "text-right" : ""}`}
-                  >
-                    {title}
-                  </h2>
-                ) : (
-                  title
-                ))}
-              {text && (
-                <p className={`${center ? "text-center" : ""}`}>{text}</p>
-              )}
-            </div>
-          )}
           {sections && (
             <div className="grid w-full grid-cols-12 sm:mx-auto">
               {sections?.map((element, index) => (
                 <Fragment key={index}>{element}</Fragment>
+              ))}
+            </div>
+          )}
+          {components && (
+            <div className="grid w-full grid-cols-12 sm:mx-auto">
+              {components?.map((component, index) => (
+                <SectionRenderer key={index} component={component} />
               ))}
             </div>
           )}
