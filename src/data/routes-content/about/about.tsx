@@ -1,5 +1,4 @@
 import { type SectionProps } from "@/components/Block";
-import { cn } from "@/lib/utils";
 
 export const SECTIONS: SectionProps[] = [
   {
