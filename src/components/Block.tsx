@@ -94,7 +94,7 @@ export type SectionComponent = {
 } & (
   | {
       type: "heading";
-      payload: { title?: string; align?: string; custom?: React.ReactNode };
+      payload: HeadingPayload | any;
     }
   | { type: "branding-card"; payload: { fields: React.ReactNode[] } }
   | {
@@ -129,6 +129,7 @@ export type TextSegment = {
 };
 
 export type HeadingPayload = {
+  text?: string;
   segments: TextSegment[];
   align?: string;
 };
@@ -151,7 +152,15 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
         return (
           component.payload.custom || (
             <Heading2 className={`w-full ${component.payload.align}`}>
-              {component.payload.title}
+              {component.payload.segments
+                ? component.payload.segments.map(
+                    (segment: TextSegment, i: number) => (
+                      <span key={i} className={segment.className}>
+                        {segment.text}
+                      </span>
+                    ),
+                  )
+                : component.payload.text}
             </Heading2>
           )
         );

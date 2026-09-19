@@ -24,15 +24,16 @@ export const SECTIONS: SectionProps[] = [
       {
         type: "heading",
         payload: {
-          custom: (
-            <Heading2 className="w-full text-center">
-              Your{" "}
-              <span className="relative font-bold text-green-400 touch-hover:text-purple-400">
-                One-Man
-              </span>{" "}
-              IT Department
-            </Heading2>
-          ),
+          align: "text-center",
+          segments: [
+            { text: "Your " },
+            {
+              text: "One-Man",
+              highlight: true,
+              className: "text-green-400 touch-hover:text-purple-400",
+            },
+            { text: " IT Department" },
+          ],
         },
       },
     ],
