@@ -10,7 +10,7 @@ export const SECTIONS: SectionProps[] = [
         colSpan: "col-span-12 lg:col-span-5 ",
         wrapperClass:
           "mb-12 lg:mb-0 flex h-full w-full flex-wrap items-center justify-center",
-        payload: { title: "Hello, World!", align: "text-center lg:text-left" },
+        payload: { text: "Hello, World!", align: "text-center lg:text-left" },
       },
       {
         type: "custom",

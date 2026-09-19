@@ -3,7 +3,7 @@ import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Icons } from "@/shared/Icons";
 import { Heading2 } from "./Headings";
-import { PortfolioSection } from "@/data/routes-content/home/portfolio";
+import { PortfolioSection } from "@/components/home/PortfolioSection";
 import SpotlightBlob from "./SpotlightBlob";
 import { BrandingCard } from "./Cards";
 

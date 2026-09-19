@@ -56,7 +56,7 @@ export const SECTIONS: SectionProps[] = [
       {
         type: "heading",
         wrapperClass: "mb-8",
-        payload: { title: "Who I Am", align: "text-center lg:text-left" },
+        payload: { text: "Who I Am", align: "text-center lg:text-left" },
       },
       {
         type: "branding-card",
