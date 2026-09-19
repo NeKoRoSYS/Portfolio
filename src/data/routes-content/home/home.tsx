@@ -11,11 +11,6 @@ import { TextHyperlink } from "@/components/Hyperlinks";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 import { Icons } from "@/shared/Icons";
 
-export const HOME = {
-  heroTitle: `NeKoRoSYS`,
-  heroSubtitle: `Your one-man IT Department.`,
-} as const;
-
 export const SECTIONS: SectionProps[] = [
   {
     id: "about-title",
