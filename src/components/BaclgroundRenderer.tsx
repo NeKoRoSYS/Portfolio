@@ -41,7 +41,7 @@ export default function BackgroundRenderer({
         return (
           <Image
             className={cn(
-              "aspect-auto h-full w-auto max-w-none opacity-10 saturate-0 sm:w-full",
+              "aspect-auto w-auto max-w-none opacity-10",
               background.className,
             )}
             alt={background.alt}

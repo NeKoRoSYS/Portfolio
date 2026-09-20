@@ -3,7 +3,6 @@ import Button from "@/components/Buttons";
 import { BUSINESS, CONTACT } from "../../hyperlinks";
 import { cn } from "@/lib/utils";
 import { Heading2, Heading3 } from "@/components/Headings";
-import { TextScramble } from "@/components/motion-primitives/text-scramble";
 import { TextHyperlink } from "@/components/Hyperlinks";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 import { Icons } from "@/shared/Icons";
@@ -41,14 +40,14 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "about",
     borderVisible: false,
-    className: "bg-[rgb(15,15,15)]",
+    className: "bg-[rgb(15,15,15)] ",
     background: {
       type: "image",
       width: 3066,
       height: 2300,
       src: "/images/bg.jpg",
       alt: "background",
-      className: "saturate-0 sm:w-full",
+      className: "saturate-0 sm:w-full ",
     },
     outline: { enable: true, color: "bg-zinc-100" },
     components: [
@@ -65,53 +64,62 @@ export const SECTIONS: SectionProps[] = [
         payload: { fields: ABOUT_FIELDS },
       },
       {
+        type: "container",
         colSpan: "col-span-12 lg:col-span-7",
         wrapperClass:
           "flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100",
-        type: "custom",
-        content: (
-          <>
-            <TextHyperlink
-              className="mb-8 justify-start self-start py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
-              showHyperlinkIcon
-              path={"/about"}
-              name={"Read the long version here!"}
-            />
-            <p className="self-start">
-              I am a <b>Software Developer</b> and <b>Graphic Designer</b> by
-              trade.
-              <br />
-              <br />
-              My portfolio spans across a handful of tech domains and media.
-              Unity game development is my main gig, but I also make and help
-              create web apps through Frontend and Backend development. I make
-              sure that all of my work are clean, reliable, consistent; and last
-              but definitely not the least—up to standards.
-              <br />
-              <br />
-              <b>
-                I commit to doing contracted, commissioned, or otherwise
-                freelance work; though, I am also open for internships and
-                part-time/full-time jobs.
-              </b>
-            </p>
-            <div className="mt-16 flex flex-col gap-4 self-start">
-              I look forward to working with like-minded individuals who share
-              the same passion for creation and solving problems.
-              <div className="flex flex-row gap-8">
-                {BUSINESS.map((link, index) => (
-                  <TextHyperlink
-                    className="py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
-                    showHyperlinkIcon
-                    key={index}
-                    path={link.path}
-                    name={link.name}
-                  />
-                ))}
-              </div>
-            </div>
-          </>
-        ),
+        items: [
+          {
+            type: "hyperlink",
+            wrapperClass: "mb-8 self-start",
+            payload: {
+              path: "/about",
+              name: "Read the long version here!",
+              showHyperlinkIcon: true,
+              className:
+                "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
+            },
+          },
+          {
+            type: "paragraph",
+            wrapperClass: "self-start",
+            payload: {
+              html: true,
+              text: `I am a <b>Software Developer</b> and <b>Graphic Designer</b> by trade.
+              <br /><br />
+              My portfolio spans across a handful of tech domains and media. Unity game development is my main gig,
+              but I also make and help create web apps through Frontend and Backend development. I make sure that
+              all of my work are clean, reliable, consistent; and last but definitely not the least—up to standards.
+              <br /> <br />
+              <b>I commit to doing contracted, commissioned, or otherwise freelance work; though, I am also open for
+              internships and part-time/full-time jobs.</b>`,
+            },
+          },
+          {
+            type: "container",
+            wrapperClass: "mt-16 flex flex-col gap-4 self-start",
+            items: [
+              {
+                type: "paragraph",
+                payload: {
+                  text: "I look forward to working with like-minded individuals who share the same passion for creation and solving problems.",
+                },
+              },
+              {
+                type: "container",
+                wrapperClass: "flex flex-row gap-8",
+                items: BUSINESS.map((link) => ({
+                  type: "hyperlink",
+                  payload: {
+                    ...link,
+                    showHyperlinkIcon: true,
+                    className: "py-2",
+                  },
+                })),
+              },
+            ],
+          },
+        ],
       },
     ],
   },
@@ -136,68 +144,81 @@ export const SECTIONS: SectionProps[] = [
     },
     components: [
       {
-        type: "heading",
-        wrapperClass:
-          "flex h-full w-full flex-wrap items-center justify-center",
-        payload: {
-          align: "text-center",
-          segments: [
-            {
-              text: "Versatile ",
-              highlight: true,
-              className: "text-green-400 touch-hover:text-purple-400",
+        type: "container",
+        colSpan: "col-span-12",
+        wrapperClass: "mb-16",
+        items: [
+          {
+            type: "heading",
+            payload: {
+              align: "text-center",
+              segments: [
+                {
+                  text: "Versatile ",
+                  highlight: true,
+                  className: "text-green-400 touch-hover:text-purple-400",
+                },
+                {
+                  text: "and ",
+                },
+                {
+                  text: "STACKED",
+                  effect: "echo",
+                },
+              ],
             },
-            {
-              text: "and ",
+          },
+          {
+            type: "paragraph",
+            wrapperClass: "mt-4 text-center font-bold text-zinc-200",
+            payload: {
+              text: "Building with industry-standard skills and tools that deliver.",
             },
-            {
-              text: "STACKED",
-              effect: "echo",
+          },
+          {
+            type: "hyperlink",
+            wrapperClass: "w-full text-center flex flex-row justify-center",
+            payload: {
+              name: "Click to Download CV",
+              path: "/CV Malibiran 2026.pdf",
+              download: true,
+              showHyperlinkIcon: true,
+              linkIcon: Icons.downloadIcon,
+              linkIconClass: "group-touch-hover:transform-[translate(0px,0px)]",
+              className:
+                "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
             },
-          ],
-        },
+          },
+        ],
       },
       {
-        type: "heading",
-        wrapperClass:
-          "flex h-full w-full flex-wrap items-center justify-center",
-        payload: {
-          custom: (
-            <>
-              <p className="mt-4 w-full text-center font-bold text-zinc-200">
-                Building with industry-standard skills and tools that deliver.
-              </p>
-              <TextHyperlink
-                download={true}
-                showHyperlinkIcon
-                linkIcon={Icons.downloadIcon}
-                linkIconClass="group-touch-hover:transform-[translate(0px,0px)]"
-                path={"/CV Malibiran 2026.pdf"}
-                name="Click to Download CV"
-                className="mb-16 py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!"
-              />
-            </>
-          ),
-        },
-      },
-      {
-        type: "custom",
-        colSpan: "col-span-12 lg:col-span-6",
-        wrapperClass: "border-b border-zinc-800  lg:border-r lg:border-b-0",
-        content: (
-          <div className="flex h-full w-full flex-wrap items-center justify-center">
-            <Heading3 className="w-full text-center">Education</Heading3>
-          </div>
-        ),
-      },
-      {
-        type: "custom",
-        colSpan: "col-span-12 lg:col-span-6",
-        content: (
-          <div className="flex h-full w-full flex-wrap items-center justify-center">
-            <Heading3 className="w-full text-center">What I Use</Heading3>
-          </div>
-        ),
+        type: "container",
+        colSpan: "col-span-12",
+        wrapperClass: "grid w-full grid-cols-12 sm:mx-auto gap-8",
+        items: [
+          {
+            type: "heading",
+            colSpan: "col-span-12 lg:col-span-6",
+            wrapperClass:
+              "flex h-full w-full flex-wrap items-center justify-center border-b border-zinc-800 lg:border-r lg:border-b-0",
+            payload: {
+              text: "Education",
+              level: "h3",
+              align: "text-center",
+            },
+          },
+          {
+            type: "heading",
+            colSpan: "col-span-12 lg:col-span-6",
+            wrapperClass:
+              "flex h-full w-full flex-wrap items-center justify-center",
+            payload: {
+              text: "What I Use",
+              level: "h3",
+              align: "text-center",
+            },
+          },
+        ],
       },
     ],
   },
@@ -213,26 +234,13 @@ export const SECTIONS: SectionProps[] = [
     },
     outline: { enable: true, color: "bg-green-400" },
     components: [
+      { type: "portfolio-header" },
       {
         type: "heading",
         wrapperClass: "relative mb-16 relative",
         payload: {
           custom: (
-            <div className="flex h-full w-full flex-wrap items-center justify-center">
-              <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
-                Systems
-                <hr className="w-full border border-zinc-400"></hr>
-                <TextScramble>
-                  <span className="font-bulletin font-normal text-green-400 italic select-none touch-hover:text-purple-400">
-                    Interlinked
-                  </span>
-                </TextScramble>
-              </Heading2>
-              <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
-                Cohesive experiences through Software and Designs—engineered
-                with purpose to solve real problems.
-              </p>
-            </div>
+            <div className="flex h-full w-full flex-wrap items-center justify-center"></div>
           ),
         },
       },

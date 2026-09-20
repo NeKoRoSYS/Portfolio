@@ -16,7 +16,7 @@ export type TextScrambleProps = {
 const defaultChars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-export function TextScramble({
+export default function TextScramble({
   children,
   duration = 0.8,
   speed = 0.04,

@@ -5,7 +5,7 @@ import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
-import { TextScramble } from "@/components/motion-primitives/text-scramble";
+import TextScramble from "@/components/motion-primitives/text-scramble";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
 import { FEATURED_ART, LETTERS, ROLES } from "@/data/nekorosys";

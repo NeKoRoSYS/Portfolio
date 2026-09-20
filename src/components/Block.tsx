@@ -2,13 +2,16 @@ import { cn } from "@/lib/utils";
 import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Icons } from "@/shared/Icons";
-import { Heading2 } from "./Headings";
-import { PortfolioSection } from "@/components/home/PortfolioSection";
+import { Heading2, Heading3 } from "./Headings";
+import { PortfolioHeader, PortfolioSection } from "@/components/home/Portfolio";
 import SpotlightBlob from "./SpotlightBlob";
 import { BrandingCard } from "./Cards";
 import TextEcho from "./home/TextEcho";
 import BackgroundRenderer, { BackgroundProps } from "./BaclgroundRenderer";
-import { TextScramble } from "./motion-primitives/text-scramble";
+import TextScramble from "./motion-primitives/text-scramble";
+import { ButtonSchema, HyperlinkSchema } from "@/data/hyperlinks";
+import Button from "./Buttons";
+import { TextHyperlink } from "./Hyperlinks";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -95,6 +98,10 @@ export type SectionComponent = {
   colSpan?: string;
   wrapperClass?: string;
 } & (
+  | { type: "container"; items: SectionComponent[] }
+  | { type: "paragraph"; payload: { text: string; html?: boolean } }
+  | { type: "hyperlink"; payload: HyperlinkSchema & { className?: string } }
+  | { type: "button"; payload: ButtonSchema & { className?: string } }
   | {
       type: "heading";
       payload: HeadingPayload | any;
@@ -109,6 +116,9 @@ export type SectionComponent = {
       opacity: string;
     }
   | { type: "portfolio" }
+  | { type: "portfolio-header" }
+  | { type: "contact-cta" }
+  | { type: "contact-links" }
   | { type: "custom"; content: React.ReactNode }
 );
 
@@ -121,6 +131,7 @@ export type TextSegment = {
 };
 
 export type HeadingPayload = {
+  level: number;
   text?: string;
   segments: TextSegment[];
   align?: string;
@@ -129,10 +140,30 @@ export type HeadingPayload = {
 function SectionRenderer({ component }: { component: SectionComponent }) {
   const getContent = () => {
     switch (component.type) {
+      case "container":
+        return (
+          <>
+            {component.items.map((item, index) => (
+              <SectionRenderer key={index} component={item} />
+            ))}
+          </>
+        );
+      case "paragraph":
+        return component.payload.html ? (
+          <p dangerouslySetInnerHTML={{ __html: component.payload.text }} />
+        ) : (
+          <p>{component.payload.text}</p>
+        );
+      case "button":
+        return <Button {...component.payload} />;
+      case "hyperlink":
+        return <TextHyperlink {...component.payload} />;
       case "custom":
         return component.content;
       case "portfolio":
         return <PortfolioSection />;
+      case "portfolio-header":
+        return <PortfolioHeader />;
       case "branding-card":
         return (
           <BrandingCard
@@ -141,9 +172,10 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
           />
         );
       case "heading":
+        const Heading = component.payload.level === "h3" ? Heading3 : Heading2;
         return (
           component.payload.custom || (
-            <Heading2 className={`w-full ${component.payload.align}`}>
+            <Heading className={`w-full ${component.payload.align}`}>
               {component.payload.segments
                 ? component.payload.segments.map(
                     (segment: TextSegment, i: number) => {
@@ -169,7 +201,7 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
                     },
                   )
                 : component.payload.text}
-            </Heading2>
+            </Heading>
           )
         );
       case "spotlight":

@@ -2,7 +2,7 @@
 
 import Button from "@/components/Buttons";
 import { ProjectCard } from "@/components/Cards";
-import { Heading3 } from "@/components/Headings";
+import { Heading2, Heading3 } from "@/components/Headings";
 import {
   TabData,
   TabControls,
@@ -19,6 +19,27 @@ import { cn } from "@/lib/utils";
 import { BRAND_COLORS } from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { useState } from "react";
+import TextScramble from "../motion-primitives/text-scramble";
+
+export function PortfolioHeader() {
+  return (
+    <div className="flex h-full w-full flex-wrap items-center justify-center">
+      <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
+        Systems
+        <hr className="w-full border border-zinc-400"></hr>
+        <TextScramble>
+          <span className="font-bulletin font-normal text-green-400 italic select-none touch-hover:text-purple-400">
+            Interlinked
+          </span>
+        </TextScramble>
+      </Heading2>
+      <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
+        Cohesive experiences through Software and Designs—engineered with
+        purpose to solve real problems.
+      </p>
+    </div>
+  );
+}
 
 export function PortfolioSection() {
   const [activeId, setActiveId] = useState<number>(0);
