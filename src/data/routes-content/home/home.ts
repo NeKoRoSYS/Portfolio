@@ -131,7 +131,7 @@ export const SECTIONS: SectionProps[] = [
   },
   {
     id: "credentials",
-    borderVisible: false,
+    borderVisible: true,
     background: {
       type: "composite",
       layers: [
