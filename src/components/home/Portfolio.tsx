@@ -89,7 +89,7 @@ export function TechStack() {
                     `aspect-square w-12 shrink-0 bg-cover bg-center bg-no-repeat saturate-0 transition-all group-touch-hover:-translate-y-3 group-touch-hover:scale-125 group-touch-hover:saturate-100`,
                   )}
                 />
-                <p className="absolute top-[75%] text-sm font-bold opacity-0 duration-150 sm:hidden group-touch-hover:opacity-100">
+                <p className="absolute top-[85%] text-sm font-bold opacity-0 duration-150 sm:hidden group-touch-hover:opacity-100">
                   {tool.name}
                 </p>
               </div>
@@ -206,8 +206,8 @@ export function PortfolioSection() {
 
   return (
     <div className="grid w-full grid-cols-12 gap-8">
-      <div className="col-span-12 w-full lg:col-span-3">
-        <div className="z-10 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2">
+      <div className="col-span-12 w-full border-l-2 border-zinc-800 lg:col-span-3">
+        <div className="z-10 border-l border-zinc-800 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2">
           <TabControls
             tabs={tabs}
             activeId={activeId}

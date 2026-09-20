@@ -50,21 +50,21 @@ export const metadata: Metadata = {
     siteName: title,
     title: title,
     description: description,
-    //images: [
-    //  {
-    //    url: '/og-image.jpg',
-    //    width: 1200,
-    //    height: 630,
-    //    alt: 'My Awesome Application Preview',
-    //  },
-    //],
+    images: [
+      {
+        url: "/images/nekorosys/previewBanner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "My Awesome Application Preview",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: title,
     description: description,
-    //images: ['/og-image.jpg'],
+    images: ["/images/nekorosys/previewBanner.jpg"],
     creator: "@NeKoRoSYS",
   },
 };

@@ -163,7 +163,7 @@ export const SECTIONS: SectionProps[] = [
                 {
                   text: "Versatile ",
                   highlight: true,
-                  className: "text-green-400 touch-hover:text-purple-400",
+                  className: "text-green-400 touch-hover:text-purple-400 ",
                 },
                 {
                   text: "and ",
