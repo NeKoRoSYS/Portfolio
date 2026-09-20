@@ -117,6 +117,38 @@ export const TECH_STACK: TechStackProps[] = [
       { name: "Vercel", icon: Stack.vercelIcon },
     ],
   },
+  {
+    category: "Design",
+    tools: [
+      { name: "Figma", icon: Stack.figmaIcon, description: "UI/UX." },
+      {
+        name: "Affinity",
+        icon: Stack.affinityIcon,
+        description:
+          "Image manipulation and Vector graphics; I use it for graphic design work the most.",
+      },
+      {
+        name: "Canva",
+        icon: Stack.canvaIcon,
+        description: "For simpler layout art and publications.",
+      },
+      {
+        name: "IbisPaint",
+        icon: Stack.ibispaintIcon,
+        description: "Drawing app. I also use it to design graphics on-the-go!",
+      },
+      {
+        name: "Alight Motion",
+        icon: Stack.alightmotionIcon,
+        description: "Motion graphics app.",
+      },
+      {
+        name: "Blender",
+        icon: Stack.blenderIcon,
+        description: "3D modelling and renders.",
+      },
+    ],
+  },
 ];
 
 export interface ProjectProps {

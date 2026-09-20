@@ -215,9 +215,9 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
                       return (
                         <Fragment key={i}>
                           {prefix}
-                          <TextScramble as="span" className={segment.className}>
+                          <span className={segment.className}>
                             {segment.text}
-                          </TextScramble>
+                          </span>
                         </Fragment>
                       );
                     },

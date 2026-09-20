@@ -157,6 +157,7 @@ export const SECTIONS: SectionProps[] = [
         items: [
           {
             type: "heading",
+            wrapperClass: "w-full",
             payload: {
               align: "text-center",
               segments: [

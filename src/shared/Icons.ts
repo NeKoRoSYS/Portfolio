@@ -25,6 +25,12 @@ export const Links = {
 };
 
 export const Stack = {
+  figmaIcon: "/icons/techStack/figma.svg",
+  canvaIcon: "/icons/techStack/canva.svg",
+  affinityIcon: "/icons/techStack/affinity.svg",
+  blenderIcon: "/icons/techStack/blender.svg",
+  ibispaintIcon: "/icons/techStack/ibispaint.svg",
+  alightmotionIcon: "/icons/techStack/alightmotion.svg",
   bashIcon: "/icons/techStack/bash.svg",
   cppIcon: "/icons/techStack/cpp.svg",
   csharpIcon: "/icons/techStack/cs.svg",
