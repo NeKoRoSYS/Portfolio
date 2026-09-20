@@ -14,12 +14,28 @@ import {
   ProjectProps,
   STANDARD_ART,
   STANDARD_TECH,
+  TECH_STACK,
 } from "@/data/nekorosys";
 import { cn } from "@/lib/utils";
 import { BRAND_COLORS } from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { useState } from "react";
 import TextScramble from "../motion-primitives/text-scramble";
+
+export function TechStack() {
+  return (
+    <div className="grid grid-cols-9 gap-8">
+      {TECH_STACK.map((category, index) => (
+        <div key={index} className="col-span-3 flex flex-col items-center">
+          <p className="font-bold">{category.category}</p>
+          {category.tools?.map((tool, index) => (
+            <p key={index}>{tool.name}</p>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function PortfolioHeader() {
   return (

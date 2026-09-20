@@ -246,22 +246,30 @@ interface BrandingCardProps {
   fields?: BrandingField[];
 }
 export function BrandingCard({
+  outline = true,
   className,
   displayLinks,
   fields,
-}: BrandingCardProps) {
+}: BrandingCardProps & { outline?: boolean }) {
   return (
-    <Card tilt className={cn("max-w-xl p-px", className)}>
-      <Spotlight
-        className={`-z-10 bg-zinc-300`}
-        size={256}
-        springOptions={{
-          stiffness: 250,
-          damping: 30,
-          mass: 0.5,
-        }}
-      />
-      <div className="relative w-full rounded-3xl bg-zinc-950">
+    <Card
+      tilt
+      className={cn("max-w-xl bg-zinc-950/25 p-px backdrop-blur-xs", className)}
+    >
+      {outline && (
+        <Spotlight
+          className={`-z-10 bg-zinc-300`}
+          size={256}
+          springOptions={{
+            stiffness: 250,
+            damping: 30,
+            mass: 0.5,
+          }}
+        />
+      )}
+      <div
+        className={cn("relative w-full rounded-3xl", outline && "bg-zinc-950")}
+      >
         <SpotlightBlob
           color="z-10 bg-zinc-300"
           top="-top-[50%] sm:-top-[100%]"

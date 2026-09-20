@@ -31,16 +31,16 @@ export const ROLES = [
   "Illustrator",
 ];
 
-export interface ToolProps {
-  icon?: string | StaticImageData;
-  name: string;
-  description?: string;
-}
-
 export interface TechStackProps {
   category?: string;
   description?: string;
   tools?: ToolProps[];
+}
+
+export interface ToolProps {
+  icon?: string | StaticImageData;
+  name: string;
+  description?: string;
 }
 
 export const TECH_STACK: TechStackProps[] = [

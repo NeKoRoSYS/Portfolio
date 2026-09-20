@@ -112,7 +112,8 @@ export const SECTIONS: SectionProps[] = [
                   payload: {
                     ...link,
                     showHyperlinkIcon: true,
-                    className: "py-2",
+                    className:
+                      "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
                   },
                 })),
               },
@@ -200,29 +201,46 @@ export const SECTIONS: SectionProps[] = [
       {
         type: "container",
         colSpan: "col-span-12",
-        wrapperClass: "grid w-full grid-cols-12 sm:mx-auto gap-8",
+        wrapperClass:
+          "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-1 border-zinc-700",
         items: [
           {
-            type: "heading",
+            type: "container",
             colSpan: "col-span-12 lg:col-span-6",
             wrapperClass:
-              "flex h-full w-full flex-wrap items-center justify-center border-b border-zinc-800 lg:border-r lg:border-b-0",
-            payload: {
-              text: "Education",
-              level: "h3",
-              align: "text-center",
-            },
+              "border-b border-zinc-800 lg:border-r lg:border-b-0 m-4",
+            items: [
+              {
+                type: "heading",
+                colSpan: "col-span-12 lg:col-span-6",
+                wrapperClass: "flex w-full mb-8",
+                payload: {
+                  text: "Education",
+                  level: "h3",
+                  align: "text-center",
+                },
+              },
+            ],
           },
           {
-            type: "heading",
+            type: "container",
             colSpan: "col-span-12 lg:col-span-6",
-            wrapperClass:
-              "flex h-full w-full flex-wrap items-center justify-center",
-            payload: {
-              text: "What I Use",
-              level: "h3",
-              align: "text-center",
-            },
+            wrapperClass: " m-4",
+            items: [
+              {
+                type: "heading",
+                colSpan: "col-span-12 lg:col-span-6",
+                wrapperClass: "flex w-full mb-8",
+                payload: {
+                  text: "What I Use",
+                  level: "h3",
+                  align: "text-center",
+                },
+              },
+              {
+                type: "tech-stack",
+              },
+            ],
           },
         ],
       },

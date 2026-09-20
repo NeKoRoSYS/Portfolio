@@ -3,7 +3,11 @@ import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
 import { Icons } from "@/shared/Icons";
 import { Heading2, Heading3 } from "./Headings";
-import { PortfolioHeader, PortfolioSection } from "@/components/home/Portfolio";
+import {
+  PortfolioHeader,
+  PortfolioSection,
+  TechStack,
+} from "@/components/home/Portfolio";
 import SpotlightBlob from "./SpotlightBlob";
 import { BrandingCard } from "./Cards";
 import TextEcho from "./home/TextEcho";
@@ -116,6 +120,7 @@ export type SectionComponent = {
       size: string;
       opacity: string;
     }
+  | { type: "tech-stack" }
   | { type: "portfolio" }
   | { type: "portfolio-header" }
   | { type: "contact-cta" }
@@ -160,8 +165,8 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
         return <Button {...component.payload} />;
       case "hyperlink":
         return <TextHyperlink {...component.payload} />;
-      case "custom":
-        return component.content;
+      case "tech-stack":
+        return <TechStack />;
       case "portfolio":
         return <PortfolioSection />;
       case "portfolio-header":
@@ -169,6 +174,7 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
       case "branding-card":
         return (
           <BrandingCard
+            outline={false}
             fields={component.payload.fields}
             className="max-w-2xs"
           />
