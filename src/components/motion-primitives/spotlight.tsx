@@ -26,7 +26,9 @@ export function Spotlight({
 
   useEffect(() => {
     if (containerRef.current) {
-      const parent = containerRef.current.parentElement;
+      const parent =
+        (containerRef.current.closest(".group") as HTMLElement) ||
+        containerRef.current.parentElement;
       if (parent) {
         parent.style.position = "relative";
         parent.style.overflow = "clip";

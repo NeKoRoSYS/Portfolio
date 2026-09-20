@@ -46,6 +46,7 @@ export const SECTIONS: SectionProps[] = [
       alt: "background",
       className: "saturate-0 sm:w-full ",
     },
+    spotlight: { enable: true, color: "bg-zinc-400/15" },
     outline: { enable: true, color: "bg-zinc-100" },
     components: [
       {
