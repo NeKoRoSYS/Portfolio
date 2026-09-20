@@ -81,7 +81,6 @@ export function Cursor({
           setIsVisible(true);
         };
         const handleMouseLeave = () => {
-          parent.style.cursor = "auto";
           setIsVisible(false);
         };
 

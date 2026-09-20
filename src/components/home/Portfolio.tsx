@@ -22,7 +22,6 @@ import { Links } from "@/shared/Icons";
 import { useState } from "react";
 import TextScramble from "../motion-primitives/text-scramble";
 import Image from "next/image";
-import { Tilt } from "../motion-primitives/tilt";
 import { Cursor } from "../motion-primitives/cursor";
 
 export function TechStack() {
