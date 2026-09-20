@@ -23,7 +23,7 @@ import TextScramble from "../motion-primitives/text-scramble";
 
 export function PortfolioHeader() {
   return (
-    <div className="flex h-full w-full flex-wrap items-center justify-center">
+    <>
       <Heading2 className="flex w-full items-center justify-between text-center lg:text-left">
         Systems
         <hr className="w-full border border-zinc-400"></hr>
@@ -33,11 +33,7 @@ export function PortfolioHeader() {
           </span>
         </TextScramble>
       </Heading2>
-      <p className="mt-4 w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right">
-        Cohesive experiences through Software and Designs—engineered with
-        purpose to solve real problems.
-      </p>
-    </div>
+    </>
   );
 }
 
@@ -152,15 +148,16 @@ export function PortfolioSection() {
                     : "cursor-pointer border-zinc-400 text-zinc-100 lg:bg-linear-to-r touch-hover:border-purple-500 touch-hover:from-purple-800/50 touch-hover:to-purple-950/0 touch-hover:text-zinc-100",
                 )}
               >
-                <Heading3
+                <span
                   className={cn(
-                    "transition-transform duration-200",
+                    "font-cosmic text-2xl leading-snug font-semibold tracking-wide sm:text-3xl lg:text-4xl",
+                    "block transition-transform duration-200",
                     activeId !== tab.index &&
                       "lg:group-touch-hover:translate-x-2",
                   )}
                 >
                   {tab.label}
-                </Heading3>
+                </span>
               </button>
             ))}
           </TabControls>

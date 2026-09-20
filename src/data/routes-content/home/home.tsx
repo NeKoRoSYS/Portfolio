@@ -22,6 +22,7 @@ export const SECTIONS: SectionProps[] = [
     components: [
       {
         type: "heading",
+        colSpan: "col-span-12",
         payload: {
           align: "text-center",
           segments: [
@@ -53,6 +54,7 @@ export const SECTIONS: SectionProps[] = [
     components: [
       {
         type: "heading",
+        colSpan: "col-span-12",
         wrapperClass: "mb-8",
         payload: { text: "Who I Am", align: "text-center lg:text-left" },
       },
@@ -234,9 +236,33 @@ export const SECTIONS: SectionProps[] = [
     },
     outline: { enable: true, color: "bg-green-400" },
     components: [
-      { type: "portfolio-header" },
+      {
+        type: "container",
+        colSpan: "col-span-12",
+        items: [
+          { type: "portfolio-header" },
+          {
+            type: "container",
+            wrapperClass: "flex h-full w-full flex-wrap justify-center",
+            items: [
+              {
+                type: "paragraph",
+                wrapperClass:
+                  "w-full text-center font-bold text-zinc-200 lg:ml-128 lg:text-right text-zinc-300",
+                payload: {
+                  html: true,
+                  text: `
+        <b>Cohesive experiences through Software and Designs—engineered with
+        purpose to solve real problems.</b>`,
+                },
+              },
+            ],
+          },
+        ],
+      },
       {
         type: "heading",
+        colSpan: "col-span-12",
         wrapperClass: "relative mb-16 relative",
         payload: {
           custom: (
@@ -268,7 +294,7 @@ export const SECTIONS: SectionProps[] = [
         size: "w-[1000px] h-[1000px]",
         opacity: "opacity-25",
       },
-      { type: "portfolio" },
+      { type: "portfolio", colSpan: "col-span-12" },
     ],
   },
   {
@@ -299,64 +325,89 @@ export const SECTIONS: SectionProps[] = [
         size: "w-[250px] h-[250px]",
         opacity: "opacity-75",
       },
+
       {
-        type: "custom",
+        type: "container",
         colSpan: "col-span-12 lg:col-span-8",
         wrapperClass:
-          "mb-16 lg:mb-0 flex h-full w-full flex-wrap items-center justify-center",
-        content: (
-          <>
-            <Heading2 className="w-full text-center lg:text-left">
-              One{" "}
-              <span className="font-serif font-normal text-green-400 italic touch-hover:text-purple-400">
-                'Hello'
-              </span>
-              ,
-              <br />
-              <span className="font-bold text-green-400 touch-hover:text-purple-400">
-                Many
-              </span>{" "}
-              Possibilities.
-            </Heading2>
-            <p className="mt-4 w-full text-center font-bold text-zinc-400 lg:text-left">
-              Your ideas are just one conversation away from becoming reality.
-            </p>
-            <p className="mt-16 hidden w-full text-center font-bold lg:block lg:text-left">
-              Currently open for freelance projects and internships. <br />{" "}
-              Connect with me on LinkedIn or drop an email to start building.
-            </p>
-          </>
-        ),
+          "mb-16 lg:mb-0 flex h-full w-full flex-wrap items-center justify-center lg:justify-start",
+        items: [
+          {
+            type: "heading",
+            payload: {
+              align: "text-center lg:text-left",
+              segments: [
+                { text: "One " },
+                {
+                  text: "'Hello'",
+                  className:
+                    "font-serif font-normal text-green-400 italic touch-hover:text-purple-400",
+                },
+                { text: "," },
+                {
+                  text: "Many",
+                  breakBefore: true,
+                  className:
+                    "font-bold text-green-400 touch-hover:text-purple-400",
+                },
+                { text: " Possibilities." },
+              ],
+            },
+          },
+          {
+            type: "paragraph",
+            wrapperClass:
+              "mt-4 w-full text-center font-bold text-zinc-400 lg:text-left",
+            payload: {
+              text: "Your ideas are just one conversation away from becoming reality.",
+            },
+          },
+          {
+            type: "paragraph",
+            wrapperClass:
+              "mt-16 hidden w-full text-center font-bold lg:block lg:text-left",
+            payload: {
+              html: true,
+              text: "Currently open for freelance projects and internships. <br /> Connect with me on LinkedIn or drop an email to start building.",
+            },
+          },
+        ],
       },
       {
-        type: "custom",
+        type: "container",
         colSpan: "col-span-12 lg:col-span-4",
         wrapperClass:
           "flex h-full w-full grow flex-col items-center justify-end lg:items-end lg:justify-center",
-        content: (
-          <>
-            <div className="z-10 flex w-full max-w-sm flex-row gap-4 text-center sm:w-md sm:max-w-none sm:text-left lg:w-2xs lg:flex-col">
-              {CONTACT.map((link, index) => (
-                <Button
-                  key={index}
-                  showHyperlinkIcon
-                  path={link.path}
-                  name={link.altName}
-                  icon={link.icon}
-                  className={cn(
-                    "relative z-10 h-16 w-full rounded-xl border px-4 font-bold backdrop-blur-xs lg:justify-start",
-                    index > 0 && "self-end lg:w-3xs touch-hover:text-zinc-100",
-                    link.colors,
-                  )}
-                />
-              ))}
-            </div>
-            <p className="mt-8 block w-full text-center font-bold lg:hidden lg:text-left">
-              Currently open for freelance projects and internships. <br />{" "}
-              Connect with me on LinkedIn or drop an email to start building.
-            </p>
-          </>
-        ),
+        items: [
+          {
+            type: "container",
+            wrapperClass:
+              "z-10 flex w-full max-w-sm flex-row gap-4 text-center sm:w-md sm:max-w-none sm:text-left lg:w-2xs lg:flex-col",
+            items: CONTACT.map((link, index) => ({
+              type: "button",
+              payload: {
+                path: link.path,
+                name: link.altName,
+                icon: link.icon,
+                showHyperlinkIcon: true,
+                className: cn(
+                  "relative z-10 h-16 w-full rounded-xl border px-4 font-bold backdrop-blur-xs lg:justify-start",
+                  index > 0 && "self-end lg:w-3xs touch-hover:text-zinc-100",
+                  link.colors,
+                ),
+              },
+            })),
+          },
+          {
+            type: "paragraph",
+            wrapperClass:
+              "mt-8 block w-full text-center font-bold lg:hidden lg:text-left",
+            payload: {
+              html: true,
+              text: "Currently open for freelance projects and internships. <br /> Connect with me on LinkedIn or drop an email to start building.",
+            },
+          },
+        ],
       },
     ],
   },

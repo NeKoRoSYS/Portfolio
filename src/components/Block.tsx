@@ -128,10 +128,11 @@ export type TextSegment = {
   italic?: boolean;
   effect?: "scramble" | "pulse" | "echo";
   className?: string;
+  breakBefore?: boolean;
 };
 
 export type HeadingPayload = {
-  level: number;
+  level: "h2" | "h3";
   text?: string;
   segments: TextSegment[];
   align?: string;
@@ -179,24 +180,38 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
               {component.payload.segments
                 ? component.payload.segments.map(
                     (segment: TextSegment, i: number) => {
+                      const prefix = segment.breakBefore ? (
+                        <br key={`br-${i}`} />
+                      ) : null;
+
                       if (segment.effect === "echo") {
-                        return <TextEcho key={i} string={segment.text} />;
+                        return (
+                          <Fragment key={i}>
+                            {prefix}
+                            <TextEcho string={segment.text} />
+                          </Fragment>
+                        );
                       }
                       if (segment.effect === "scramble") {
                         return (
-                          <TextScramble
-                            key={i}
-                            as="span"
-                            className={segment.className}
-                          >
-                            {segment.text}
-                          </TextScramble>
+                          <Fragment key={i}>
+                            {prefix}
+                            <TextScramble
+                              as="span"
+                              className={segment.className}
+                            >
+                              {segment.text}
+                            </TextScramble>
+                          </Fragment>
                         );
                       }
                       return (
-                        <span key={i} className={segment.className}>
-                          {segment.text}
-                        </span>
+                        <Fragment key={i}>
+                          {prefix}
+                          <TextScramble as="span" className={segment.className}>
+                            {segment.text}
+                          </TextScramble>
+                        </Fragment>
                       );
                     },
                   )
@@ -220,13 +235,9 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
         return null;
     }
   };
-  return (
-    <div
-      className={cn(component.colSpan || "col-span-12", component.wrapperClass)}
-    >
-      {getContent()}
-    </div>
-  );
+  const wrapperClasses = cn(component.colSpan, component.wrapperClass);
+  if (!wrapperClasses) return getContent();
+  return <div className={wrapperClasses}>{getContent()}</div>;
 }
 
 export interface SectionProps extends BlockProps {
