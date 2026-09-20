@@ -1,12 +1,9 @@
 import { type SectionProps } from "@/components/Block";
 import Button from "@/components/Buttons";
 import { BUSINESS, CONTACT } from "../../hyperlinks";
-import Image from "next/image";
-import Grid from "@/components/Grid";
 import { cn } from "@/lib/utils";
 import { Heading2, Heading3 } from "@/components/Headings";
 import { TextScramble } from "@/components/motion-primitives/text-scramble";
-import { BackgroundAscii } from "@/components/VideoPlayer";
 import { TextHyperlink } from "@/components/Hyperlinks";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 import { Icons } from "@/shared/Icons";
@@ -16,9 +13,12 @@ export const SECTIONS: SectionProps[] = [
     id: "about-title",
     showIndex: false,
     outline: { enable: true, color: "bg-green-400" },
-    background: (
-      <Grid className="inset-0 z-10 opacity-50" fadeDir="top" size={56} />
-    ),
+    background: {
+      type: "grid",
+      fadeDir: "top",
+      size: 56,
+      className: "opacity-50",
+    },
     borderVisible: false,
     components: [
       {
@@ -42,15 +42,14 @@ export const SECTIONS: SectionProps[] = [
     id: "about",
     borderVisible: false,
     className: "bg-[rgb(15,15,15)]",
-    background: (
-      <Image
-        className="aspect-auto h-full w-auto max-w-none opacity-10 saturate-0 sm:w-full"
-        alt={"background"}
-        width={3066}
-        height={2300}
-        src={"/images/bg.jpg"}
-      />
-    ),
+    background: {
+      type: "image",
+      width: 3066,
+      height: 2300,
+      src: "/images/bg.jpg",
+      alt: "background",
+      className: "saturate-0 sm:w-full",
+    },
     outline: { enable: true, color: "bg-zinc-100" },
     components: [
       {
@@ -120,25 +119,44 @@ export const SECTIONS: SectionProps[] = [
     id: "credentials",
     borderVisible: false,
     outline: { enable: true, color: "bg-green-400" },
-    background: (
-      <>
-        <Image
-          alt="stack"
-          width={1920}
-          height={1080}
-          src="/images/nekorosys/nekostack.png"
-          className="absolute top-[2%] right-[2%] -z-10 aspect-auto w-full mask-[linear-gradient(to_bottom,black,transparent_75%)] opacity-50 invert saturate-0"
-        />
-        <div className="absolute top-0 right-0 left-0 h-64">
-          <Grid
-            className="inset-0 z-10 opacity-50"
-            fadeDir="bottom"
-            size={56}
-          />
-        </div>
-      </>
-    ),
+    background: {
+      type: "composite",
+      layers: [
+        {
+          type: "image",
+          width: 1920,
+          height: 1080,
+          src: "/images/nekorosys/nekostack.png",
+          alt: "stack",
+          className:
+            "absolute top-[2%] right-[2%] -z-10 aspect-auto w-full mask-[linear-gradient(to_bottom,black,transparent_75%)] opacity-50 invert saturate-0",
+        },
+        { type: "grid", fadeDir: "bottom", size: 56, className: "opacity-50" },
+      ],
+    },
     components: [
+      {
+        type: "heading",
+        wrapperClass:
+          "flex h-full w-full flex-wrap items-center justify-center",
+        payload: {
+          align: "text-center",
+          segments: [
+            {
+              text: "Versatile ",
+              highlight: true,
+              className: "text-green-400 touch-hover:text-purple-400",
+            },
+            {
+              text: "and ",
+            },
+            {
+              text: "STACKED",
+              effect: "echo",
+            },
+          ],
+        },
+      },
       {
         type: "heading",
         wrapperClass:
@@ -146,33 +164,6 @@ export const SECTIONS: SectionProps[] = [
         payload: {
           custom: (
             <>
-              <Heading2 className="w-full text-center">
-                <span className="text-green-400 touch-hover:text-purple-400">
-                  Versatile
-                </span>{" "}
-                and{" "}
-                <span className="group relative text-green-400 select-none touch-hover:text-purple-400">
-                  STACKED
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-2 group-touch-hover:opacity-50"
-                  >
-                    STACKED
-                  </span>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-5 group-touch-hover:opacity-25"
-                  >
-                    STACKED
-                  </span>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-0 -z-10 text-transparent opacity-0 transition-all ease-in-out [-webkit-text-stroke:2px_var(--color-purple-400)] group-touch-hover:top-7 group-touch-hover:opacity-10"
-                  >
-                    STACKED
-                  </span>
-                </span>
-              </Heading2>
               <p className="mt-4 w-full text-center font-bold text-zinc-200">
                 Building with industry-standard skills and tools that deliver.
               </p>
@@ -214,10 +205,12 @@ export const SECTIONS: SectionProps[] = [
     id: "portfolio",
     className: "bg-zinc-950",
     borderVisible: false,
-
-    background: (
-      <Grid className="inset-0 z-10 opacity-50" fadeDir="radial" size={56} />
-    ),
+    background: {
+      type: "grid",
+      fadeDir: "radial",
+      size: 56,
+      className: "opacity-50",
+    },
     outline: { enable: true, color: "bg-green-400" },
     components: [
       {
@@ -275,19 +268,12 @@ export const SECTIONS: SectionProps[] = [
     outline: { enable: true, color: "bg-green-400" },
     spotlight: { enable: true, color: "bg-green-500/25" },
     borderVisible: false,
-    background: (
-      <>
-        <div className="absolute inset-0 z-0 aspect-video h-full w-full max-w-none opacity-20">
-          <BackgroundAscii
-            themeColor="#FFFFFF"
-            url={"/videos/lavalamp.mp4"}
-            containerClassOverride="absolute inset-0 z-0 lg:w-full h-full max-w-none min-h-svh aspect-video lg:aspect-auto "
-            loop
-          />
-          <div className="pointer-events-none absolute inset-0 right-0 bottom-0 left-0 z-10 bg-linear-to-b from-black/0 from-25% to-black" />
-        </div>
-      </>
-    ),
+    background: {
+      type: "ascii-video",
+      className: "opacity-20",
+      themeColor: "#FFFFFF",
+      url: "/videos/lavalamp.mp4",
+    },
     components: [
       {
         type: "spotlight",

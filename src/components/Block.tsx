@@ -6,6 +6,9 @@ import { Heading2 } from "./Headings";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import SpotlightBlob from "./SpotlightBlob";
 import { BrandingCard } from "./Cards";
+import TextEcho from "./home/TextEcho";
+import BackgroundRenderer, { BackgroundProps } from "./BaclgroundRenderer";
+import { TextScramble } from "./motion-primitives/text-scramble";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -16,7 +19,7 @@ interface BlockProps {
   index?: number;
   id?: string;
   children?: ReactNode;
-  background?: ReactNode;
+  background?: BackgroundProps;
   className?: string;
   outline?: SpotlightProps;
   spotlight?: SpotlightProps;
@@ -75,7 +78,7 @@ export default function Block({
         )}
         {background && (
           <div className="pointer-events-none absolute inset-0 z-0">
-            {background}
+            <BackgroundRenderer background={background} />
           </div>
         )}
         <div
@@ -109,22 +112,11 @@ export type SectionComponent = {
   | { type: "custom"; content: React.ReactNode }
 );
 
-export type BackgroundProps =
-  | {
-      type: "grid";
-      fadeDir: "top" | "bottom" | "radial";
-      size: number;
-      opacity: number;
-    }
-  | { type: "image"; src: string; opacity: number; saturate: number }
-  | { type: "ascii-video"; url: string; themeColor: string; opacity: number }
-  | { type: "composite"; layers: BackgroundProps[] };
-
 export type TextSegment = {
   text: string;
   highlight?: boolean;
   italic?: boolean;
-  effect?: "scramble" | "pulse";
+  effect?: "scramble" | "pulse" | "echo";
   className?: string;
 };
 
@@ -154,11 +146,27 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
             <Heading2 className={`w-full ${component.payload.align}`}>
               {component.payload.segments
                 ? component.payload.segments.map(
-                    (segment: TextSegment, i: number) => (
-                      <span key={i} className={segment.className}>
-                        {segment.text}
-                      </span>
-                    ),
+                    (segment: TextSegment, i: number) => {
+                      if (segment.effect === "echo") {
+                        return <TextEcho key={i} string={segment.text} />;
+                      }
+                      if (segment.effect === "scramble") {
+                        return (
+                          <TextScramble
+                            key={i}
+                            as="span"
+                            className={segment.className}
+                          >
+                            {segment.text}
+                          </TextScramble>
+                        );
+                      }
+                      return (
+                        <span key={i} className={segment.className}>
+                          {segment.text}
+                        </span>
+                      );
+                    },
                   )
                 : component.payload.text}
             </Heading2>
