@@ -86,7 +86,7 @@ export function TechStack() {
                   alt={tool.name}
                   src={tool.icon}
                   className={cn(
-                    `aspect-square w-12 shrink-0 bg-cover bg-center bg-no-repeat saturate-0 transition-all group-touch-hover:-translate-y-3 group-touch-hover:scale-125 group-touch-hover:saturate-100`,
+                    `aspect-square w-12 shrink-0 bg-cover bg-center bg-no-repeat saturate-0 transition-all select-none group-touch-hover:-translate-y-3 group-touch-hover:scale-125 group-touch-hover:saturate-100`,
                   )}
                 />
                 <p className="absolute top-[85%] text-sm font-bold opacity-0 duration-150 sm:hidden group-touch-hover:opacity-100">
