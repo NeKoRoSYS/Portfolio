@@ -206,8 +206,8 @@ export function PortfolioSection() {
 
   return (
     <div className="grid w-full grid-cols-12 gap-8">
-      <div className="col-span-12 w-full border-l-2 border-zinc-800 lg:col-span-3">
-        <div className="z-10 border-l border-zinc-800 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2">
+      <div className="col-span-12 w-full border-zinc-800 lg:col-span-3 lg:border-l-2">
+        <div className="z-10 border-zinc-800 lg:sticky lg:top-[50vh] lg:mt-16 lg:-translate-y-1/2 lg:border-l">
           <TabControls
             tabs={tabs}
             activeId={activeId}
