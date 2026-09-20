@@ -1,9 +1,6 @@
 import { type SectionProps } from "@/components/Block";
-import Button from "@/components/Buttons";
 import { BUSINESS, CONTACT } from "../../hyperlinks";
 import { cn } from "@/lib/utils";
-import { Heading2, Heading3 } from "@/components/Headings";
-import { TextHyperlink } from "@/components/Hyperlinks";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
 import { Icons } from "@/shared/Icons";
 
@@ -259,16 +256,6 @@ export const SECTIONS: SectionProps[] = [
             ],
           },
         ],
-      },
-      {
-        type: "heading",
-        colSpan: "col-span-12",
-        wrapperClass: "relative mb-16 relative",
-        payload: {
-          custom: (
-            <div className="flex h-full w-full flex-wrap items-center justify-center"></div>
-          ),
-        },
       },
       {
         type: "spotlight",

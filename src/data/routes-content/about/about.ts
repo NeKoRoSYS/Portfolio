@@ -13,27 +13,22 @@ export const SECTIONS: SectionProps[] = [
         payload: { text: "Hello, World!", align: "text-center lg:text-left" },
       },
       {
-        type: "custom",
+        type: "paragraph",
         colSpan: "col-span-12 lg:col-span-7",
         wrapperClass:
           "flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100 sm:justify-end",
-        content: (
-          <>
-            <p>
-              My name is Marky, but I am better known online as <b>NeKoRoSYS</b>
+        payload: {
+          html: true,
+          text: `My name is Marky, but I am better known online as <b>NeKoRoSYS</b>
               ! I am a 19-year-old Filipino currently taking Computer Science as
               my undergraduate program.
-            </p>
-            <br />
-            <p>
+              <br />
               I aspire to be a Software Engineer and Systems Architect. My goal
               is to learn a lot of aspects that come in developing software and
               IoT such as video games, utilities, and other systems. I am
               interested in web, game, and AI/ML development; though I also
-              happen to like creating graphic and motion designs.
-            </p>
-          </>
-        ),
+              happen to like creating graphic and motion designs.`,
+        },
       },
     ],
   },
