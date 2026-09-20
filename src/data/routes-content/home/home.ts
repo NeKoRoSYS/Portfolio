@@ -257,6 +257,7 @@ export const SECTIONS: SectionProps[] = [
           },
         ],
       },
+      { type: "portfolio", colSpan: "col-span-12", wrapperClass: "mt-16" },
       {
         type: "spotlight",
         color: "bg-zinc-500/75",
@@ -281,7 +282,6 @@ export const SECTIONS: SectionProps[] = [
         size: "w-[1000px] h-[1000px]",
         opacity: "opacity-25",
       },
-      { type: "portfolio", colSpan: "col-span-12" },
     ],
   },
   {
