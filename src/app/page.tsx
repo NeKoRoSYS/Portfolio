@@ -11,7 +11,7 @@ import { BackgroundAscii } from "@/components/VideoPlayer";
 import { FEATURED, LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home/home";
 import { Colors } from "@/shared/Colors";
-import { Icons } from "@/shared/Icons";
+import { Links } from "@/shared/Icons";
 import { Heading1 } from "@/components/Headings";
 import { ProjectCard } from "@/components/Cards";
 import {
@@ -97,7 +97,7 @@ export default function Home() {
                     }}
                   />
                   <Button
-                    icon={Icons.emailIcon}
+                    icon={Links.emailIcon}
                     iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
                     path="#contact"
                     className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"

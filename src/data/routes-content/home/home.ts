@@ -2,7 +2,7 @@ import { type SectionProps } from "@/components/Block";
 import { BUSINESS, CONTACT } from "../../hyperlinks";
 import { cn } from "@/lib/utils";
 import { ABOUT_FIELDS } from "@/data/components/brandingCard";
-import { Icons } from "@/shared/Icons";
+import { Links } from "@/shared/Icons";
 
 export const SECTIONS: SectionProps[] = [
   {
@@ -190,7 +190,7 @@ export const SECTIONS: SectionProps[] = [
               path: "/CV Malibiran 2026.pdf",
               download: true,
               showHyperlinkIcon: true,
-              linkIcon: Icons.downloadIcon,
+              linkIcon: Links.downloadIcon,
               linkIconClass: "group-touch-hover:transform-[translate(0px,0px)]",
               className:
                 "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
@@ -208,7 +208,7 @@ export const SECTIONS: SectionProps[] = [
             type: "container",
             colSpan: "col-span-12 lg:col-span-6",
             wrapperClass:
-              "border-b border-zinc-800 lg:border-r lg:border-b-0 m-4",
+              "border-b border-zinc-800 lg:border-r lg:border-b-0 p-8",
             items: [
               {
                 type: "heading",
@@ -225,7 +225,7 @@ export const SECTIONS: SectionProps[] = [
           {
             type: "container",
             colSpan: "col-span-12 lg:col-span-6",
-            wrapperClass: " m-4",
+            wrapperClass: " p-8",
             items: [
               {
                 type: "heading",

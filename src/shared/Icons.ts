@@ -1,4 +1,4 @@
-export const Icons = {
+export const Links = {
   arrowIcon: "/icons/arrow.webp",
   linkArrowIcon: "/icons/arrowLink.svg",
   downloadIcon: "/icons/downloadIcon.svg",
@@ -22,6 +22,33 @@ export const Icons = {
   discordIcon: "/icons/discord.svg",
   gravensoftIcon: "/icons/gravensoftBgFlat.jpg",
   itchioIcon: "/icons/itchio.svg",
+};
+
+export const Stack = {
+  bashIcon: "/icons/techStack/bash.svg",
+  cppIcon: "/icons/techStack/cpp.svg",
+  csharpIcon: "/icons/techStack/cs.svg",
+  cssIcon: "/icons/techStack/css.svg",
+  dockerIcon: "/icons/techStack/docker.svg",
+  fastapiIcon: "/icons/techStack/fastapi.svg",
+  gitIcon: "/icons/techStack/git.svg",
+  githubIcon: "/icons/techStack/github.svg",
+  htmlIcon: "/icons/techStack/html.svg",
+  javascriptIcon: "/icons/techStack/js.svg",
+  kubernetesIcon: "/icons/techStack/k8s.svg",
+  linuxIcon: "/icons/techStack/linux.svg",
+  mongodbIcon: "/icons/techStack/mongodb.svg",
+  nextjsIcon: "/icons/techStack/nextjs.svg",
+  nodejsIcon: "/icons/techStack/nodejs.svg",
+  pythonIcon: "/icons/techStack/py.svg",
+  postgresqlIcon: "/icons/techStack/postgresql.svg",
+  reactIcon: "/icons/techStack/react.svg",
+  tailwindIcon: "/icons/techStack/tailwind.svg",
+  typescriptIcon: "/icons/techStack/ts.svg",
+  unityIcon: "/icons/techStack/unity.svg",
+  vercelIcon: "/icons/techStack/vercel.svg",
+  viteIcon: "/icons/techStack/vite.png",
+  vscodeIcon: "/icons/techStack/vscode.svg",
 };
 
 export const Media = {

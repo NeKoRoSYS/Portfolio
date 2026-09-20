@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { HyperlinkSchema } from "../data/hyperlinks";
-import { Icons } from "../shared/Icons";
+import { Links } from "../shared/Icons";
 import { CopyTextToClipboard } from "@/shared/Utils";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
@@ -17,7 +17,7 @@ export function SmartLink({
     download = false,
     showHyperlinkIcon,
     icon,
-    linkIcon = Icons.linkArrowIcon,
+    linkIcon = Links.linkArrowIcon,
     name,
     path,
   } = hyperlinkProps;

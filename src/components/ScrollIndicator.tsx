@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/shared/Icons";
+import { Links } from "@/shared/Icons";
 import { useEffect, useState } from "react";
 
 export default function ScrollIndicator() {
@@ -59,7 +59,7 @@ export default function ScrollIndicator() {
           className="mask-icon h-5 w-5 bg-green-400"
           style={
             {
-              "--mask-url": `url(${Icons.arrowIcon.toString()})`,
+              "--mask-url": `url(${Links.arrowIcon.toString()})`,
             } as React.CSSProperties
           }
         />

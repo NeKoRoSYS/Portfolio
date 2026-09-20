@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Fragment, type ReactNode } from "react";
 import { Spotlight } from "./motion-primitives/spotlight";
-import { Icons } from "@/shared/Icons";
+import { Links } from "@/shared/Icons";
 import { Heading2, Heading3 } from "./Headings";
 import {
   PortfolioHeader,
@@ -271,7 +271,7 @@ export function Section(props: SectionProps) {
                 aria-hidden={true}
                 style={
                   {
-                    "--mask-url": `url(${Icons.diamondIcon.toString()})`,
+                    "--mask-url": `url(${Links.diamondIcon.toString()})`,
                   } as React.CSSProperties
                 }
                 className={cn(

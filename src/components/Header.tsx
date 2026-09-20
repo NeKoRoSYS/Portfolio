@@ -12,7 +12,7 @@ import { Magnetic } from "./motion-primitives/magnetic";
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "./motion-primitives/spotlight";
-import { CTA_NAME, CTA_PATH, TITLE } from "@/data/components/header";
+import { CTA_NAME, CTA_PATH } from "@/data/components/header";
 import { Media } from "@/shared/Icons";
 import { validateNav } from "@/lib/utilsClient";
 import { useState } from "react";

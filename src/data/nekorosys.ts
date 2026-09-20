@@ -1,3 +1,4 @@
+import { Stack } from "@/shared/Icons";
 import { StaticImageData } from "next/image";
 
 export const EMAIL = "malibiran.johnmarky@gmail.com";
@@ -38,7 +39,7 @@ export interface TechStackProps {
 }
 
 export interface ToolProps {
-  icon?: string | StaticImageData;
+  icon: string | StaticImageData;
   name: string;
   description?: string;
 }
@@ -47,48 +48,73 @@ export const TECH_STACK: TechStackProps[] = [
   {
     category: "Languages",
     tools: [
-      { name: "TypeScript" },
-      { name: "JavaScript" },
-      { name: "C#" },
-      { name: "C++" },
-      { name: "Python" },
+      {
+        name: "TypeScript",
+        icon: Stack.typescriptIcon,
+        description:
+          "A superset of JavaScript. I use this on all my web apps to promote type-safety. ",
+      },
+      {
+        name: "JavaScript",
+        icon: Stack.javascriptIcon,
+        description:
+          "The base language that allows for dynamic and interactive content for my web apps.",
+      },
+      {
+        name: "C#",
+        icon: Stack.csharpIcon,
+        description:
+          "I use this progamming language for game development on Unity!",
+      },
+      {
+        name: "C++",
+        icon: Stack.cppIcon,
+        description:
+          "C++ is my go-to systems programming language when coding low-level stuff such as 3D renderers.",
+      },
+      {
+        name: "Python",
+        icon: Stack.pythonIcon,
+        description:
+          "I use Python for making the backend for some of my web apps.",
+      },
     ],
   },
   {
     category: "Frontend",
     tools: [
-      { name: "Next.js" },
-      { name: "React" },
-      { name: "Tailwind CSS" },
-      { name: "Vite" },
+      { name: "Next.js", icon: Stack.nextjsIcon },
+      { name: "React", icon: Stack.reactIcon },
+      { name: "Tailwind CSS", icon: Stack.tailwindIcon },
+      { name: "Vite", icon: Stack.viteIcon },
     ],
   },
   {
     category: "Backend",
     tools: [
-      { name: "Node.js" },
-      { name: "MongoDB" },
-      { name: "PostgreSQL" },
-      { name: "FastAPI" },
+      { name: "Node.js", icon: Stack.nodejsIcon },
+      { name: "MongoDB", icon: Stack.mongodbIcon },
+      { name: "PostgreSQL", icon: Stack.postgresqlIcon },
+      { name: "FastAPI", icon: Stack.fastapiIcon },
     ],
   },
   {
     category: "DevOps/SysAd",
     tools: [
-      { name: "Arch Linux" },
-      { name: "Git" },
-      { name: "Docker" },
-      { name: "Kubernetes" },
-      { name: "Bash" },
+      { name: "Linux", icon: Stack.linuxIcon },
+      { name: "Git", icon: Stack.gitIcon },
+      { name: "Docker", icon: Stack.dockerIcon },
+      { name: "Kubernetes", icon: Stack.kubernetesIcon },
+      { name: "Bash", icon: Stack.bashIcon },
     ],
   },
   {
     category: "Tools",
     tools: [
-      { name: "Unity" },
-      { name: "VS Code" },
-      { name: "GitHub" },
-      { name: "Vercel" },
+      { name: "Unity", icon: Stack.unityIcon },
+      { name: "VS Code", icon: Stack.vscodeIcon },
+      { name: "GitHub", icon: Stack.githubIcon },
+      { name: "Vercel", icon: Stack.vercelIcon },
     ],
   },
 ];

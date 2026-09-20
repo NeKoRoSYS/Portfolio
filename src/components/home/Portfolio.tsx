@@ -18,19 +18,80 @@ import {
 } from "@/data/nekorosys";
 import { cn } from "@/lib/utils";
 import { BRAND_COLORS } from "@/shared/Colors";
-import { Icons } from "@/shared/Icons";
+import { Links } from "@/shared/Icons";
 import { useState } from "react";
 import TextScramble from "../motion-primitives/text-scramble";
+import Image from "next/image";
+import { Tilt } from "../motion-primitives/tilt";
+import { Cursor } from "../motion-primitives/cursor";
 
 export function TechStack() {
   return (
     <div className="grid grid-cols-9 gap-8">
       {TECH_STACK.map((category, index) => (
         <div key={index} className="col-span-3 flex flex-col items-center">
-          <p className="font-bold">{category.category}</p>
-          {category.tools?.map((tool, index) => (
-            <p key={index}>{tool.name}</p>
-          ))}
+          <p className="mb-4 font-bold">{category.category}</p>
+          <div className="grid grid-cols-3 gap-4">
+            {category.tools?.map((tool, index) => (
+              <div
+                key={index}
+                className="group relative flex flex-col items-center duration-150"
+              >
+                <Cursor
+                  attachToParent
+                  variants={{
+                    initial: {
+                      height: 0,
+                      opacity: 0,
+                      scale: 0.3,
+                    },
+                    animate: {
+                      height: "auto",
+                      opacity: 1,
+                      scale: 1,
+                    },
+                    exit: {
+                      height: 0,
+                      opacity: 0,
+                      scale: 0.3,
+                    },
+                  }}
+                  transition={{
+                    type: "spring",
+                    duration: 0.3,
+                    bounce: 0.1,
+                  }}
+                  className="pointer-events-none"
+                  springConfig={{
+                    stiffness: 200,
+                    damping: 30,
+                    mass: 0.5,
+                  }}
+                >
+                  <div className="relative mt-8 flex max-w-sm translate-y-[50%] flex-col gap-2 overflow-clip rounded-2xl border border-zinc-700 bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-4">
+                    <Image
+                      className="absolute top-[25%] right-0 -z-10 aspect-square w-24 mask-[linear-gradient(to_bottom,black_50%,transparent)] opacity-25 saturate-0"
+                      width={128}
+                      height={128}
+                      src={tool.icon}
+                      alt={tool.name}
+                    />
+                    <b>{tool.name}</b>
+                    {tool.description}
+                  </div>
+                </Cursor>
+                <Image
+                  width={128}
+                  height={128}
+                  alt={tool.name}
+                  src={tool.icon}
+                  className={cn(
+                    `aspect-square w-8 shrink-0 bg-cover bg-center bg-no-repeat saturate-0 transition-all group-touch-hover:-translate-y-3 group-touch-hover:scale-125 group-touch-hover:saturate-100`,
+                  )}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
@@ -109,7 +170,7 @@ export function PortfolioSection() {
             showHyperlinkIcon
             path={"https://github.com/NeKoRoSYS"}
             name={"GitHub"}
-            icon={Icons.githubIcon}
+            icon={Links.githubIcon}
             className={cn(
               "relative z-10 h-16 w-3xs rounded-xl border px-4 font-bold lg:justify-start",
               BRAND_COLORS.github,
@@ -129,7 +190,7 @@ export function PortfolioSection() {
             showHyperlinkIcon
             path={"https://behance.net/NeKoRoSYS"}
             name={"Behance"}
-            icon={Icons.behanceIcon}
+            icon={Links.behanceIcon}
             className={cn(
               "relative z-10 h-16 w-3xs rounded-xl border px-4 font-bold lg:justify-start",
               BRAND_COLORS.behance,
