@@ -257,7 +257,11 @@ export const SECTIONS: SectionProps[] = [
           },
         ],
       },
-      { type: "portfolio", colSpan: "col-span-12", wrapperClass: "mt-16" },
+      {
+        type: "portfolio",
+        colSpan: "col-span-12",
+        wrapperClass: "mt-16",
+      },
       {
         type: "spotlight",
         color: "bg-zinc-500/75",
