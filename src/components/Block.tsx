@@ -12,6 +12,7 @@ import TextScramble from "./motion-primitives/text-scramble";
 import { ButtonSchema, HyperlinkSchema } from "@/data/hyperlinks";
 import Button from "./Buttons";
 import { TextHyperlink } from "./Hyperlinks";
+import { BrandingField } from "@/data/components/brandingCard";
 
 interface SpotlightProps {
   enable?: boolean;
@@ -106,7 +107,7 @@ export type SectionComponent = {
       type: "heading";
       payload: HeadingPayload | any;
     }
-  | { type: "branding-card"; payload: { fields: React.ReactNode[] } }
+  | { type: "branding-card"; payload: { fields: BrandingField[] } }
   | {
       type: "spotlight";
       color: string;

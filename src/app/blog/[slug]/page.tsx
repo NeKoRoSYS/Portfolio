@@ -1,8 +1,12 @@
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { BlogLoader } from "@/components/app/BlogLoader";
+import fs from "fs";
 import { BLOG_POSTS } from "@/data/routes-content/blog";
 import { GLOBAL_KEYWORDS } from "@/data/nekorosys";
+import ReactMarkdown from "react-markdown";
+import Block from "@/components/Block";
+import { TextHyperlink } from "@/components/Hyperlinks";
+import path from "path";
 
 const DOMAIN = "https://nekorosys.vercel.app";
 
@@ -72,6 +76,15 @@ export default async function BlogPost({ params }: Props) {
     notFound();
   }
 
+  const filePath = path.join(process.cwd(), "public", postMeta.file);
+  let content = "";
+  try {
+    content = fs.readFileSync(filePath, "utf8");
+  } catch (error) {
+    console.error("Failed to load post content", error);
+    notFound();
+  }
+
   const imageUrl =
     typeof postMeta.thumbnail === "string"
       ? postMeta.thumbnail
@@ -105,12 +118,37 @@ export default async function BlogPost({ params }: Props) {
   };
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <BlogLoader slug={slug} />
-    </>
+      <Block
+        index={0}
+        outline={{ enable: true, color: "bg-zinc-100" }}
+        className="flex min-h-svh items-center justify-center bg-zinc-950 py-0"
+      >
+        <div className="mt-16 h-full border-zinc-800 lg:border lg:py-16">
+          <article className="prose prose-invert lg:prose-xl mx-auto h-full w-full max-w-4xl bg-zinc-950">
+            <div className="mb-8">
+              <TextHyperlink name="Back to Blog" path="/blog" />
+            </div>
+            <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+              {postMeta.title}
+            </h1>
+            <p className="mb-4 text-zinc-400">
+              <i>Posted on {postMeta.date}</i>
+            </p>
+            <p className="text-zinc-400 italic">
+              {postMeta.tags.length > 1 ? "Tags" : "Tag"}:{" "}
+              {postMeta.tags.join(", ")}
+            </p>
+            <hr className="my-8 border-zinc-700" />
+
+            <ReactMarkdown>{content}</ReactMarkdown>
+          </article>
+        </div>
+      </Block>
+    </main>
   );
 }

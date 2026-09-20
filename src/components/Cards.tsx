@@ -3,7 +3,12 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
-import { CONTACT_FIELDS, NAME, PORTRAIT } from "@/data/components/brandingCard";
+import {
+  BrandingField,
+  CONTACT_FIELDS,
+  NAME,
+  PORTRAIT,
+} from "@/data/components/brandingCard";
 import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -238,7 +243,7 @@ export function ProjectCard({
 interface BrandingCardProps {
   className?: string;
   displayLinks?: boolean;
-  fields?: ReactNode[];
+  fields?: BrandingField[];
 }
 export function BrandingCard({
   className,
@@ -285,8 +290,24 @@ export function BrandingCard({
             <hr className="w-[50%] border border-zinc-800 @lg:h-16 @lg:w-0" />
           )}
           <div className="z-10 flex flex-col items-center justify-center text-center @lg:items-start @lg:justify-start @lg:text-left">
-            {fields?.map((element, index) => (
-              <Fragment key={index}>{element}</Fragment>
+            {fields?.map((field, index) => (
+              <p
+                key={index}
+                className={cn(
+                  field.isBold && "font-bold",
+                  field.isItalic && "italic",
+                )}
+              >
+                {field.text}
+                {field.link && (
+                  <a
+                    href={field.link.url}
+                    className="font-bold text-zinc-400 touch-hover:text-green-400"
+                  >
+                    {field.link.text}
+                  </a>
+                )}
+              </p>
             ))}
           </div>
         </div>
