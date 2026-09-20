@@ -59,7 +59,7 @@ export const SECTIONS: SectionProps[] = [
         type: "branding-card",
         colSpan: "col-span-12 lg:col-span-5",
         wrapperClass:
-          "mb-12 lg:mb-0 flex h-full w-full flex-wrap items-center justify-center lg:justify-center",
+          "lg:hidden mb-12 lg:mb-0 flex w-full flex-wrap justify-center",
         payload: { fields: ABOUT_FIELDS },
       },
       {
@@ -119,6 +119,13 @@ export const SECTIONS: SectionProps[] = [
             ],
           },
         ],
+      },
+      {
+        type: "branding-card",
+        colSpan: "col-span-12 lg:col-span-5",
+        wrapperClass:
+          "mb-12 lg:mb-0 hidden lg:flex h-full w-full flex-wrap items-center justify-end",
+        payload: { fields: ABOUT_FIELDS },
       },
     ],
   },
