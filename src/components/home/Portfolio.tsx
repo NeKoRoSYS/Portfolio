@@ -67,7 +67,7 @@ export function TechStack() {
                     mass: 0.5,
                   }}
                 >
-                  <div className="relative mt-8 flex max-w-3xs translate-y-[50%] flex-col gap-2 overflow-clip rounded-2xl border border-zinc-700 bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-4 sm:max-w-xs">
+                  <div className="relative mt-8 flex max-w-3xs translate-y-[50%] flex-col gap-2 overflow-clip rounded-2xl border border-green-400 bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-4 sm:max-w-xs">
                     <Image
                       className="absolute top-[25%] right-0 -z-10 aspect-square w-24 mask-[linear-gradient(to_bottom,black_50%,transparent)] opacity-25 saturate-0"
                       width={128}

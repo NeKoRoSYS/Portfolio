@@ -112,8 +112,9 @@ export type SectionComponent = {
       payload: HeadingPayload | any;
     }
   | { type: "branding-card"; payload: { fields: BrandingField[] } }
+  | { type: "spotlight"; size: number; color: string }
   | {
-      type: "spotlight";
+      type: "spotlightStatic";
       color: string;
       top: string;
       left: string;
@@ -227,6 +228,21 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
           )
         );
       case "spotlight":
+        return (
+          <Spotlight
+            className={cn(
+              `pointer-events-auto -z-10 blur-3xl`,
+              component.color,
+            )}
+            size={component.size}
+            springOptions={{
+              stiffness: 200,
+              damping: 30,
+              mass: 0.5,
+            }}
+          />
+        );
+      case "spotlightStatic":
         return (
           <SpotlightBlob
             color={component.color}

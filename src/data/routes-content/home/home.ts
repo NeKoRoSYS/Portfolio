@@ -8,7 +8,6 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "about-title",
     showIndex: false,
-    outline: { enable: true, color: "bg-green-400" },
     background: {
       type: "grid",
       fadeDir: "top",
@@ -133,7 +132,6 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "credentials",
     borderVisible: false,
-    outline: { enable: true, color: "bg-green-400" },
     background: {
       type: "composite",
       layers: [
@@ -203,8 +201,13 @@ export const SECTIONS: SectionProps[] = [
         type: "container",
         colSpan: "col-span-12",
         wrapperClass:
-          "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-1 border-zinc-700",
+          "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-1 border-zinc-700 transition-all duration-150 touch-hover:border-green-400",
         items: [
+          {
+            type: "spotlight",
+            color: "bg-green-400/50",
+            size: 128,
+          },
           {
             type: "container",
             colSpan: "col-span-12 lg:col-span-6",
@@ -257,7 +260,6 @@ export const SECTIONS: SectionProps[] = [
       size: 56,
       className: "opacity-50",
     },
-    outline: { enable: true, color: "bg-green-400" },
     components: [
       {
         type: "container",
@@ -289,7 +291,7 @@ export const SECTIONS: SectionProps[] = [
         wrapperClass: "mt-16",
       },
       {
-        type: "spotlight",
+        type: "spotlightStatic",
         color: "bg-zinc-500/75",
         top: "bottom-[75%]",
         left: "left-[75%]",
@@ -297,7 +299,7 @@ export const SECTIONS: SectionProps[] = [
         opacity: "opacity-25 ",
       },
       {
-        type: "spotlight",
+        type: "spotlightStatic",
         color: "bg-green-600/50",
         top: "top-[75%]",
         left: "left-[75%]",
@@ -305,7 +307,7 @@ export const SECTIONS: SectionProps[] = [
         opacity: "opacity-25",
       },
       {
-        type: "spotlight",
+        type: "spotlightStatic",
         color: "bg-purple-500/35",
         top: "bottom-[15%]",
         left: "right-[88%]",
@@ -327,7 +329,7 @@ export const SECTIONS: SectionProps[] = [
     },
     components: [
       {
-        type: "spotlight",
+        type: "spotlightStatic",
         color: "bg-purple-800",
         top: "top-[100%]",
         left: "left-[33%] lg:left-0",
@@ -335,7 +337,7 @@ export const SECTIONS: SectionProps[] = [
         opacity: "opacity-75",
       },
       {
-        type: "spotlight",
+        type: "spotlightStatic",
         color: "bg-purple-800",
         top: "-top-[50%]",
         left: "invisible lg:visible lg:right-0",
