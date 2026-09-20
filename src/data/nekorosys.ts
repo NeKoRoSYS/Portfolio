@@ -182,3 +182,5 @@ export const FEATURED_ART = ART_PROJECTS.filter((project) =>
 export const STANDARD_ART = ART_PROJECTS.filter(
   (project) => !project.tags?.includes("Featured"),
 );
+
+export const FEATURED = TECH_PROJECTS.concat(FEATURED_ART);

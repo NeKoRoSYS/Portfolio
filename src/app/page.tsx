@@ -8,13 +8,12 @@ import { TextLoop } from "@/components/motion-primitives/text-loop";
 import TextScramble from "@/components/motion-primitives/text-scramble";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { BackgroundAscii } from "@/components/VideoPlayer";
-import { FEATURED_ART, LETTERS, ROLES } from "@/data/nekorosys";
+import { FEATURED, LETTERS, ROLES } from "@/data/nekorosys";
 import { SECTIONS } from "@/data/routes-content/home/home";
 import { Colors } from "@/shared/Colors";
 import { Icons } from "@/shared/Icons";
 import { Heading1 } from "@/components/Headings";
 import { ProjectCard } from "@/components/Cards";
-import { FEATURED_TECH } from "@/data/nekorosys";
 import {
   Carousel,
   CarouselContent,
@@ -129,16 +128,9 @@ export default function Home() {
           <Carousel className="ml-16 w-full">
             <div className="my-16 mask-[linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
               <CarouselContent className="w-full">
-                {FEATURED_TECH.map((project, index) => (
+                {FEATURED.map((project, index) => (
                   <CarouselItem key={index} className="">
                     <div className="m-4">
-                      <ProjectCard {...project} tilt featured></ProjectCard>
-                    </div>
-                  </CarouselItem>
-                ))}
-                {FEATURED_ART.map((project, index) => (
-                  <CarouselItem key={index} className="">
-                    <div className="mx-4">
                       <ProjectCard {...project} tilt featured></ProjectCard>
                     </div>
                   </CarouselItem>
