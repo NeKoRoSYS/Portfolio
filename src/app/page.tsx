@@ -76,43 +76,45 @@ export default function Home() {
           </div>
           <hr className="order-3 mx-auto mt-4 mb-10 hidden w-full border-2 border-green-400 sm:w-md lg:mx-0 lg:mt-2 lg:mb-8 lg:block touch-hover:border-purple-400" />
           <div className="order-4 mt-10 flex max-w-xs flex-wrap justify-center gap-4 sm:mt-24 sm:max-w-none lg:mt-0 lg:w-md lg:justify-start lg:gap-8">
-            <div className="group relative z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
+            <div className="z-10 w-full origin-center rounded-xl transition-transform sm:w-fit lg:flex-2 touch-hover:scale-95">
               <Magnetic>
-                <GlowEffect
-                  className={`pointer-events-none absolute inset-0 z-0 group-touch-hover:hidden`}
-                  colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
-                  mode="colorShift"
-                  blur="medium"
-                  duration={2}
-                  scale={1.01}
-                />
-                <div className="relative flex rounded-xl p-px">
-                  <Spotlight
-                    className={`-z-10 bg-green-400`}
-                    size={128}
-                    springOptions={{
-                      stiffness: 350,
-                      damping: 30,
-                      mass: 0.5,
-                    }}
+                <div className="group relative w-full rounded-xl">
+                  <GlowEffect
+                    className={`pointer-events-none absolute inset-0 z-0 group-touch-hover:hidden`}
+                    colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
+                    mode="colorShift"
+                    blur="medium"
+                    duration={2}
+                    scale={1.01}
                   />
-                  <Button
-                    icon={Links.emailIcon}
-                    iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
-                    path="#contact"
-                    className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
-                  >
+                  <div className="group relative flex rounded-xl p-px">
                     <Spotlight
-                      className={`-z-10 bg-zinc-100/50 blur-2xl`}
-                      size={64}
+                      className={`-z-10 bg-green-400`}
+                      size={128}
                       springOptions={{
                         stiffness: 350,
                         damping: 30,
                         mass: 0.5,
                       }}
                     />
-                    <p>Get in Touch</p>
-                  </Button>
+                    <Button
+                      icon={Links.emailIcon}
+                      iconClass="invert group-touch-hover:invert-0 mr-4 group-touch-hover:bg-green-300 saturate-100"
+                      path="#contact"
+                      className="relative z-10 h-16 w-full rounded-xl bg-zinc-100 px-8 font-bold text-zinc-950 lg:justify-center touch-hover:bg-zinc-950 touch-hover:text-green-300"
+                    >
+                      <Spotlight
+                        className={`-z-10 bg-zinc-100/50 blur-2xl`}
+                        size={64}
+                        springOptions={{
+                          stiffness: 350,
+                          damping: 30,
+                          mass: 0.5,
+                        }}
+                      />
+                      <p>Get in Touch</p>
+                    </Button>
+                  </div>
                 </div>
               </Magnetic>
             </div>
