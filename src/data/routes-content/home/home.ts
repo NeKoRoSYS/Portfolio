@@ -158,6 +158,7 @@ export const SECTIONS: SectionProps[] = [
       {
         type: "container",
         colSpan: "col-span-12 lg:col-span-6",
+        wrapperClass: "mb-16 lg:mb-0",
         items: [
           {
             type: "container",
