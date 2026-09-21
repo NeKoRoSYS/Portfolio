@@ -32,6 +32,21 @@ export const ROLES = [
   "Illustrator",
 ];
 
+export interface AchievementProps {
+  thumbnail?: string | StaticImageData;
+  title: string;
+  date: string;
+  description: string;
+}
+
+export const ACHIEVEMENTS: AchievementProps[] = [
+  {
+    title: "B.Sc. in Computer Science",
+    date: "2030",
+    description: "Pamantasan ng Lungsod ng Maynila",
+  },
+];
+
 export interface TechStackProps {
   category?: string;
   description?: string;

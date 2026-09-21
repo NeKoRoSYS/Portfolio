@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Buttons";
-import { ProjectCard } from "@/components/Cards";
+import { EducationCard, ProjectCard } from "@/components/Cards";
 import { Heading2, Heading3 } from "@/components/Headings";
 import {
   TabData,
@@ -9,6 +9,7 @@ import {
   TabContent,
 } from "@/components/PaginatedContent";
 import {
+  ACHIEVEMENTS,
   FEATURED_ART,
   FEATURED_TECH,
   ProjectProps,
@@ -23,6 +24,16 @@ import { useState } from "react";
 import TextScramble from "../motion-primitives/text-scramble";
 import Image from "next/image";
 import { Cursor } from "../motion-primitives/cursor";
+
+export function Education() {
+  return (
+    <>
+      {ACHIEVEMENTS.map((achievement, index) => (
+        <EducationCard key={index} {...achievement} />
+      ))}
+    </>
+  );
+}
 
 export function TechStack() {
   return (

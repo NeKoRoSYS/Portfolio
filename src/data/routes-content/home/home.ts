@@ -143,64 +143,82 @@ export const SECTIONS: SectionProps[] = [
           src: "/images/nekorosys/nekostack.png",
           alt: "stack",
           className:
-            "absolute top-[2%] right-[2%] -z-10 aspect-auto w-full mask-[linear-gradient(to_bottom,black,transparent_75%)] opacity-50 invert saturate-0",
+            "hidden lg:block absolute lg:right-72 lg:-bottom-40 lg:-scale-x-75 lg:scale-75 z-50 aspect-auto w-full bg-center bg-cover mask-[linear-gradient(to_bottom,black,transparent_75%)] opacity-50 saturate-75",
         },
-        { type: "grid", fadeDir: "bottom", size: 56, className: "opacity-50" },
+        {
+          type: "grid",
+          fadeDir: "bottom",
+          size: 56,
+          className:
+            "opacity-50 mask-[linear-gradient(to_bottom,black,transparent_99%)]",
+        },
       ],
     },
     components: [
       {
         type: "container",
-        colSpan: "col-span-12",
+        colSpan: "col-span-12 lg:col-span-6",
         wrapperClass: "mb-16",
         items: [
           {
-            type: "heading",
-            wrapperClass: "w-full",
-            payload: {
-              align: "text-center",
-              segments: [
-                {
-                  text: "Versatile ",
-                  highlight: true,
-                  className: "text-green-400 touch-hover:text-purple-400 ",
+            type: "container",
+            wrapperClass:
+              "lg:sticky lg:top-[50vh] lg:mt-29 lg:-translate-y-1/2",
+            items: [
+              {
+                type: "heading",
+                wrapperClass:
+                  "filter w-full drop-shadow-[0_10px_10px_rgba(0,0,0,0.75)]",
+                payload: {
+                  align: "text-center lg:text-left",
+                  segments: [
+                    {
+                      text: "Versatile ",
+                      highlight: true,
+                      className: "text-green-400 touch-hover:text-purple-400 ",
+                    },
+                    {
+                      breakBefore: true,
+                      text: "and ",
+                    },
+                    {
+                      text: "STACKED",
+                      effect: "echo",
+                    },
+                  ],
                 },
-                {
-                  text: "and ",
+              },
+              {
+                type: "paragraph",
+                wrapperClass:
+                  "mt-4 text-center lg:text-left font-bold text-zinc-200  drop-shadow-[0_10px_10px_rgba(0,0,0,0.75)]",
+                payload: {
+                  text: "Building with industry-standard skills and tools that deliver.",
                 },
-                {
-                  text: "STACKED",
-                  effect: "echo",
+              },
+              {
+                type: "hyperlink",
+                wrapperClass:
+                  "w-full text-center lg:text-left flex flex-row justify-center lg:justify-start  drop-shadow-[0_10px_10px_rgba(0,0,0,0.75)]",
+                payload: {
+                  name: "Click to Download CV",
+                  path: "/CV Malibiran 2026.pdf",
+                  download: true,
+                  showHyperlinkIcon: true,
+                  linkIcon: Links.downloadIcon,
+                  linkIconClass:
+                    "group-touch-hover:transform-[translate(0px,0px)]",
+                  className:
+                    "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
                 },
-              ],
-            },
-          },
-          {
-            type: "paragraph",
-            wrapperClass: "mt-4 text-center font-bold text-zinc-200",
-            payload: {
-              text: "Building with industry-standard skills and tools that deliver.",
-            },
-          },
-          {
-            type: "hyperlink",
-            wrapperClass: "w-full text-center flex flex-row justify-center",
-            payload: {
-              name: "Click to Download CV",
-              path: "/CV Malibiran 2026.pdf",
-              download: true,
-              showHyperlinkIcon: true,
-              linkIcon: Links.downloadIcon,
-              linkIconClass: "group-touch-hover:transform-[translate(0px,0px)]",
-              className:
-                "py-2 touch-hover:translate-x-0! touch-hover:-translate-y-1!",
-            },
+              },
+            ],
           },
         ],
       },
       {
         type: "container",
-        colSpan: "col-span-12",
+        colSpan: "col-span-12 lg:col-span-6",
         wrapperClass:
           "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-1 border-zinc-700 transition-all duration-150 touch-hover:border-green-400",
         items: [
@@ -211,30 +229,12 @@ export const SECTIONS: SectionProps[] = [
           },
           {
             type: "container",
-            colSpan: "col-span-12 lg:col-span-6",
-            wrapperClass:
-              "border-b border-zinc-800 lg:border-r lg:border-b-0 p-8",
+            colSpan: "col-span-12",
+            wrapperClass: "border-b border-zinc-800 p-8",
             items: [
               {
                 type: "heading",
-                colSpan: "col-span-12 lg:col-span-6",
-                wrapperClass: "flex w-full mb-8",
-                payload: {
-                  text: "Education",
-                  level: "h3",
-                  align: "text-center",
-                },
-              },
-            ],
-          },
-          {
-            type: "container",
-            colSpan: "col-span-12 lg:col-span-6",
-            wrapperClass: " p-8",
-            items: [
-              {
-                type: "heading",
-                colSpan: "col-span-12 lg:col-span-6",
+                colSpan: "col-span-12",
                 wrapperClass: "flex w-full mb-8",
                 payload: {
                   text: "What I Use",
@@ -244,6 +244,34 @@ export const SECTIONS: SectionProps[] = [
               },
               {
                 type: "tech-stack",
+              },
+            ],
+          },
+          {
+            type: "container",
+            colSpan: "col-span-12",
+            wrapperClass: " p-8",
+            items: [
+              {
+                type: "heading",
+                colSpan: "col-span-12",
+                wrapperClass: "flex w-full mb-8",
+                payload: {
+                  text: "Education",
+                  level: "h3",
+                  align: "text-center",
+                },
+              },
+              {
+                type: "container",
+                wrapperClass:
+                  "overflow-y-scroll w-full grow max-h-100 mask-[linear-gradient(to_bottom,transparent,black_5%,black_95%,transparent)]",
+                items: [
+                  {
+                    type: "education",
+                    wrapperClass: "mx-4 my-2 flex flex-col gap-4",
+                  },
+                ],
               },
             ],
           },

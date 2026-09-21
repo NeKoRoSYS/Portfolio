@@ -4,6 +4,7 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { Links } from "@/shared/Icons";
 import { Heading2, Heading3 } from "./Headings";
 import {
+  Education,
   PortfolioHeader,
   PortfolioSection,
   TechStack,
@@ -121,6 +122,7 @@ export type SectionComponent = {
       size: string;
       opacity: string;
     }
+  | { type: "education" }
   | { type: "tech-stack" }
   | { type: "portfolio" }
   | { type: "portfolio-header" }
@@ -166,6 +168,8 @@ function SectionRenderer({ component }: { component: SectionComponent }) {
         return <Button {...component.payload} />;
       case "hyperlink":
         return <TextHyperlink {...component.payload} />;
+      case "education":
+        return <Education />;
       case "tech-stack":
         return <TechStack />;
       case "portfolio":

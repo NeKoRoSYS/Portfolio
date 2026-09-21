@@ -13,7 +13,7 @@ import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { PillChip, RectChip } from "./Chips";
-import { ProjectProps } from "@/data/nekorosys";
+import { AchievementProps, ProjectProps } from "@/data/nekorosys";
 import { Colors } from "@/shared/Colors";
 import Image from "next/image";
 import { Heading3 } from "./Headings";
@@ -45,6 +45,54 @@ export function Card({
     >
       {children}
     </Tilt>
+  );
+}
+
+export function EducationCard({ ...props }: AchievementProps) {
+  return (
+    <Card tilt className="group w-full">
+      <div className="relative h-full overflow-hidden p-px">
+        <Spotlight
+          className="bg-green-400"
+          size={256}
+          springOptions={{
+            stiffness: 250,
+            damping: 30,
+            mass: 0.5,
+          }}
+        />
+
+        <div className="relative flex h-full min-h-32 w-full flex-col overflow-clip rounded-3xl @lg:flex-row">
+          {props.thumbnail && (
+            <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-zinc-800 @lg:aspect-auto @lg:w-2/5">
+              <Image
+                width={1280}
+                height={720}
+                className="h-full w-full object-cover transition-transform duration-300 group-touch-hover:scale-115"
+                alt={props.title}
+                src={
+                  typeof props.thumbnail === "string"
+                    ? props.thumbnail
+                    : props.thumbnail?.src
+                }
+              />
+            </div>
+          )}
+
+          <div className="flex min-h-32 grow flex-col justify-between bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-6 shadow-2xl shadow-zinc-800 @lg:w-3/5">
+            <div>
+              <h2 className="text-2xl font-bold text-zinc-100 group-touch-hover:text-green-400">
+                {props.title}
+              </h2>
+              <p className="mt-1 mb-4 text-sm text-zinc-400 italic">
+                {props.date}
+              </p>
+              <p className="mb-4 text-zinc-300">{props.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Card>
   );
 }
 

@@ -35,11 +35,11 @@ export default function Grid({
       "[mask-image:linear-gradient(to_top,black_50%,transparent)]",
     ],
     bottom: [
-      "mask-[linear-gradient(to_bottom,black-50%,transparent)]",
+      "mask-[linear-gradient(to_bottom,black_50%,transparent)]",
       "[mask-image:linear-gradient(to_bottom,black_50%,transparent)]",
     ],
     y: [
-      "mask-[linear-gradient(to_bottom,transparent,black-50%,transparent)]",
+      "mask-[linear-gradient(to_bottom,transparent,black_50%,transparent)]",
       "[mask-image:linear-gradient(to_bottom,transparent,black_50%,transparent)]",
     ],
     x: [
