@@ -41,7 +41,7 @@ export function TechStack() {
     <div className="grid grid-cols-6 gap-8 md:grid-cols-9">
       {TECH_STACK.map((category, index) => (
         <div key={index} className="col-span-3 flex flex-col items-center">
-          <p className="mb-4 font-bold">{category.category}</p>
+          <p className="mb-4 text-center font-bold">{category.category}</p>
           <div className="grid grid-cols-3">
             {category.tools?.map((tool, index) => (
               <div

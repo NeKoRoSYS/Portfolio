@@ -108,7 +108,6 @@ export const TECH_STACK: TechStackProps[] = [
     category: "Backend",
     tools: [
       { name: "Node.js", icon: Stack.nodejsIcon },
-      { name: "MongoDB", icon: Stack.mongodbIcon },
       { name: "PostgreSQL", icon: Stack.postgresqlIcon },
       { name: "FastAPI", icon: Stack.fastapiIcon },
     ],
@@ -129,6 +128,8 @@ export const TECH_STACK: TechStackProps[] = [
       { name: "Unity", icon: Stack.unityIcon },
       { name: "VS Code", icon: Stack.vscodeIcon },
       { name: "GitHub", icon: Stack.githubIcon },
+      { name: "MongoDB", icon: Stack.mongodbIcon },
+      { name: "Supabase", icon: Stack.supabaseIcon },
       { name: "Vercel", icon: Stack.vercelIcon },
     ],
   },

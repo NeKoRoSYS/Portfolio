@@ -41,6 +41,7 @@ export const Stack = {
   githubIcon: "/icons/techStack/github.svg",
   htmlIcon: "/icons/techStack/html.svg",
   javascriptIcon: "/icons/techStack/js.svg",
+  supabaseIcon: "/icons/techStack/supabase.svg",
   kubernetesIcon: "/icons/techStack/k8s.svg",
   linuxIcon: "/icons/techStack/linux.svg",
   mongodbIcon: "/icons/techStack/mongodb.svg",
