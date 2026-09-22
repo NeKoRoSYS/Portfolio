@@ -71,7 +71,7 @@ export function TechStack() {
                     duration: 0.3,
                     bounce: 0.1,
                   }}
-                  className="pointer-events-none hidden sm:block"
+                  className="pointer-events-none"
                   springConfig={{
                     stiffness: 200,
                     damping: 30,
@@ -80,14 +80,14 @@ export function TechStack() {
                 >
                   <div className="relative mt-8 flex max-w-3xs translate-y-[50%] flex-col gap-2 overflow-clip rounded-2xl border border-green-400 bg-linear-to-b from-zinc-900 from-25% to-zinc-950 p-4 sm:max-w-xs">
                     <Image
-                      className="absolute top-[25%] right-0 -z-10 aspect-square w-24 mask-[linear-gradient(to_bottom,black_50%,transparent)] opacity-25 saturate-0"
+                      className="absolute top-[25%] right-0 -z-10 hidden aspect-square w-24 mask-[linear-gradient(to_bottom,black_50%,transparent)] opacity-25 saturate-0 sm:block"
                       width={128}
                       height={128}
                       src={tool.icon}
                       alt={tool.name}
                     />
                     <b>{tool.name}</b>
-                    {tool.description}
+                    <p className="hidden sm:block">{tool.description}</p>
                   </div>
                 </Cursor>
                 <Image
@@ -99,9 +99,6 @@ export function TechStack() {
                     `aspect-square w-12 shrink-0 bg-cover bg-center bg-no-repeat p-1 saturate-0 transition-all select-none group-touch-hover:-translate-y-3 group-touch-hover:scale-125 group-touch-hover:saturate-100`,
                   )}
                 />
-                <p className="absolute top-[85%] text-sm font-bold opacity-0 duration-150 sm:hidden group-touch-hover:opacity-100">
-                  {tool.name}
-                </p>
               </div>
             ))}
           </div>

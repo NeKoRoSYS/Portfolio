@@ -37,7 +37,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "about",
     borderVisible: false,
-    className: "bg-[rgb(15,15,15)] ",
+    className: "bg-[rgb(15,15,15)] min-h-svh",
     background: {
       type: "image",
       width: 3066,

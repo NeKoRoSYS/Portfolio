@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const domain: string = "https://nekorosys.vercel.app";
-const title: string = "NeKoRoSYS | Full-Stack Developer | Graphic Designer";
+const title: string = "NeKoRoSYS | Full-Stack Developer & Graphic Designer";
 const description: string =
   "Explore the portfolio of John Marky G. Malibiran (NeKoRoSYS), featuring full-stack software development, game design, and graphic design projects.";
 
