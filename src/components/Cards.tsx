@@ -3,13 +3,7 @@ import { Spotlight } from "./motion-primitives/spotlight";
 import { Tilt } from "./motion-primitives/tilt";
 import { IconHyperlink, TextHyperlink } from "./Hyperlinks";
 import SpotlightBlob from "./SpotlightBlob";
-import {
-  BrandingField,
-  CONTACT_FIELDS,
-  NAME,
-  PORTRAIT,
-} from "@/data/components/brandingCard";
-import { Fragment } from "react/jsx-runtime";
+import { BrandingField, NAME, PORTRAIT } from "@/data/components/brandingCard";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { PillChip, RectChip } from "./Chips";
@@ -18,7 +12,6 @@ import { Colors } from "@/shared/Colors";
 import Image from "next/image";
 import { Heading3 } from "./Headings";
 import { BlogMeta } from "@/data/routes-content/blog";
-import Grid from "./Grid";
 
 interface CardProps {
   rotationFactor?: number;
@@ -156,13 +149,11 @@ export function ProjectCard({
   projectLink,
   className,
   rotationFactor,
-  children,
   featured,
   title,
   thumbnail,
   tags,
   excerpt,
-  description,
 }: CardProps & ProjectProps) {
   return (
     <Card

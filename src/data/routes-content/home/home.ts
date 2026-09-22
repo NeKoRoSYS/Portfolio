@@ -37,7 +37,7 @@ export const SECTIONS: SectionProps[] = [
   {
     id: "about",
     borderVisible: false,
-    className: "bg-[rgb(15,15,15)] min-h-svh",
+    className: "bg-[rgb(15,15,15)]",
     background: {
       type: "image",
       width: 3066,
@@ -50,21 +50,21 @@ export const SECTIONS: SectionProps[] = [
     outline: { enable: true, color: "bg-zinc-100" },
     components: [
       {
-        type: "heading",
+        type: "container",
         colSpan: "col-span-12",
-        wrapperClass: "mb-8",
-        payload: { text: "Who I Am", align: "text-center lg:text-left" },
-      },
-      {
-        type: "branding-card",
-        colSpan: "col-span-12 lg:col-span-5",
-        wrapperClass:
-          "lg:hidden mb-12 lg:mb-0 flex w-full flex-wrap justify-center",
-        payload: { fields: ABOUT_FIELDS },
+        wrapperClass: "flex flex-col",
+        items: [
+          {
+            type: "heading",
+            colSpan: "col-span-12",
+            wrapperClass: "mb-16 md:mb-8",
+            payload: { text: "Who I Am", align: "text-center md:text-left" },
+          },
+        ],
       },
       {
         type: "container",
-        colSpan: "col-span-12 lg:col-span-7",
+        colSpan: "col-span-12 md:col-span-7",
         wrapperClass:
           "flex h-full w-full grow flex-col items-center justify-center pl-4 text-zinc-100",
         items: [
@@ -122,11 +122,17 @@ export const SECTIONS: SectionProps[] = [
         ],
       },
       {
-        type: "branding-card",
-        colSpan: "col-span-12 lg:col-span-5",
-        wrapperClass:
-          "mb-12 lg:mb-0 hidden lg:flex h-full w-full flex-wrap items-center justify-end",
-        payload: { fields: ABOUT_FIELDS },
+        type: "container",
+        colSpan: "col-span-5",
+        wrapperClass: "hidden md:block relative",
+        items: [
+          {
+            type: "branding-card",
+            wrapperClass:
+              "absolute top-12 mb-12 lg:mb-0 hidden md:flex w-full flex-wrap items-center justify-end",
+            payload: { fields: ABOUT_FIELDS },
+          },
+        ],
       },
     ],
   },
