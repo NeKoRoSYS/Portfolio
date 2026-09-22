@@ -24,6 +24,7 @@ import { useState } from "react";
 import TextScramble from "../motion-primitives/text-scramble";
 import Image from "next/image";
 import { Cursor } from "../motion-primitives/cursor";
+import { Spotlight } from "../motion-primitives/spotlight";
 
 export function Education() {
   return (
@@ -134,36 +135,49 @@ export function PortfolioSection() {
   ) => {
     return (
       <>
-        <div className="mb-8 flex w-full items-center justify-center text-center">
-          <h3 className="font-cosmic text-3xl font-bold">Featured</h3>
+        <div className="w-full rounded-3xl border border-zinc-700 bg-zinc-950/50 p-8 backdrop-blur-sm transition-all duration-150 touch-hover:border-green-400">
+          <Spotlight
+            className={`pointer-events-auto -z-10 bg-green-400/50 blur-3xl`}
+            size={128}
+            springOptions={{
+              stiffness: 200,
+              damping: 30,
+              mass: 0.5,
+            }}
+          />
+          <div className="mb-8 flex w-full items-center justify-center text-center">
+            <h3 className="font-cosmic text-3xl font-bold">Featured</h3>
+          </div>
+          <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
+            {featuredProjects.map((project, index) => (
+              <div
+                key={index}
+                className={cn("col-span-12", index > 0 && "sm:col-span-6")}
+              >
+                <ProjectCard {...project} tilt featured></ProjectCard>
+              </div>
+            ))}
+          </div>
+          {standardProjects.length > 0 && (
+            <>
+              <div className="my-8 flex w-full items-center justify-center text-center">
+                <h4 className="font-cosmic text-3xl font-bold">
+                  Other Projects
+                </h4>
+              </div>
+              <div
+                className={cn(
+                  "flex w-full flex-col gap-4 sm:mx-auto",
+                  useGrid && "grid grid-cols-3",
+                )}
+              >
+                {standardProjects.map((project, index) => (
+                  <ProjectCard {...project} key={index}></ProjectCard>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-        <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={index}
-              className={cn("col-span-12", index > 0 && "sm:col-span-6")}
-            >
-              <ProjectCard {...project} tilt featured></ProjectCard>
-            </div>
-          ))}
-        </div>
-        {standardProjects.length > 0 && (
-          <>
-            <div className="my-8 flex w-full items-center justify-center text-center">
-              <h4 className="font-cosmic text-2xl font-bold">Other Projects</h4>
-            </div>
-            <div
-              className={cn(
-                "flex w-full flex-col gap-4 sm:mx-auto",
-                useGrid && "grid grid-cols-3",
-              )}
-            >
-              {standardProjects.map((project, index) => (
-                <ProjectCard {...project} key={index}></ProjectCard>
-              ))}
-            </div>
-          </>
-        )}
       </>
     );
   };
@@ -213,7 +227,7 @@ export function PortfolioSection() {
 
   return (
     <div className="grid w-full grid-cols-12 gap-8">
-      <div className="col-span-12 w-full border-zinc-800 lg:col-span-3 lg:border-l-2">
+      <div className="col-span-12 w-full border-zinc-800 lg:col-span-3">
         <div className="z-10 border-zinc-800 lg:sticky lg:top-[50vh] lg:mt-21 lg:-translate-y-1/2 lg:border-l">
           <TabControls
             tabs={tabs}

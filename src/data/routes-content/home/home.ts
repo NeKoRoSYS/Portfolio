@@ -220,7 +220,7 @@ export const SECTIONS: SectionProps[] = [
         type: "container",
         colSpan: "col-span-12 lg:col-span-6",
         wrapperClass:
-          "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-1 border-zinc-700 transition-all duration-150 touch-hover:border-green-400",
+          "grid w-full grid-cols-12 sm:mx-auto bg-zinc-950/50 backdrop-blur-sm rounded-3xl border border-zinc-700 transition-all duration-150 touch-hover:border-green-400",
         items: [
           {
             type: "spotlight",
