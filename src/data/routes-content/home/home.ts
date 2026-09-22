@@ -230,7 +230,7 @@ export const SECTIONS: SectionProps[] = [
           {
             type: "container",
             colSpan: "col-span-12",
-            wrapperClass: "border-b border-zinc-800 p-8",
+            wrapperClass: "border-b border-zinc-800 px-4 py-8 sm:p-8",
             items: [
               {
                 type: "heading",
@@ -250,7 +250,7 @@ export const SECTIONS: SectionProps[] = [
           {
             type: "container",
             colSpan: "col-span-12",
-            wrapperClass: " p-8",
+            wrapperClass: "px-4 py-4 pt-8 sm:p-8",
             items: [
               {
                 type: "heading",

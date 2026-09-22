@@ -135,7 +135,7 @@ export function PortfolioSection() {
   ) => {
     return (
       <>
-        <div className="w-full rounded-3xl border border-zinc-700 bg-zinc-950/50 p-8 backdrop-blur-sm transition-all duration-150 touch-hover:border-green-400">
+        <div className="w-full rounded-3xl border border-zinc-700 bg-zinc-950/50 p-4 backdrop-blur-sm transition-all duration-150 sm:p-8 touch-hover:border-green-400">
           <Spotlight
             className={`pointer-events-auto -z-10 bg-green-400/50 blur-3xl`}
             size={128}
@@ -145,7 +145,7 @@ export function PortfolioSection() {
               mass: 0.5,
             }}
           />
-          <div className="mb-8 flex w-full items-center justify-center text-center">
+          <div className="mt-4 mb-8 flex w-full items-center justify-center text-center sm:mt-0 sm:mb-8">
             <h3 className="font-cosmic text-3xl font-bold">Featured</h3>
           </div>
           <div className="grid w-full grid-cols-12 gap-4 sm:mx-auto">
@@ -160,7 +160,7 @@ export function PortfolioSection() {
           </div>
           {standardProjects.length > 0 && (
             <>
-              <div className="my-8 flex w-full items-center justify-center text-center">
+              <div className="my-8 flex w-full items-center justify-center text-center sm:my-8">
                 <h4 className="font-cosmic text-3xl font-bold">
                   Other Projects
                 </h4>
@@ -188,7 +188,7 @@ export function PortfolioSection() {
       label: "Tech",
       payload: [
         renderProjects(FEATURED_TECH, STANDARD_TECH),
-        <div className="mt-16 flex flex-row items-center justify-center gap-8">
+        <div className="mt-8 flex flex-row items-center justify-center gap-8 sm:mt-16">
           <p className="font-cosmic text-2xl">More at</p>
           <Button
             showHyperlinkIcon
@@ -208,7 +208,7 @@ export function PortfolioSection() {
       label: "Art",
       payload: [
         renderProjects(FEATURED_ART, STANDARD_ART, true),
-        <div className="mt-16 flex flex-row items-center justify-center gap-8">
+        <div className="mt-8 flex flex-row items-center justify-center gap-8 sm:mt-16">
           <p className="font-cosmic text-2xl">More at</p>
           <Button
             showHyperlinkIcon
@@ -226,14 +226,14 @@ export function PortfolioSection() {
   ];
 
   return (
-    <div className="grid w-full grid-cols-12 gap-8">
+    <div className="grid w-full grid-cols-12">
       <div className="col-span-12 w-full border-zinc-800 lg:col-span-3">
         <div className="z-10 border-zinc-800 lg:sticky lg:top-[50vh] lg:mt-21 lg:-translate-y-1/2 lg:border-l">
           <TabControls
             tabs={tabs}
             activeId={activeId}
             setActiveId={setActiveId}
-            className="mb-8 flex w-full flex-row justify-center lg:mb-0 lg:flex-col lg:justify-start"
+            className="flex w-full flex-row justify-center lg:flex-col lg:justify-start"
           >
             {tabs.map((tab) => (
               <button
