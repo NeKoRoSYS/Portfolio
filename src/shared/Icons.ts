@@ -56,7 +56,7 @@ export const Stack = {
   tailwindIcon: "/icons/techStack/tailwind.svg",
   typescriptIcon: "/icons/techStack/ts.svg",
   unityIcon: "/icons/techStack/unity.svg",
-  godotIcon: "/icons/techStack/unity.svg",
+  godotIcon: "/icons/techStack/godot.svg",
   vercelIcon: "/icons/techStack/vercel.svg",
   viteIcon: "/icons/techStack/vite.png",
   vscodeIcon: "/icons/techStack/vscode.svg",
