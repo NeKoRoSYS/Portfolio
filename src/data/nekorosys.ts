@@ -42,7 +42,7 @@ export interface AchievementProps {
 export const ACHIEVEMENTS: AchievementProps[] = [
   {
     title: "B.Sc. in Computer Science",
-    date: "2030",
+    date: "2026 – 2030 (Expected)",
     description: "Pamantasan ng Lungsod ng Maynila",
   },
 ];
@@ -101,6 +101,7 @@ export const TECH_STACK: TechStackProps[] = [
       { name: "Next.js", icon: Stack.nextjsIcon },
       { name: "React", icon: Stack.reactIcon },
       { name: "Tailwind CSS", icon: Stack.tailwindIcon },
+      { name: "Three.js", icon: Stack.threejsIcon },
       { name: "Vite", icon: Stack.viteIcon },
     ],
   },
@@ -108,7 +109,9 @@ export const TECH_STACK: TechStackProps[] = [
     category: "Backend",
     tools: [
       { name: "Node.js", icon: Stack.nodejsIcon },
+      { name: "Bun", icon: Stack.bunIcon },
       { name: "PostgreSQL", icon: Stack.postgresqlIcon },
+      { name: "SQLite", icon: Stack.sqliteIcon },
       { name: "FastAPI", icon: Stack.fastapiIcon },
       { name: "MongoDB", icon: Stack.mongodbIcon },
       { name: "Supabase", icon: Stack.supabaseIcon },
@@ -128,6 +131,7 @@ export const TECH_STACK: TechStackProps[] = [
     category: "Tools",
     tools: [
       { name: "Unity", icon: Stack.unityIcon },
+      { name: "Godot", icon: Stack.godotIcon },
       { name: "VS Code", icon: Stack.vscodeIcon },
       { name: "GitHub", icon: Stack.githubIcon },
       { name: "Vercel", icon: Stack.vercelIcon },
